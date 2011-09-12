@@ -15,8 +15,8 @@ public class getBPM{
 
     static double [][] array;
     static double [] datacopy;
-    static boolean guardlow = false, guardhigh = false, GH1 = false, GH2 = false, GL1 = false, GL2 = false;
-    static int count = 0, k = 0, totalcount = 0;
+    static boolean guardlow = false, guardhigh = false, GH1 = false, GH2 = false, GL1 = false, GL2 = false, BPMguard = false;
+    static int count = 0, k = 0, totalcount = 0, averageBPM = 0, countGetBPM = 0;
     static getBPM BPM;
     static double previoustime = 0.00;
 
@@ -67,8 +67,10 @@ public class getBPM{
         }
         System.out.println(count);
         previoustime = array[39][0];
-        getBPM();
-        count++;
+        if (BPMguard){
+            getBPM();
+        }
+        count = 0;
     }
     public static void reset(){
         array = null;
@@ -86,10 +88,11 @@ public class getBPM{
     public static void getBPM(){
         double BPM = 0.00;
         double time = (System.currentTimeMillis() - SplitParse.InitialTime);
-
-        BPM = ((double) count*1.0 / (time / (1000*60))*1.0) / 2.0;
+        BPM = ((double) count*1.0 / (time / (1000*60))*1.0);
+        averageBPM += BPM;
+        averageBPM = (int) (averageBPM / (2.0));
         System.out.println(Integer.toString((int)BPM));
-        ECGJAVa2View.PulseValue.setText(Integer.toString((int)BPM));
+        ECGJAVa2View.PulseValue.setText(Double.toString(averageBPM));
     }
     public void run() {
         createNewArrays();
