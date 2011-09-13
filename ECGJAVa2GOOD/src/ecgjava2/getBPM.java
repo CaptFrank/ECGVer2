@@ -92,7 +92,7 @@ public class getBPM{
         averageBPM += BPM;
         averageBPM = (int) (averageBPM / (2.0));
         System.out.println(Integer.toString((int)BPM));
-        ECGJAVa2View.PulseValue.setText(Double.toString(averageBPM));
+        ECGJAVa2View.PulseValue.setText(Integer.toString(averageBPM));
     }
     public void run() {
         createNewArrays();

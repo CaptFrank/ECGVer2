@@ -103,7 +103,7 @@ public class SplitParse {
                 IR = items[25];
                 if (IR != null && !IR.isEmpty()){
                     IRnum = Double.parseDouble(IR);
-                    ECGJAVa2View.IRLED.setText(Double.toString(IRnum*1.00));
+                    ECGJAVa2View.IRLED.setText(Double.toString(IRnum));
                 }
                 ECGJAVa2View.IRLED.repaint();
             }
