@@ -103,11 +103,14 @@ public class SplitParse {
                 IR = items[25];
                 if (IR != null && !IR.isEmpty()){
                     IRnum = Double.parseDouble(IR);
-                    ECGJAVa2View.IRLED.setText(Double.toString(IRnum));
+                    ECGJAVa2View.IRLED.setText(Double.toString(IRnum*1.00));
                 }
                 ECGJAVa2View.IRLED.repaint();
             }
             i++;
+            if (getSPO2.guard){
+                getSPO2.getSPO2();
+            }
         }
         if (Light != null && ECG != null && Temp != null && Pot != null && !Light.isEmpty() && !ECG.isEmpty() && !Temp.isEmpty() && !Pot.isEmpty() && Bat != null && !Bat.isEmpty()
                 && IR != null && !IR.isEmpty()){
