@@ -15,7 +15,9 @@ public class getSPO2 {
     static boolean guard = false;
 
     public static void getSPO2(){
-        double tempSPO2 = (SplitParse.Potnum / SplitParse.IRnum);
+        double error = Math.abs(SplitParse.IRnum - SplitParse.LowNum);
+        System.out.println(SplitParse.IRnum + "   " + SplitParse.LowNum + "   " + error);
+        double tempSPO2 = ((SplitParse.Potnum - error) / (SplitParse.IRnum - error));
         averageSPO2 += tempSPO2;
         averageSPO2 = averageSPO2 / 2.0;
         ECGJAVa2View.SPO2Value.setText(Integer.toString((int) (averageSPO2 * 100)));
