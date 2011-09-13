@@ -99,20 +99,20 @@ public class SplitParse {
                 }
                 ECGJAVa2View.Batt.repaint();
             }
-            /*else if (i == 25){
+            else if (i == 25){
                 IR = items[25];
                 if (IR != null && !IR.isEmpty()){
                     IRnum = Double.parseDouble(IR);
                     ECGJAVa2View.IRLED.setText(Double.toString(IRnum));
                 }
                 ECGJAVa2View.IRLED.repaint();
-            }*/
+            }
             i++;
         }
         if (Light != null && ECG != null && Temp != null && Pot != null && !Light.isEmpty() && !ECG.isEmpty() && !Temp.isEmpty() && !Pot.isEmpty() && Bat != null && !Bat.isEmpty()
-                /*&& IR != null && !IR.isEmpty()*/){
+                && IR != null && !IR.isEmpty()){
             GlobalTime = System.currentTimeMillis() - ECGJAVa2View.InitialTime;
-            String x = (System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + Lightnum + "," + ECGnum + "," + Tempnum + "," + Potnum + "," + Bat + "," + IR +"\n";
+            String x = (System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + Lightnum + "," + ECGnum + "," + Tempnum + "," + Potnum + "," + Bat + "," + IRnum +"\n";
             LogFiles.WriteLogFiles.Writetofile(x);
         }
 
@@ -125,7 +125,7 @@ public class SplitParse {
 
     public static boolean parsable(String val){
 
-        Pattern p = Pattern.compile("(!?)(Lig:)(\\d+)(.)(\\d+)(Tem:)(\\d+)(.)(\\d+)(ECG:)(\\d+)(.)(\\d+)(POT:)(\\d+)(.)(\\d+)(BAT:)(\\d+)(.)(\\d+)");
+        Pattern p = Pattern.compile("(!?)(Lig:)(\\d+)(.)(\\d+)(Tem:)(\\d+)(.)(\\d+)(ECG:)(\\d+)(.)(\\d+)(POT:)(\\d+)(.)(\\d+)(BAT:)(\\d+)(.)(\\d+)(IRL:)(\\d+)(.)(\\d+)");
         Matcher m = p.matcher(val);
 
         if (m.find()){

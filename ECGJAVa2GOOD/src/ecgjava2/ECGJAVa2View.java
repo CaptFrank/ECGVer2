@@ -180,6 +180,9 @@ public class ECGJAVa2View extends FrameView {
         jLabel13 = new javax.swing.JLabel();
         OXISQLChart1 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         IRSerialChart = new javax.swing.JButton();
@@ -593,7 +596,7 @@ public class ECGJAVa2View extends FrameView {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+            .add(jPanel2Layout.createSequentialGroup()
                 .add(127, 127, 127)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(ECGLabel)
@@ -818,6 +821,30 @@ public class ECGJAVa2View extends FrameView {
         jLabel29.setText(resourceMap.getString("jLabel29.text")); // NOI18N
         jLabel29.setName("jLabel29"); // NOI18N
 
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
+        jButton2.setName("jButton2"); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N
+        jButton3.setName("jButton3"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel9Layout = new org.jdesktop.layout.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -833,9 +860,15 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel12)
                 .add(156, 156, 156))
             .add(jPanel9Layout.createSequentialGroup()
-                .add(330, 330, 330)
+                .add(28, 28, 28)
+                .add(jButton2)
+                .add(30, 30, 30)
+                .add(jButton3)
+                .add(30, 30, 30)
+                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel29)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -848,9 +881,17 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel13)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 53, Short.MAX_VALUE)
-                .add(jLabel29)
-                .add(65, 65, 65))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 40, Short.MAX_VALUE)
+                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jPanel9Layout.createSequentialGroup()
+                        .add(jLabel29)
+                        .add(65, 65, 65))
+                    .add(jPanel9Layout.createSequentialGroup()
+                        .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel9.TabConstraints.tabTitle"), jPanel9); // NOI18N
@@ -2137,12 +2178,12 @@ public class ECGJAVa2View extends FrameView {
 
     private void IRSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSerialChartActionPerformed
 
-       /* if (!CommPortOpen.getConnected()){
+        if (!CommPortOpen.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
         }
         else{
             chart.ThreadedChartIR.main(null);
-       }*/
+       }
     }//GEN-LAST:event_IRSerialChartActionPerformed
 
     private void IRSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSQLChartActionPerformed
@@ -2163,6 +2204,21 @@ public class ECGJAVa2View extends FrameView {
         // TODO add your handling code here:
         SignalAnalysis.setVisible(true);
     }//GEN-LAST:event_ShowSignalActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        getBPM.reset();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        getBPM.BPMguard = true;
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        getBPM.BPMguard = false;
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2246,6 +2302,9 @@ public class ECGJAVa2View extends FrameView {
     public static javax.swing.JLabel XbeeTotal;
     public static javax.swing.JLabel Xbeegood;
     public static javax.swing.JInternalFrame container;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
