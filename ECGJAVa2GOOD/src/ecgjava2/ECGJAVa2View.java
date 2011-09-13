@@ -168,12 +168,6 @@ public class ECGJAVa2View extends FrameView {
         ECGSerialChart = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         ECGSQLChart = new javax.swing.JButton();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        SPO2SerialChart = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        SPO2SQLChart = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         OXISerialChart1 = new javax.swing.JButton();
@@ -715,87 +709,6 @@ public class ECGJAVa2View extends FrameView {
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
-
-        jPanel11.setName("jPanel11"); // NOI18N
-
-        jPanel12.setName("jPanel12"); // NOI18N
-
-        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
-        jLabel8.setName("jLabel8"); // NOI18N
-
-        SPO2SerialChart.setText(resourceMap.getString("SPO2SerialChart.text")); // NOI18N
-        SPO2SerialChart.setName("SPO2SerialChart"); // NOI18N
-        SPO2SerialChart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SPO2SerialChartActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
-        jLabel9.setName("jLabel9"); // NOI18N
-
-        SPO2SQLChart.setText(resourceMap.getString("SPO2SQLChart.text")); // NOI18N
-        SPO2SQLChart.setName("SPO2SQLChart"); // NOI18N
-        SPO2SQLChart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SPO2SQLChartActionPerformed(evt);
-            }
-        });
-
-        org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel12Layout.createSequentialGroup()
-                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, SPO2SQLChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                        .add(SPO2SerialChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
-                        .add(jPanel12Layout.createSequentialGroup()
-                            .add(188, 188, 188)
-                            .add(jLabel9))))
-                .addContainerGap(169, Short.MAX_VALUE))
-            .add(jPanel12Layout.createSequentialGroup()
-                .add(158, 158, 158)
-                .add(jLabel8)
-                .addContainerGap(328, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jLabel8)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(SPO2SerialChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jLabel9)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(SPO2SQLChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 46, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout jPanel11Layout = new org.jdesktop.layout.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 509, Short.MAX_VALUE)
-            .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(jPanel11Layout.createSequentialGroup()
-                    .add(0, 0, Short.MAX_VALUE)
-                    .add(jPanel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 329, Short.MAX_VALUE)
-            .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(jPanel11Layout.createSequentialGroup()
-                    .add(0, 0, Short.MAX_VALUE)
-                    .add(jPanel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(0, 0, Short.MAX_VALUE)))
-        );
-
-        ECGPane.addTab(resourceMap.getString("jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
 
         jPanel9.setName("jPanel9"); // NOI18N
 
@@ -2022,103 +1935,6 @@ public class ECGJAVa2View extends FrameView {
         //SQL Based
     }//GEN-LAST:event_TempSQLChartActionPerformed
 
-    private void LightSerialChart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LightSerialChart2ActionPerformed
- // TODO add your handling code here:
-
-        if (!CommPortOpen.getConnected()){
-            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            chart.ThreadedChartLight.main(null);
-        }
-    }//GEN-LAST:event_LightSerialChart2ActionPerformed
-
-    private void LightSQLChart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LightSQLChart2ActionPerformed
-        // TODO add your handling code here:
-
-        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
-
-
-        if (!SQL.connected){
-            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-        // Get Trend Graph
-        //SQL Based
-    }//GEN-LAST:event_LightSQLChart2ActionPerformed
-
-    private void OXISerialChart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OXISerialChart1ActionPerformed
-         // TODO add your handling code here:
-
-        if (!CommPortOpen.getConnected()){
-            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            chart.ThreadedChartOXI.main(null);
-        }
-    }//GEN-LAST:event_OXISerialChart1ActionPerformed
-
-    private void OXISQLChart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OXISQLChart1ActionPerformed
-
-        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
-
-
-        if (!SQL.connected){
-            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-    }//GEN-LAST:event_OXISQLChart1ActionPerformed
-
-    private void SPO2SerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SPO2SerialChartActionPerformed
-
-        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
-
-        if (!CommPortOpen.getConnected()){
-            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-    }//GEN-LAST:event_SPO2SerialChartActionPerformed
-
-    private void SPO2SQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SPO2SQLChartActionPerformed
-        // TODO add your handling code here:
-
-        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
-
-
-        if (!SQL.connected){
-            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_SPO2SQLChartActionPerformed
-
-    private void ECGSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ECGSerialChartActionPerformed
-
-       // TODO add your handling code here:
-
-        if (!CommPortOpen.getConnected()){
-            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            chart.ThreadedChartECG.main(null);
-        }
-
-        // Get Real Time Graph
-        // Serial Based
-    }//GEN-LAST:event_ECGSerialChartActionPerformed
-
-    private void ECGSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ECGSQLChartActionPerformed
-        // TODO add your handling code here:
-
-        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
-
-
-        if (!SQL.connected){
-            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-        // Get Trend Graph
-        //SQL Based
-    }//GEN-LAST:event_ECGSQLChartActionPerformed
-
     private void ConnectBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectBoardActionPerformed
 
         Thread Comm = null;
@@ -2216,18 +2032,13 @@ public class ECGJAVa2View extends FrameView {
         }
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-    private void IRSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSerialChartActionPerformed
+    private void ShowSignalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowSignalActionPerformed
+        // TODO add your handling code here:
+        SignalAnalysis.setVisible(true);
+    }//GEN-LAST:event_ShowSignalActionPerformed
 
-        if (!CommPortOpen.getConnected()){
-            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            chart.ThreadedChartIR.main(null);
-       }
-    }//GEN-LAST:event_IRSerialChartActionPerformed
-
-    private void IRSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSQLChartActionPerformed
-            // TODO add your handling code here:
+    private void LightSQLChart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LightSQLChart2ActionPerformed
+        // TODO add your handling code here:
 
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -2238,43 +2049,118 @@ public class ECGJAVa2View extends FrameView {
 
         // Get Trend Graph
         //SQL Based
-    }//GEN-LAST:event_IRSQLChartActionPerformed
+}//GEN-LAST:event_LightSQLChart2ActionPerformed
 
-    private void ShowSignalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowSignalActionPerformed
+    private void LightSerialChart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LightSerialChart2ActionPerformed
         // TODO add your handling code here:
-        SignalAnalysis.setVisible(true);
-    }//GEN-LAST:event_ShowSignalActionPerformed
 
-    private void ResetPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetPulseActionPerformed
-        // TODO add your handling code here:
-        getBPM.reset();
-    }//GEN-LAST:event_ResetPulseActionPerformed
-
-    private void StartPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartPulseActionPerformed
-        // TODO add your handling code here:
-        getBPM.BPMguard = true;
-    }//GEN-LAST:event_StartPulseActionPerformed
-
-    private void StopPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopPulseActionPerformed
-        // TODO add your handling code here:
-        getBPM.BPMguard = false;
-    }//GEN-LAST:event_StopPulseActionPerformed
-
-    private void StartSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartSPO2ActionPerformed
-        // TODO add your handling code here:
-        getSPO2.guard = true;
-
-    }//GEN-LAST:event_StartSPO2ActionPerformed
-
-    private void StopSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopSPO2ActionPerformed
-        // TODO add your handling code here:
-        getSPO2.guard = false;
-    }//GEN-LAST:event_StopSPO2ActionPerformed
+        if (!CommPortOpen.getConnected()){
+            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
+        } else{
+            chart.ThreadedChartLight.main(null);
+        }
+}//GEN-LAST:event_LightSerialChart2ActionPerformed
 
     private void ResetSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetSPO2ActionPerformed
         // TODO add your handling code here:
         getSPO2.reset();
-    }//GEN-LAST:event_ResetSPO2ActionPerformed
+}//GEN-LAST:event_ResetSPO2ActionPerformed
+
+    private void StopSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopSPO2ActionPerformed
+        // TODO add your handling code here:
+        getSPO2.guard = false;
+}//GEN-LAST:event_StopSPO2ActionPerformed
+
+    private void StartSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartSPO2ActionPerformed
+        // TODO add your handling code here:
+        getSPO2.guard = true;
+    }//GEN-LAST:event_StartSPO2ActionPerformed
+
+    private void IRSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSQLChartActionPerformed
+        // TODO add your handling code here:
+
+        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
+
+
+        if (!SQL.connected){
+            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        // Get Trend Graph
+        //SQL Based
+}//GEN-LAST:event_IRSQLChartActionPerformed
+
+    private void IRSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSerialChartActionPerformed
+
+        if (!CommPortOpen.getConnected()){
+            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
+        } else{
+            chart.ThreadedChartIR.main(null);
+        }
+}//GEN-LAST:event_IRSerialChartActionPerformed
+
+    private void StopPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopPulseActionPerformed
+        // TODO add your handling code here:
+        getBPM.BPMguard = false;
+}//GEN-LAST:event_StopPulseActionPerformed
+
+    private void StartPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartPulseActionPerformed
+        // TODO add your handling code here:
+        getBPM.BPMguard = true;
+}//GEN-LAST:event_StartPulseActionPerformed
+
+    private void ResetPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetPulseActionPerformed
+        // TODO add your handling code here:
+        getBPM.reset();
+}//GEN-LAST:event_ResetPulseActionPerformed
+
+    private void OXISQLChart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OXISQLChart1ActionPerformed
+
+        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
+
+
+        if (!SQL.connected){
+            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_OXISQLChart1ActionPerformed
+
+    private void OXISerialChart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OXISerialChart1ActionPerformed
+        // TODO add your handling code here:
+
+        if (!CommPortOpen.getConnected()){
+            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
+        } else{
+            chart.ThreadedChartOXI.main(null);
+        }
+}//GEN-LAST:event_OXISerialChart1ActionPerformed
+
+    private void ECGSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ECGSQLChartActionPerformed
+        // TODO add your handling code here:
+
+        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
+
+
+        if (!SQL.connected){
+            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        // Get Trend Graph
+        //SQL Based
+}//GEN-LAST:event_ECGSQLChartActionPerformed
+
+    private void ECGSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ECGSerialChartActionPerformed
+
+        // TODO add your handling code here:
+
+        if (!CommPortOpen.getConnected()){
+            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
+        } else{
+            chart.ThreadedChartECG.main(null);
+        }
+
+        // Get Real Time Graph
+        // Serial Based
+}//GEN-LAST:event_ECGSerialChartActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2337,8 +2223,6 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JButton ResetPulse;
     private javax.swing.JButton ResetSPO2;
     private javax.swing.JLabel SPO2Label;
-    private javax.swing.JButton SPO2SQLChart;
-    private javax.swing.JButton SPO2SerialChart;
     public static javax.swing.JLabel SPO2Value;
     private javax.swing.JLabel Serial;
     private javax.swing.JMenuItem ShowALL;
@@ -2380,9 +2264,9 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    public static javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    public static javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -2391,8 +2275,6 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -2416,14 +2298,12 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    public static javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

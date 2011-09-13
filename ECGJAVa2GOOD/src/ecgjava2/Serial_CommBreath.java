@@ -2,6 +2,7 @@ package ecgjava2;
 
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
+import gnu.io.CommPortOwnershipListener;
 import gnu.io.NoSuchPortException;
 import gnu.io.ParallelPort;
 import gnu.io.PortInUseException;
@@ -29,6 +30,7 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -66,6 +68,8 @@ class CommPortOpenBreath extends Thread{
 
   public static int PacketTotal = 0;
 
+  public static boolean guard = true;
+
     @Override
   public void run(){
         try {
@@ -101,12 +105,13 @@ class CommPortOpenBreath extends Thread{
       // Dialog done. Get the port name.
       portName = chooser.getSelectedName();
 
-      if (portName == null)
+      if (portName == null && guard == false)
         System.out.println("No port selected. Try again.\n");
-    } while (portName == null);
+    } while (portName == null && guard == false);
 
     // Get the CommPortIdentifier.
     thePortID = chooser.getSelectedIdentifier();
+    thePortID.addPortOwnershipListener(new MyResolver());
 
     // Now actually open the port.
     // This form of openPort takes an Application Name and a timeout.
@@ -377,4 +382,27 @@ class PortChooserBreath extends JDialog implements ItemListener {
             //SplitParse.splitVal(val);
         //System.out.println(val);
     }
+    class MyResolver implements CommPortOwnershipListener {
+        protected boolean owned = false;
+        public void ownershipChange(int whaHoppen) {
+            switch (whaHoppen) {
+                case PORT_OWNED:
+                    System.out.println("An open succeeded.");
+                    owned = true;
+                    break;
+                case PORT_UNOWNED:
+                    System.out.println("A close succeeded.");
+                    owned = false;
+                    break;
+                case PORT_OWNERSHIP_REQUESTED:
+                    if (owned) {
+                        if (JOptionPane.showConfirmDialog(null,"I've been asked to give up the port, should I?",
+                                "Port Conflict (" + CommPortOpen.thePortID + ")",JOptionPane.OK_CANCEL_OPTION) == 0);
+                                CommPortOpen.thePort.close();
+                        } else {
+                            System.out.println("Somebody else has the port");
+                        }
+                }
+        }
+      }
   }
