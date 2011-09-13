@@ -80,7 +80,7 @@ public final class ChartIR
     static public boolean stop = false;
 
     public void run() {
-            JFrame frame = new JFrame("OXI Data Chart");
+            JFrame frame = new JFrame("IR Data Chart");
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             ChartIR showcase = new ChartIR();
             showcase.init();

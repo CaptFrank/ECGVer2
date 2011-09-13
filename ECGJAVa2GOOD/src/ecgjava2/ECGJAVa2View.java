@@ -180,14 +180,17 @@ public class ECGJAVa2View extends FrameView {
         jLabel13 = new javax.swing.JLabel();
         OXISQLChart1 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ResetPulse = new javax.swing.JButton();
+        StartPulse = new javax.swing.JButton();
+        StopPulse = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         IRSerialChart = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         IRSQLChart = new javax.swing.JButton();
+        StartSPO2 = new javax.swing.JButton();
+        StopSPO2 = new javax.swing.JButton();
+        ResetSPO2 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         LightSerialChart2 = new javax.swing.JButton();
@@ -821,27 +824,27 @@ public class ECGJAVa2View extends FrameView {
         jLabel29.setText(resourceMap.getString("jLabel29.text")); // NOI18N
         jLabel29.setName("jLabel29"); // NOI18N
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ResetPulse.setText(resourceMap.getString("ResetPulse.text")); // NOI18N
+        ResetPulse.setName("ResetPulse"); // NOI18N
+        ResetPulse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ResetPulseActionPerformed(evt);
             }
         });
 
-        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
-        jButton2.setName("jButton2"); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        StartPulse.setText(resourceMap.getString("StartPulse.text")); // NOI18N
+        StartPulse.setName("StartPulse"); // NOI18N
+        StartPulse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                StartPulseActionPerformed(evt);
             }
         });
 
-        jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N
-        jButton3.setName("jButton3"); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        StopPulse.setText(resourceMap.getString("StopPulse.text")); // NOI18N
+        StopPulse.setName("StopPulse"); // NOI18N
+        StopPulse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                StopPulseActionPerformed(evt);
             }
         });
 
@@ -861,11 +864,11 @@ public class ECGJAVa2View extends FrameView {
                 .add(156, 156, 156))
             .add(jPanel9Layout.createSequentialGroup()
                 .add(28, 28, 28)
-                .add(jButton2)
+                .add(StartPulse)
                 .add(30, 30, 30)
-                .add(jButton3)
+                .add(StopPulse)
                 .add(30, 30, 30)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel29)
                 .addContainerGap(21, Short.MAX_VALUE))
@@ -888,9 +891,9 @@ public class ECGJAVa2View extends FrameView {
                         .add(65, 65, 65))
                     .add(jPanel9Layout.createSequentialGroup()
                         .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(StartPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(StopPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
 
@@ -920,6 +923,30 @@ public class ECGJAVa2View extends FrameView {
             }
         });
 
+        StartSPO2.setText(resourceMap.getString("StartSPO2.text")); // NOI18N
+        StartSPO2.setName("StartSPO2"); // NOI18N
+        StartSPO2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartSPO2ActionPerformed(evt);
+            }
+        });
+
+        StopSPO2.setText(resourceMap.getString("StopSPO2.text")); // NOI18N
+        StopSPO2.setName("StopSPO2"); // NOI18N
+        StopSPO2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StopSPO2ActionPerformed(evt);
+            }
+        });
+
+        ResetSPO2.setText(resourceMap.getString("ResetSPO2.text")); // NOI18N
+        ResetSPO2.setName("ResetSPO2"); // NOI18N
+        ResetSPO2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetSPO2ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel17Layout = new org.jdesktop.layout.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
@@ -934,6 +961,14 @@ public class ECGJAVa2View extends FrameView {
                 .addContainerGap(160, Short.MAX_VALUE)
                 .add(jLabel27)
                 .add(156, 156, 156))
+            .add(jPanel17Layout.createSequentialGroup()
+                .add(26, 26, 26)
+                .add(StartSPO2)
+                .add(30, 30, 30)
+                .add(StopSPO2)
+                .add(30, 30, 30)
+                .add(ResetSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -946,7 +981,12 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel28)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(IRSQLChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 40, Short.MAX_VALUE)
+                .add(jPanel17Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(ResetSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(StartSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(StopSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel17.TabConstraints.tabTitle"), jPanel17); // NOI18N
@@ -2205,20 +2245,36 @@ public class ECGJAVa2View extends FrameView {
         SignalAnalysis.setVisible(true);
     }//GEN-LAST:event_ShowSignalActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ResetPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetPulseActionPerformed
         // TODO add your handling code here:
         getBPM.reset();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ResetPulseActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void StartPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartPulseActionPerformed
         // TODO add your handling code here:
         getBPM.BPMguard = true;
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_StartPulseActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void StopPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopPulseActionPerformed
         // TODO add your handling code here:
         getBPM.BPMguard = false;
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_StopPulseActionPerformed
+
+    private void StartSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartSPO2ActionPerformed
+        // TODO add your handling code here:
+        getSPO2.guard = true;
+
+    }//GEN-LAST:event_StartSPO2ActionPerformed
+
+    private void StopSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopSPO2ActionPerformed
+        // TODO add your handling code here:
+        getSPO2.guard = false;
+    }//GEN-LAST:event_StopSPO2ActionPerformed
+
+    private void ResetSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetSPO2ActionPerformed
+        // TODO add your handling code here:
+        getSPO2.reset();
+    }//GEN-LAST:event_ResetSPO2ActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2278,6 +2334,8 @@ public class ECGJAVa2View extends FrameView {
     public static javax.swing.JLabel REDLED;
     private javax.swing.JLabel RESPLabel;
     public static javax.swing.JLabel RESPValue;
+    private javax.swing.JButton ResetPulse;
+    private javax.swing.JButton ResetSPO2;
     private javax.swing.JLabel SPO2Label;
     private javax.swing.JButton SPO2SQLChart;
     private javax.swing.JButton SPO2SerialChart;
@@ -2292,6 +2350,10 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JMenuItem ShowTemp;
     public static javax.swing.JInternalFrame SignalAnalysis;
     public static javax.swing.JPanel SignalStrength;
+    private javax.swing.JButton StartPulse;
+    private javax.swing.JButton StartSPO2;
+    private javax.swing.JButton StopPulse;
+    private javax.swing.JButton StopSPO2;
     private javax.swing.JLabel TEXT;
     private javax.swing.JButton TempSQLChart;
     private javax.swing.JButton TempSerialChart;
@@ -2302,9 +2364,6 @@ public class ECGJAVa2View extends FrameView {
     public static javax.swing.JLabel XbeeTotal;
     public static javax.swing.JLabel Xbeegood;
     public static javax.swing.JInternalFrame container;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

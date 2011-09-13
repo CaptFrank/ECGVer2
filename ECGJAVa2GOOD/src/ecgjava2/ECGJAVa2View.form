@@ -902,11 +902,11 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StartPulse" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="StopPulse" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" pref="132" max="-2" attributes="0"/>
+                                  <Component id="ResetPulse" min="-2" pref="132" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="21" max="32767" attributes="0"/>
@@ -932,9 +932,9 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jButton1" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                                              <Component id="jButton2" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                                              <Component id="jButton3" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                              <Component id="ResetPulse" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                              <Component id="StartPulse" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                              <Component id="StopPulse" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
@@ -980,31 +980,31 @@
                             <Property name="name" type="java.lang.String" value="jLabel29" noResource="true"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="jButton1">
+                        <Component class="javax.swing.JButton" name="ResetPulse">
                           <Properties>
-                            <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
-                            <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+                            <Property name="text" type="java.lang.String" resourceKey="ResetPulse.text"/>
+                            <Property name="name" type="java.lang.String" value="ResetPulse" noResource="true"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetPulseActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="jButton2">
+                        <Component class="javax.swing.JButton" name="StartPulse">
                           <Properties>
-                            <Property name="text" type="java.lang.String" resourceKey="jButton2.text"/>
-                            <Property name="name" type="java.lang.String" value="jButton2" noResource="true"/>
+                            <Property name="text" type="java.lang.String" resourceKey="StartPulse.text"/>
+                            <Property name="name" type="java.lang.String" value="StartPulse" noResource="true"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StartPulseActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="jButton3">
+                        <Component class="javax.swing.JButton" name="StopPulse">
                           <Properties>
-                            <Property name="text" type="java.lang.String" resourceKey="jButton3.text"/>
-                            <Property name="name" type="java.lang.String" value="jButton3" noResource="true"/>
+                            <Property name="text" type="java.lang.String" resourceKey="StopPulse.text"/>
+                            <Property name="name" type="java.lang.String" value="StopPulse" noResource="true"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StopPulseActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
@@ -1036,6 +1036,15 @@
                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="StartSPO2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="StopSPO2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="ResetSPO2" min="-2" pref="132" max="-2" attributes="0"/>
+                                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -1049,7 +1058,13 @@
                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="IRSQLChart" min="-2" pref="44" max="-2" attributes="0"/>
-                                  <EmptySpace pref="118" max="32767" attributes="0"/>
+                                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="ResetSPO2" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                      <Component id="StartSPO2" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                      <Component id="StopSPO2" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1083,6 +1098,33 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IRSQLChartActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="StartSPO2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" resourceKey="StartSPO2.text"/>
+                            <Property name="name" type="java.lang.String" value="StartSPO2" noResource="true"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StartSPO2ActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="StopSPO2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" resourceKey="StopSPO2.text"/>
+                            <Property name="name" type="java.lang.String" value="StopSPO2" noResource="true"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StopSPO2ActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="ResetSPO2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" resourceKey="ResetSPO2.text"/>
+                            <Property name="name" type="java.lang.String" value="ResetSPO2" noResource="true"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetSPO2ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
