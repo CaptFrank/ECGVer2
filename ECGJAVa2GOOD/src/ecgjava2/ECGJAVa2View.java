@@ -206,7 +206,6 @@ public class ECGJAVa2View extends FrameView {
         BreathPer = new javax.swing.JLabel();
         ConectBreathSerial = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        BreathSerialChart = new javax.swing.JButton();
         BreathChartSQL = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -1092,14 +1091,6 @@ public class ECGJAVa2View extends FrameView {
 
         jPanel7.setName("jPanel7"); // NOI18N
 
-        BreathSerialChart.setText(resourceMap.getString("BreathSerialChart.text")); // NOI18N
-        BreathSerialChart.setName("BreathSerialChart"); // NOI18N
-        BreathSerialChart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BreathSerialChartActionPerformed(evt);
-            }
-        });
-
         BreathChartSQL.setText(resourceMap.getString("BreathChartSQL.text")); // NOI18N
         BreathChartSQL.setName("BreathChartSQL"); // NOI18N
         BreathChartSQL.addActionListener(new java.awt.event.ActionListener() {
@@ -1130,20 +1121,15 @@ public class ECGJAVa2View extends FrameView {
                 .addContainerGap(37, Short.MAX_VALUE)
                 .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(jPanel7Layout.createSequentialGroup()
                                 .add(21, 21, 21)
                                 .add(BreathChartSQL))
-                            .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                .add(BreathSerialChart1)
-                                .add(jLabel5)))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, BreathSerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .add(55, 55, 55))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jLabel4)
-                            .add(jPanel7Layout.createSequentialGroup()
-                                .add(BreathSerialChart)
-                                .add(96, 96, 96)))
+                        .add(jLabel4)
                         .add(29, 29, 29))))
         );
         jPanel7Layout.setVerticalGroup(
@@ -1152,9 +1138,7 @@ public class ECGJAVa2View extends FrameView {
                 .addContainerGap()
                 .add(jLabel4)
                 .add(19, 19, 19)
-                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(BreathSerialChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel5)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -1881,17 +1865,6 @@ public class ECGJAVa2View extends FrameView {
 
     }//GEN-LAST:event_ConnectToDBActionPerformed
 
-    private void BreathSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BreathSerialChartActionPerformed
-        if (!CommPortOpenBreath.getConnected()){
-            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            chart.ThreadedChartBreathper.main(null);
-        }
-        // Get Real Time Graph
-        // Serial Based
-    }//GEN-LAST:event_BreathSerialChartActionPerformed
-
     private void BreathChartSQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BreathChartSQLActionPerformed
         // TODO add your handling code here:
         
@@ -2177,7 +2150,6 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JButton BreathChartSQL;
     public static javax.swing.JLabel BreathPacket;
     public static javax.swing.JLabel BreathPer;
-    private javax.swing.JButton BreathSerialChart;
     private javax.swing.JButton BreathSerialChart1;
     public static javax.swing.JLabel BreathTotal;
     public static javax.swing.JLabel BreathVal;
@@ -2264,9 +2236,9 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
+    public static javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
+    public static javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -2303,7 +2275,7 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel2;
+    public static javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
