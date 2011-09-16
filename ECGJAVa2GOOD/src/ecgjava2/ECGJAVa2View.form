@@ -406,12 +406,6 @@
                         <Property name="name" type="java.lang.String" value="jMenu3" noResource="true"/>
                       </Properties>
                       <SubComponents>
-                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" resourceKey="jMenuItem6.text"/>
-                            <Property name="name" type="java.lang.String" value="jMenuItem6" noResource="true"/>
-                          </Properties>
-                        </MenuItem>
                         <MenuItem class="javax.swing.JMenuItem" name="EXITTEMP">
                           <Properties>
                             <Property name="text" type="java.lang.String" resourceKey="EXITTEMP.text"/>
@@ -770,7 +764,6 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="OXISerialChart1" alignment="0" pref="509" max="32767" attributes="0"/>
                               <Component id="OXISQLChart1" alignment="0" pref="509" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
@@ -793,6 +786,10 @@
                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="21" max="32767" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="OXISerialChart1" pref="492" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -800,9 +797,9 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="OXISerialChart1" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="OXISQLChart1" min="-2" pref="44" max="-2" attributes="0"/>
@@ -1159,12 +1156,6 @@
                         <Property name="name" type="java.lang.String" value="jMenu5" noResource="true"/>
                       </Properties>
                       <SubComponents>
-                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" resourceKey="jMenuItem7.text"/>
-                            <Property name="name" type="java.lang.String" value="jMenuItem7" noResource="true"/>
-                          </Properties>
-                        </MenuItem>
                         <MenuItem class="javax.swing.JMenuItem" name="EXITINBOUND">
                           <Properties>
                             <Property name="text" type="java.lang.String" resourceKey="EXITINBOUND.text"/>
@@ -1328,22 +1319,22 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="21" pref="21" max="21" attributes="0"/>
-                                                  <Component id="BreathChartSQL" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel5" alignment="1" max="32767" attributes="1"/>
-                                              <Component id="BreathSerialChart1" alignment="1" max="32767" attributes="1"/>
-                                          </Group>
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="1"/>
                                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="BreathChartSQL" alignment="0" pref="225" max="32767" attributes="0"/>
+                                              <Component id="BreathSerialChart1" alignment="1" pref="225" max="32767" attributes="1"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1352,9 +1343,9 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="BreathSerialChart1" min="-2" pref="23" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -1468,12 +1459,6 @@
                         <Property name="name" type="java.lang.String" value="jMenu1" noResource="true"/>
                       </Properties>
                       <SubComponents>
-                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" resourceKey="jMenuItem8.text"/>
-                            <Property name="name" type="java.lang.String" value="jMenuItem8" noResource="true"/>
-                          </Properties>
-                        </MenuItem>
                         <MenuItem class="javax.swing.JMenuItem" name="EXITGEN">
                           <Properties>
                             <Property name="text" type="java.lang.String" resourceKey="EXITGEN.text"/>
@@ -2128,7 +2113,6 @@
                 <Menu class="javax.swing.JMenu" name="jMenu6">
                   <Properties>
                     <Property name="text" type="java.lang.String" resourceKey="jMenu6.text"/>
-                    <Property name="name" type="java.lang.String" value="jMenu6" noResource="true"/>
                   </Properties>
                   <SubComponents>
                     <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">

@@ -144,7 +144,6 @@ public class ECGJAVa2View extends FrameView {
         jTable1 = new javax.swing.JTable();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
         EXITTEMP = new javax.swing.JMenuItem();
         Inbound = new javax.swing.JInternalFrame();
         ECGPane = new javax.swing.JTabbedPane();
@@ -195,7 +194,6 @@ public class ECGJAVa2View extends FrameView {
         jTable3 = new javax.swing.JTable();
         jMenuBar3 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
         EXITINBOUND = new javax.swing.JMenuItem();
         GenDAta = new javax.swing.JInternalFrame();
         jTabbedPane6 = new javax.swing.JTabbedPane();
@@ -215,7 +213,6 @@ public class ECGJAVa2View extends FrameView {
         jTable2 = new javax.swing.JTable();
         jMenuBar5 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
         EXITGEN = new javax.swing.JMenuItem();
         ConnectBreath = new javax.swing.JMenu();
         ConnectBoard = new javax.swing.JMenuItem();
@@ -500,10 +497,6 @@ public class ECGJAVa2View extends FrameView {
         jMenu3.setText(resourceMap.getString("jMenu3.text")); // NOI18N
         jMenu3.setName("jMenu3"); // NOI18N
 
-        jMenuItem6.setText(resourceMap.getString("jMenuItem6.text")); // NOI18N
-        jMenuItem6.setName("jMenuItem6"); // NOI18N
-        jMenu3.add(jMenuItem6);
-
         EXITTEMP.setText(resourceMap.getString("EXITTEMP.text")); // NOI18N
         EXITTEMP.setName("EXITTEMP"); // NOI18N
         EXITTEMP.addActionListener(new java.awt.event.ActionListener() {
@@ -764,7 +757,6 @@ public class ECGJAVa2View extends FrameView {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
             .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
             .add(jPanel9Layout.createSequentialGroup()
                 .add(180, 180, 180)
@@ -784,15 +776,18 @@ public class ECGJAVa2View extends FrameView {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel29)
                 .addContainerGap(21, Short.MAX_VALUE))
+            .add(jPanel9Layout.createSequentialGroup()
+                .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jLabel12)
-                .add(5, 5, 5)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(13, 13, 13)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jLabel13)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -1002,10 +997,6 @@ public class ECGJAVa2View extends FrameView {
         jMenu5.setText(resourceMap.getString("jMenu5.text")); // NOI18N
         jMenu5.setName("jMenu5"); // NOI18N
 
-        jMenuItem7.setText(resourceMap.getString("jMenuItem7.text")); // NOI18N
-        jMenuItem7.setName("jMenuItem7"); // NOI18N
-        jMenu5.add(jMenuItem7);
-
         EXITINBOUND.setText(resourceMap.getString("EXITINBOUND.text")); // NOI18N
         EXITINBOUND.setName("EXITINBOUND"); // NOI18N
         EXITINBOUND.addActionListener(new java.awt.event.ActionListener() {
@@ -1118,26 +1109,26 @@ public class ECGJAVa2View extends FrameView {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap()
                 .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jPanel7Layout.createSequentialGroup()
-                                .add(21, 21, 21)
-                                .add(BreathChartSQL))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, BreathSerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .add(jLabel5)
                         .add(55, 55, 55))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
                         .add(jLabel4)
-                        .add(29, 29, 29))))
+                        .add(30, 30, 30))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, BreathChartSQL, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
+                .add(32, 32, 32)
                 .add(jLabel4)
-                .add(19, 19, 19)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel5)
@@ -1192,10 +1183,6 @@ public class ECGJAVa2View extends FrameView {
 
         jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
         jMenu1.setName("jMenu1"); // NOI18N
-
-        jMenuItem8.setText(resourceMap.getString("jMenuItem8.text")); // NOI18N
-        jMenuItem8.setName("jMenuItem8"); // NOI18N
-        jMenu1.add(jMenuItem8);
 
         EXITGEN.setText(resourceMap.getString("EXITGEN.text")); // NOI18N
         EXITGEN.setName("EXITGEN"); // NOI18N
@@ -1636,7 +1623,6 @@ public class ECGJAVa2View extends FrameView {
         jMenuBar1.add(jMenu2);
 
         jMenu6.setText(resourceMap.getString("jMenu6.text")); // NOI18N
-        jMenu6.setName("jMenu6"); // NOI18N
 
         jMenuItem3.setText(resourceMap.getString("jMenuItem3.text")); // NOI18N
         jMenuItem3.setName("jMenuItem3"); // NOI18N
@@ -1730,15 +1716,12 @@ public class ECGJAVa2View extends FrameView {
             } catch (NoSuchPortException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Could not connect to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-
             } catch (PortInUseException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Could not connect to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-
             } catch (UnsupportedCommOperationException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Could not connect to Serial", "Error", JOptionPane.ERROR_MESSAGE);
-
             }
        Comm.start();
        InitialTime = System.currentTimeMillis();
@@ -1749,7 +1732,6 @@ public class ECGJAVa2View extends FrameView {
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
        System.out.println(CommPortOpen.getConnected());
         if (CommPortOpen.getConnected()){
             Serial.setText(CommPortOpen.getPortName());
@@ -1765,35 +1747,30 @@ public class ECGJAVa2View extends FrameView {
         Dialog = new Dialog_box();
         Dialog.show();
         Dialogconnected = true;
-
     }//GEN-LAST:event_Dialog_boxActionPerformed
 
     private void ShowConnectedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowConnectedActionPerformed
 
         //Connected.show();
         Connected.setVisible(true);
-        
     }//GEN-LAST:event_ShowConnectedActionPerformed
 
     private void ShowTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowTempActionPerformed
 
         //Temperature.show();
         Temperature.setVisible(true);
-
     }//GEN-LAST:event_ShowTempActionPerformed
 
     private void ShowInboundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowInboundActionPerformed
 
         //Inbound.show();
         Inbound.setVisible(true);
-
     }//GEN-LAST:event_ShowInboundActionPerformed
 
     private void ShowGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowGenActionPerformed
 
         //GenDAta.show();
         GenDAta.setVisible(true);
-
     }//GEN-LAST:event_ShowGenActionPerformed
 
     private void ShowECGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowECGActionPerformed
@@ -2265,9 +2242,6 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel13;
