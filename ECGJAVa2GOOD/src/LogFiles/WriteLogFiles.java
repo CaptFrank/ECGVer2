@@ -53,7 +53,7 @@ public class WriteLogFiles {
     }
 
     fout = new FileWriter(aFile);
-    fout.write("Time,Light,ECG,Temp,OXI,Battery Voltage (mV), IR Value, SPO2, Fail safe\n");
+    fout.write("Time,Light,ECG,Temp,OXI,Battery Voltage (mV), IR Value, SPO2, Fail safe, RESP Value\n");
     fout.close();
     System.out.println("Header Written Successfully");
       if (ecgjava2.ECGJAVa2View.Dialogconnected){

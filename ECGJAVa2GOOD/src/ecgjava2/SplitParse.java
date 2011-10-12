@@ -18,12 +18,11 @@ public class SplitParse {
 
     /*________________________________________________________________________________*/
 
-    private static String REGEX1 = "[!Lig:TemECGPOBAIRW]";;
-    static String TestInput = "!Lig:100Tem:25.50ECG:29POT:10";
+    private static String REGEX1 = "[!Lig:TemECGPOBAIRWS]";
     static public int i = 0, count = 0, j = 0;
     static public double GlobalTime;
-    static public String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "";
-    static public double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00;
+    static public String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
+    static public double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
     static public double lightTotal = 0.00, ECGTotal = 0.00, potTotal = 0.00, BatteryTotal = 0.00, IRTotal = 0.00;
     static public double lightavrg = 0.00, ECGavrg = 0.00, potavrg = 0.00, Batteryavrg = 0.00, IRavrg = 0.00;
     static public double [][] SPO2Array = new double [40][2];
@@ -114,15 +113,23 @@ public class SplitParse {
                     System.out.println(LowNum);
                 }
             }
+            else if (i == 33){
+                RESP = items[33];
+                if (RESP != null && !RESP.isEmpty()){
+                    RESPnum = Double.parseDouble(RESP);
+                    System.out.println(RESPnum);
+                }
+                ECGJAVa2View.RESP.repaint();
+            }
             i++;
             if (getSPO2.guard){
                 getSPO2.getSPO2();
             }
         }
         if (Light != null && ECG != null && Temp != null && Pot != null && !Light.isEmpty() && !ECG.isEmpty() && !Temp.isEmpty() && !Pot.isEmpty() && Bat != null && !Bat.isEmpty()
-                && IR != null && !IR.isEmpty() && Low != null && !Low.isEmpty()){
+                && IR != null && !IR.isEmpty() && Low != null && !Low.isEmpty() && RESP != null && !RESP.isEmpty()){
             GlobalTime = System.currentTimeMillis() - ECGJAVa2View.InitialTime;
-            String x = (System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + Lightnum + "," + ECGnum + "," + Tempnum + "," + Potnum + "," + Bat + "," + IRnum + "," + LowNum +"\n";
+            String x = (System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + Lightnum + "," + ECGnum + "," + Tempnum + "," + Potnum + "," + Bat + "," + IRnum + "," + LowNum + "," + RESPnum + "\n";
             LogFiles.WriteLogFiles.Writetofile(x);
         }
 
@@ -130,12 +137,10 @@ public class SplitParse {
     }
 
        /*________________________________________________________________________________*/
-    //"!Lig:100Tem:25.50ECG:29POT:10"
-
 
     public static boolean parsable(String val){
 
-        Pattern p = Pattern.compile("(!?)(Lig:)(\\d+)(.)(\\d+)(Tem:)(\\d+)(.)(\\d+)(ECG:)(\\d+)(.)(\\d+)(POT:)(\\d+)(.)(\\d+)(BAT:)(\\d+)(.)(\\d+)(IRL:)(\\d+)(.)(\\d+)(LOW:)(\\d+)(.)(\\d+)");
+        Pattern p = Pattern.compile("(!?)(Lig:)(\\d+)(.)(\\d+)(Tem:)(\\d+)(.)(\\d+)(ECG:)(\\d+)(.)(\\d+)(POT:)(\\d+)(.)(\\d+)(BAT:)(\\d+)(.)(\\d+)(IRL:)(\\d+)(.)(\\d+)(LOW:)(\\d+)(.)(\\d+)(RES:)(\\d+)(.)(\\d+)");
         Matcher m = p.matcher(val);
 
         if (m.find()){

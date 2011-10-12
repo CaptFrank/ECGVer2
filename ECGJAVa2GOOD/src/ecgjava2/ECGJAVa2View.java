@@ -162,6 +162,8 @@ public class ECGJAVa2View extends FrameView {
         jLabel26 = new javax.swing.JLabel();
         REDLED = new javax.swing.JLabel();
         IRLED = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        RESP = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         ECGSerialChart = new javax.swing.JButton();
@@ -189,6 +191,11 @@ public class ECGJAVa2View extends FrameView {
         LightSerialChart2 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         LightSQLChart2 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        RESPSql = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        RESPSerial = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -581,6 +588,14 @@ public class ECGJAVa2View extends FrameView {
         IRLED.setText(resourceMap.getString("IRLED.text")); // NOI18N
         IRLED.setName("IRLED"); // NOI18N
 
+        jLabel8.setFont(resourceMap.getFont("jLabel8.font")); // NOI18N
+        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
+        jLabel8.setName("jLabel8"); // NOI18N
+
+        RESP.setFont(resourceMap.getFont("RESP.font")); // NOI18N
+        RESP.setText(resourceMap.getString("RESP.text")); // NOI18N
+        RESP.setName("RESP"); // NOI18N
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -594,9 +609,11 @@ public class ECGJAVa2View extends FrameView {
                     .add(PulseLabel)
                     .add(jLabel24)
                     .add(jLabel26)
-                    .add(LightSensorLabel))
+                    .add(LightSensorLabel)
+                    .add(jLabel8))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 70, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(RESP)
                     .add(IRLED)
                     .add(REDLED)
                     .add(SPO2Value)
@@ -642,7 +659,11 @@ public class ECGJAVa2View extends FrameView {
                         .add(REDLED)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(IRLED)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jLabel8)
+                    .add(RESP))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
@@ -952,6 +973,65 @@ public class ECGJAVa2View extends FrameView {
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel13.TabConstraints.tabTitle"), jPanel13); // NOI18N
+
+        jPanel11.setName("jPanel11"); // NOI18N
+
+        RESPSql.setText(resourceMap.getString("RESPSql.text")); // NOI18N
+        RESPSql.setName("RESPSql"); // NOI18N
+        RESPSql.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RESPSqlActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText(resourceMap.getString("jLabel30.text")); // NOI18N
+        jLabel30.setName("jLabel30"); // NOI18N
+
+        RESPSerial.setText(resourceMap.getString("RESPSerial.text")); // NOI18N
+        RESPSerial.setName("RESPSerial"); // NOI18N
+        RESPSerial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RESPSerialActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setText(resourceMap.getString("jLabel31.text")); // NOI18N
+        jLabel31.setName("jLabel31"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout jPanel11Layout = new org.jdesktop.layout.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(RESPSql, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                    .add(jPanel11Layout.createSequentialGroup()
+                        .add(180, 180, 180)
+                        .add(jLabel30)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 166, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 143, Short.MAX_VALUE)
+                        .add(jLabel31)
+                        .add(156, 156, 156))
+                    .add(RESPSerial, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel11Layout.createSequentialGroup()
+                .add(34, 34, 34)
+                .add(jLabel31)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(RESPSerial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel30)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+
+        ECGPane.addTab(resourceMap.getString("jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
 
         jPanel3.setName("jPanel3"); // NOI18N
 
@@ -2112,6 +2192,28 @@ public class ECGJAVa2View extends FrameView {
         // Serial Based
 }//GEN-LAST:event_ECGSerialChartActionPerformed
 
+    private void RESPSqlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RESPSqlActionPerformed
+        // TODO add your handling code here:
+
+        JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
+
+
+        if (!SQL.connected){
+            JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_RESPSqlActionPerformed
+
+    private void RESPSerialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RESPSerialActionPerformed
+        // TODO add your handling code here:
+
+        if (!CommPortOpen.getConnected()){
+            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
+        } else{
+            chart.ThreadedChartRESP.main(null);
+        }
+    }//GEN-LAST:event_RESPSerialActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.connected){
@@ -2167,7 +2269,10 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JLabel PulseLabel;
     public static javax.swing.JLabel PulseValue;
     public static javax.swing.JLabel REDLED;
+    public static javax.swing.JLabel RESP;
     private javax.swing.JLabel RESPLabel;
+    private javax.swing.JButton RESPSerial;
+    private javax.swing.JButton RESPSql;
     public static javax.swing.JLabel RESPValue;
     private javax.swing.JButton ResetPulse;
     private javax.swing.JButton ResetSPO2;
@@ -2220,10 +2325,13 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -2244,6 +2352,7 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
