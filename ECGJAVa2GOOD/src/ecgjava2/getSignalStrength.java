@@ -11,6 +11,7 @@ import java.io.IOException;
  *
  * @author francispapineau
  */
+
 public class getSignalStrength {
 
     public static String Broadcast_Power;
