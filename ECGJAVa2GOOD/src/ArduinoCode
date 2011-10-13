@@ -1,0 +1,102 @@
+// this example is public domain. enjoy!
+// www.ladyada.net/learn/sensors/thermocouple
+
+//defines/includes
+
+#include "max6675.h"
+
+#define potPin 0
+#define LightPin 1
+#define ECGPin 4
+#define ECG_LED 5
+#define threshold 10
+#define PWR_PIN 6
+#define Red 2
+#define redLED 3
+#define irLED 4
+#define Battpin 5
+#define Resppin 2
+
+//initalization of vars
+
+int z=0;
+double temp=0;
+
+int thermoDO = 10;
+int thermoCS = 11;
+int thermoCLK = 12;
+
+ /*________________________________________________________________________________*/
+
+MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
+int vccPin = 9;
+int gndPin = 8;
+
+ /*________________________________________________________________________________*/
+
+void setup() {
+  Serial.begin(115200);
+  // use Arduino pins
+
+  pinMode(vccPin, OUTPUT); digitalWrite(vccPin, HIGH);
+  pinMode(gndPin, OUTPUT); digitalWrite(gndPin, LOW);
+  pinMode(PWR_PIN, OUTPUT); digitalWrite(PWR_PIN, HIGH);
+  pinMode(ECG_LED, OUTPUT); digitalWrite(ECG_LED, LOW);
+  pinMode(ECGPin, INPUT); digitalWrite(ECGPin, LOW);
+  pinMode(irLED, OUTPUT); digitalWrite(irLED, LOW);
+  pinMode(redLED, OUTPUT); digitalWrite(redLED, LOW);
+  pinMode(LightPin, INPUT);
+
+  // wait for MAX chip to stabilize
+  delay(100);
+}
+
+ /*________________________________________________________________________________*/
+
+void loop() {
+  // basic readout test, just print the current temp
+  Serial.print("!");
+  Serial.print("Lig:");
+  Serial.print((double)analogRead(LightPin));
+  if (z==1000){
+    Serial.print("Tem:");
+    temp =thermocouple.readCelsius()-6.0;
+    Serial.print((double)(thermocouple.readCelsius()-6.0));
+    z=0;
+  }
+  else{
+    Serial.print("Tem:");
+    Serial.print(temp);
+  }
+  Serial.print("ECG:");
+  Serial.print((double)analogRead(ECGPin));
+  Serial.print("POT:");
+  digitalWrite(redLED, HIGH);
+  Serial.print(pulseIn(Red, HIGH));
+  digitalWrite(redLED, LOW);
+  Serial.print("BAT:");
+  Serial.print((double)analogRead(Battpin));
+  Serial.print("IRL:");
+  digitalWrite(irLED, HIGH);
+  Serial.print((double)pulseIn(Red, HIGH));
+  digitalWrite(irLED, LOW);
+  Serial.print("LOW:");
+  Serial.print((double)pulseIn(Red, HIGH));
+  Serial.print("RES:");
+  Serial.print((double)analogRead(Resppin));
+  Serial.println("\n");
+
+   delay(70);
+   z+=10;
+}
+
+ /*________________________________________________________________________________*/
+
+
+void select(){
+
+  // Select the inputs...
+
+
+
+}
