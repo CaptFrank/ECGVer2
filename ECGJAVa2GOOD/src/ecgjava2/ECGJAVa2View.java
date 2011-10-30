@@ -164,6 +164,19 @@ public class ECGJAVa2View extends FrameView {
         IRLED = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         RESP = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        IRSerialChart = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        IRSQLChart = new javax.swing.JButton();
+        StartSPO2 = new javax.swing.JButton();
+        StopSPO2 = new javax.swing.JButton();
+        ResetSPO2 = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        LightSerialChart2 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        LightSQLChart2 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         ECGSerialChart = new javax.swing.JButton();
@@ -178,24 +191,13 @@ public class ECGJAVa2View extends FrameView {
         ResetPulse = new javax.swing.JButton();
         StartPulse = new javax.swing.JButton();
         StopPulse = new javax.swing.JButton();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        IRSerialChart = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
-        IRSQLChart = new javax.swing.JButton();
-        StartSPO2 = new javax.swing.JButton();
-        StopSPO2 = new javax.swing.JButton();
-        ResetSPO2 = new javax.swing.JButton();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        LightSerialChart2 = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
-        LightSQLChart2 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         RESPSql = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         RESPSerial = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        GPS = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -677,165 +679,6 @@ public class ECGJAVa2View extends FrameView {
 
         ECGPane.addTab(resourceMap.getString("jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
 
-        jPanel10.setName("jPanel10"); // NOI18N
-
-        jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
-        jLabel10.setName("jLabel10"); // NOI18N
-
-        ECGSerialChart.setText(resourceMap.getString("ECGSerialChart.text")); // NOI18N
-        ECGSerialChart.setName("ECGSerialChart"); // NOI18N
-        ECGSerialChart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ECGSerialChartActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setText(resourceMap.getString("jLabel11.text")); // NOI18N
-        jLabel11.setName("jLabel11"); // NOI18N
-
-        ECGSQLChart.setText(resourceMap.getString("ECGSQLChart.text")); // NOI18N
-        ECGSQLChart.setName("ECGSQLChart"); // NOI18N
-        ECGSQLChart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ECGSQLChartActionPerformed(evt);
-            }
-        });
-
-        org.jdesktop.layout.GroupLayout jPanel10Layout = new org.jdesktop.layout.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
-                .add(jLabel11)
-                .add(178, 178, 178))
-            .add(ECGSQLChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
-            .add(ECGSerialChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
-                .add(jLabel10)
-                .add(157, 157, 157))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jLabel10)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(ECGSerialChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 46, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jLabel11)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(ECGSQLChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
-        );
-
-        ECGPane.addTab(resourceMap.getString("jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
-
-        jPanel9.setName("jPanel9"); // NOI18N
-
-        jLabel12.setText(resourceMap.getString("jLabel12.text")); // NOI18N
-        jLabel12.setName("jLabel12"); // NOI18N
-
-        OXISerialChart1.setText(resourceMap.getString("OXISerialChart1.text")); // NOI18N
-        OXISerialChart1.setName("OXISerialChart1"); // NOI18N
-        OXISerialChart1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OXISerialChart1ActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setText(resourceMap.getString("jLabel13.text")); // NOI18N
-        jLabel13.setName("jLabel13"); // NOI18N
-
-        OXISQLChart1.setText(resourceMap.getString("OXISQLChart1.text")); // NOI18N
-        OXISQLChart1.setName("OXISQLChart1"); // NOI18N
-        OXISQLChart1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OXISQLChart1ActionPerformed(evt);
-            }
-        });
-
-        jLabel29.setText(resourceMap.getString("jLabel29.text")); // NOI18N
-        jLabel29.setName("jLabel29"); // NOI18N
-
-        ResetPulse.setText(resourceMap.getString("ResetPulse.text")); // NOI18N
-        ResetPulse.setName("ResetPulse"); // NOI18N
-        ResetPulse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ResetPulseActionPerformed(evt);
-            }
-        });
-
-        StartPulse.setText(resourceMap.getString("StartPulse.text")); // NOI18N
-        StartPulse.setName("StartPulse"); // NOI18N
-        StartPulse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StartPulseActionPerformed(evt);
-            }
-        });
-
-        StopPulse.setText(resourceMap.getString("StopPulse.text")); // NOI18N
-        StopPulse.setName("StopPulse"); // NOI18N
-        StopPulse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StopPulseActionPerformed(evt);
-            }
-        });
-
-        org.jdesktop.layout.GroupLayout jPanel9Layout = new org.jdesktop.layout.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
-            .add(jPanel9Layout.createSequentialGroup()
-                .add(180, 180, 180)
-                .add(jLabel13)
-                .addContainerGap(183, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
-                .add(jLabel12)
-                .add(156, 156, 156))
-            .add(jPanel9Layout.createSequentialGroup()
-                .add(28, 28, 28)
-                .add(StartPulse)
-                .add(30, 30, 30)
-                .add(StopPulse)
-                .add(30, 30, 30)
-                .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jLabel29)
-                .addContainerGap(21, Short.MAX_VALUE))
-            .add(jPanel9Layout.createSequentialGroup()
-                .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jLabel12)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jLabel13)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 40, Short.MAX_VALUE)
-                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jPanel9Layout.createSequentialGroup()
-                        .add(jLabel29)
-                        .add(65, 65, 65))
-                    .add(jPanel9Layout.createSequentialGroup()
-                        .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(StartPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(StopPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
-        );
-
-        ECGPane.addTab(resourceMap.getString("jPanel9.TabConstraints.tabTitle"), jPanel9); // NOI18N
-
         jPanel17.setName("jPanel17"); // NOI18N
 
         jLabel27.setText(resourceMap.getString("jLabel27.text")); // NOI18N
@@ -983,6 +826,163 @@ public class ECGJAVa2View extends FrameView {
 
         ECGPane.addTab(resourceMap.getString("jPanel13.TabConstraints.tabTitle"), jPanel13); // NOI18N
 
+        jPanel10.setName("jPanel10"); // NOI18N
+
+        jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
+        jLabel10.setName("jLabel10"); // NOI18N
+
+        ECGSerialChart.setText(resourceMap.getString("ECGSerialChart.text")); // NOI18N
+        ECGSerialChart.setName("ECGSerialChart"); // NOI18N
+        ECGSerialChart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ECGSerialChartActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText(resourceMap.getString("jLabel11.text")); // NOI18N
+        jLabel11.setName("jLabel11"); // NOI18N
+
+        ECGSQLChart.setText(resourceMap.getString("ECGSQLChart.text")); // NOI18N
+        ECGSQLChart.setName("ECGSQLChart"); // NOI18N
+        ECGSQLChart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ECGSQLChartActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel10Layout = new org.jdesktop.layout.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(185, Short.MAX_VALUE)
+                .add(jLabel11)
+                .add(178, 178, 178))
+            .add(ECGSQLChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(ECGSerialChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(159, Short.MAX_VALUE)
+                .add(jLabel10)
+                .add(157, 157, 157))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel10)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(ECGSerialChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 46, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel11)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(ECGSQLChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+
+        ECGPane.addTab(resourceMap.getString("jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
+
+        jPanel9.setName("jPanel9"); // NOI18N
+
+        jLabel12.setText(resourceMap.getString("jLabel12.text")); // NOI18N
+        jLabel12.setName("jLabel12"); // NOI18N
+
+        OXISerialChart1.setText(resourceMap.getString("OXISerialChart1.text")); // NOI18N
+        OXISerialChart1.setName("OXISerialChart1"); // NOI18N
+        OXISerialChart1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OXISerialChart1ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText(resourceMap.getString("jLabel13.text")); // NOI18N
+        jLabel13.setName("jLabel13"); // NOI18N
+
+        OXISQLChart1.setText(resourceMap.getString("OXISQLChart1.text")); // NOI18N
+        OXISQLChart1.setName("OXISQLChart1"); // NOI18N
+        OXISQLChart1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OXISQLChart1ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText(resourceMap.getString("jLabel29.text")); // NOI18N
+        jLabel29.setName("jLabel29"); // NOI18N
+
+        ResetPulse.setText(resourceMap.getString("ResetPulse.text")); // NOI18N
+        ResetPulse.setName("ResetPulse"); // NOI18N
+        ResetPulse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetPulseActionPerformed(evt);
+            }
+        });
+
+        StartPulse.setText(resourceMap.getString("StartPulse.text")); // NOI18N
+        StartPulse.setName("StartPulse"); // NOI18N
+        StartPulse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartPulseActionPerformed(evt);
+            }
+        });
+
+        StopPulse.setText(resourceMap.getString("StopPulse.text")); // NOI18N
+        StopPulse.setName("StopPulse"); // NOI18N
+        StopPulse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StopPulseActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel9Layout = new org.jdesktop.layout.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(jPanel9Layout.createSequentialGroup()
+                .add(180, 180, 180)
+                .add(jLabel13)
+                .addContainerGap(183, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(160, Short.MAX_VALUE)
+                .add(jLabel12)
+                .add(156, 156, 156))
+            .add(jPanel9Layout.createSequentialGroup()
+                .add(28, 28, 28)
+                .add(StartPulse)
+                .add(30, 30, 30)
+                .add(StopPulse)
+                .add(30, 30, 30)
+                .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel29)
+                .addContainerGap(21, Short.MAX_VALUE))
+            .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel12)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel13)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 40, Short.MAX_VALUE)
+                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jPanel9Layout.createSequentialGroup()
+                        .add(jLabel29)
+                        .add(65, 65, 65))
+                    .add(jPanel9Layout.createSequentialGroup()
+                        .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(StartPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(StopPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
+        );
+
+        ECGPane.addTab(resourceMap.getString("jPanel9.TabConstraints.tabTitle"), jPanel9); // NOI18N
+
         jPanel11.setName("jPanel11"); // NOI18N
 
         RESPSql.setText(resourceMap.getString("RESPSql.text")); // NOI18N
@@ -1011,19 +1011,21 @@ public class ECGJAVa2View extends FrameView {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(RESPSql, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
+                .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(RESPSerial, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                    .add(RESPSql, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
                     .add(jPanel11Layout.createSequentialGroup()
-                        .add(180, 180, 180)
-                        .add(jLabel30)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 166, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 143, Short.MAX_VALUE)
-                        .add(jLabel31)
-                        .add(156, 156, 156))
-                    .add(RESPSerial, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel11Layout.createSequentialGroup()
+                                .add(180, 180, 180)
+                                .add(jLabel30)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 183, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(jLabel31)
+                                .add(156, 156, 156)))))
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -1031,16 +1033,45 @@ public class ECGJAVa2View extends FrameView {
             .add(jPanel11Layout.createSequentialGroup()
                 .add(34, 34, 34)
                 .add(jLabel31)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(RESPSerial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(RESPSerial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 53, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jLabel30)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
+
+        jPanel12.setName("jPanel12"); // NOI18N
+
+        GPS.setText(resourceMap.getString("GPS.text")); // NOI18N
+        GPS.setName("GPS"); // NOI18N
+        GPS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPSActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel12Layout.createSequentialGroup()
+                .add(50, 50, 50)
+                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 204, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
 
         jPanel3.setName("jPanel3"); // NOI18N
 
@@ -1886,23 +1917,19 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_ShowALLActionPerformed
 
     private void EXITGENActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITGENActionPerformed
-        // TODO add your handling code here:
         GenDAta.setVisible(false);
     }//GEN-LAST:event_EXITGENActionPerformed
 
     private void EXITTEMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITTEMPActionPerformed
-        // TODO add your handling code here:
         Temperature.setVisible(false);
     }//GEN-LAST:event_EXITTEMPActionPerformed
 
     private void EXITINBOUNDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITINBOUNDActionPerformed
-        // TODO add your handling code here:
         Inbound.setVisible(false);
     }//GEN-LAST:event_EXITINBOUNDActionPerformed
 
     private void ConnectToDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectToDBActionPerformed
         try {
-            // TODO add your handling code here:
             // Connect to DB
             SQL.connectArduinoData();
             SQL.connectHistory();
@@ -1932,9 +1959,7 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_ConnectToDBActionPerformed
 
     private void BreathChartSQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BreathChartSQLActionPerformed
-        // TODO add your handling code here:
         
-         // TODO add your handling code here:
 
         if (!CommPortOpenBreath.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to SQL", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1948,7 +1973,6 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_BreathChartSQLActionPerformed
 
     private void TempSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempSerialChartActionPerformed
-       // TODO add your handling code here:
 
         if (!CommPortOpen.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1961,7 +1985,6 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_TempSerialChartActionPerformed
 
     private void TempSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempSQLChartActionPerformed
-        // TODO add your handling code here:
 
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -2010,7 +2033,6 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_ConnectBoardActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
 
         if (!CommPortOpen.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2024,7 +2046,6 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
 
         ECGContainer.setVisible(false);
 
@@ -2036,12 +2057,10 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_EXITActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
         FileChooser.main(null);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void BreathSerialChart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BreathSerialChart1ActionPerformed
-        // TODO add your handling code here:
 
         if (!CommPortOpenBreath.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2072,12 +2091,10 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void ShowSignalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowSignalActionPerformed
-        // TODO add your handling code here:
         SignalAnalysis.setVisible(true);
     }//GEN-LAST:event_ShowSignalActionPerformed
 
     private void LightSQLChart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LightSQLChart2ActionPerformed
-        // TODO add your handling code here:
 
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -2091,7 +2108,6 @@ public class ECGJAVa2View extends FrameView {
 }//GEN-LAST:event_LightSQLChart2ActionPerformed
 
     private void LightSerialChart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LightSerialChart2ActionPerformed
-        // TODO add your handling code here:
 
         if (!CommPortOpen.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2101,22 +2117,18 @@ public class ECGJAVa2View extends FrameView {
 }//GEN-LAST:event_LightSerialChart2ActionPerformed
 
     private void ResetSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetSPO2ActionPerformed
-        // TODO add your handling code here:
         getSPO2.reset();
 }//GEN-LAST:event_ResetSPO2ActionPerformed
 
     private void StopSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopSPO2ActionPerformed
-        // TODO add your handling code here:
         getSPO2.guard = false;
 }//GEN-LAST:event_StopSPO2ActionPerformed
 
     private void StartSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartSPO2ActionPerformed
-        // TODO add your handling code here:
         getSPO2.guard = true;
     }//GEN-LAST:event_StartSPO2ActionPerformed
 
     private void IRSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSQLChartActionPerformed
-        // TODO add your handling code here:
 
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -2139,17 +2151,14 @@ public class ECGJAVa2View extends FrameView {
 }//GEN-LAST:event_IRSerialChartActionPerformed
 
     private void StopPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopPulseActionPerformed
-        // TODO add your handling code here:
         getBPM.BPMguard = false;
 }//GEN-LAST:event_StopPulseActionPerformed
 
     private void StartPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartPulseActionPerformed
-        // TODO add your handling code here:
         getBPM.BPMguard = true;
 }//GEN-LAST:event_StartPulseActionPerformed
 
     private void ResetPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetPulseActionPerformed
-        // TODO add your handling code here:
         getBPM.reset();
 }//GEN-LAST:event_ResetPulseActionPerformed
 
@@ -2164,7 +2173,6 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_OXISQLChart1ActionPerformed
 
     private void OXISerialChart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OXISerialChart1ActionPerformed
-        // TODO add your handling code here:
 
         if (!CommPortOpen.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2174,7 +2182,6 @@ public class ECGJAVa2View extends FrameView {
 }//GEN-LAST:event_OXISerialChart1ActionPerformed
 
     private void ECGSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ECGSQLChartActionPerformed
-        // TODO add your handling code here:
 
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -2189,7 +2196,6 @@ public class ECGJAVa2View extends FrameView {
 
     private void ECGSerialChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ECGSerialChartActionPerformed
 
-        // TODO add your handling code here:
 
         if (!CommPortOpen.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2202,7 +2208,6 @@ public class ECGJAVa2View extends FrameView {
 }//GEN-LAST:event_ECGSerialChartActionPerformed
 
     private void RESPSqlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RESPSqlActionPerformed
-        // TODO add your handling code here:
 
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
@@ -2214,7 +2219,6 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_RESPSqlActionPerformed
 
     private void RESPSerialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RESPSerialActionPerformed
-        // TODO add your handling code here:
 
         if (!CommPortOpen.getConnected()){
             JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2222,6 +2226,15 @@ public class ECGJAVa2View extends FrameView {
             chart.ThreadedChartRESP.main(null);
         }
     }//GEN-LAST:event_RESPSerialActionPerformed
+
+    private void GPSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSActionPerformed
+        try {
+            Process child = Runtime.getRuntime().exec("java -jar /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar");
+        } catch (IOException ex) {
+            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_GPSActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2262,6 +2275,7 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JMenuItem EXITINBOUND;
     private javax.swing.JMenuItem EXITTEMP;
     private javax.swing.JMenu File;
+    private javax.swing.JButton GPS;
     private javax.swing.JInternalFrame GenDAta;
     private javax.swing.JLabel GoodPackets;
     public static javax.swing.JLabel IRLED;
@@ -2362,6 +2376,7 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;

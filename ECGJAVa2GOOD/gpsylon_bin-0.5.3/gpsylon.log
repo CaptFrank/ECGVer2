@@ -1,0 +1,26 @@
+02:23:30,462 DEBUG plugin:1362 - URL of my class :jar:file:/Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar!/org/dinopolis/gpstool/Gpsylon.class, dir of jar is /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3
+02:23:30,484 DEBUG plugin:1389 - Adding default plugin dir: /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
+02:23:30,484 DEBUG plugin:1410 - Adding repository for plugin/service jars: /Users/francispapineau/.gpsylon/plugins
+02:23:30,485 DEBUG plugin:1403 - Ignoring duplicate plugin/service repository: /Users/francispapineau/.gpsylon/plugins
+02:23:30,637 DEBUG plugin:2949 - plugins for writing image detected: (java.lang.Object[2])org.dinopolis.gpstool.plugin.writerasterimage.WriteJpgImagePlugin@70d05c13,org.dinopolis.gpstool.plugin.writerasterimage.WritePngImagePlugin@7f4d1d41
+02:23:30,644 DEBUG connection:1657 - connecting in gps mode 'serial' with gps protocol 'nmea'
+02:23:30,644 DEBUG connection:1721 - connecting to nmea device /dev/ttyS0
+02:23:30,679 INFO  Gpsylon:1762 - Connecting to gpsdevice on port /dev/ttyS0 at 9600 baud
+02:23:30,679 DEBUG GPSSerialDevice:113 - try to connect to port '/dev/ttyS0' using 9600 baud
+02:23:30,920 INFO  Gpsylon:585 - Plugins in the following locations are used:
+02:23:30,921 INFO  Gpsylon:594 - /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
+02:23:30,953 INFO  Gpsylon:1440 - Added Gui Plugin: Average Position V0.01
+02:23:30,959 INFO  Gpsylon:1440 - Added Gui Plugin: GPSTool V0.01
+02:23:31,001 INFO  Gpsylon:1440 - Added Gui Plugin: ImportExport V0.01
+02:23:31,001 INFO  Gpsylon:1440 - Added Gui Plugin: Kismet Import V0.01
+02:23:31,015 INFO  Gpsylon:1440 - Added Gui Plugin: Map Manager V0.01
+02:23:31,018 INFO  Gpsylon:1440 - Added Gui Plugin: Track Charts V0.01
+02:23:31,056 INFO  Gpsylon:1440 - Added Gui Plugin: Tracks V0.01
+02:23:31,345 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Download Maps V1.1
+02:23:31,459 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Navigation Mode V1.0
+02:23:33,394 DEBUG MapInfo:356 - Image 'null' loaded.
+02:23:33,533 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000220.gif' loaded.
+02:23:33,579 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000219.gif' loaded.
+02:23:33,585 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000225.gif' loaded.
+02:23:33,600 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000215.gif' loaded.
+02:23:33,623 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000230.gif' loaded.
