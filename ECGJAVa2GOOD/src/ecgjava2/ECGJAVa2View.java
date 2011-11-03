@@ -2255,8 +2255,6 @@ public class ECGJAVa2View extends FrameView {
 
 private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
 
-    Instructions Var = new Instructions();
-    Var.run();
 }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void Disconnect_Close(){

@@ -1,28 +1,477 @@
-16:16:16,946 DEBUG plugin:1362 - URL of my class :jar:file:/Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar!/org/dinopolis/gpstool/Gpsylon.class, dir of jar is /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3
-16:16:16,961 DEBUG plugin:1389 - Adding default plugin dir: /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
-16:16:16,962 DEBUG plugin:1410 - Adding repository for plugin/service jars: /Users/francispapineau/.gpsylon/plugins
-16:16:16,962 DEBUG plugin:1403 - Ignoring duplicate plugin/service repository: /Users/francispapineau/.gpsylon/plugins
-16:16:17,017 DEBUG plugin:2949 - plugins for writing image detected: (java.lang.Object[2])org.dinopolis.gpstool.plugin.writerasterimage.WriteJpgImagePlugin@239a029e,org.dinopolis.gpstool.plugin.writerasterimage.WritePngImagePlugin@5421e554
-16:16:17,023 DEBUG connection:1657 - connecting in gps mode 'serial' with gps protocol 'nmea'
-16:16:17,024 DEBUG connection:1721 - connecting to nmea device /dev/ttyS0
-16:16:17,031 INFO  Gpsylon:1762 - Connecting to gpsdevice on port /dev/ttyS0 at 9600 baud
-16:16:17,031 DEBUG GPSSerialDevice:113 - try to connect to port '/dev/ttyS0' using 9600 baud
-16:16:17,166 INFO  Gpsylon:585 - Plugins in the following locations are used:
-16:16:17,167 INFO  Gpsylon:594 - /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
-16:16:17,210 INFO  Gpsylon:1440 - Added Gui Plugin: Average Position V0.01
-16:16:17,230 INFO  Gpsylon:1440 - Added Gui Plugin: GPSTool V0.01
-16:16:17,254 INFO  Gpsylon:1440 - Added Gui Plugin: ImportExport V0.01
-16:16:17,254 INFO  Gpsylon:1440 - Added Gui Plugin: Kismet Import V0.01
-16:16:17,289 INFO  Gpsylon:1440 - Added Gui Plugin: Map Manager V0.01
-16:16:17,295 INFO  Gpsylon:1440 - Added Gui Plugin: Track Charts V0.01
-16:16:17,314 INFO  Gpsylon:1440 - Added Gui Plugin: Tracks V0.01
-16:16:17,554 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Download Maps V1.1
-16:16:17,582 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Navigation Mode V1.0
-16:16:18,755 DEBUG MapInfo:356 - Image 'null' loaded.
-16:16:18,833 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000221.gif' loaded.
-16:16:18,851 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000222.gif' loaded.
-16:16:18,856 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000223.gif' loaded.
-16:16:18,862 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000153.gif' loaded.
-16:16:18,868 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000227.gif' loaded.
-16:16:18,875 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000219.gif' loaded.
-16:16:18,880 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000215.gif' loaded.
+18:30:09,096 DEBUG plugin:1362 - URL of my class :jar:file:/Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar!/org/dinopolis/gpstool/Gpsylon.class, dir of jar is /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3
+18:30:09,131 DEBUG plugin:1389 - Adding default plugin dir: /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
+18:30:09,132 DEBUG plugin:1410 - Adding repository for plugin/service jars: /Users/francispapineau/.gpsylon/plugins
+18:30:09,132 DEBUG plugin:1403 - Ignoring duplicate plugin/service repository: /Users/francispapineau/.gpsylon/plugins
+18:30:09,377 DEBUG plugin:2949 - plugins for writing image detected: (java.lang.Object[2])org.dinopolis.gpstool.plugin.writerasterimage.WriteJpgImagePlugin@bb273cc,org.dinopolis.gpstool.plugin.writerasterimage.WritePngImagePlugin@70d05c13
+18:30:09,419 DEBUG connection:1657 - connecting in gps mode 'serial' with gps protocol 'nmea'
+18:30:09,420 DEBUG connection:1721 - connecting to nmea device /dev/ttyS0
+18:30:09,539 INFO  Gpsylon:1762 - Connecting to gpsdevice on port /dev/ttyS0 at 9600 baud
+18:30:09,539 DEBUG GPSSerialDevice:113 - try to connect to port '/dev/ttyS0' using 9600 baud
+18:30:10,484 INFO  Gpsylon:585 - Plugins in the following locations are used:
+18:30:10,484 INFO  Gpsylon:594 - /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
+18:30:10,527 INFO  Gpsylon:1440 - Added Gui Plugin: Average Position V0.01
+18:30:10,534 INFO  Gpsylon:1440 - Added Gui Plugin: GPSTool V0.01
+18:30:10,572 INFO  Gpsylon:1440 - Added Gui Plugin: ImportExport V0.01
+18:30:10,573 INFO  Gpsylon:1440 - Added Gui Plugin: Kismet Import V0.01
+18:30:10,586 INFO  Gpsylon:1440 - Added Gui Plugin: Map Manager V0.01
+18:30:10,589 INFO  Gpsylon:1440 - Added Gui Plugin: Track Charts V0.01
+18:30:10,598 INFO  Gpsylon:1440 - Added Gui Plugin: Tracks V0.01
+18:30:10,782 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Download Maps V1.1
+18:30:10,893 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Navigation Mode V1.0
+18:30:15,088 DEBUG MapInfo:356 - Image 'null' loaded.
+18:30:15,198 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000221.gif' loaded.
+18:30:15,207 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000222.gif' loaded.
+18:30:15,215 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000223.gif' loaded.
+18:30:15,243 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000153.gif' loaded.
+18:30:15,258 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000227.gif' loaded.
+18:30:15,271 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000219.gif' loaded.
+18:30:15,281 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000215.gif' loaded.
+18:30:23,372 DEBUG propertychange:1175 - property change event: map.scale.value=1.59917728E8 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,380 DEBUG propertychange:1175 - property change event: current_map_position.latitude=65.22261047363281 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,381 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-110.70238494873047 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,422 DEBUG propertychange:1175 - property change event: current_map_position.latitude=65.16139221191406 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,423 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-118.56598663330078 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,500 DEBUG propertychange:1175 - property change event: current_map_position.latitude=65.10193634033203 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,501 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-126.4120101928711 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,605 DEBUG propertychange:1175 - property change event: current_map_position.latitude=65.04418182373047 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,606 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-134.24102783203125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,743 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.9880599975586 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,744 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-142.05325317382812 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,818 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.93352508544922 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,818 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-149.8495635986328 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,992 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.88050842285156 from org.dinopolis.util.resource.FileResources@1798928
+18:30:23,993 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-157.63050842285156 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,002 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.82896423339844 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,002 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-165.3965301513672 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,034 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.77885437011719 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,035 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-173.14813232421875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,069 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.73011016845703 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,070 DEBUG propertychange:1175 - property change event: current_map_position.longitude=179.11422729492188 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,101 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000224.gif' loaded.
+18:30:24,108 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000225.gif' loaded.
+18:30:24,127 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000230.gif' loaded.
+18:30:24,146 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.6827163696289 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,146 DEBUG propertychange:1175 - property change event: current_map_position.longitude=171.39010620117188 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,181 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.63660430908203 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,181 DEBUG propertychange:1175 - property change event: current_map_position.longitude=163.67909240722656 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,229 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.59172821044922 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,230 DEBUG propertychange:1175 - property change event: current_map_position.longitude=155.98080444335938 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,267 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.54804992675781 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,268 DEBUG propertychange:1175 - property change event: current_map_position.longitude=148.2948455810547 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,303 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000220.gif' loaded.
+18:30:24,322 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.50553894042969 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,324 DEBUG propertychange:1175 - property change event: current_map_position.longitude=140.620849609375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,356 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.46414947509766 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,356 DEBUG propertychange:1175 - property change event: current_map_position.longitude=132.95846557617188 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,401 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.42385864257812 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,402 DEBUG propertychange:1175 - property change event: current_map_position.longitude=125.3073501586914 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,475 DEBUG propertychange:1175 - property change event: current_map_position.latitude=64.3846206665039 from org.dinopolis.util.resource.FileResources@1798928
+18:30:24,476 DEBUG propertychange:1175 - property change event: current_map_position.longitude=117.66715240478516 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,089 DEBUG propertychange:1175 - property change event: map.scale.value=3.9979432E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,090 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.974971771240234 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,091 DEBUG propertychange:1175 - property change event: current_map_position.longitude=125.19490814208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,131 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000156.gif' loaded.
+18:30:25,146 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000165.gif' loaded.
+18:30:25,172 DEBUG propertychange:1175 - property change event: map.scale.value=1.9989716E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,204 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.842838287353516 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,205 DEBUG propertychange:1175 - property change event: current_map_position.longitude=128.94110107421875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,273 DEBUG propertychange:1175 - property change event: map.scale.value=9994858.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,281 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.7940673828125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,281 DEBUG propertychange:1175 - property change event: current_map_position.longitude=130.8109588623047 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,360 DEBUG propertychange:1175 - property change event: map.scale.value=4997429.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,364 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.773948669433594 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,365 DEBUG propertychange:1175 - property change event: current_map_position.longitude=131.74522399902344 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,483 DEBUG propertychange:1175 - property change event: map.scale.value=2498714.5 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,485 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.76494598388672 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,486 DEBUG propertychange:1175 - property change event: current_map_position.longitude=132.2122039794922 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,678 DEBUG propertychange:1175 - property change event: map.scale.value=1249357.25 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,683 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.76070785522461 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,684 DEBUG propertychange:1175 - property change event: current_map_position.longitude=132.44566345214844 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,992 DEBUG propertychange:1175 - property change event: map.scale.value=2498714.5 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,993 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.76838302612305 from org.dinopolis.util.resource.FileResources@1798928
+18:30:25,994 DEBUG propertychange:1175 - property change event: current_map_position.longitude=132.21212768554688 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,035 DEBUG propertychange:1175 - property change event: map.scale.value=4997429.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,039 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.783199310302734 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,039 DEBUG propertychange:1175 - property change event: current_map_position.longitude=131.7448272705078 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,153 DEBUG propertychange:1175 - property change event: map.scale.value=9994858.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,156 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.81069564819336 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,157 DEBUG propertychange:1175 - property change event: current_map_position.longitude=130.80934143066406 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,200 DEBUG propertychange:1175 - property change event: map.scale.value=1.9989716E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,202 DEBUG propertychange:1175 - property change event: current_map_position.latitude=63.85710525512695 from org.dinopolis.util.resource.FileResources@1798928
+18:30:26,203 DEBUG propertychange:1175 - property change event: current_map_position.longitude=128.93527221679688 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,452 DEBUG propertychange:1175 - property change event: map.scale.value=9994858.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,454 DEBUG propertychange:1175 - property change event: current_map_position.latitude=60.946231842041016 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,455 DEBUG propertychange:1175 - property change event: current_map_position.longitude=120.50028991699219 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,554 DEBUG propertychange:1175 - property change event: map.scale.value=4997429.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,559 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.585594177246094 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,559 DEBUG propertychange:1175 - property change event: current_map_position.longitude=116.45478820800781 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,852 DEBUG propertychange:1175 - property change event: map.scale.value=2498714.5 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,854 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.92495346069336 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,854 DEBUG propertychange:1175 - property change event: current_map_position.longitude=114.47097778320312 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,971 DEBUG propertychange:1175 - property change event: map.scale.value=1249357.25 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,973 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.599159240722656 from org.dinopolis.util.resource.FileResources@1798928
+18:30:27,973 DEBUG propertychange:1175 - property change event: current_map_position.longitude=113.48831939697266 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,186 DEBUG propertychange:1175 - property change event: map.scale.value=624678.625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,199 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.43735122680664 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,199 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.9992446899414 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,292 DEBUG propertychange:1175 - property change event: map.scale.value=312339.3125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,306 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.356712341308594 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,307 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.75526428222656 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,386 DEBUG propertychange:1175 - property change event: map.scale.value=156169.65625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,389 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.31645965576172 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,389 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.63340759277344 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,480 DEBUG propertychange:1175 - property change event: map.scale.value=78084.828125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,486 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.29635238647461 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,486 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.572509765625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,562 DEBUG propertychange:1175 - property change event: map.scale.value=39042.4140625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,565 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.28630065917969 from org.dinopolis.util.resource.FileResources@1798928
+18:30:28,565 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.54206848144531 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,433 DEBUG propertychange:1175 - property change event: map.scale.value=19521.20703125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,436 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.281272888183594 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,437 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.52684783935547 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,583 DEBUG propertychange:1175 - property change event: map.scale.value=9760.603515625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,586 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.27875900268555 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,586 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51923370361328 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,596 DEBUG propertychange:1175 - property change event: map.scale.value=4880.3017578125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,598 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.27750015258789 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,599 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51541900634766 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,640 DEBUG propertychange:1175 - property change event: map.scale.value=2440.15087890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,642 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.27687072753906 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,643 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51351165771484 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,697 DEBUG propertychange:1175 - property change event: map.scale.value=1220.075439453125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,699 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.27655029296875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,700 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.5125503540039 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,911 DEBUG propertychange:1175 - property change event: map.scale.value=610.0377197265625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,914 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.27638626098633 from org.dinopolis.util.resource.FileResources@1798928
+18:30:29,914 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51206970214844 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,007 DEBUG propertychange:1175 - property change event: map.scale.value=1220.075439453125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,010 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.27653884887695 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,010 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51253509521484 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,022 DEBUG propertychange:1175 - property change event: map.scale.value=2440.15087890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,025 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.276851654052734 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,025 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51347351074219 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,039 DEBUG propertychange:1175 - property change event: map.scale.value=4880.3017578125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,041 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.277488708496094 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,042 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51535034179688 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,052 DEBUG propertychange:1175 - property change event: map.scale.value=9760.603515625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,055 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.27875518798828 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,055 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.51911926269531 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,078 DEBUG propertychange:1175 - property change event: map.scale.value=19521.20703125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,083 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.28129196166992 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,083 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.52665710449219 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,087 DEBUG propertychange:1175 - property change event: map.scale.value=39042.4140625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,090 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.286376953125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,090 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.541748046875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,092 DEBUG propertychange:1175 - property change event: map.scale.value=78084.828125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,095 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.296539306640625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,095 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.57195281982422 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,098 DEBUG propertychange:1175 - property change event: map.scale.value=156169.65625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,100 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.31686019897461 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,100 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.63240051269531 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,114 DEBUG propertychange:1175 - property change event: map.scale.value=312339.3125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,116 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.35747146606445 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,116 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.75343322753906 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,119 DEBUG propertychange:1175 - property change event: map.scale.value=624678.625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,120 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.438568115234375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,124 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.9960708618164 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,127 DEBUG propertychange:1175 - property change event: map.scale.value=1249357.25 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,128 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.60022735595703 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,129 DEBUG propertychange:1175 - property change event: current_map_position.longitude=113.48359680175781 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,131 DEBUG propertychange:1175 - property change event: map.scale.value=2498714.5 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,134 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.92132568359375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,134 DEBUG propertychange:1175 - property change event: current_map_position.longitude=114.46769714355469 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,147 DEBUG propertychange:1175 - property change event: map.scale.value=4997429.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,149 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.55398941040039 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,150 DEBUG propertychange:1175 - property change event: current_map_position.longitude=116.47286987304688 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,153 DEBUG propertychange:1175 - property change event: map.scale.value=9994858.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,155 DEBUG propertychange:1175 - property change event: current_map_position.latitude=60.775238037109375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,156 DEBUG propertychange:1175 - property change event: current_map_position.longitude=120.63530731201172 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,158 DEBUG propertychange:1175 - property change event: map.scale.value=1.9989716E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,160 DEBUG propertychange:1175 - property change event: current_map_position.latitude=62.98301315307617 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,160 DEBUG propertychange:1175 - property change event: current_map_position.longitude=129.5838623046875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,161 DEBUG propertychange:1175 - property change event: map.scale.value=3.9979432E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,162 DEBUG propertychange:1175 - property change event: current_map_position.latitude=65.73419952392578 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,162 DEBUG propertychange:1175 - property change event: current_map_position.longitude=149.3687286376953 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,175 DEBUG propertychange:1175 - property change event: map.scale.value=7.9958864E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,176 DEBUG propertychange:1175 - property change event: current_map_position.latitude=52.347984313964844 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,177 DEBUG propertychange:1175 - property change event: current_map_position.longitude=175.97206115722656 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,177 DEBUG propertychange:1175 - property change event: map.scale.value=1.59917728E8 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,178 DEBUG propertychange:1175 - property change event: current_map_position.latitude=56.92179489135742 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,178 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-154.24566650390625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,181 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.60749816894531 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,181 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-123.03724670410156 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,199 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72951126098633 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,199 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-91.7194595336914 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,201 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.7238883972168 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,201 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-60.406734466552734 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,202 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72419738769531 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,203 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-29.093730926513672 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,222 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,222 DEBUG propertychange:1175 - property change event: current_map_position.longitude=2.2192554473876953 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,238 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,238 DEBUG propertychange:1175 - property change event: current_map_position.longitude=33.53224182128906 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,240 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,249 DEBUG propertychange:1175 - property change event: current_map_position.longitude=64.84522247314453 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,275 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,275 DEBUG propertychange:1175 - property change event: current_map_position.longitude=96.158203125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,280 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,326 DEBUG propertychange:1175 - property change event: current_map_position.longitude=127.47118377685547 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,328 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,329 DEBUG propertychange:1175 - property change event: current_map_position.longitude=158.78414916992188 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,382 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,383 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-169.90286254882812 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,399 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,399 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-138.58987426757812 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,415 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,415 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-107.27688598632812 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,418 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,418 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-75.9638900756836 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,441 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,441 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-44.65089797973633 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,447 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,447 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-13.337908744812012 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,449 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,449 DEBUG propertychange:1175 - property change event: current_map_position.longitude=17.97507667541504 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,450 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,451 DEBUG propertychange:1175 - property change event: current_map_position.longitude=49.288063049316406 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,452 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,452 DEBUG propertychange:1175 - property change event: current_map_position.longitude=80.60104370117188 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,454 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,454 DEBUG propertychange:1175 - property change event: current_map_position.longitude=111.91402435302734 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,459 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,459 DEBUG propertychange:1175 - property change event: current_map_position.longitude=143.2270050048828 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,485 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,485 DEBUG propertychange:1175 - property change event: current_map_position.longitude=174.53997802734375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,488 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,488 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-154.14703369140625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,510 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,510 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-122.83403015136719 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,514 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,514 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-91.52103424072266 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,515 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,515 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-60.20804214477539 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,533 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,533 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-28.89505386352539 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,536 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,536 DEBUG propertychange:1175 - property change event: current_map_position.longitude=2.417933464050293 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,539 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,539 DEBUG propertychange:1175 - property change event: current_map_position.longitude=33.730918884277344 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,558 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,559 DEBUG propertychange:1175 - property change event: current_map_position.longitude=65.04390716552734 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,560 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,560 DEBUG propertychange:1175 - property change event: current_map_position.longitude=96.35688781738281 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,561 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,562 DEBUG propertychange:1175 - property change event: current_map_position.longitude=127.66986846923828 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,581 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,581 DEBUG propertychange:1175 - property change event: current_map_position.longitude=158.98284912109375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,583 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,583 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-169.70416259765625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,584 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,584 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-138.3911590576172 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,606 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,607 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-107.07817077636719 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,608 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,608 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-75.76518249511719 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,609 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,610 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-44.45219802856445 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,627 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,627 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-13.139208793640137 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,629 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,629 DEBUG propertychange:1175 - property change event: current_map_position.longitude=18.173776626586914 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,635 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,635 DEBUG propertychange:1175 - property change event: current_map_position.longitude=49.486759185791016 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,700 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,700 DEBUG propertychange:1175 - property change event: current_map_position.longitude=80.79974365234375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,710 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,710 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.11273193359375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,732 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,732 DEBUG propertychange:1175 - property change event: current_map_position.longitude=143.4257049560547 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,734 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,734 DEBUG propertychange:1175 - property change event: current_map_position.longitude=174.7386932373047 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,755 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,755 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-153.94830322265625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,757 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,757 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-122.63529968261719 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,758 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,758 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-91.32230377197266 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,776 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,777 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-60.00931167602539 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,779 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,779 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-28.69632339477539 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,783 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,784 DEBUG propertychange:1175 - property change event: current_map_position.longitude=2.6166634559631348 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,808 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,809 DEBUG propertychange:1175 - property change event: current_map_position.longitude=33.929649353027344 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,814 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,814 DEBUG propertychange:1175 - property change event: current_map_position.longitude=65.24263000488281 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,817 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,819 DEBUG propertychange:1175 - property change event: current_map_position.longitude=96.55561065673828 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,823 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,823 DEBUG propertychange:1175 - property change event: current_map_position.longitude=127.86859130859375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,856 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,856 DEBUG propertychange:1175 - property change event: current_map_position.longitude=159.1815643310547 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,860 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,861 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-169.50546264648438 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,956 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,957 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-138.1924591064453 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,959 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,960 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-106.87945556640625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,962 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,962 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-75.56645965576172 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,988 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,988 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-44.253475189208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,990 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,991 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-12.940485954284668 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,992 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,992 DEBUG propertychange:1175 - property change event: current_map_position.longitude=18.372499465942383 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,994 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,994 DEBUG propertychange:1175 - property change event: current_map_position.longitude=49.685482025146484 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,995 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,995 DEBUG propertychange:1175 - property change event: current_map_position.longitude=80.99846649169922 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,996 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,996 DEBUG propertychange:1175 - property change event: current_map_position.longitude=112.31145477294922 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,997 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,997 DEBUG propertychange:1175 - property change event: current_map_position.longitude=143.6244354248047 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,998 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:30,999 DEBUG propertychange:1175 - property change event: current_map_position.longitude=174.9374237060547 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,000 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,001 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-153.74957275390625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,002 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,002 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-122.43656921386719 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,003 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,003 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-91.12356567382812 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,004 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.72418212890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,004 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-59.81057357788086 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,008 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.724178314208984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:31,008 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-28.49758529663086 from org.dinopolis.util.resource.FileResources@1798928
+18:30:48,745 DEBUG propertychange:1175 - property change event: map.scale.value=3.9979432E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:48,760 DEBUG propertychange:1175 - property change event: current_map_position.latitude=57.58510208129883 from org.dinopolis.util.resource.FileResources@1798928
+18:30:48,761 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-52.18889236450195 from org.dinopolis.util.resource.FileResources@1798928
+18:30:48,810 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000157.gif' loaded.
+18:30:48,821 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000162.gif' loaded.
+18:30:48,835 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000160.gif' loaded.
+18:30:48,852 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000159.gif' loaded.
+18:30:48,858 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000163.gif' loaded.
+18:30:48,874 DEBUG propertychange:1175 - property change event: map.scale.value=1.9989716E7 from org.dinopolis.util.resource.FileResources@1798928
+18:30:48,877 DEBUG propertychange:1175 - property change event: current_map_position.latitude=57.88022232055664 from org.dinopolis.util.resource.FileResources@1798928
+18:30:48,877 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-64.13157653808594 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,001 DEBUG propertychange:1175 - property change event: map.scale.value=9994858.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,003 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.19386291503906 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,003 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.1558609008789 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,022 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000170.gif' loaded.
+18:30:49,027 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000171.gif' loaded.
+18:30:49,042 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000238.gif' loaded.
+18:30:49,051 DEBUG propertychange:1175 - property change event: map.scale.value=4997429.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,053 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.39107894897461 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,053 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-73.18482208251953 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,856 DEBUG propertychange:1175 - property change event: map.scale.value=2498714.5 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,858 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.116512298583984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,858 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-71.4991226196289 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,868 DEBUG propertychange:1175 - property change event: map.scale.value=1249357.25 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,871 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.48234176635742 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,871 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.64716339111328 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,882 DEBUG propertychange:1175 - property change event: map.scale.value=624678.625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,884 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.66606521606445 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,884 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.21884155273438 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,888 DEBUG propertychange:1175 - property change event: map.scale.value=312339.3125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,889 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.75813674926758 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,889 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.00408935546875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,902 DEBUG propertychange:1175 - property change event: map.scale.value=156169.65625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,904 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.804222106933594 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,904 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.89656829833984 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,906 DEBUG propertychange:1175 - property change event: map.scale.value=78084.828125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,910 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.827274322509766 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,911 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.8427734375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,924 DEBUG propertychange:1175 - property change event: map.scale.value=39042.4140625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,927 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.838802337646484 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,927 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.81586456298828 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,935 DEBUG propertychange:1175 - property change event: map.scale.value=19521.20703125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,935 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.844566345214844 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,936 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.80240631103516 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,937 DEBUG propertychange:1175 - property change event: map.scale.value=9760.603515625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,939 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.84744644165039 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,939 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.7956771850586 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,964 DEBUG propertychange:1175 - property change event: map.scale.value=4880.3017578125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,967 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.848880767822266 from org.dinopolis.util.resource.FileResources@1798928
+18:30:49,967 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.79230499267578 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,264 DEBUG propertychange:1175 - property change event: map.scale.value=2440.15087890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,266 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.84959411621094 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,266 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.79061889648438 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,291 DEBUG propertychange:1175 - property change event: map.scale.value=1220.075439453125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,342 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.84994888305664 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,342 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78977966308594 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,353 DEBUG propertychange:1175 - property change event: map.scale.value=610.0377197265625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,356 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.85012435913086 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,356 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78936004638672 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,415 DEBUG propertychange:1175 - property change event: map.scale.value=305.01885986328125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,417 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.850215911865234 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,418 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78913879394531 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,520 DEBUG propertychange:1175 - property change event: map.scale.value=152.50942993164062 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,522 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.850257873535156 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,522 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78902435302734 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,559 DEBUG propertychange:1175 - property change event: map.scale.value=76.25471496582031 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,561 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.850276947021484 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,561 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.7889633178711 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,608 DEBUG propertychange:1175 - property change event: map.scale.value=38.127357482910156 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,610 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.850284576416016 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,610 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78893280029297 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,728 DEBUG propertychange:1175 - property change event: map.scale.value=76.25471496582031 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,730 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.85026931762695 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,730 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78895568847656 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,745 DEBUG propertychange:1175 - property change event: map.scale.value=152.50942993164062 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,747 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.850242614746094 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,747 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78900146484375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,748 DEBUG propertychange:1175 - property change event: map.scale.value=305.01885986328125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,751 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.85019302368164 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,751 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78910064697266 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,774 DEBUG propertychange:1175 - property change event: map.scale.value=610.0377197265625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,797 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.85010528564453 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,798 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.789306640625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,815 DEBUG propertychange:1175 - property change event: map.scale.value=1220.075439453125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,819 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.84992218017578 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,819 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.78973388671875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,823 DEBUG propertychange:1175 - property change event: map.scale.value=2440.15087890625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,826 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.84956359863281 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,826 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.79057312011719 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,845 DEBUG propertychange:1175 - property change event: map.scale.value=4880.3017578125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,847 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.84884262084961 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,848 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.79226684570312 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,849 DEBUG propertychange:1175 - property change event: map.scale.value=9760.603515625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,851 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.847412109375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,851 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.795654296875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,867 DEBUG propertychange:1175 - property change event: map.scale.value=19521.20703125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,870 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.84455108642578 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,870 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.80243682861328 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,911 DEBUG propertychange:1175 - property change event: map.scale.value=39042.4140625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,913 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.838844299316406 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,913 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.81600952148438 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,951 DEBUG propertychange:1175 - property change event: map.scale.value=78084.828125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,953 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.82742691040039 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,953 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.84314727783203 from org.dinopolis.util.resource.FileResources@1798928
+18:30:50,999 DEBUG propertychange:1175 - property change event: map.scale.value=156169.65625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,000 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.80458450317383 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,001 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-69.89739227294922 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,039 DEBUG propertychange:1175 - property change event: map.scale.value=312339.3125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,041 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.75888442993164 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,041 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.00574493408203 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,079 DEBUG propertychange:1175 - property change event: map.scale.value=624678.625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,083 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.667381286621094 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,083 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.22186279296875 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,127 DEBUG propertychange:1175 - property change event: map.scale.value=1249357.25 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,129 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.48395919799805 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,129 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.65177154541016 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,196 DEBUG propertychange:1175 - property change event: map.scale.value=2498714.5 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,198 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.115543365478516 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,198 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-71.5023193359375 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,400 DEBUG propertychange:1175 - property change event: map.scale.value=1249357.25 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,402 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.48136901855469 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,402 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-70.650390625 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,720 DEBUG propertychange:1175 - property change event: map.scale.value=2498714.5 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,721 DEBUG propertychange:1175 - property change event: current_map_position.latitude=59.11296081542969 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,722 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-71.5008773803711 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,732 DEBUG propertychange:1175 - property change event: map.scale.value=4997429.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,734 DEBUG propertychange:1175 - property change event: current_map_position.latitude=58.37035369873047 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,734 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-73.16583251953125 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,769 DEBUG propertychange:1175 - property change event: map.scale.value=9994858.0 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,771 DEBUG propertychange:1175 - property change event: current_map_position.latitude=56.86565017700195 from org.dinopolis.util.resource.FileResources@1798928
+18:30:51,772 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-76.36029815673828 from org.dinopolis.util.resource.FileResources@1798928
