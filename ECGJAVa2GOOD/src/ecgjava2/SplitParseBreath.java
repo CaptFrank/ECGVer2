@@ -21,7 +21,6 @@ public class SplitParseBreath {
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[%|r:,]";
-    static String TestInput = "!Lig:100Tem:25.50ECG:29POT:10";
     static public int i = 0;
     static public String value = "", percentage = "";
     static public double valuenum = 0.00, percentagenum = 0.00;

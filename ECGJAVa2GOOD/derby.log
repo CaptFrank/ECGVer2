@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-2011-10-30 06:41:26.829 GMT:
- Booting Derby version The Apache Software Foundation - Apache Derby - 10.1.2.1 - (330608): instance c013800d-0133-538f-b3c1-0000047dcef8
+2011-11-03 20:16:17.975 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.1.2.1 - (330608): instance c013800d-0133-6b13-29e0-0000048331e8
 on database directory /Users/francispapineau/.gpsylon/marker/location_marker_db_derby 
 
 Database Class Loader started - derby.database.classpath=''

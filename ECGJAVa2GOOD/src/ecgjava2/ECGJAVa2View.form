@@ -1149,7 +1149,6 @@
                                                   <EmptySpace pref="183" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                                               </Group>
@@ -2368,6 +2367,15 @@
                 <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
               </AuxValues>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jMenuItem6.text"/>
+                <Property name="name" type="java.lang.String" value="jMenuItem6" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem6ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

@@ -280,6 +280,7 @@ public class ECGJAVa2View extends FrameView {
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         javax.swing.JMenu helpMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         Main = new javax.swing.JFrame();
         jLabel20 = new javax.swing.JLabel();
 
@@ -1023,7 +1024,6 @@ public class ECGJAVa2View extends FrameView {
                                 .add(jLabel30)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 183, Short.MAX_VALUE))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jLabel31)
                                 .add(156, 156, 156)))))
                 .addContainerGap())
@@ -1791,6 +1791,15 @@ public class ECGJAVa2View extends FrameView {
         aboutMenuItem.setName("aboutMenuItem"); // NOI18N
         helpMenu.add(aboutMenuItem);
 
+        jMenuItem6.setText(resourceMap.getString("jMenuItem6.text")); // NOI18N
+        jMenuItem6.setName("jMenuItem6"); // NOI18N
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        helpMenu.add(jMenuItem6);
+
         menuBar.add(helpMenu);
 
         Main.setName("Main"); // NOI18N
@@ -2077,6 +2086,7 @@ public class ECGJAVa2View extends FrameView {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
 
+    if (CommPortOpen.connected){
         if(CommPortOpen.thePortID.getName().startsWith("/dev/tty.usbmodem") || CommPortOpen.thePortID.getName().startsWith("/dev/cu.usbmodem")){
             JOptionPane.showMessageDialog(null, "Not Connected to Wireless Serial Port", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -2085,13 +2095,20 @@ public class ECGJAVa2View extends FrameView {
             Var.run();
             SignalAnalysisGuard = true;
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Not Connected", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    }
+    else{
+        JOptionPane.showMessageDialog(null, "Not Connected", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void ShowSignalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowSignalActionPerformed
-        SignalAnalysis.setVisible(true);
+        if (CommPortOpen.connected){
+            SignalAnalysis.setVisible(true);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
     }//GEN-LAST:event_ShowSignalActionPerformed
 
     private void LightSQLChart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LightSQLChart2ActionPerformed
@@ -2236,6 +2253,12 @@ public class ECGJAVa2View extends FrameView {
 
     }//GEN-LAST:event_GPSActionPerformed
 
+private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+
+    Instructions Var = new Instructions();
+    Var.run();
+}//GEN-LAST:event_jMenuItem6ActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.connected){
@@ -2373,6 +2396,7 @@ public class ECGJAVa2View extends FrameView {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
