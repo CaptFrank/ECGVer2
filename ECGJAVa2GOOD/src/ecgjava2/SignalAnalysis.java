@@ -267,9 +267,7 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
     // End of variables declaration//GEN-END:variables
 
     public void run() {
-
         main(null);
-
     }
 
 }

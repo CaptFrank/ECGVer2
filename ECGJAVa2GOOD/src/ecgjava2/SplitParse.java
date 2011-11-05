@@ -139,7 +139,7 @@ public class SplitParse {
        /*________________________________________________________________________________*/
 
     public static boolean parsable(String val){
-
+        
         Pattern p = Pattern.compile("(!?)(Lig:)(\\d+)(.)(\\d+)(Tem:)(\\d+)(.)(\\d+)(ECG:)(\\d+)(.)(\\d+)(POT:)(\\d+)(.)(\\d+)(BAT:)(\\d+)(.)(\\d+)(IRL:)(\\d+)(.)(\\d+)(LOW:)(\\d+)(.)(\\d+)(RES:)(\\d+)(.)(\\d+)");
         Matcher m = p.matcher(val);
 

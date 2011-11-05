@@ -11,16 +11,15 @@ package ecgjava2;
  */
 public class getSPO2 {
     
-    static double averageSPO2 = 0.00;
+    static double averageSPO2 = 100.00;
     static boolean guard = false;
 
     public static void getSPO2(){
-        double error = Math.abs(SplitParse.IRnum - SplitParse.LowNum);
-        System.out.println(SplitParse.IRnum + "   " + SplitParse.LowNum + "   " + error);
-        double tempSPO2 = ((SplitParse.Potnum - error) / (SplitParse.IRnum - error));
+        double error = SplitParse.LowNum;
+        double tempSPO2 = ((SplitParse.Potnum - error) / (SplitParse.IRnum - error))*100.00;
         averageSPO2 += tempSPO2;
         averageSPO2 = averageSPO2 / 2.0;
-        ECGJAVa2View.SPO2Value.setText(Integer.toString((int) (averageSPO2 * 100)));
+        ECGJAVa2View.SPO2Value.setText(Integer.toString((int)averageSPO2));
     }
 
     public static void reset(){

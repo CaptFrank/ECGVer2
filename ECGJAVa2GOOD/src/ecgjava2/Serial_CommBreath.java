@@ -111,7 +111,6 @@ class CommPortOpenBreath extends Thread{
 
     // Get the CommPortIdentifier.
     thePortID = chooser.getSelectedIdentifier();
-    thePortID.addPortOwnershipListener(new MyResolver());
 
     // Now actually open the port.
     // This form of openPort takes an Application Name and a timeout.
@@ -382,27 +381,4 @@ class PortChooserBreath extends JDialog implements ItemListener {
             //SplitParse.splitVal(val);
         //System.out.println(val);
     }
-    class MyResolver implements CommPortOwnershipListener {
-        protected boolean owned = false;
-        public void ownershipChange(int whaHoppen) {
-            switch (whaHoppen) {
-                case PORT_OWNED:
-                    System.out.println("An open succeeded.");
-                    owned = true;
-                    break;
-                case PORT_UNOWNED:
-                    System.out.println("A close succeeded.");
-                    owned = false;
-                    break;
-                case PORT_OWNERSHIP_REQUESTED:
-                    if (owned) {
-                        if (JOptionPane.showConfirmDialog(null,"I've been asked to give up the port, should I?",
-                                "Port Conflict (" + CommPortOpen.thePortID + ")",JOptionPane.OK_CANCEL_OPTION) == 0);
-                                CommPortOpen.thePort.close();
-                        } else {
-                            System.out.println("Somebody else has the port");
-                        }
-                }
-        }
-      }
   }

@@ -324,7 +324,7 @@ public class ECGJAVa2View extends FrameView {
 
         ConnectDB.setText(resourceMap.getString("ConnectDB.text")); // NOI18N
         ConnectDB.setName("ConnectDB"); // NOI18N
-        Connected.getContentPane().add(ConnectDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 140, 20));
+        Connected.getContentPane().add(ConnectDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 140, 20));
 
         container.getContentPane().add(Connected, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 340, 110));
 
@@ -1823,7 +1823,11 @@ public class ECGJAVa2View extends FrameView {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectActionPerformed
-        Disconnect_Close();
+        try {
+            CommPortOpen.closeConnection();
+        } catch (IOException ex) {
+            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {
             WriteLogFiles.fout.close();
             WriteLogFiles.in.close();

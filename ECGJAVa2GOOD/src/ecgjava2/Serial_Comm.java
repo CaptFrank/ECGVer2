@@ -68,6 +68,7 @@ class CommPortOpen extends Thread{
   static CommPortIdentifier thePortID = null;
 
   static boolean connected = false;
+  static public SerialPort myPort;
 
   /** The chosen Port itself */
   static public CommPort thePort;
@@ -115,7 +116,6 @@ class CommPortOpen extends Thread{
 
     // Get the CommPortIdentifier.
     thePortID = chooser.getSelectedIdentifier();
-    thePortID.addPortOwnershipListener(new MyResolver());
 
     // Now actually open the port.
     // This form of openPort takes an Application Name and a timeout.
@@ -126,7 +126,7 @@ class CommPortOpen extends Thread{
     case CommPortIdentifier.PORT_SERIAL:
       thePort = thePortID.open("Franks App",
           TIMEOUTSECONDS * 1000);
-      SerialPort myPort = (SerialPort) thePort;
+      myPort = (SerialPort) thePort;
                   connected = true;
 
       // set up the serial port
@@ -183,7 +183,6 @@ class CommPortOpen extends Thread{
     }
     os = new PrintStream(thePort.getOutputStream(), true);
   }
-
   /**
    * This method will be overridden by non-trivial subclasses to hold a
    * conversation.
@@ -211,9 +210,21 @@ class CommPortOpen extends Thread{
   }
 
   static void closeConnection() throws IOException{
+      
+      System.out.println("closing: " + thePort.getName());
+      DataThread.currentThread().stop();
+      DataThread.inStream.close();
       is.close();
+      in.close();
       os.close();
+      myPort.close();
       thePort.close();
+      is = null;
+      in = null;
+      os = null;
+      myPort = null;
+      thePort = null;
+      
   }
 
   static String getPortName(){
@@ -391,7 +402,7 @@ class PortChooser extends JDialog implements ItemListener {
 /** This inner class handles one side of a conversation. */
 
   class DataThread extends Thread {
-    BufferedReader inStream;
+    static public BufferedReader inStream;
     String val;
     PrintStream pStream;
 
@@ -409,29 +420,5 @@ class PortChooser extends JDialog implements ItemListener {
     /** A Thread's run method does the work. */
     public void run() {
         return;
-      }
-  }
-
-  class MyResolver implements CommPortOwnershipListener {
-        protected boolean owned = false;
-        public void ownershipChange(int whaHoppen) {
-            switch (whaHoppen) {
-                case PORT_OWNED:
-                    System.out.println("An open succeeded.");
-                    owned = true;
-                    break;
-                case PORT_UNOWNED:
-                    System.out.println("A close succeeded.");
-                    owned = false;
-                    break;
-                case PORT_OWNERSHIP_REQUESTED:
-                    if (owned) {
-                        if (JOptionPane.showConfirmDialog(null,"I've been asked to give up the port, should I?",
-                                "Port Conflict (" + CommPortOpen.thePortID + ")",JOptionPane.OK_CANCEL_OPTION) == 0);
-                                CommPortOpen.thePort.close();
-                        } else {
-                            System.out.println("Somebody else has the port");
-                        }
-            }
       }
 }
