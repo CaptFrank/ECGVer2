@@ -285,6 +285,7 @@ public class ECGJAVa2View extends FrameView {
 
         GenDAta.setClosable(true);
         GenDAta.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        GenDAta.setIconifiable(true);
         GenDAta.setMaximizable(true);
         GenDAta.setResizable(true);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getResourceMap(ECGJAVa2View.class);
@@ -544,6 +545,8 @@ public class ECGJAVa2View extends FrameView {
 
         Connected.setClosable(true);
         Connected.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        Connected.setIconifiable(true);
+        Connected.setResizable(true);
         Connected.setTitle(resourceMap.getString("Connected.title")); // NOI18N
         Connected.setName("Connected"); // NOI18N
         Connected.setVisible(true);
@@ -574,6 +577,7 @@ public class ECGJAVa2View extends FrameView {
 
         Temperature.setClosable(true);
         Temperature.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        Temperature.setIconifiable(true);
         Temperature.setMaximizable(true);
         Temperature.setResizable(true);
         Temperature.setTitle(resourceMap.getString("Temperature.title")); // NOI18N
@@ -777,6 +781,7 @@ public class ECGJAVa2View extends FrameView {
 
         SignalAnalysis.setClosable(true);
         SignalAnalysis.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        SignalAnalysis.setIconifiable(true);
         SignalAnalysis.setMaximizable(true);
         SignalAnalysis.setResizable(true);
         SignalAnalysis.setTitle(resourceMap.getString("SignalAnalysis.title")); // NOI18N
@@ -1004,6 +1009,7 @@ public class ECGJAVa2View extends FrameView {
 
         Inbound.setClosable(true);
         Inbound.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        Inbound.setIconifiable(true);
         Inbound.setMaximizable(true);
         Inbound.setResizable(true);
         Inbound.setTitle(resourceMap.getString("Inbound.title")); // NOI18N
