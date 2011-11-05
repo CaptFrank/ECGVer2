@@ -18,6 +18,8 @@ public class getSignalStrength {
     public static String SignalStrength;
     public static String DestinationAddressHigh, DestinationAddressLow, PANID, VersionID, ChannelID, NodeID;
 
+    void getSignalStrenght(){}
+    
     public static void getSignalStrength() throws IOException{
         CommPortOpen.os.print("ATDB\r");
         SignalStrength = CommPortOpen.is.readLine();

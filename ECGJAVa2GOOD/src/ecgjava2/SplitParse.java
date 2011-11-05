@@ -16,6 +16,8 @@ import java.util.regex.Pattern;
  */
 public class SplitParse {
 
+    SplitParse(){}
+    
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[!Lig:TemECGPOBAIRWS]";

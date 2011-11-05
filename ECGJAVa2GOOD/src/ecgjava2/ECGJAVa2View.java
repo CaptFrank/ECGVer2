@@ -1795,9 +1795,12 @@ public class ECGJAVa2View extends FrameView {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectActionPerformed
+        
+        Serial.setText("<Default>");
+        Serial.repaint();
+        
         try {
             CommPortOpen.closeConnection();
-            Serial.setText("<Default>");
         } catch (IOException ex) {
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
         }

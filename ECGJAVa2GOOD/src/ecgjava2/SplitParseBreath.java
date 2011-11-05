@@ -18,6 +18,8 @@ import java.util.regex.Pattern;
  */
 public class SplitParseBreath {
 
+    SplitParseBreath(){}
+    
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[%|r:,]";

@@ -20,6 +20,8 @@ public class getBPM{
     static getBPM BPM;
     static double previoustime = 0.00;
 
+    getBPM(){}
+    
     static void createNewArrays(){
         //Create and print a 2D double array
         array = new double[40][2];

@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 import javax.swing.*;
 
 public class FileChooser extends Thread{
+    
+    FileChooser(){}
 
     public static void main(String[] args) {
         final JFrame frame = new JFrame("Open Log Files");

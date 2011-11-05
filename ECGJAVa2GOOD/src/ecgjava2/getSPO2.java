@@ -11,6 +11,8 @@ package ecgjava2;
  */
 public class getSPO2 {
     
+    getSPO2(){}
+    
     static double averageSPO2 = 100.00;
     static boolean guard = false;
 

@@ -20,6 +20,8 @@ import java.sql.SQLException;
  * @author Administrator
  */
 public class SQL extends Thread{
+    
+    SQL(){}
 
   static String Message = "";
   static String copy = "";
