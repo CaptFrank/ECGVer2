@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartECG extends Thread{
 
+    ThreadedChartECG(){}
+    
     public static void main(String[] args){
         ChartECG Chart = new ChartECG();
         Chart.run();

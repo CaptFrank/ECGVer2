@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartOXI extends Thread{
 
+    ThreadedChartOXI(){}
+    
     public static void main(String[] args){
         ChartOXI Chart = new ChartOXI();
         Chart.run();

@@ -25,7 +25,8 @@ public class WriteLogFilesB {
     private static BufferedWriter output;
     public static Date date;
 
-
+    WriteLogFilesB(){}
+    
     private final static java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy.MMMM.dd");
 
   public static void main(String[] args) throws IOException {

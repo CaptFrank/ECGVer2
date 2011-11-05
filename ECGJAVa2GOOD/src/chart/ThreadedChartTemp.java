@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartTemp extends Thread{
 
+    ThreadedChartTemp(){}
+    
     public static void main(String[] args){
         ChartTemp Chart = new ChartTemp();
         Chart.run();

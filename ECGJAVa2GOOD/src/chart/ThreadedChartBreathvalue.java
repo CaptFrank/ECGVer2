@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartBreathvalue extends Thread{
 
+    ThreadedChartBreathvalue(){}
+    
     public static void main(String[] args){
         ChartBreathvalue Chart = new ChartBreathvalue();
         Chart.run();

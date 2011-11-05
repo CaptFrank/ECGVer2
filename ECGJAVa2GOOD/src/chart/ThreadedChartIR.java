@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartIR extends Thread{
 
+    ThreadedChartIR(){}
+    
     public static void main(String[] args){
         ChartIR Chart = new ChartIR();
         Chart.run();

@@ -28,7 +28,8 @@ public class WriteLogFiles {
     public static FileReader in;
     public static FileWriter fout;
 
-
+    WriteLogFiles(){}
+    
     private final static java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy.MMMM.dd");
 
   public static void main(String[] args) throws IOException {

@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartLight extends Thread{
 
+    ThreadedChartLight(){}
+    
     public static void main(String[] args){
         ChartLight Chart = new ChartLight();
         Chart.run();

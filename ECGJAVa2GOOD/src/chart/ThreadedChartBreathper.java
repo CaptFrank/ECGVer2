@@ -10,6 +10,8 @@ package chart;
  * @author francispapineau
  */
 public class ThreadedChartBreathper extends Thread{
+    
+    ThreadedChartBreathper(){}
 
     public static void main(String[] args){
         ChartBreathvalue Chart = new ChartBreathvalue();

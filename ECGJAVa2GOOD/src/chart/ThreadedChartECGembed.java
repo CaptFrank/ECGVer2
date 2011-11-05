@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartECGembed extends Thread{
 
+    ThreadedChartECGembed(){}
+    
     public static void main(String[] args){
         ChartECGembed Chart = new ChartECGembed();
         Chart.run();

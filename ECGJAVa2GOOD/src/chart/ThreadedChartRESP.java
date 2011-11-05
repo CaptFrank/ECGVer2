@@ -11,6 +11,8 @@ package chart;
  */
 public class ThreadedChartRESP extends Thread{
 
+    ThreadedChartRESP(){}
+    
     public static void main(String[] args){
         ChartRESP Chart = new ChartRESP();
         Chart.run();
