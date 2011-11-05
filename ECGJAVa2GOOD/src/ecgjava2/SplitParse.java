@@ -124,7 +124,7 @@ public class SplitParse {
                 ECGJAVa2View.RESP.repaint();
             }
             i++;
-            if (getSPO2.guard){
+            if (getSPO2.getGuard()){
                 getSPO2.getSPO2();
             }
         }
@@ -157,5 +157,14 @@ public class SplitParse {
     }
     public static double[][] getArray(){
         return SPO2Array;
+    }
+    public static double getLowNum(){
+        return LowNum;
+    }
+    static double getIRValue(){
+        return IRnum;
+    }
+    static boolean getFull(){
+        return full;
     }
 }

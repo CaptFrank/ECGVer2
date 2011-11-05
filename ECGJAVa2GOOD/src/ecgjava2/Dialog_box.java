@@ -71,7 +71,7 @@ public final class Dialog_box extends JFrame{
 
 
       static public void update(String x) {
-          if (ECGJAVa2View.Dialogconnected){
+          if (ECGJAVa2View.getDialogConnected()){
                 outputArea.append(x + "\n");
           }
       }

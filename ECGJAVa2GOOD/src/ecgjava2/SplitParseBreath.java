@@ -39,12 +39,10 @@ public class SplitParseBreath {
             if (i == 2){
                 valuenum = Float.parseFloat(s);
                 ECGJAVa2View.BreathVal.setText(s);
-                System.out.println("% =" + ECGJAVa2View.value);
             }
             else if (i == 6){
                 percentagenum = ((float) (Float.parseFloat(s)));
                 ECGJAVa2View.BreathPer.setText(s);
-                System.out.println("% =" + ECGJAVa2View.percentage);
             }
             
             i++;

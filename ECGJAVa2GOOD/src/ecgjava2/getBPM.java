@@ -96,6 +96,9 @@ public class getBPM{
         System.out.println(Integer.toString((int)BPM));
         ECGJAVa2View.PulseValue.setText(Integer.toString(averageBPM));
     }
+    static void setBPMGuard(boolean val){
+        BPMguard = val;
+    }
     public void run() {
         createNewArrays();
         try {
@@ -103,7 +106,7 @@ public class getBPM{
         } catch (InterruptedException ex) {
             Logger.getLogger(getBPM.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (SplitParse.full){
+        if (SplitParse.getFull()){
             try {
                 getPeaks();
             } catch (InterruptedException ex) {

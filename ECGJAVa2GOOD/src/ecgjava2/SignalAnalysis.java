@@ -53,7 +53,7 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
         Temp = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        CloseSignalAnalysis = new javax.swing.JMenuItem();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getResourceMap(SignalAnalysis.class);
         jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
@@ -121,14 +121,14 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
         jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
         jMenu1.setName("jMenu1"); // NOI18N
 
-        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
-        jMenuItem1.setName("jMenuItem1"); // NOI18N
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        CloseSignalAnalysis.setText(resourceMap.getString("CloseSignalAnalysis.text")); // NOI18N
+        CloseSignalAnalysis.setName("CloseSignalAnalysis"); // NOI18N
+        CloseSignalAnalysis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                CloseSignalAnalysisActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(CloseSignalAnalysis);
 
         jMenuBar1.add(jMenu1);
 
@@ -225,10 +225,10 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void CloseSignalAnalysisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseSignalAnalysisActionPerformed
 
         this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_CloseSignalAnalysisActionPerformed
 
     /**
     * @param args the command line arguments
@@ -244,6 +244,7 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Broadcastpower;
     public static javax.swing.JLabel ChannelID;
+    private javax.swing.JMenuItem CloseSignalAnalysis;
     public static javax.swing.JLabel DestinationAddressHigh;
     public static javax.swing.JLabel DestinationAddressLow;
     public static javax.swing.JLabel FirmwareID;
@@ -263,7 +264,6 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 
     public void run() {

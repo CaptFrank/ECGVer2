@@ -76,6 +76,11 @@ public class SQL extends Thread{
       }
     }
 
+    static boolean getConnectedSQL(){
+    
+        return connected;
+    }
+    
     static void insertItems(String instance, String Command){
 
     }

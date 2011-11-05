@@ -209,6 +209,22 @@ class CommPortOpen extends Thread{
       return connected;
   }
 
+  static boolean getConnectGuard(){
+      return ConnectGuard;
+  }
+  
+  static void setConnectGuard(boolean Val){
+      ConnectGuard = Val;
+  }
+  
+  static void printCommand(String x){
+      os.print(x);
+  }
+  
+  public static String readReply() throws IOException{
+      return is.readLine();
+  }
+  
   static void closeConnection() throws IOException{
       
       System.out.println("closing: " + thePort.getName());

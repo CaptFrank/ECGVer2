@@ -96,4 +96,8 @@ public class WriteLogFiles {
             inputFile.delete();
             outputFile.renameTo(f);
         }
+  public static void closeWriteFile() throws IOException{
+            fout.close();
+            in.close();
+        }
   }

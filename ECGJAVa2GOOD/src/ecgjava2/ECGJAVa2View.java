@@ -33,16 +33,16 @@ import javax.swing.JOptionPane;
  * The application's main frame.
  */
 public class ECGJAVa2View extends FrameView {
-    public static boolean SignalAnalysisGuard = false;
-    public static long InitialTime;
-    public static boolean SPO2guard = false;
+    static boolean SignalAnalysisGuard = false;
+    static long InitialTime;
+    static boolean SPO2guard = false;
     private final Timer messageTimer;
     private final Timer busyIconTimer;
     private final Icon idleIcon;
     private final Icon[] busyIcons = new Icon[15];
     private int busyIconIndex = 0;
     public JFrame Dialog;
-    static public int selection;
+    static int selection;
     private JDialog aboutBox;
 
     public ECGJAVa2View(SingleFrameApplication app) {
@@ -58,8 +58,8 @@ public class ECGJAVa2View extends FrameView {
 
         Main.addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent we){
-                    if (CommPortOpen.ConnectGuard == true) {
-                        CommPortOpen.ConnectGuard = false;
+                    if (CommPortOpen.getConnectGuard() == true) {
+                        CommPortOpen.setConnectGuard(false);
                     }
                     System.exit(0);
             }
@@ -105,10 +105,9 @@ public class ECGJAVa2View extends FrameView {
     }
     
     
-    static public boolean DBconnected = false;
-    static public float percentage = (float) 0.00, value = (float) 0.00;
-    static public boolean Dialogconnected = false;
-
+    static boolean DBconnected = false;
+    public static boolean Dialogconnected = false;
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -1805,8 +1804,7 @@ public class ECGJAVa2View extends FrameView {
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            WriteLogFiles.fout.close();
-            WriteLogFiles.in.close();
+            WriteLogFiles.closeWriteFile();
         } catch (IOException ex) {
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1854,7 +1852,7 @@ public class ECGJAVa2View extends FrameView {
     private void Dialog_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dialog_boxActionPerformed
 
         Dialog = new Dialog_box();
-        Dialog.show();
+        Dialog.setVisible(true);
         Dialogconnected = true;
     }//GEN-LAST:event_Dialog_boxActionPerformed
 
@@ -1940,7 +1938,7 @@ public class ECGJAVa2View extends FrameView {
             JOptionPane.showMessageDialog(null, "Cannot Connect to DB", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        if (SQL.connected){
+        if (SQL.getConnectedSQL()){
             ConnectDB.setText("Connected!!!");
             ConnectDB.repaint();
         }
@@ -1978,7 +1976,7 @@ public class ECGJAVa2View extends FrameView {
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
 
-        if (!SQL.connected){
+        if (!SQL.getConnectedSQL()){
             JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -2061,7 +2059,7 @@ public class ECGJAVa2View extends FrameView {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
 
-    if (CommPortOpen.connected){
+    if (CommPortOpen.getConnected()){
         if(CommPortOpen.thePortID.getName().startsWith("/dev/tty.usbmodem") || CommPortOpen.thePortID.getName().startsWith("/dev/cu.usbmodem")){
             JOptionPane.showMessageDialog(null, "Not Connected to Wireless Serial Port", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -2077,7 +2075,7 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void ShowSignalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowSignalActionPerformed
-        if (CommPortOpen.connected){
+        if (CommPortOpen.getConnected()){
             SignalAnalysis.setVisible(true);
         }
         else {
@@ -2091,7 +2089,7 @@ public class ECGJAVa2View extends FrameView {
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
 
-        if (!SQL.connected){
+        if (!SQL.getConnectedSQL()){
             JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -2113,11 +2111,11 @@ public class ECGJAVa2View extends FrameView {
 }//GEN-LAST:event_ResetSPO2ActionPerformed
 
     private void StopSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopSPO2ActionPerformed
-        getSPO2.guard = false;
+        getSPO2.setSPO2Guard(false);
 }//GEN-LAST:event_StopSPO2ActionPerformed
 
     private void StartSPO2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartSPO2ActionPerformed
-        getSPO2.guard = true;
+        getSPO2.setSPO2Guard(true);
     }//GEN-LAST:event_StartSPO2ActionPerformed
 
     private void IRSQLChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRSQLChartActionPerformed
@@ -2125,7 +2123,7 @@ public class ECGJAVa2View extends FrameView {
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
 
-        if (!SQL.connected){
+        if (!SQL.getConnectedSQL()){
             JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -2143,11 +2141,11 @@ public class ECGJAVa2View extends FrameView {
 }//GEN-LAST:event_IRSerialChartActionPerformed
 
     private void StopPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopPulseActionPerformed
-        getBPM.BPMguard = false;
+        getBPM.setBPMGuard(false);
 }//GEN-LAST:event_StopPulseActionPerformed
 
     private void StartPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartPulseActionPerformed
-        getBPM.BPMguard = true;
+        getBPM.setBPMGuard(true);
 }//GEN-LAST:event_StartPulseActionPerformed
 
     private void ResetPulseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetPulseActionPerformed
@@ -2159,7 +2157,7 @@ public class ECGJAVa2View extends FrameView {
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
 
-        if (!SQL.connected){
+        if (!SQL.getConnectedSQL()){
             JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_OXISQLChart1ActionPerformed
@@ -2178,7 +2176,7 @@ public class ECGJAVa2View extends FrameView {
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
 
-        if (!SQL.connected){
+        if (!SQL.getConnectedSQL()){
             JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -2204,7 +2202,7 @@ public class ECGJAVa2View extends FrameView {
         JOptionPane.showMessageDialog(null, "Not Supported Yet", "Error", JOptionPane.ERROR_MESSAGE);
 
 
-        if (!SQL.connected){
+        if (!SQL.getConnectedSQL()){
             JOptionPane.showMessageDialog(null, "Not Connected to Database", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -2234,10 +2232,14 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
     private void Disconnect_Close(){
 
-        if(CommPortOpen.connected){
-            CommPortOpen.ConnectGuard = false;
+        if(CommPortOpen.getConnected()){
+            CommPortOpen.setConnectGuard(false);
         }
         System.exit(0);
+    }
+    
+    static boolean getDialogConnected(){
+        return Dialogconnected;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
