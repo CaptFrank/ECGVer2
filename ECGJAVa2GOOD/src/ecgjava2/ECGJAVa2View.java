@@ -119,7 +119,33 @@ public class ECGJAVa2View extends FrameView {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        container = new javax.swing.JInternalFrame();
+        GenDAta = new javax.swing.JInternalFrame();
+        jTabbedPane6 = new javax.swing.JTabbedPane();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        BreathVal = new javax.swing.JLabel();
+        BreathPer = new javax.swing.JLabel();
+        ConectBreathSerial = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        BreathChartSQL = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        BreathSerialChart1 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jMenuBar5 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        EXITGEN = new javax.swing.JMenuItem();
+        ConnectBreath = new javax.swing.JMenu();
+        ConnectBoard = new javax.swing.JMenuItem();
+        ECGContainer = new javax.swing.JInternalFrame();
+        jLabel16 = new javax.swing.JLabel();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         Connected = new javax.swing.JInternalFrame();
         TEXT = new javax.swing.JLabel();
         Serial = new javax.swing.JLabel();
@@ -145,6 +171,30 @@ public class ECGJAVa2View extends FrameView {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         EXITTEMP = new javax.swing.JMenuItem();
+        SignalAnalysis = new javax.swing.JInternalFrame();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        XbeePackets = new javax.swing.JLabel();
+        XbeeTotal = new javax.swing.JLabel();
+        GoodPackets = new javax.swing.JLabel();
+        Xbeegood = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        BreathPacket = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        BreathTotal = new javax.swing.JLabel();
+        SignalStrength = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        label10 = new javax.swing.JLabel();
+        label20 = new javax.swing.JLabel();
+        label30 = new javax.swing.JLabel();
+        label40 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        Batt = new javax.swing.JLabel();
         Inbound = new javax.swing.JInternalFrame();
         ECGPane = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -204,62 +254,11 @@ public class ECGJAVa2View extends FrameView {
         jMenuBar3 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         EXITINBOUND = new javax.swing.JMenuItem();
-        GenDAta = new javax.swing.JInternalFrame();
-        jTabbedPane6 = new javax.swing.JTabbedPane();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        BreathVal = new javax.swing.JLabel();
-        BreathPer = new javax.swing.JLabel();
-        ConectBreathSerial = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        BreathChartSQL = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        BreathSerialChart1 = new javax.swing.JButton();
-        jPanel8 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jMenuBar5 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        EXITGEN = new javax.swing.JMenuItem();
-        ConnectBreath = new javax.swing.JMenu();
-        ConnectBoard = new javax.swing.JMenuItem();
-        ECGContainer = new javax.swing.JInternalFrame();
-        jLabel16 = new javax.swing.JLabel();
-        jMenuBar4 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        SignalAnalysis = new javax.swing.JInternalFrame();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel14 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        XbeePackets = new javax.swing.JLabel();
-        XbeeTotal = new javax.swing.JLabel();
-        GoodPackets = new javax.swing.JLabel();
-        Xbeegood = new javax.swing.JLabel();
-        jPanel15 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        BreathPacket = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        BreathTotal = new javax.swing.JLabel();
-        SignalStrength = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        label10 = new javax.swing.JLabel();
-        label20 = new javax.swing.JLabel();
-        label30 = new javax.swing.JLabel();
-        label40 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        Batt = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        File = new javax.swing.JMenu();
+        menuBar = new javax.swing.JMenuBar();
+        javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         Connect = new javax.swing.JMenuItem();
         ConnectToDB = new javax.swing.JMenuItem();
-        EXIT = new javax.swing.JMenuItem();
+        javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         ShowConnected = new javax.swing.JMenuItem();
         ShowTemp = new javax.swing.JMenuItem();
@@ -275,9 +274,6 @@ public class ECGJAVa2View extends FrameView {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        menuBar = new javax.swing.JMenuBar();
-        javax.swing.JMenu fileMenu = new javax.swing.JMenu();
-        javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         javax.swing.JMenu helpMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -287,16 +283,264 @@ public class ECGJAVa2View extends FrameView {
         mainPanel.setName("mainPanel"); // NOI18N
         mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        container.setClosable(true);
-        container.setIconifiable(true);
-        container.setMaximizable(true);
-        container.setResizable(true);
+        GenDAta.setClosable(true);
+        GenDAta.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        GenDAta.setMaximizable(true);
+        GenDAta.setResizable(true);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getResourceMap(ECGJAVa2View.class);
-        container.setTitle(resourceMap.getString("container.title")); // NOI18N
-        container.setAutoscrolls(true);
-        container.setName("container"); // NOI18N
-        container.setVisible(true);
-        container.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        GenDAta.setTitle(resourceMap.getString("GenDAta.title")); // NOI18N
+        GenDAta.setName("GenDAta"); // NOI18N
+        GenDAta.setVisible(true);
+        GenDAta.getContentPane().setLayout(null);
+
+        jTabbedPane6.setName("jTabbedPane6"); // NOI18N
+
+        jPanel6.setName("jPanel6"); // NOI18N
+
+        jLabel2.setFont(resourceMap.getFont("jLabel2.font")); // NOI18N
+        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
+        jLabel2.setName("jLabel2"); // NOI18N
+
+        jLabel3.setFont(resourceMap.getFont("jLabel3.font")); // NOI18N
+        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
+        jLabel3.setName("jLabel3"); // NOI18N
+
+        BreathVal.setFont(resourceMap.getFont("BreathVal.font")); // NOI18N
+        BreathVal.setText(resourceMap.getString("BreathVal.text")); // NOI18N
+        BreathVal.setName("BreathVal"); // NOI18N
+
+        BreathPer.setFont(resourceMap.getFont("BreathPer.font")); // NOI18N
+        BreathPer.setText(resourceMap.getString("BreathPer.text")); // NOI18N
+        BreathPer.setName("BreathPer"); // NOI18N
+
+        ConectBreathSerial.setText("Not Connected to Serial");
+
+        org.jdesktop.layout.GroupLayout jPanel6Layout = new org.jdesktop.layout.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel2)
+                    .add(jLabel3))
+                .add(18, 18, 18)
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(BreathVal)
+                    .add(BreathPer))
+                .addContainerGap(34, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .add(ConectBreathSerial)
+                .add(54, 54, 54))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(38, 38, 38)
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel2)
+                    .add(BreathVal))
+                .add(18, 18, 18)
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(BreathPer)
+                    .add(jLabel3))
+                .add(18, 18, 18)
+                .add(ConectBreathSerial)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        jTabbedPane6.addTab(resourceMap.getString("jPanel6.TabConstraints.tabTitle"), jPanel6); // NOI18N
+
+        jPanel7.setName("jPanel7"); // NOI18N
+
+        BreathChartSQL.setText(resourceMap.getString("BreathChartSQL.text")); // NOI18N
+        BreathChartSQL.setName("BreathChartSQL"); // NOI18N
+        BreathChartSQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BreathChartSQLActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
+        jLabel4.setName("jLabel4"); // NOI18N
+
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        BreathSerialChart1.setText(resourceMap.getString("BreathSerialChart1.text")); // NOI18N
+        BreathSerialChart1.setName("BreathSerialChart1"); // NOI18N
+        BreathSerialChart1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BreathSerialChart1ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel7Layout = new org.jdesktop.layout.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .add(jLabel5)
+                        .add(55, 55, 55))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .add(jLabel4)
+                        .add(30, 30, 30))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, BreathChartSQL, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
+                        .addContainerGap())))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7Layout.createSequentialGroup()
+                .add(32, 32, 32)
+                .add(jLabel4)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel5)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(BreathChartSQL)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jTabbedPane6.addTab(resourceMap.getString("jPanel7.TabConstraints.tabTitle"), jPanel7); // NOI18N
+
+        jPanel8.setName("jPanel8"); // NOI18N
+
+        jScrollPane2.setName("jScrollPane2"); // NOI18N
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable2.setName("jTable2"); // NOI18N
+        jScrollPane2.setViewportView(jTable2);
+
+        org.jdesktop.layout.GroupLayout jPanel8Layout = new org.jdesktop.layout.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane6.addTab(resourceMap.getString("jPanel8.TabConstraints.tabTitle"), jPanel8); // NOI18N
+
+        GenDAta.getContentPane().add(jTabbedPane6);
+        jTabbedPane6.setBounds(20, 20, 280, 210);
+
+        jMenuBar5.setName("jMenuBar5"); // NOI18N
+
+        jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
+        jMenu1.setName("jMenu1"); // NOI18N
+
+        EXITGEN.setText(resourceMap.getString("EXITGEN.text")); // NOI18N
+        EXITGEN.setName("EXITGEN"); // NOI18N
+        EXITGEN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EXITGENActionPerformed(evt);
+            }
+        });
+        jMenu1.add(EXITGEN);
+
+        jMenuBar5.add(jMenu1);
+
+        ConnectBreath.setText(resourceMap.getString("ConnectBreath.text")); // NOI18N
+        ConnectBreath.setName("ConnectBreath"); // NOI18N
+
+        ConnectBoard.setText(resourceMap.getString("ConnectBoard.text")); // NOI18N
+        ConnectBoard.setName("ConnectBoard"); // NOI18N
+        ConnectBoard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConnectBoardActionPerformed(evt);
+            }
+        });
+        ConnectBreath.add(ConnectBoard);
+
+        jMenuBar5.add(ConnectBreath);
+
+        GenDAta.setJMenuBar(jMenuBar5);
+
+        mainPanel.add(GenDAta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 340, 310));
+
+        ECGContainer.setClosable(true);
+        ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        ECGContainer.setIconifiable(true);
+        ECGContainer.setResizable(true);
+        ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
+        ECGContainer.setName("ECGContainer"); // NOI18N
+        ECGContainer.setVisible(true);
+
+        jLabel16.setText(resourceMap.getString("jLabel16.text")); // NOI18N
+        jLabel16.setName("jLabel16"); // NOI18N
+
+        jMenuBar4.setName("jMenuBar4"); // NOI18N
+
+        jMenu4.setText(resourceMap.getString("jMenu4.text")); // NOI18N
+        jMenu4.setName("jMenu4"); // NOI18N
+
+        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
+        jMenuItem1.setName("jMenuItem1"); // NOI18N
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem1);
+
+        jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
+        jMenuItem2.setName("jMenuItem2"); // NOI18N
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem2);
+
+        jMenuBar4.add(jMenu4);
+
+        ECGContainer.setJMenuBar(jMenuBar4);
+
+        org.jdesktop.layout.GroupLayout ECGContainerLayout = new org.jdesktop.layout.GroupLayout(ECGContainer.getContentPane());
+        ECGContainer.getContentPane().setLayout(ECGContainerLayout);
+        ECGContainerLayout.setHorizontalGroup(
+            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, ECGContainerLayout.createSequentialGroup()
+                .addContainerGap(600, Short.MAX_VALUE)
+                .add(jLabel16)
+                .add(598, 598, 598))
+        );
+        ECGContainerLayout.setVerticalGroup(
+            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ECGContainerLayout.createSequentialGroup()
+                .add(112, 112, 112)
+                .add(jLabel16)
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(ECGContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
 
         Connected.setClosable(true);
         Connected.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -326,7 +570,7 @@ public class ECGJAVa2View extends FrameView {
         ConnectDB.setName("ConnectDB"); // NOI18N
         Connected.getContentPane().add(ConnectDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 140, 20));
 
-        container.getContentPane().add(Connected, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 340, 110));
+        mainPanel.add(Connected, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 340, 110));
 
         Temperature.setClosable(true);
         Temperature.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -529,7 +773,234 @@ public class ECGJAVa2View extends FrameView {
 
         Temperature.setJMenuBar(jMenuBar2);
 
-        container.getContentPane().add(Temperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 510, 280));
+        mainPanel.add(Temperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 510, 280));
+
+        SignalAnalysis.setClosable(true);
+        SignalAnalysis.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        SignalAnalysis.setMaximizable(true);
+        SignalAnalysis.setResizable(true);
+        SignalAnalysis.setTitle(resourceMap.getString("SignalAnalysis.title")); // NOI18N
+        SignalAnalysis.setName("SignalAnalysis"); // NOI18N
+        SignalAnalysis.setVisible(true);
+
+        jTabbedPane1.setName("jTabbedPane1"); // NOI18N
+
+        jPanel14.setName("jPanel14"); // NOI18N
+
+        jLabel17.setText(resourceMap.getString("jLabel17.text")); // NOI18N
+        jLabel17.setName("jLabel17"); // NOI18N
+
+        jLabel18.setText(resourceMap.getString("jLabel18.text")); // NOI18N
+        jLabel18.setName("jLabel18"); // NOI18N
+
+        XbeePackets.setText(resourceMap.getString("XbeePackets.text")); // NOI18N
+        XbeePackets.setName("XbeePackets"); // NOI18N
+
+        XbeeTotal.setText(resourceMap.getString("XbeeTotal.text")); // NOI18N
+        XbeeTotal.setName("XbeeTotal"); // NOI18N
+
+        GoodPackets.setText(resourceMap.getString("GoodPackets.text")); // NOI18N
+        GoodPackets.setName("GoodPackets"); // NOI18N
+
+        Xbeegood.setText(resourceMap.getString("Xbeegood.text")); // NOI18N
+        Xbeegood.setName("Xbeegood"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout jPanel14Layout = new org.jdesktop.layout.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel14Layout.createSequentialGroup()
+                .add(jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel14Layout.createSequentialGroup()
+                        .add(10, 10, 10)
+                        .add(GoodPackets)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(Xbeegood)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jLabel18)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(XbeeTotal))
+                    .add(jPanel14Layout.createSequentialGroup()
+                        .add(148, 148, 148)
+                        .add(jLabel17)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(XbeePackets)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel14Layout.createSequentialGroup()
+                .add(jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(GoodPackets)
+                    .add(Xbeegood)
+                    .add(jLabel18)
+                    .add(XbeeTotal))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel17)
+                    .add(XbeePackets))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(resourceMap.getString("jPanel14.TabConstraints.tabTitle"), jPanel14); // NOI18N
+
+        jPanel15.setName("jPanel15"); // NOI18N
+
+        jLabel21.setText(resourceMap.getString("jLabel21.text")); // NOI18N
+        jLabel21.setName("jLabel21"); // NOI18N
+
+        BreathPacket.setText(resourceMap.getString("BreathPacket.text")); // NOI18N
+        BreathPacket.setName("BreathPacket"); // NOI18N
+
+        jLabel23.setText(resourceMap.getString("jLabel23.text")); // NOI18N
+        jLabel23.setName("jLabel23"); // NOI18N
+
+        BreathTotal.setText(resourceMap.getString("BreathTotal.text")); // NOI18N
+        BreathTotal.setName("BreathTotal"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout jPanel15Layout = new org.jdesktop.layout.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel21)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(BreathPacket)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jLabel23)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(BreathTotal)
+                .add(30, 30, 30))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel15Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel21)
+                    .add(BreathPacket)
+                    .add(jLabel23)
+                    .add(BreathTotal))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(resourceMap.getString("jPanel15.TabConstraints.tabTitle"), jPanel15); // NOI18N
+
+        SignalStrength.setName("SignalStrength"); // NOI18N
+
+        jLabel19.setText(resourceMap.getString("jLabel19.text")); // NOI18N
+        jLabel19.setName("jLabel19"); // NOI18N
+
+        jLabel25.setText(resourceMap.getString("jLabel25.text")); // NOI18N
+        jLabel25.setName("jLabel25"); // NOI18N
+
+        label10.setIcon(resourceMap.getIcon("label10.icon")); // NOI18N
+        label10.setText(resourceMap.getString("label10.text")); // NOI18N
+        label10.setName("label10"); // NOI18N
+
+        label20.setIcon(resourceMap.getIcon("label20.icon")); // NOI18N
+        label20.setText(resourceMap.getString("label20.text")); // NOI18N
+        label20.setName("label20"); // NOI18N
+
+        label30.setIcon(resourceMap.getIcon("label30.icon")); // NOI18N
+        label30.setText(resourceMap.getString("label30.text")); // NOI18N
+        label30.setName("label30"); // NOI18N
+
+        label40.setIcon(resourceMap.getIcon("label40.icon")); // NOI18N
+        label40.setText(resourceMap.getString("label40.text")); // NOI18N
+        label40.setName("label40"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout SignalStrengthLayout = new org.jdesktop.layout.GroupLayout(SignalStrength);
+        SignalStrength.setLayout(SignalStrengthLayout);
+        SignalStrengthLayout.setHorizontalGroup(
+            SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(SignalStrengthLayout.createSequentialGroup()
+                .add(SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(SignalStrengthLayout.createSequentialGroup()
+                        .add(468, 468, 468)
+                        .add(jLabel25))
+                    .add(SignalStrengthLayout.createSequentialGroup()
+                        .add(122, 122, 122)
+                        .add(jLabel19)
+                        .add(29, 29, 29)
+                        .add(label10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(label20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(label30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(label40, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        SignalStrengthLayout.linkSize(new java.awt.Component[] {label10, label20, label30, label40}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
+
+        SignalStrengthLayout.setVerticalGroup(
+            SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(SignalStrengthLayout.createSequentialGroup()
+                .add(8, 8, 8)
+                .add(SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel19, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(label40)
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, label30)
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, label20)
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, label10)))
+                .add(59, 59, 59)
+                .add(jLabel25)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(resourceMap.getString("SignalStrength.TabConstraints.tabTitle"), SignalStrength); // NOI18N
+
+        jPanel16.setName("jPanel16"); // NOI18N
+
+        jLabel22.setText(resourceMap.getString("jLabel22.text")); // NOI18N
+        jLabel22.setName("jLabel22"); // NOI18N
+
+        Batt.setText(resourceMap.getString("Batt.text")); // NOI18N
+        Batt.setName("Batt"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout jPanel16Layout = new org.jdesktop.layout.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel16Layout.createSequentialGroup()
+                .add(130, 130, 130)
+                .add(jLabel22)
+                .add(32, 32, 32)
+                .add(Batt)
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel16Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel22)
+                    .add(Batt))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab(resourceMap.getString("jPanel16.TabConstraints.tabTitle"), jPanel16); // NOI18N
+
+        org.jdesktop.layout.GroupLayout SignalAnalysisLayout = new org.jdesktop.layout.GroupLayout(SignalAnalysis.getContentPane());
+        SignalAnalysis.getContentPane().setLayout(SignalAnalysisLayout);
+        SignalAnalysisLayout.setHorizontalGroup(
+            SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(SignalAnalysisLayout.createSequentialGroup()
+                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 483, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        SignalAnalysisLayout.setVerticalGroup(
+            SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(SignalAnalysisLayout.createSequentialGroup()
+                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(SignalAnalysis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 510, 150));
 
         Inbound.setClosable(true);
         Inbound.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1130,497 +1601,12 @@ public class ECGJAVa2View extends FrameView {
 
         Inbound.setJMenuBar(jMenuBar3);
 
-        container.getContentPane().add(Inbound, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, 570, 410));
+        mainPanel.add(Inbound, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 570, 410));
 
-        GenDAta.setClosable(true);
-        GenDAta.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        GenDAta.setMaximizable(true);
-        GenDAta.setResizable(true);
-        GenDAta.setTitle(resourceMap.getString("GenDAta.title")); // NOI18N
-        GenDAta.setName("GenDAta"); // NOI18N
-        GenDAta.setVisible(true);
-        GenDAta.getContentPane().setLayout(null);
+        menuBar.setName("menuBar"); // NOI18N
 
-        jTabbedPane6.setName("jTabbedPane6"); // NOI18N
-
-        jPanel6.setName("jPanel6"); // NOI18N
-
-        jLabel2.setFont(resourceMap.getFont("jLabel2.font")); // NOI18N
-        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
-        jLabel2.setName("jLabel2"); // NOI18N
-
-        jLabel3.setFont(resourceMap.getFont("jLabel3.font")); // NOI18N
-        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
-        jLabel3.setName("jLabel3"); // NOI18N
-
-        BreathVal.setFont(resourceMap.getFont("BreathVal.font")); // NOI18N
-        BreathVal.setText(resourceMap.getString("BreathVal.text")); // NOI18N
-        BreathVal.setName("BreathVal"); // NOI18N
-
-        BreathPer.setFont(resourceMap.getFont("BreathPer.font")); // NOI18N
-        BreathPer.setText(resourceMap.getString("BreathPer.text")); // NOI18N
-        BreathPer.setName("BreathPer"); // NOI18N
-
-        ConectBreathSerial.setText("Not Connected to Serial");
-
-        org.jdesktop.layout.GroupLayout jPanel6Layout = new org.jdesktop.layout.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel2)
-                    .add(jLabel3))
-                .add(18, 18, 18)
-                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(BreathVal)
-                    .add(BreathPer))
-                .addContainerGap(34, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .add(ConectBreathSerial)
-                .add(54, 54, 54))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel6Layout.createSequentialGroup()
-                .add(38, 38, 38)
-                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel2)
-                    .add(BreathVal))
-                .add(18, 18, 18)
-                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(BreathPer)
-                    .add(jLabel3))
-                .add(18, 18, 18)
-                .add(ConectBreathSerial)
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        jTabbedPane6.addTab(resourceMap.getString("jPanel6.TabConstraints.tabTitle"), jPanel6); // NOI18N
-
-        jPanel7.setName("jPanel7"); // NOI18N
-
-        BreathChartSQL.setText(resourceMap.getString("BreathChartSQL.text")); // NOI18N
-        BreathChartSQL.setName("BreathChartSQL"); // NOI18N
-        BreathChartSQL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BreathChartSQLActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
-        jLabel4.setName("jLabel4"); // NOI18N
-
-        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
-        jLabel5.setName("jLabel5"); // NOI18N
-
-        BreathSerialChart1.setText(resourceMap.getString("BreathSerialChart1.text")); // NOI18N
-        BreathSerialChart1.setName("BreathSerialChart1"); // NOI18N
-        BreathSerialChart1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BreathSerialChart1ActionPerformed(evt);
-            }
-        });
-
-        org.jdesktop.layout.GroupLayout jPanel7Layout = new org.jdesktop.layout.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .add(jLabel5)
-                        .add(55, 55, 55))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .add(jLabel4)
-                        .add(30, 30, 30))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, BreathChartSQL, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                            .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
-                        .addContainerGap())))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel7Layout.createSequentialGroup()
-                .add(32, 32, 32)
-                .add(jLabel4)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(BreathSerialChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jLabel5)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(BreathChartSQL)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-
-        jTabbedPane6.addTab(resourceMap.getString("jPanel7.TabConstraints.tabTitle"), jPanel7); // NOI18N
-
-        jPanel8.setName("jPanel8"); // NOI18N
-
-        jScrollPane2.setName("jScrollPane2"); // NOI18N
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jTable2.setName("jTable2"); // NOI18N
-        jScrollPane2.setViewportView(jTable2);
-
-        org.jdesktop.layout.GroupLayout jPanel8Layout = new org.jdesktop.layout.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane6.addTab(resourceMap.getString("jPanel8.TabConstraints.tabTitle"), jPanel8); // NOI18N
-
-        GenDAta.getContentPane().add(jTabbedPane6);
-        jTabbedPane6.setBounds(20, 20, 280, 210);
-
-        jMenuBar5.setName("jMenuBar5"); // NOI18N
-
-        jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
-        jMenu1.setName("jMenu1"); // NOI18N
-
-        EXITGEN.setText(resourceMap.getString("EXITGEN.text")); // NOI18N
-        EXITGEN.setName("EXITGEN"); // NOI18N
-        EXITGEN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXITGENActionPerformed(evt);
-            }
-        });
-        jMenu1.add(EXITGEN);
-
-        jMenuBar5.add(jMenu1);
-
-        ConnectBreath.setText(resourceMap.getString("ConnectBreath.text")); // NOI18N
-        ConnectBreath.setName("ConnectBreath"); // NOI18N
-
-        ConnectBoard.setText(resourceMap.getString("ConnectBoard.text")); // NOI18N
-        ConnectBoard.setName("ConnectBoard"); // NOI18N
-        ConnectBoard.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConnectBoardActionPerformed(evt);
-            }
-        });
-        ConnectBreath.add(ConnectBoard);
-
-        jMenuBar5.add(ConnectBreath);
-
-        GenDAta.setJMenuBar(jMenuBar5);
-
-        container.getContentPane().add(GenDAta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 340, 310));
-
-        ECGContainer.setClosable(true);
-        ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        ECGContainer.setIconifiable(true);
-        ECGContainer.setResizable(true);
-        ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
-        ECGContainer.setName("ECGContainer"); // NOI18N
-        ECGContainer.setVisible(true);
-
-        jLabel16.setText(resourceMap.getString("jLabel16.text")); // NOI18N
-        jLabel16.setName("jLabel16"); // NOI18N
-
-        jMenuBar4.setName("jMenuBar4"); // NOI18N
-
-        jMenu4.setText(resourceMap.getString("jMenu4.text")); // NOI18N
-        jMenu4.setName("jMenu4"); // NOI18N
-
-        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
-        jMenuItem1.setName("jMenuItem1"); // NOI18N
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem1);
-
-        jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
-        jMenuItem2.setName("jMenuItem2"); // NOI18N
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem2);
-
-        jMenuBar4.add(jMenu4);
-
-        ECGContainer.setJMenuBar(jMenuBar4);
-
-        org.jdesktop.layout.GroupLayout ECGContainerLayout = new org.jdesktop.layout.GroupLayout(ECGContainer.getContentPane());
-        ECGContainer.getContentPane().setLayout(ECGContainerLayout);
-        ECGContainerLayout.setHorizontalGroup(
-            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, ECGContainerLayout.createSequentialGroup()
-                .addContainerGap(600, Short.MAX_VALUE)
-                .add(jLabel16)
-                .add(598, 598, 598))
-        );
-        ECGContainerLayout.setVerticalGroup(
-            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ECGContainerLayout.createSequentialGroup()
-                .add(112, 112, 112)
-                .add(jLabel16)
-                .addContainerGap(134, Short.MAX_VALUE))
-        );
-
-        container.getContentPane().add(ECGContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 1400, 330));
-
-        SignalAnalysis.setClosable(true);
-        SignalAnalysis.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        SignalAnalysis.setMaximizable(true);
-        SignalAnalysis.setResizable(true);
-        SignalAnalysis.setTitle(resourceMap.getString("SignalAnalysis.title")); // NOI18N
-        SignalAnalysis.setName("SignalAnalysis"); // NOI18N
-        SignalAnalysis.setVisible(true);
-
-        jTabbedPane1.setName("jTabbedPane1"); // NOI18N
-
-        jPanel14.setName("jPanel14"); // NOI18N
-
-        jLabel17.setText(resourceMap.getString("jLabel17.text")); // NOI18N
-        jLabel17.setName("jLabel17"); // NOI18N
-
-        jLabel18.setText(resourceMap.getString("jLabel18.text")); // NOI18N
-        jLabel18.setName("jLabel18"); // NOI18N
-
-        XbeePackets.setText(resourceMap.getString("XbeePackets.text")); // NOI18N
-        XbeePackets.setName("XbeePackets"); // NOI18N
-
-        XbeeTotal.setText(resourceMap.getString("XbeeTotal.text")); // NOI18N
-        XbeeTotal.setName("XbeeTotal"); // NOI18N
-
-        GoodPackets.setText(resourceMap.getString("GoodPackets.text")); // NOI18N
-        GoodPackets.setName("GoodPackets"); // NOI18N
-
-        Xbeegood.setText(resourceMap.getString("Xbeegood.text")); // NOI18N
-        Xbeegood.setName("Xbeegood"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout jPanel14Layout = new org.jdesktop.layout.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel14Layout.createSequentialGroup()
-                .add(jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel14Layout.createSequentialGroup()
-                        .add(10, 10, 10)
-                        .add(GoodPackets)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(Xbeegood)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jLabel18)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(XbeeTotal))
-                    .add(jPanel14Layout.createSequentialGroup()
-                        .add(148, 148, 148)
-                        .add(jLabel17)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(XbeePackets)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel14Layout.createSequentialGroup()
-                .add(jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(GoodPackets)
-                    .add(Xbeegood)
-                    .add(jLabel18)
-                    .add(XbeeTotal))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel14Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel17)
-                    .add(XbeePackets))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab(resourceMap.getString("jPanel14.TabConstraints.tabTitle"), jPanel14); // NOI18N
-
-        jPanel15.setName("jPanel15"); // NOI18N
-
-        jLabel21.setText(resourceMap.getString("jLabel21.text")); // NOI18N
-        jLabel21.setName("jLabel21"); // NOI18N
-
-        BreathPacket.setText(resourceMap.getString("BreathPacket.text")); // NOI18N
-        BreathPacket.setName("BreathPacket"); // NOI18N
-
-        jLabel23.setText(resourceMap.getString("jLabel23.text")); // NOI18N
-        jLabel23.setName("jLabel23"); // NOI18N
-
-        BreathTotal.setText(resourceMap.getString("BreathTotal.text")); // NOI18N
-        BreathTotal.setName("BreathTotal"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout jPanel15Layout = new org.jdesktop.layout.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jLabel21)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(BreathPacket)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jLabel23)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(BreathTotal)
-                .add(30, 30, 30))
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel15Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel21)
-                    .add(BreathPacket)
-                    .add(jLabel23)
-                    .add(BreathTotal))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab(resourceMap.getString("jPanel15.TabConstraints.tabTitle"), jPanel15); // NOI18N
-
-        SignalStrength.setName("SignalStrength"); // NOI18N
-
-        jLabel19.setText(resourceMap.getString("jLabel19.text")); // NOI18N
-        jLabel19.setName("jLabel19"); // NOI18N
-
-        jLabel25.setText(resourceMap.getString("jLabel25.text")); // NOI18N
-        jLabel25.setName("jLabel25"); // NOI18N
-
-        label10.setIcon(resourceMap.getIcon("label10.icon")); // NOI18N
-        label10.setText(resourceMap.getString("label10.text")); // NOI18N
-        label10.setName("label10"); // NOI18N
-
-        label20.setIcon(resourceMap.getIcon("label20.icon")); // NOI18N
-        label20.setText(resourceMap.getString("label20.text")); // NOI18N
-        label20.setName("label20"); // NOI18N
-
-        label30.setIcon(resourceMap.getIcon("label30.icon")); // NOI18N
-        label30.setText(resourceMap.getString("label30.text")); // NOI18N
-        label30.setName("label30"); // NOI18N
-
-        label40.setIcon(resourceMap.getIcon("label40.icon")); // NOI18N
-        label40.setText(resourceMap.getString("label40.text")); // NOI18N
-        label40.setName("label40"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout SignalStrengthLayout = new org.jdesktop.layout.GroupLayout(SignalStrength);
-        SignalStrength.setLayout(SignalStrengthLayout);
-        SignalStrengthLayout.setHorizontalGroup(
-            SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(SignalStrengthLayout.createSequentialGroup()
-                .add(SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(SignalStrengthLayout.createSequentialGroup()
-                        .add(468, 468, 468)
-                        .add(jLabel25))
-                    .add(SignalStrengthLayout.createSequentialGroup()
-                        .add(122, 122, 122)
-                        .add(jLabel19)
-                        .add(29, 29, 29)
-                        .add(label10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(label20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(label30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(label40, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        SignalStrengthLayout.linkSize(new java.awt.Component[] {label10, label20, label30, label40}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
-
-        SignalStrengthLayout.setVerticalGroup(
-            SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(SignalStrengthLayout.createSequentialGroup()
-                .add(8, 8, 8)
-                .add(SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel19, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, SignalStrengthLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(label40)
-                        .add(org.jdesktop.layout.GroupLayout.TRAILING, label30)
-                        .add(org.jdesktop.layout.GroupLayout.TRAILING, label20)
-                        .add(org.jdesktop.layout.GroupLayout.TRAILING, label10)))
-                .add(59, 59, 59)
-                .add(jLabel25)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab(resourceMap.getString("SignalStrength.TabConstraints.tabTitle"), SignalStrength); // NOI18N
-
-        jPanel16.setName("jPanel16"); // NOI18N
-
-        jLabel22.setText(resourceMap.getString("jLabel22.text")); // NOI18N
-        jLabel22.setName("jLabel22"); // NOI18N
-
-        Batt.setText(resourceMap.getString("Batt.text")); // NOI18N
-        Batt.setName("Batt"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout jPanel16Layout = new org.jdesktop.layout.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel16Layout.createSequentialGroup()
-                .add(130, 130, 130)
-                .add(jLabel22)
-                .add(32, 32, 32)
-                .add(Batt)
-                .addContainerGap(156, Short.MAX_VALUE))
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel16Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel22)
-                    .add(Batt))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab(resourceMap.getString("jPanel16.TabConstraints.tabTitle"), jPanel16); // NOI18N
-
-        org.jdesktop.layout.GroupLayout SignalAnalysisLayout = new org.jdesktop.layout.GroupLayout(SignalAnalysis.getContentPane());
-        SignalAnalysis.getContentPane().setLayout(SignalAnalysisLayout);
-        SignalAnalysisLayout.setHorizontalGroup(
-            SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(SignalAnalysisLayout.createSequentialGroup()
-                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 483, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        SignalAnalysisLayout.setVerticalGroup(
-            SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(SignalAnalysisLayout.createSequentialGroup()
-                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        container.getContentPane().add(SignalAnalysis, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 510, 150));
-
-        jMenuBar1.setName("jMenuBar1"); // NOI18N
-
-        File.setText(resourceMap.getString("File.text")); // NOI18N
-        File.setName("File"); // NOI18N
+        fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
+        fileMenu.setName("fileMenu"); // NOI18N
 
         Connect.setText(resourceMap.getString("Connect.text")); // NOI18N
         Connect.setName("Connect"); // NOI18N
@@ -1629,7 +1615,7 @@ public class ECGJAVa2View extends FrameView {
                 ConnectActionPerformed(evt);
             }
         });
-        File.add(Connect);
+        fileMenu.add(Connect);
 
         ConnectToDB.setText(resourceMap.getString("ConnectToDB.text")); // NOI18N
         ConnectToDB.setName("ConnectToDB"); // NOI18N
@@ -1638,18 +1624,19 @@ public class ECGJAVa2View extends FrameView {
                 ConnectToDBActionPerformed(evt);
             }
         });
-        File.add(ConnectToDB);
+        fileMenu.add(ConnectToDB);
 
-        EXIT.setText(resourceMap.getString("EXIT.text")); // NOI18N
-        EXIT.setName("EXIT"); // NOI18N
-        EXIT.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(ECGJAVa2View.class, this);
+        exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
+        exitMenuItem.setName("exitMenuItem"); // NOI18N
+        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXITActionPerformed(evt);
+                exitMenuItemActionPerformed(evt);
             }
         });
-        File.add(EXIT);
+        fileMenu.add(exitMenuItem);
 
-        jMenuBar1.add(File);
+        menuBar.add(fileMenu);
 
         jMenu9.setText(resourceMap.getString("jMenu9.text")); // NOI18N
         jMenu9.setName("jMenu9"); // NOI18N
@@ -1717,7 +1704,7 @@ public class ECGJAVa2View extends FrameView {
         });
         jMenu9.add(ShowALL);
 
-        jMenuBar1.add(jMenu9);
+        menuBar.add(jMenu9);
 
         jMenu2.setText(resourceMap.getString("jMenu2.text")); // NOI18N
         jMenu2.setName("jMenu2"); // NOI18N
@@ -1740,7 +1727,7 @@ public class ECGJAVa2View extends FrameView {
         });
         jMenu2.add(Dialog_box);
 
-        jMenuBar1.add(jMenu2);
+        menuBar.add(jMenu2);
 
         jMenu6.setText(resourceMap.getString("jMenu6.text")); // NOI18N
 
@@ -1761,28 +1748,7 @@ public class ECGJAVa2View extends FrameView {
         });
         jMenu6.add(jMenuItem10);
 
-        jMenuBar1.add(jMenu6);
-
-        container.setJMenuBar(jMenuBar1);
-
-        mainPanel.add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1440, 790));
-
-        menuBar.setName("menuBar"); // NOI18N
-
-        fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
-        fileMenu.setName("fileMenu"); // NOI18N
-
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(ECGJAVa2View.class, this);
-        exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
-        exitMenuItem.setName("exitMenuItem"); // NOI18N
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(exitMenuItem);
-
-        menuBar.add(fileMenu);
+        menuBar.add(jMenu6);
 
         helpMenu.setText(resourceMap.getString("helpMenu.text")); // NOI18N
         helpMenu.setName("helpMenu"); // NOI18N
@@ -1825,6 +1791,7 @@ public class ECGJAVa2View extends FrameView {
     private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectActionPerformed
         try {
             CommPortOpen.closeConnection();
+            Serial.setText("<Default>");
         } catch (IOException ex) {
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2064,11 +2031,6 @@ public class ECGJAVa2View extends FrameView {
 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
-
-        Disconnect_Close();
-    }//GEN-LAST:event_EXITActionPerformed
-
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         FileChooser.main(null);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -2295,11 +2257,9 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JButton ECGSQLChart;
     private javax.swing.JButton ECGSerialChart;
     public static javax.swing.JLabel ECGValue;
-    private javax.swing.JMenuItem EXIT;
     private javax.swing.JMenuItem EXITGEN;
     private javax.swing.JMenuItem EXITINBOUND;
     private javax.swing.JMenuItem EXITTEMP;
-    private javax.swing.JMenu File;
     private javax.swing.JButton GPS;
     private javax.swing.JInternalFrame GenDAta;
     private javax.swing.JLabel GoodPackets;
@@ -2349,7 +2309,6 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     public static javax.swing.JLabel XbeePackets;
     public static javax.swing.JLabel XbeeTotal;
     public static javax.swing.JLabel Xbeegood;
-    public static javax.swing.JInternalFrame container;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2387,7 +2346,6 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu9;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuBar jMenuBar4;
