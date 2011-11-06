@@ -21,12 +21,10 @@ public class SplitParse {
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[!Lig:TemECGPOBAIRWS]";
-    static public int i = 0, count = 0, j = 0;
+    static public int ArrayIndex1 = 0, ArrayIndex2 = 0;
     static public double GlobalTime;
     static public String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
     static public double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
-    static public double lightTotal = 0.00, ECGTotal = 0.00, potTotal = 0.00, BatteryTotal = 0.00, IRTotal = 0.00;
-    static public double lightavrg = 0.00, ECGavrg = 0.00, potavrg = 0.00, Batteryavrg = 0.00, IRavrg = 0.00;
     static public double [][] SPO2Array = new double [40][2];
     static public boolean full = false;
     static public getBPM BPM = new getBPM();
@@ -36,24 +34,21 @@ public class SplitParse {
 
 
     static public void splitVal(String Val) throws IOException{
-        if (j == 0){
+        if (ArrayIndex2 == 0){
            InitialTime = System.currentTimeMillis();
         }
-        count++;
         Pattern p = Pattern.compile(REGEX1);
         String[] items = p.split(Val);
         for(String s : items) {
-            if (i == 5){
+            if (ArrayIndex1 == 5){
                 Light = items[5];
                 if (Light != null && !Light.isEmpty()){
                     Lightnum = Double.parseDouble(Light);
-                    lightTotal += Lightnum;
-                    lightavrg = lightTotal / count*1.0;
                     ECGJAVa2View.LightValue.setText(Light);
                 }
                 ECGJAVa2View.LightValue.repaint();
             }
-            else if (i == 9){
+            else if (ArrayIndex1 == 9){
                 Temp = items[9];
                 if (Temp != null && !Temp.isEmpty()){
                     Tempnum = Double.parseDouble(Temp);
@@ -61,27 +56,25 @@ public class SplitParse {
                 }
                 ECGJAVa2View.TympTempValue.repaint();
             }
-            else if (i == 13){
+            else if (ArrayIndex1 == 13){
                 ECG = items[13];
                 if (ECG != null && !ECG.isEmpty()){
                     ECGnum = Double.parseDouble(ECG);
-                    ECGTotal += ECGnum;
-                    ECGavrg = ECGTotal / count*1.0;
                     ECGJAVa2View.ECGValue.setText(ECG);
                 }
                 ECGJAVa2View.ECGValue.repaint();
             }
-            else if (i == 17){
+            else if (ArrayIndex1 == 17){
                 Pot = items[17];
                 if (Pot != null && !Pot.isEmpty()){
                     Potnum = Double.parseDouble(Pot);
-                    if (j < SPO2Array.length){
-                        SPO2Array[j][0] = InitialTime;
-                        SPO2Array[j][1] = Potnum;
-                        j++;
+                    if (ArrayIndex2 < SPO2Array.length){
+                        SPO2Array[ArrayIndex2][0] = InitialTime;
+                        SPO2Array[ArrayIndex2][1] = Potnum;
+                        ArrayIndex2++;
                     }
-                    if (j == SPO2Array.length){
-                        j = 0;
+                    if (ArrayIndex2 == SPO2Array.length){
+                        ArrayIndex2 = 0;
                         full = true;
                         if (full){
                             BPM.run();
@@ -91,16 +84,15 @@ public class SplitParse {
                 }
                 ECGJAVa2View.REDLED.repaint();
             }
-            else if (i == 21){
+            else if (ArrayIndex1 == 21){
                 Bat = items[21];
                 if (Bat != null && !Bat.isEmpty()){
                     Battery = Double.parseDouble(Bat)/100.00;
-                    Batteryavrg += Battery / count*1.0;
                     ECGJAVa2View.Batt.setText(Battery + "V");
                 }
                 ECGJAVa2View.Batt.repaint();
             }
-            else if (i == 25){
+            else if (ArrayIndex1 == 25){
                 IR = items[25];
                 if (IR != null && !IR.isEmpty()){
                     IRnum = Double.parseDouble(IR);
@@ -108,14 +100,14 @@ public class SplitParse {
                 }
                 ECGJAVa2View.IRLED.repaint();
             }
-            else if (i == 29){
+            else if (ArrayIndex1 == 29){
                 Low = items[29];
                 if (Low != null && !Low.isEmpty()){
                     LowNum = Double.parseDouble(Low);
                     System.out.println(LowNum);
                 }
             }
-            else if (i == 33){
+            else if (ArrayIndex1 == 33){
                 RESP = items[33];
                 if (RESP != null && !RESP.isEmpty()){
                     RESPnum = Double.parseDouble(RESP);
@@ -123,7 +115,7 @@ public class SplitParse {
                 }
                 ECGJAVa2View.RESP.repaint();
             }
-            i++;
+            ArrayIndex1++;
             if (getSPO2.getGuard()){
                 getSPO2.getSPO2();
             }
@@ -135,7 +127,7 @@ public class SplitParse {
             LogFiles.WriteLogFiles.Writetofile(x);
         }
 
-        i = 0;
+        ArrayIndex1 = 0;
     }
 
        /*________________________________________________________________________________*/

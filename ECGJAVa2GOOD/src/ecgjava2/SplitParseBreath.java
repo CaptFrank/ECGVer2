@@ -23,7 +23,7 @@ public class SplitParseBreath {
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[%|r:,]";
-    static public int i = 0;
+    static public int MatcherArrayIndex1 = 0;
     static public String value = "", percentage = "";
     static public double valuenum = 0.00, percentagenum = 0.00;
 
@@ -35,22 +35,22 @@ public class SplitParseBreath {
         for(String s : items) {
             System.out.println(s);
             
-            System.out.println(s + " " + i);
-            if (i == 2){
+            System.out.println(s + " " + MatcherArrayIndex1);
+            if (MatcherArrayIndex1 == 2){
                 valuenum = Float.parseFloat(s);
                 ECGJAVa2View.BreathVal.setText(s);
             }
-            else if (i == 6){
-                percentagenum = ((float) (Float.parseFloat(s)));
+            else if (MatcherArrayIndex1 == 6){
+                percentagenum = ((Float.parseFloat(s)));
                 ECGJAVa2View.BreathPer.setText(s);
             }
             
-            i++;
+            MatcherArrayIndex1++;
         }
         if (valuenum != 0 && percentagenum != 0){
             String x = valuenum + "," + percentagenum + "\n";
             LogFiles.WriteLogFilesB.Writetofile(x);
         }
-        i = 0;
+        MatcherArrayIndex1 = 0;
     }
 }

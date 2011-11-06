@@ -83,13 +83,27 @@ public class SQL extends Thread{
     
     static void insertItems(String instance, String Command){
 
+        // To Do
+        
     }
 
     static void getItems(String instance, String Command){
 
+        // To Do
+        
     }
-
     
+    static void PostResults(){
+        
+        // To Do
+        
+    }
+    
+    static void requestQuery(){
+     
+        // To Do
+        
+    }
   }
 
 
