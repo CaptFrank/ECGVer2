@@ -33,16 +33,16 @@ import javax.swing.JOptionPane;
  * The application's main frame.
  */
 public class ECGJAVa2View extends FrameView {
-    static boolean SignalAnalysisGuard = false;
-    static long InitialTime;
-    static boolean SPO2guard = false;
+    protected static boolean SignalAnalysisGuard = false;
+    protected static long InitialTime;
+    protected static boolean SPO2guard = false;
     private final Timer messageTimer;
     private final Timer busyIconTimer;
     private final Icon idleIcon;
     private final Icon[] busyIcons = new Icon[15];
     private int busyIconIndex = 0;
-    public JFrame Dialog;
-    static int selection;
+    protected JFrame Dialog;
+    protected static int selection;
     private JDialog aboutBox;
 
     public ECGJAVa2View(SingleFrameApplication app) {

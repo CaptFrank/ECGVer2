@@ -83,7 +83,7 @@ public class DataAcquisitionECG extends ADataCollector{
   public TracePoint2D collectData() {
 
       
-    this.m_y = ecgjava2.SplitParse.ECGnum;
+    this.m_y = ecgjava2.SplitParse.getECGNum();
     
     return new TracePoint2D(((double) System.currentTimeMillis() - this.m_starttime), this.m_y);
   }

@@ -45,35 +45,35 @@ import javax.swing.JPanel;
 class CommPortOpen extends Thread{
 
   /** How long to wait for the open to finish up. */
-  public static final int TIMEOUTSECONDS = 30;
+  static final int TIMEOUTSECONDS = 30;
 
   /** The baud rate to use. */
-  public static final int BAUD = 115200;
+  static final int BAUD = 115200;
 
   /** The parent JFrame, for the chooser. */
   protected JFrame parent;
 
-  public static boolean ConnectGuard = true;
+  protected static boolean ConnectGuard = true;
 
   /** The input stream */
   static protected BufferedReader is;
-  static public BufferedInputStream in;
+  static protected BufferedInputStream in;
 
-  public static boolean guard = true;
+  protected static boolean guard = true;
 
   /** The output stream */
   static protected PrintStream os;
 
   /** The chosen Port Identifier */
-  static CommPortIdentifier thePortID = null;
+  protected static CommPortIdentifier thePortID = null;
 
-  static boolean connected = false;
-  static public SerialPort myPort;
+  protected static boolean connected = false;
+  protected static SerialPort myPort;
 
   /** The chosen Port itself */
-  static public CommPort thePort;
-  public static int PacketCountXbee = 0;
-  public static int PacketCountXbeegood = 0;
+  protected static CommPort thePort;
+  protected static int PacketCountXbee = 0;
+  protected static int PacketCountXbeegood = 0;
   final static java.text.SimpleDateFormat timeFormat = new java.text.SimpleDateFormat("mm:ss");
 
     @Override

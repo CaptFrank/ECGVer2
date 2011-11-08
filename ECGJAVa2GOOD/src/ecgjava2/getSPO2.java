@@ -13,8 +13,8 @@ public class getSPO2 {
     
     getSPO2(){}
     
-    static double averageSPO2 = 100.00;
-    static boolean guard = false;
+    protected static double averageSPO2 = 100.00;
+    protected static boolean guard = false;
 
     public static void getSPO2(){
         double error = SplitParse.getLowNum();

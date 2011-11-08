@@ -21,14 +21,14 @@ public class SplitParse {
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[!Lig:TemECGPOBAIRWS]";
-    static public int ArrayIndex1 = 0, ArrayIndex2 = 0;
-    static public double GlobalTime;
-    static public String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
-    static public double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
-    static public double [][] SPO2Array = new double [40][2];
-    static public boolean full = false;
-    static public getBPM BPM = new getBPM();
-    public static long InitialTime = 0;
+    protected static int ArrayIndex1 = 0, ArrayIndex2 = 0;
+    protected static double GlobalTime;
+    protected static String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
+    protected static double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
+    protected static double [][] SPO2Array = new double [40][2];
+    protected static boolean full = false;
+    protected static getBPM BPM = new getBPM();
+    protected static long InitialTime = 0;
 
    /*________________________________________________________________________________*/
 
@@ -153,10 +153,29 @@ public class SplitParse {
     public static double getLowNum(){
         return LowNum;
     }
-    static double getIRValue(){
+    public static double getIRValue(){
         return IRnum;
     }
-    static boolean getFull(){
+    public static boolean getFull(){
         return full;
     }
+    public static double getTempNum(){
+        return Tempnum;
+    }
+    public static double getLightNum(){
+        return Lightnum;
+    }
+    public static double getECGNum(){
+        return ECGnum;
+    }
+    public static double getBattery(){
+        return Battery;
+    }
+    public static double getIRNum(){
+        return IRnum;
+    }
+    public static double getRESPNum(){
+        return RESPnum;
+    }
+    
 }

@@ -83,7 +83,7 @@ public class DataAcquisitionLight extends ADataCollector{
   public TracePoint2D collectData() {
 
       
-    this.m_y = ecgjava2.SplitParse.Lightnum;
+    this.m_y = ecgjava2.SplitParse.getLightNum();
     
     return new TracePoint2D(((double) System.currentTimeMillis() - this.m_starttime), this.m_y);
   }

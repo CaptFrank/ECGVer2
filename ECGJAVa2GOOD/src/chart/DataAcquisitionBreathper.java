@@ -83,7 +83,7 @@ public class DataAcquisitionBreathper extends ADataCollector{
   public TracePoint2D collectData() {
 
       
-    this.m_y = ecgjava2.SplitParseBreath.percentagenum;
+    this.m_y = ecgjava2.SplitParseBreath.getPerNum();
     
     return new TracePoint2D(((double) System.currentTimeMillis() - this.m_starttime), this.m_y);
   }

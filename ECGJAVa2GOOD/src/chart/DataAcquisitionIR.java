@@ -83,7 +83,7 @@ public class DataAcquisitionIR extends ADataCollector{
   public TracePoint2D collectData() {
 
       
-    this.m_y = ecgjava2.SplitParse.IRnum;
+    this.m_y = ecgjava2.SplitParse.getIRNum();
     
     return new TracePoint2D(((double) System.currentTimeMillis() - this.m_starttime), this.m_y);
   }

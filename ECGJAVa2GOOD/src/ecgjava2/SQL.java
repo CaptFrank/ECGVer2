@@ -23,10 +23,10 @@ public class SQL extends Thread{
     
     SQL(){}
 
-  static String Message = "";
-  static String copy = "";
-  static boolean connected = false;
-  static Connection Connection = null;
+  protected static String Message = "";
+  protected static String copy = "";
+  protected static boolean connected = false;
+  protected static Connection Connection = null;
 
     public static void main(String args[]){
         SQL Server = new SQL();

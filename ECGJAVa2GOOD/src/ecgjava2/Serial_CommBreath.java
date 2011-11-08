@@ -42,10 +42,10 @@ import javax.swing.JPanel;
 class CommPortOpenBreath extends Thread{
 
   /** How long to wait for the open to finish up. */
-  public static final int TIMEOUTSECONDS = 30;
+  static final int TIMEOUTSECONDS = 30;
 
   /** The baud rate to use. */
-  public static final int BAUD = 9600;
+  static final int BAUD = 9600;
 
   /** The parent JFrame, for the chooser. */
   protected JFrame parent;
@@ -57,18 +57,17 @@ class CommPortOpenBreath extends Thread{
   static protected PrintStream os;
 
   /** The chosen Port Identifier */
-  static CommPortIdentifier thePortID;
+  protected static CommPortIdentifier thePortID;
 
   static boolean connected = false;
 
   /** The chosen Port itself */
-  static CommPort thePort;
+  protected static CommPort thePort;
 
-  public static int PacketGood = 0;
+  protected static int PacketGood = 0;
+  protected static int PacketTotal = 0;
 
-  public static int PacketTotal = 0;
-
-  public static boolean guard = true;
+  protected static boolean guard = true;
 
     @Override
   public void run(){

@@ -36,6 +36,7 @@ int gndPin = 8;
 
 void setup() {
   Serial.begin(115200);
+  Serial2.begin(9600);
   // use Arduino pins
 
   pinMode(vccPin, OUTPUT); digitalWrite(vccPin, HIGH);
@@ -85,6 +86,7 @@ void loop() {
   Serial.print("RES:");
   Serial.print((double)analogRead(Resppin));
   Serial.println("\n");
+  
 
    delay(70);
    z+=10;

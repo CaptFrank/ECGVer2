@@ -23,9 +23,9 @@ public class SplitParseBreath {
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[%|r:,]";
-    static public int MatcherArrayIndex1 = 0;
-    static public String value = "", percentage = "";
-    static public double valuenum = 0.00, percentagenum = 0.00;
+    protected static int MatcherArrayIndex1 = 0;
+    protected static String value = "", percentage = "";
+    protected static double valuenum = 0.00, percentagenum = 0.00;
 
     static public void splitVal(String Val) throws IOException{
         //Dialog_box.update(Val);
@@ -52,5 +52,11 @@ public class SplitParseBreath {
             LogFiles.WriteLogFilesB.Writetofile(x);
         }
         MatcherArrayIndex1 = 0;
+    }
+    public static double getPerNum(){
+        return percentagenum;
+    }
+    public static double getValueNum(){
+        return valuenum;
     }
 }

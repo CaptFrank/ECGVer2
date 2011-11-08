@@ -83,7 +83,7 @@ public class DataAcquisitionTemp extends ADataCollector{
   public TracePoint2D collectData() {
 
       
-    this.m_y = ecgjava2.SplitParse.Tempnum;
+    this.m_y = ecgjava2.SplitParse.getTempNum();
     
     return new TracePoint2D(((double) System.currentTimeMillis() - this.m_starttime), this.m_y);
   }

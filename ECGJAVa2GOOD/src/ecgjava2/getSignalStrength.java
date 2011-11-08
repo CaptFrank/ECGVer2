@@ -14,9 +14,9 @@ import java.io.IOException;
 
 public class getSignalStrength {
 
-    public static String Broadcast_Power;
-    public static String SignalStrength;
-    public static String DestinationAddressHigh, DestinationAddressLow, PANID, VersionID, ChannelID, NodeID;
+    protected static String Broadcast_Power;
+    protected static String SignalStrength;
+    protected static String DestinationAddressHigh, DestinationAddressLow, PANID, VersionID, ChannelID, NodeID;
 
     void getSignalStrenght(){}
     
