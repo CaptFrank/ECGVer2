@@ -2,7 +2,6 @@ package ecgjava2;
 
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
-import gnu.io.CommPortOwnershipListener;
 import gnu.io.NoSuchPortException;
 import gnu.io.ParallelPort;
 import gnu.io.PortInUseException;
@@ -33,7 +32,6 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -267,7 +265,18 @@ class CommPortOpen extends Thread{
           ECGJAVa2View.XbeePackets.setText(Double.toString(Math.floor((PacketCountXbeegood*1.0)/(PacketCountXbee*1.0)*100.0)));
           System.out.println(val);
           Dialog_box.update("XBee Inbound : " + val + " -> written to LogFiles");
-          SplitParse.splitVal(val);
+          SplitParse.splitVal(val); 
+          
+          /*
+           * 
+           * Send to the Parse Class and split the message in 2
+           *    - GPS (9600 baud)
+           *    - Monitoring Data (115200 baud)
+           * 
+           *    SplitParse.splitGPS_Val(val);
+           * 
+           */
+          
       }
   }
 }

@@ -21,23 +21,21 @@ public class FileChooser extends Thread{
 
     public static void main(String[] args) {
         final JFrame frame = new JFrame("Open Log Files");
-
-
         final JFileChooser fc = new JFileChooser();
         fc.setMultiSelectionEnabled(true);
-                int retVal = fc.showOpenDialog(frame);
-                if (retVal == JFileChooser.APPROVE_OPTION) {
-                    File selectedfile = fc.getSelectedFile();
-                    StringBuilder sb = new StringBuilder();
-                    System.out.println(fc.getSelectedFile());
+        int retVal = fc.showOpenDialog(frame);
+        if (retVal == JFileChooser.APPROVE_OPTION) {
+            File selectedfile = fc.getSelectedFile();
+            StringBuilder sb = new StringBuilder();
+            System.out.println(fc.getSelectedFile());
 
-                    // Execute a command without arguments
-                    String command = "open " + fc.getSelectedFile();
-                    try {
-                        Process child = Runtime.getRuntime().exec(command);
-                    } catch (IOException ex) {
-                        Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
+            // Execute a command without arguments
+            String command = "open " + fc.getSelectedFile();
+            try {
+                Process child = Runtime.getRuntime().exec(command);
+            } catch (IOException ex) {
+                Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
-}
+}      

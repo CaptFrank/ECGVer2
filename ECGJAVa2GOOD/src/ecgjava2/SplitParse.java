@@ -21,8 +21,19 @@ public class SplitParse {
     /*________________________________________________________________________________*/
 
     private static String REGEX1 = "[!Lig:TemECGPOBAIRWS]";
+   
+    /*  ADD THE REGEX FOR PARSING */
+    
+    
+    private static String REGEX2 = "";
+    
+    
+    
+    
+    
     protected static int ArrayIndex1 = 0, ArrayIndex2 = 0;
     protected static double GlobalTime;
+    protected static String GPSSentence = "", ECGSentence ="";
     protected static String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
     protected static double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
     protected static double [][] SPO2Array = new double [40][2];
@@ -32,7 +43,33 @@ public class SplitParse {
 
    /*________________________________________________________________________________*/
 
-
+    /*
+     * 
+     * This method splits the message acquired by the connection to 2 sentences
+     * one GPS sentence with basic info and one on the vital data monitoring data
+     * 
+     */
+    
+    
+    static public void splitGPS_Val(String Val) throws IOException{
+        
+        Pattern p1 = Pattern.compile(REGEX2);
+        String[] items = p1.split(Val);
+        for (String s : items){
+            // get values
+            
+            // GPSSentence = ...
+            
+            // ECGSentence = ...
+            
+            // Send_GPS(GPSSentence);
+            //Send to the Server Socket Thread using a mehtod based
+            //on interrupts
+            
+            // splitVal(ECGSentence);
+            //Split the values from the ECG vital Signs 
+        }  
+    }
     static public void splitVal(String Val) throws IOException{
         if (ArrayIndex2 == 0){
            InitialTime = System.currentTimeMillis();
