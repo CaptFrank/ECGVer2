@@ -44,6 +44,7 @@ public class ECGJAVa2View extends FrameView {
     protected JFrame Dialog;
     protected static int selection;
     private JDialog aboutBox;
+    protected boolean socketConnected = false;
 
     public ECGJAVa2View(SingleFrameApplication app) {
         super(app);
@@ -247,6 +248,9 @@ public class ECGJAVa2View extends FrameView {
         jLabel31 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         GPS = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        Socket = new javax.swing.JLabel();
+        ConnectSocket = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -537,10 +541,10 @@ public class ECGJAVa2View extends FrameView {
             .add(ECGContainerLayout.createSequentialGroup()
                 .add(112, 112, 112)
                 .add(jLabel16)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
-        mainPanel.add(ECGContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+        mainPanel.add(ECGContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 1400, -1));
 
         Connected.setClosable(true);
         Connected.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1530,21 +1534,48 @@ public class ECGJAVa2View extends FrameView {
             }
         });
 
+        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
+        jLabel9.setName("jLabel9"); // NOI18N
+
+        Socket.setText(resourceMap.getString("Socket.text")); // NOI18N
+        Socket.setName("Socket"); // NOI18N
+
+        ConnectSocket.setText(resourceMap.getString("ConnectSocket.text")); // NOI18N
+        ConnectSocket.setName("ConnectSocket"); // NOI18N
+        ConnectSocket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConnectSocketActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel12Layout.createSequentialGroup()
+            .add(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
                 .addContainerGap())
+            .add(jPanel12Layout.createSequentialGroup()
+                .add(32, 32, 32)
+                .add(jLabel9)
+                .add(32, 32, 32)
+                .add(Socket)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 83, Short.MAX_VALUE)
+                .add(ConnectSocket)
+                .add(59, 59, 59))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel12Layout.createSequentialGroup()
-                .add(50, 50, 50)
+                .add(16, 16, 16)
+                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel9)
+                    .add(Socket)
+                    .add(ConnectSocket))
+                .add(18, 18, 18)
                 .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 204, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -2218,17 +2249,31 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_RESPSerialActionPerformed
 
     private void GPSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSActionPerformed
-        try {
-            Process child = Runtime.getRuntime().exec("java -jar /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar");
-        } catch (IOException ex) {
-            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+        
+        if (socketConnected){
+            try {
+                Process child = Runtime.getRuntime().exec("java -jar /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar");
+            } catch (IOException ex) {
+                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-
+        else{
+            JOptionPane.showMessageDialog(null, "Not Connected to Socket", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_GPSActionPerformed
 
 private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
 
 }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+private void ConnectSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocketActionPerformed
+
+           //GPSComm comm = new GPSComm();
+           //comm.start();
+            
+           //socketConnected = true;
+    
+}//GEN-LAST:event_ConnectSocketActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2257,6 +2302,7 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JMenuItem ConnectBoard;
     private javax.swing.JMenu ConnectBreath;
     public static javax.swing.JLabel ConnectDB;
+    private javax.swing.JButton ConnectSocket;
     private javax.swing.JMenuItem ConnectToDB;
     private javax.swing.JInternalFrame Connected;
     private javax.swing.JMenuItem Dialog_box;
@@ -2307,6 +2353,7 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JMenuItem ShowTemp;
     public static javax.swing.JInternalFrame SignalAnalysis;
     public static javax.swing.JPanel SignalStrength;
+    private javax.swing.JLabel Socket;
     private javax.swing.JButton StartPulse;
     private javax.swing.JButton StartSPO2;
     private javax.swing.JButton StopPulse;
@@ -2350,6 +2397,7 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

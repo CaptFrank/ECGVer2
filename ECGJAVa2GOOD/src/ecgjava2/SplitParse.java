@@ -33,7 +33,7 @@ public class SplitParse {
     
     protected static int ArrayIndex1 = 0, ArrayIndex2 = 0;
     protected static double GlobalTime;
-    protected static String GPSSentence = "", ECGSentence ="";
+    protected static String GPSSentence = "ll", ECGSentence ="";
     protected static String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
     protected static double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
     protected static double [][] SPO2Array = new double [40][2];
@@ -62,7 +62,7 @@ public class SplitParse {
             
             // ECGSentence = ...
             
-            // Send_GPS(GPSSentence);
+            //for(;;){GPSComm.sendGPSSentence(GPSSentence);}
             //Send to the Server Socket Thread using a mehtod based
             //on interrupts
             
@@ -213,6 +213,9 @@ public class SplitParse {
     }
     public static double getRESPNum(){
         return RESPnum;
+    }
+    public static String getGPS_Sentence(){
+        return GPSSentence;
     }
     
 }

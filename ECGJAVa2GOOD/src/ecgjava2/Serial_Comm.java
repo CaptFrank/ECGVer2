@@ -245,6 +245,7 @@ class CommPortOpen extends Thread{
       return thePortID.getName();
   }
   static public void readvalues() throws IOException{
+      
       //ECGJAVa2View.container.setTitle("Container - " + timeFormat.format(System.currentTimeMillis() - (ECGJAVa2View.InitialTime)));
       String val = is.readLine();
       PacketCountXbee++;
