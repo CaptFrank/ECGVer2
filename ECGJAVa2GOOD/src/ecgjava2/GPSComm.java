@@ -1,14 +1,14 @@
 package ecgjava2;
 
-import java.lang.*;
-import java.util.*;
 import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
 import java.net.*;
+
+/**
+ * The GPSComm class does 
+ * @author Francis Papineau
+ */
 
 public class GPSComm extends Thread {
 
@@ -16,9 +16,10 @@ public class GPSComm extends Thread {
     private static ServerSocket hostServer = null;
     private static Socket socket = null;
     private static PrintWriter out = null;
-    static String tesstring = "null\n";
+    static String tesString = "null\n";
     
     static public void main(String[] args) throws IOException{
+        // Initialize stuff
         initialize_Socket();
         GPSComm comm = new GPSComm();
         comm.start();
@@ -29,7 +30,10 @@ public class GPSComm extends Thread {
         socket = hostServer.accept();
         out = new PrintWriter(socket.getOutputStream(), true);
     }
-        
+    
+    /**
+     * Initializes and prints tessstring
+     */
     public void start() {
         try {
             initialize_Socket();
@@ -37,7 +41,11 @@ public class GPSComm extends Thread {
             Logger.getLogger(GPSComm.class.getName()).log(Level.SEVERE, null, ex);
         }
         while(socket.isConnected()){
-            out.print(tesstring);
+            out.print(tesString);
         }
+    }
+    public void disconnect() throws IOException{
+
+        socket.close();
     }
 }

@@ -251,6 +251,7 @@ public class ECGJAVa2View extends FrameView {
         jLabel9 = new javax.swing.JLabel();
         Socket = new javax.swing.JLabel();
         ConnectSocket = new javax.swing.JButton();
+        ConnectSocket1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -1548,34 +1549,53 @@ public class ECGJAVa2View extends FrameView {
             }
         });
 
+        ConnectSocket1.setText(resourceMap.getString("ConnectSocket1.text")); // NOI18N
+        ConnectSocket1.setName("ConnectSocket1"); // NOI18N
+        ConnectSocket1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConnectSocket1ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel12Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE))
+                    .add(jPanel12Layout.createSequentialGroup()
+                        .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jPanel12Layout.createSequentialGroup()
+                                .add(32, 32, 32)
+                                .add(jLabel9)
+                                .add(18, 18, 18)
+                                .add(Socket)
+                                .add(65, 65, 65))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel12Layout.createSequentialGroup()
+                                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(ConnectSocket)
+                                .add(45, 45, 45)))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(ConnectSocket1)))
                 .addContainerGap())
-            .add(jPanel12Layout.createSequentialGroup()
-                .add(32, 32, 32)
-                .add(jLabel9)
-                .add(32, 32, 32)
-                .add(Socket)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 83, Short.MAX_VALUE)
-                .add(ConnectSocket)
-                .add(59, 59, 59))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel12Layout.createSequentialGroup()
-                .add(16, 16, 16)
+                .addContainerGap()
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel9)
-                    .add(Socket)
-                    .add(ConnectSocket))
-                .add(18, 18, 18)
-                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 204, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(Socket))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(ConnectSocket)
+                    .add(ConnectSocket1))
+                .add(8, 8, 8)
+                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 176, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -2275,6 +2295,12 @@ private void ConnectSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     
 }//GEN-LAST:event_ConnectSocketActionPerformed
 
+private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocket1ActionPerformed
+
+    
+    
+}//GEN-LAST:event_ConnectSocket1ActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.getConnected()){
@@ -2303,6 +2329,7 @@ private void ConnectSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     private javax.swing.JMenu ConnectBreath;
     public static javax.swing.JLabel ConnectDB;
     private javax.swing.JButton ConnectSocket;
+    private javax.swing.JButton ConnectSocket1;
     private javax.swing.JMenuItem ConnectToDB;
     private javax.swing.JInternalFrame Connected;
     private javax.swing.JMenuItem Dialog_box;
