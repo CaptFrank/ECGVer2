@@ -44,7 +44,7 @@ public class ECGJAVa2View extends FrameView {
     protected JFrame Dialog;
     protected static int selection;
     private JDialog aboutBox;
-    protected boolean socketConnected = false;
+    protected static boolean socketConnected = false;
 
     public ECGJAVa2View(SingleFrameApplication app) {
         super(app);
@@ -2288,17 +2288,22 @@ private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
 private void ConnectSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocketActionPerformed
 
-           //GPSComm comm = new GPSComm();
-           //comm.start();
-            
-           //socketConnected = true;
+        Thread Server = new GPSComm();
+        Server.start();
+
+        socketConnected = true;
     
 }//GEN-LAST:event_ConnectSocketActionPerformed
 
 private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocket1ActionPerformed
-
-    
-    
+  
+    if (socketConnected){
+            try {
+                GPSComm.closeSocket();
+            } catch (IOException ex) {
+                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
 }//GEN-LAST:event_ConnectSocket1ActionPerformed
 
     private void Disconnect_Close(){
@@ -2313,6 +2318,9 @@ private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GE
         return Dialogconnected;
     }
 
+    static boolean getSocketConnected(){
+        return socketConnected;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BaseLabel;
     public static javax.swing.JLabel BaseTempValue;

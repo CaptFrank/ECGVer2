@@ -25,7 +25,7 @@ public class SplitParse {
     /*  ADD THE REGEX FOR PARSING */
     
     
-    private static String REGEX2 = "";
+    private static String REGEX2 = "|";
     
     
     
@@ -55,20 +55,10 @@ public class SplitParse {
         
         Pattern p1 = Pattern.compile(REGEX2);
         String[] items = p1.split(Val);
-        for (String s : items){
-            // get values
-            
-            // GPSSentence = ...
-            
-            // ECGSentence = ...
-            
-            //for(;;){GPSComm.sendGPSSentence(GPSSentence);}
-            //Send to the Server Socket Thread using a mehtod based
-            //on interrupts
-            
-            // splitVal(ECGSentence);
-            //Split the values from the ECG vital Signs 
-        }  
+        if(ECGJAVa2View.getSocketConnected()){
+            GPSComm.setMessage(items[2]);
+        }
+        splitVal(items[1]);
     }
     static public void splitVal(String Val) throws IOException{
         if (ArrayIndex2 == 0){

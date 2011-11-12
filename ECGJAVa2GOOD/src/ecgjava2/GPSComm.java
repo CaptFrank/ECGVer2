@@ -1,51 +1,82 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ecgjava2;
 
-import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.net.*;
-
 /**
- * The GPSComm class does 
- * @author Francis Papineau
+ *
+ * @author SimMan3G
  */
+import java.io.*;
+import java.net.*;
+import java.sql.SQLException;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
-public class GPSComm extends Thread {
-
-    private static int port = 2004;
-    private static ServerSocket hostServer = null;
-    private static Socket socket = null;
-    private static PrintWriter out = null;
-    static String tesString = "null\n";
-    
-    static public void main(String[] args) throws IOException{
-        // Initialize stuff
-        initialize_Socket();
-        GPSComm comm = new GPSComm();
-        comm.start();
-    }
-
-    private static void initialize_Socket() throws IOException {
-        hostServer = new ServerSocket(port);
-        socket = hostServer.accept();
-        out = new PrintWriter(socket.getOutputStream(), true);
-    }
-    
-    /**
-     * Initializes and prints tessstring
-     */
-    public void start() {
-        try {
-            initialize_Socket();
-        } catch (IOException ex) {
-            Logger.getLogger(GPSComm.class.getName()).log(Level.SEVERE, null, ex);
+class GPSComm extends Thread{
+	public static ServerSocket providerSocket;
+	public static Socket connection = null;
+	static ObjectOutputStream out;
+	static String message = "11";
+	public void run(){
+            try{
+		//1. creating a server socket
+		providerSocket = new ServerSocket();
+			
+		//2. Wait for connection
+		providerSocket.bind(new InetSocketAddress("localhost", 4444));
+		System.out.println("Waiting for connection on localhost:4444");
+			
+		//2.2 connect to the SQL server
+			
+		connection = providerSocket.accept();
+		System.out.println("Connection received from " + connection.getInetAddress().getHostName());
+		JOptionPane.showMessageDialog(null, "Handshake accepted", "Initialize connection", JOptionPane.INFORMATION_MESSAGE);
+			
+		//3. get Input and Output streams
+		out = new ObjectOutputStream(connection.getOutputStream());
+		out.flush();
+		sendMessage("Connection successful");
+			
+		//4. The two parts communicate via the input and output streams
+		do{
+                    sendMessage(message);
+                    if (connection.isClosed()){
+                        break;
+                    }
+		}while(true);
+            }
+            catch(IOException ioException){}
+            finally{
+		//4: Closing connection
+                try{
+                    out.close();
+                    providerSocket.close();
+                }
+                catch(IOException ioException){} 
+            }
+	}
+    public static void sendMessage(String msg){
+        try{
+            out.writeChars(msg + "\n");
+            out.flush();
+            System.out.println("server>" + msg);
         }
-        while(socket.isConnected()){
-            out.print(tesString);
+        catch(IOException ioException){}
+    }
+    
+    public static void closeSocket() throws IOException{
+        Thread.currentThread().destroy();
+    }
+
+    public static void main(String args[]){
+        GPSComm server = new GPSComm();
+        while(true){
+            server.start();
         }
     }
-    public void disconnect() throws IOException{
-
-        socket.close();
+    public static void setMessage(String val){
+        message = val;
     }
 }
