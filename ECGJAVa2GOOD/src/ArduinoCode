@@ -3,8 +3,9 @@
 
 //defines/includes
 
-#include "max6675.h"
+#include <nmea.h>
 
+#include "max6675.h"
 #define potPin 0
 #define LightPin 1
 #define ECGPin 4
@@ -25,20 +26,22 @@ double temp=0;
 int thermoDO = 10;
 int thermoCS = 11;
 int thermoCLK = 12;
+String Sentence = null;
+NMEA gps(ALL);
 
  /*________________________________________________________________________________*/
 
 MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
 int vccPin = 9;
 int gndPin = 8;
-
+  
  /*________________________________________________________________________________*/
-
+  
 void setup() {
   Serial.begin(115200);
-  Serial2.begin(9600);
-  // use Arduino pins
-
+  Serial1.begin(4800);
+  // use Arduino pins 
+  
   pinMode(vccPin, OUTPUT); digitalWrite(vccPin, HIGH);
   pinMode(gndPin, OUTPUT); digitalWrite(gndPin, LOW);
   pinMode(PWR_PIN, OUTPUT); digitalWrite(PWR_PIN, HIGH);
@@ -47,7 +50,7 @@ void setup() {
   pinMode(irLED, OUTPUT); digitalWrite(irLED, LOW);
   pinMode(redLED, OUTPUT); digitalWrite(redLED, LOW);
   pinMode(LightPin, INPUT);
-
+  
   // wait for MAX chip to stabilize
   delay(100);
 }
@@ -85,20 +88,32 @@ void loop() {
   Serial.print((double)pulseIn(Red, HIGH));
   Serial.print("RES:");
   Serial.print((double)analogRead(Resppin));
+ 
+  getGPSSentence();
   Serial.println("\n");
-  
-
-   delay(70);
-   z+=10;
+  delay(70);
+  z+=10;
 }
 
  /*________________________________________________________________________________*/
 
 
 void select(){
-
+  
   // Select the inputs...
+}
 
-
-
+String getGPSSentence(){
+  if(Serial1.available() > 0){
+    if (gps.decode(Serial1.read())){
+      if(Sentence != gps.decode()){
+         Sentence = gps.decode();
+         Serial.print("|");      
+         Serial.print(Sentence);
+       } 
+       else{
+         Serial.print("|");      
+         Serial.print(Sentence);
+       }
+  }
 }

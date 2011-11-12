@@ -18,7 +18,7 @@ class GPSComm extends Thread{
 	public static ServerSocket providerSocket;
 	public static Socket connection = null;
 	static ObjectOutputStream out;
-	static String message = "11";
+	static String message = "";
 	public void run(){
             try{
 		//1. creating a server socket
@@ -42,6 +42,7 @@ class GPSComm extends Thread{
 		//4. The two parts communicate via the input and output streams
 		do{
                     sendMessage(message);
+                    Dialog_box.update("GPS OUT -> " + message);
                     if (connection.isClosed()){
                         break;
                     }

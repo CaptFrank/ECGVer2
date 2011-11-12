@@ -27,13 +27,9 @@ public class SplitParse {
     
     private static String REGEX2 = "|";
     
-    
-    
-    
-    
     protected static int ArrayIndex1 = 0, ArrayIndex2 = 0;
     protected static double GlobalTime;
-    protected static String GPSSentence = "ll", ECGSentence ="";
+    protected static String GPSSentence = "", ECGSentence ="";
     protected static String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
     protected static double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
     protected static double [][] SPO2Array = new double [40][2];
@@ -56,9 +52,13 @@ public class SplitParse {
         Pattern p1 = Pattern.compile(REGEX2);
         String[] items = p1.split(Val);
         if(ECGJAVa2View.getSocketConnected()){
-            GPSComm.setMessage(items[2]);
+            GPSSentence = items[1];
+            GPSComm.setMessage(GPSSentence);
         }
-        splitVal(items[1]);
+        ECGSentence = items[0];
+        if(parsable(ECGSentence)){
+            splitVal(ECGSentence);
+        }
     }
     static public void splitVal(String Val) throws IOException{
         if (ArrayIndex2 == 0){

@@ -260,13 +260,13 @@ class CommPortOpen extends Thread{
               }
           }
       }
-      if (val != null && SplitParse.parsable(val)){
+      if (val != null){
           PacketCountXbeegood++;
           ECGJAVa2View.Xbeegood.setText(Integer.toString(PacketCountXbeegood));
           ECGJAVa2View.XbeePackets.setText(Double.toString(Math.floor((PacketCountXbeegood*1.0)/(PacketCountXbee*1.0)*100.0)));
           System.out.println(val);
           Dialog_box.update("XBee Inbound : " + val + " -> written to LogFiles");
-          SplitParse.splitVal(val); 
+          SplitParse.splitGPS_Val(val); 
           
           /*
            * 
