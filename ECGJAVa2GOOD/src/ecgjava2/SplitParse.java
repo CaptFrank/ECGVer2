@@ -24,7 +24,7 @@ public class SplitParse {
    
     /*  ADD THE REGEX FOR PARSING */
     
-    
+    //the regex that splits the stuff
     private static String REGEX2 = "|";
     
     protected static int ArrayIndex1 = 0, ArrayIndex2 = 0;
@@ -49,12 +49,16 @@ public class SplitParse {
     
     static public void splitGPS_Val(String Val) throws IOException{
         
+        //compile regex
+        
         Pattern p1 = Pattern.compile(REGEX2);
         String[] items = p1.split(Val);
+        //if connected
         if(ECGJAVa2View.getSocketConnected()){
             GPSSentence = items[1];
             GPSComm.setMessage(GPSSentence);
         }
+        //split values if parsable
         ECGSentence = items[0];
         if(parsable(ECGSentence)){
             splitVal(ECGSentence);

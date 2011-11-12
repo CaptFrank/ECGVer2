@@ -266,6 +266,8 @@ class CommPortOpen extends Thread{
           ECGJAVa2View.XbeePackets.setText(Double.toString(Math.floor((PacketCountXbeegood*1.0)/(PacketCountXbee*1.0)*100.0)));
           System.out.println(val);
           Dialog_box.update("XBee Inbound : " + val + " -> written to LogFiles");
+          
+          //split the 2 messages
           SplitParse.splitGPS_Val(val); 
           
           /*

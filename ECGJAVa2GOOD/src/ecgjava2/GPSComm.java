@@ -15,6 +15,8 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 class GPSComm extends Thread{
+    
+       //define stuff
 	public static ServerSocket providerSocket;
 	public static Socket connection = null;
 	static ObjectOutputStream out;
@@ -58,6 +60,8 @@ class GPSComm extends Thread{
                 catch(IOException ioException){} 
             }
 	}
+        
+        //sned messages
     public static void sendMessage(String msg){
         try{
             out.writeChars(msg + "\n");
@@ -67,16 +71,19 @@ class GPSComm extends Thread{
         catch(IOException ioException){}
     }
     
+        //close ports
+    
     public static void closeSocket() throws IOException{
         Thread.currentThread().destroy();
     }
-
+        //make a new thread
     public static void main(String args[]){
         GPSComm server = new GPSComm();
         while(true){
             server.start();
         }
     }
+        //set new message to be sent
     public static void setMessage(String val){
         message = val;
     }
