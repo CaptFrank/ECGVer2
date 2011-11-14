@@ -33,6 +33,7 @@ import javax.swing.JOptionPane;
  * The application's main frame.
  */
 public class ECGJAVa2View extends FrameView {
+    //define stuff
     protected static boolean SignalAnalysisGuard = false;
     protected static long InitialTime;
     protected static boolean SPO2guard = false;
@@ -49,7 +50,7 @@ public class ECGJAVa2View extends FrameView {
     public ECGJAVa2View(SingleFrameApplication app) {
         super(app);
 
-
+        // making the gui
         initComponents();
 
             ECGJAVa2View.label40.setVisible(false);
@@ -94,7 +95,7 @@ public class ECGJAVa2View extends FrameView {
         });
     }
 
-
+    //invoke on action
     @Action
     public void showAboutBox() {
         if (aboutBox == null) {
@@ -1840,6 +1841,8 @@ public class ECGJAVa2View extends FrameView {
         setMenuBar(menuBar);
     }// </editor-fold>//GEN-END:initComponents
 
+    //disconnect serial
+    
     private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectActionPerformed
         
         Serial.setText("<Default>");
@@ -1857,6 +1860,8 @@ public class ECGJAVa2View extends FrameView {
         }
     }//GEN-LAST:event_DisconnectActionPerformed
 
+    //connect serial
+    
     private void ConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectActionPerformed
 
        Thread Comm = null;
@@ -1896,6 +1901,8 @@ public class ECGJAVa2View extends FrameView {
         }
     }//GEN-LAST:event_ConnectActionPerformed
 
+    //get dialog box
+    
     private void Dialog_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dialog_boxActionPerformed
 
         Dialog = new Dialog_box();

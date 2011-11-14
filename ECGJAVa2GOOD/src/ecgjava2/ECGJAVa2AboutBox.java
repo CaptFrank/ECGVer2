@@ -8,12 +8,15 @@ import org.jdesktop.application.Action;
 
 public class ECGJAVa2AboutBox extends javax.swing.JDialog {
 
+    // instantiating a an about box, as a super class
+    // getting the pane and instantiating them
     public ECGJAVa2AboutBox(java.awt.Frame parent) {
         super(parent);
         initComponents();
         getRootPane().setDefaultButton(closeButton);
     }
 
+    // if the close action is invoked close the about box
     @Action public void closeAboutBox() {
         dispose();
     }
