@@ -119,6 +119,7 @@ public class ECGJAVa2View extends FrameView {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         mainPanel = new javax.swing.JPanel();
         GenDAta = new javax.swing.JInternalFrame();
@@ -299,7 +300,7 @@ public class ECGJAVa2View extends FrameView {
         GenDAta.setTitle(resourceMap.getString("GenDAta.title")); // NOI18N
         GenDAta.setName("GenDAta"); // NOI18N
         GenDAta.setVisible(true);
-        GenDAta.getContentPane().setLayout(null);
+        GenDAta.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jTabbedPane6.setName("jTabbedPane6"); // NOI18N
 
@@ -456,8 +457,14 @@ public class ECGJAVa2View extends FrameView {
 
         jTabbedPane6.addTab(resourceMap.getString("jPanel8.TabConstraints.tabTitle"), jPanel8); // NOI18N
 
-        GenDAta.getContentPane().add(jTabbedPane6);
-        jTabbedPane6.setBounds(20, 20, 280, 210);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 14;
+        gridBagConstraints.ipady = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 12, 16);
+        GenDAta.getContentPane().add(jTabbedPane6, gridBagConstraints);
 
         jMenuBar5.setName("jMenuBar5"); // NOI18N
 
@@ -491,7 +498,7 @@ public class ECGJAVa2View extends FrameView {
 
         GenDAta.setJMenuBar(jMenuBar5);
 
-        mainPanel.add(GenDAta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 340, 310));
+        mainPanel.add(GenDAta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 340, 300));
 
         ECGContainer.setClosable(true);
         ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -500,9 +507,16 @@ public class ECGJAVa2View extends FrameView {
         ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
         ECGContainer.setName("ECGContainer"); // NOI18N
         ECGContainer.setVisible(true);
+        ECGContainer.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel16.setText(resourceMap.getString("jLabel16.text")); // NOI18N
         jLabel16.setName("jLabel16"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(112, 600, 161, 598);
+        ECGContainer.getContentPane().add(jLabel16, gridBagConstraints);
 
         jMenuBar4.setName("jMenuBar4"); // NOI18N
 
@@ -531,23 +545,6 @@ public class ECGJAVa2View extends FrameView {
 
         ECGContainer.setJMenuBar(jMenuBar4);
 
-        org.jdesktop.layout.GroupLayout ECGContainerLayout = new org.jdesktop.layout.GroupLayout(ECGContainer.getContentPane());
-        ECGContainer.getContentPane().setLayout(ECGContainerLayout);
-        ECGContainerLayout.setHorizontalGroup(
-            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, ECGContainerLayout.createSequentialGroup()
-                .addContainerGap(600, Short.MAX_VALUE)
-                .add(jLabel16)
-                .add(598, 598, 598))
-        );
-        ECGContainerLayout.setVerticalGroup(
-            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ECGContainerLayout.createSequentialGroup()
-                .add(112, 112, 112)
-                .add(jLabel16)
-                .addContainerGap(161, Short.MAX_VALUE))
-        );
-
         mainPanel.add(ECGContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 1400, -1));
 
         Connected.setClosable(true);
@@ -557,27 +554,57 @@ public class ECGJAVa2View extends FrameView {
         Connected.setTitle(resourceMap.getString("Connected.title")); // NOI18N
         Connected.setName("Connected"); // NOI18N
         Connected.setVisible(true);
-        Connected.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Connected.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         TEXT.setText(resourceMap.getString("TEXT.text")); // NOI18N
         TEXT.setName("TEXT"); // NOI18N
-        Connected.getContentPane().add(TEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        Connected.getContentPane().add(TEXT, gridBagConstraints);
 
         Serial.setText(resourceMap.getString("Serial.text")); // NOI18N
         Serial.setName("Serial"); // NOI18N
-        Connected.getContentPane().add(Serial, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 2, 0, 0);
+        Connected.getContentPane().add(Serial, gridBagConstraints);
 
         ConnectDB.setText(resourceMap.getString("ConnectDB.text")); // NOI18N
         ConnectDB.setName("ConnectDB"); // NOI18N
-        Connected.getContentPane().add(ConnectDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 160, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 17;
+        gridBagConstraints.ipady = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 2, 14, 26);
+        Connected.getContentPane().add(ConnectDB, gridBagConstraints);
 
         jLabel32.setText(resourceMap.getString("jLabel32.text")); // NOI18N
         jLabel32.setName("jLabel32"); // NOI18N
-        Connected.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 12, 0, 0);
+        Connected.getContentPane().add(jLabel32, gridBagConstraints);
 
         jLabel33.setText(resourceMap.getString("jLabel33.text")); // NOI18N
         jLabel33.setName("jLabel33"); // NOI18N
-        Connected.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 12, 0, 0);
+        Connected.getContentPane().add(jLabel33, gridBagConstraints);
 
         mainPanel.add(Connected, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 340, 110));
 
@@ -589,7 +616,7 @@ public class ECGJAVa2View extends FrameView {
         Temperature.setTitle(resourceMap.getString("Temperature.title")); // NOI18N
         Temperature.setName("Temperature"); // NOI18N
         Temperature.setVisible(true);
-        Temperature.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Temperature.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jTabbedPane5.setName("jTabbedPane5"); // NOI18N
 
@@ -763,7 +790,13 @@ public class ECGJAVa2View extends FrameView {
 
         jTabbedPane5.addTab(resourceMap.getString("jPanel5.TabConstraints.tabTitle"), jPanel5); // NOI18N
 
-        Temperature.getContentPane().add(jTabbedPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 460, 210));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 64;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 2, 16);
+        Temperature.getContentPane().add(jTabbedPane5, gridBagConstraints);
 
         jMenuBar2.setName("jMenuBar2"); // NOI18N
 
@@ -793,6 +826,7 @@ public class ECGJAVa2View extends FrameView {
         SignalAnalysis.setTitle(resourceMap.getString("SignalAnalysis.title")); // NOI18N
         SignalAnalysis.setName("SignalAnalysis"); // NOI18N
         SignalAnalysis.setVisible(true);
+        SignalAnalysis.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jTabbedPane1.setName("jTabbedPane1"); // NOI18N
 
@@ -893,7 +927,7 @@ public class ECGJAVa2View extends FrameView {
                     .add(BreathPacket)
                     .add(jLabel23)
                     .add(BreathTotal))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(resourceMap.getString("jPanel15.TabConstraints.tabTitle"), jPanel15); // NOI18N
@@ -991,25 +1025,19 @@ public class ECGJAVa2View extends FrameView {
                 .add(jPanel16Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel22)
                     .add(Batt))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab(resourceMap.getString("jPanel16.TabConstraints.tabTitle"), jPanel16); // NOI18N
 
-        org.jdesktop.layout.GroupLayout SignalAnalysisLayout = new org.jdesktop.layout.GroupLayout(SignalAnalysis.getContentPane());
-        SignalAnalysis.getContentPane().setLayout(SignalAnalysisLayout);
-        SignalAnalysisLayout.setHorizontalGroup(
-            SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(SignalAnalysisLayout.createSequentialGroup()
-                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 483, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        SignalAnalysisLayout.setVerticalGroup(
-            SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(SignalAnalysisLayout.createSequentialGroup()
-                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -26;
+        gridBagConstraints.ipady = -59;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 3);
+        SignalAnalysis.getContentPane().add(jTabbedPane1, gridBagConstraints);
 
         mainPanel.add(SignalAnalysis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 510, 150));
 
@@ -1021,7 +1049,7 @@ public class ECGJAVa2View extends FrameView {
         Inbound.setTitle(resourceMap.getString("Inbound.title")); // NOI18N
         Inbound.setName("Inbound"); // NOI18N
         Inbound.setVisible(true);
-        Inbound.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Inbound.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         ECGPane.setName("ECGPane"); // NOI18N
 
@@ -1158,7 +1186,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jLabel8)
                     .add(RESP))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
@@ -1245,7 +1273,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel28)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(IRSQLChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 34, Short.MAX_VALUE)
                 .add(jPanel17Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(ResetSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(StartSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -1305,7 +1333,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel11)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(ECGSQLChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel10.TabConstraints.tabTitle"), jPanel10); // NOI18N
@@ -1397,7 +1425,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel13)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 34, Short.MAX_VALUE)
                 .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jPanel9Layout.createSequentialGroup()
                         .add(jLabel29)
@@ -1467,7 +1495,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel30)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
@@ -1538,7 +1566,7 @@ public class ECGJAVa2View extends FrameView {
                     .add(ConnectSocket1))
                 .add(8, 8, 8)
                 .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -1593,7 +1621,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel15)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(LightSQLChart2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 46, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel13.TabConstraints.tabTitle"), jPanel13); // NOI18N
@@ -1629,13 +1657,20 @@ public class ECGJAVa2View extends FrameView {
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
 
-        Inbound.getContentPane().add(ECGPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 530, 330));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 1;
+        gridBagConstraints.ipady = -21;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 2, 6);
+        Inbound.getContentPane().add(ECGPane, gridBagConstraints);
 
         jMenuBar3.setName("jMenuBar3"); // NOI18N
 

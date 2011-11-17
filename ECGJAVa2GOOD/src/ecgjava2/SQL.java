@@ -11,6 +11,7 @@
 package ecgjava2;
 
 import java.io.IOException;
+import java.net.SocketException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ import java.sql.SQLException;
  *
  * @author Administrator
  */
-public class SQL extends Thread{
+public class SQL{
     
     SQL(){}
 
@@ -28,28 +29,27 @@ public class SQL extends Thread{
   protected static boolean connected = false;
   protected static Connection Connection = null, Connection1 = null, Connection2 = null, Connection3 = null;
 
-    public static void main(String args[]){
-        SQL Server = new SQL();
-        Server.start();
-    }
+    //public static void main(String args[]){
+    //    SQL Server = new SQL();
+    //    Server.start();
+    //}
 
-    static void connectArduinoData() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
+    static void connectArduinoData() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException, SocketException {
       Class.forName("org.gjt.mm.mysql.Driver");
       Connection = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/arduino_data", "DataUser", "data");
       System.out.println("Connection successful to Arduino Data Database!");
       Dialog_box.update("Connection successful to Arduino Data Database!\n");
-
+            
       connected = true;
 
-      if (Connection != null) {
-        try {
-          Connection.close();
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
-      }
+//      if (Connection != null) {
+//        try {
+//          Connection.close();
+//        } catch (SQLException e) {
+//        }
+//      }
     }
-    static void connectTrends() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
+    static void connectTrends() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException, SocketException {
       Class.forName("org.gjt.mm.mysql.Driver");
       Connection1 = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/trends", "DataUser", "data");
       System.out.println("Connection successful to Trend Data Database!");
@@ -57,40 +57,40 @@ public class SQL extends Thread{
 
       connected = true;
 
-      if (Connection1 != null) {
-        try {
-          Connection1.close();
-        } catch (SQLException e) {
-        }
-      }
+//      if (Connection1 != null) {
+//        try {
+//          Connection1.close();
+//        } catch (SQLException e) {
+//        }
+//      }
     }
-    static void connectHistory() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
+    static void connectHistory() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException, SocketException {
       Class.forName("org.gjt.mm.mysql.Driver");
       Connection2 = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/history_data", "DataUser", "data");
       System.out.println("Connection successful to History Database!");
       Dialog_box.update("Connection successful to History Database!\n");
       connected = true;
 
-      if (Connection2 != null) {
-        try {
-          Connection2.close();
-        } catch (SQLException e) {
-        }
-      }
+//      if (Connection2 != null) {
+//        try {
+//          Connection2.close();
+//        } catch (SQLException e) {
+//        }
+//      }
     }
-    static void connectGPS() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
+    static void connectGPS() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException, SocketException {
       Class.forName("org.gjt.mm.mysql.Driver");
       Connection3 = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/gps_data", "DataUser", "data");
       System.out.println("Connection successful to GPS Database!");
       Dialog_box.update("Connection successful to GPS Database!\n");
       connected = true;
 
-      if (Connection3 != null) {
-        try {
-          Connection3.close();
-        } catch (SQLException e) {
-        }
-      }
+//      if (Connection3 != null) {
+//        try {
+//          Connection3.close();
+//        } catch (SQLException e) {
+//        }
+//      }
     }
     
     static void disconnectSQL() throws SQLException{
@@ -109,7 +109,6 @@ public class SQL extends Thread{
     }
     
     static boolean getConnectedSQL(){
-    
         return connected;
     }
     
