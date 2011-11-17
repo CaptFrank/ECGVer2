@@ -289,7 +289,7 @@ public class ECGJAVa2View extends FrameView {
         jLabel20 = new javax.swing.JLabel();
 
         mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setLayout(new java.awt.GridBagLayout());
+        mainPanel.setLayout(null);
 
         GenDAta.setClosable(true);
         GenDAta.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -492,15 +492,8 @@ public class ECGJAVa2View extends FrameView {
 
         GenDAta.setJMenuBar(jMenuBar5);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 190;
-        gridBagConstraints.ipady = 235;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(120, 20, 0, 0);
-        mainPanel.add(GenDAta, gridBagConstraints);
+        mainPanel.add(GenDAta);
+        GenDAta.setBounds(20, 120, 340, 300);
 
         ECGContainer.setClosable(true);
         ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -547,16 +540,8 @@ public class ECGJAVa2View extends FrameView {
 
         ECGContainer.setJMenuBar(jMenuBar4);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 6;
-        gridBagConstraints.ipadx = 1250;
-        gridBagConstraints.ipady = 292;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(110, 20, 14, 20);
-        mainPanel.add(ECGContainer, gridBagConstraints);
+        mainPanel.add(ECGContainer);
+        ECGContainer.setBounds(20, 410, 1400, 335);
 
         Connected.setClosable(true);
         Connected.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -617,14 +602,8 @@ public class ECGJAVa2View extends FrameView {
         gridBagConstraints.insets = new java.awt.Insets(10, 12, 0, 0);
         Connected.getContentPane().add(jLabel33, gridBagConstraints);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 190;
-        gridBagConstraints.ipady = 45;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
-        mainPanel.add(Connected, gridBagConstraints);
+        mainPanel.add(Connected);
+        Connected.setBounds(20, 20, 340, 110);
 
         Temperature.setClosable(true);
         Temperature.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -817,16 +796,8 @@ public class ECGJAVa2View extends FrameView {
 
         Temperature.setJMenuBar(jMenuBar2);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 360;
-        gridBagConstraints.ipady = 215;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 350, 0, 0);
-        mainPanel.add(Temperature, gridBagConstraints);
+        mainPanel.add(Temperature);
+        Temperature.setBounds(350, 20, 510, 280);
 
         SignalAnalysis.setClosable(true);
         SignalAnalysis.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1041,16 +1012,8 @@ public class ECGJAVa2View extends FrameView {
 
         SignalAnalysis.getContentPane().add(jTabbedPane1, new java.awt.GridBagConstraints());
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 4;
-        gridBagConstraints.ipadx = 360;
-        gridBagConstraints.ipady = 85;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(150, 350, 0, 0);
-        mainPanel.add(SignalAnalysis, gridBagConstraints);
+        mainPanel.add(SignalAnalysis);
+        SignalAnalysis.setBounds(350, 280, 510, 150);
 
         Inbound.setClosable(true);
         Inbound.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1767,16 +1730,8 @@ public class ECGJAVa2View extends FrameView {
 
         Inbound.setJMenuBar(jMenuBar3);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.ipadx = 420;
-        gridBagConstraints.ipady = 345;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 490, 0, 20);
-        mainPanel.add(Inbound, gridBagConstraints);
+        mainPanel.add(Inbound);
+        Inbound.setBounds(850, 20, 570, 410);
 
         menuBar.setName("menuBar"); // NOI18N
 
