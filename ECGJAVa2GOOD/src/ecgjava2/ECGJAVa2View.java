@@ -493,7 +493,7 @@ public class ECGJAVa2View extends FrameView {
         GenDAta.setJMenuBar(jMenuBar5);
 
         mainPanel.add(GenDAta);
-        GenDAta.setBounds(20, 120, 340, 300);
+        GenDAta.setBounds(20, 120, 340, 310);
 
         ECGContainer.setClosable(true);
         ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);

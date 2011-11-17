@@ -34,8 +34,6 @@ public class NetworkPolling
         out.printf("Name: %s\n", netint.getName());
         Enumeration<InetAddress> inetAddresses = netint.getInetAddresses();
         for (InetAddress inetAddress : Collections.list(inetAddresses)) {
-            if(inetAddress.getAddress().toString().equals(compare.getAddress().toString())) System.out.println("good!!!");
-            System.out.println(inetAddress.getAddress().toString());
             out.printf("InetAddress: %s\n", inetAddress, inetAddress.getAddress().toString());
         }
         out.printf("\n");
