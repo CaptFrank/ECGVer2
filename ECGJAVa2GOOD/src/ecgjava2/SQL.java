@@ -26,7 +26,7 @@ public class SQL extends Thread{
   protected static String Message = "";
   protected static String copy = "";
   protected static boolean connected = false;
-  protected static Connection Connection = null;
+  protected static Connection Connection = null, Connection1 = null, Connection2 = null, Connection3 = null;
 
     public static void main(String args[]){
         SQL Server = new SQL();
@@ -36,7 +36,9 @@ public class SQL extends Thread{
     static void connectArduinoData() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
       Class.forName("org.gjt.mm.mysql.Driver");
       Connection = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/arduino_data", "DataUser", "data");
-      System.out.println("Connection successful!");
+      System.out.println("Connection successful to Arduino Data Database!");
+      Dialog_box.update("Connection successful to Arduino Data Database!\n");
+
       connected = true;
 
       if (Connection != null) {
@@ -49,33 +51,63 @@ public class SQL extends Thread{
     }
     static void connectTrends() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
       Class.forName("org.gjt.mm.mysql.Driver");
-      Connection = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/trends", "DataUser", "data");
-      System.out.println("Connection successful!");
+      Connection1 = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/trends", "DataUser", "data");
+      System.out.println("Connection successful to Trend Data Database!");
+      Dialog_box.update("Connection successful to Trend Data Database!\n");
+
       connected = true;
 
-      if (Connection != null) {
+      if (Connection1 != null) {
         try {
-          Connection.close();
+          Connection1.close();
         } catch (SQLException e) {
-          e.printStackTrace();
         }
       }
     }
     static void connectHistory() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
       Class.forName("org.gjt.mm.mysql.Driver");
-      Connection = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/history_data", "DataUser", "data");
-      System.out.println("Connection successful!");
+      Connection2 = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/history_data", "DataUser", "data");
+      System.out.println("Connection successful to History Database!");
+      Dialog_box.update("Connection successful to History Database!\n");
       connected = true;
 
-      if (Connection != null) {
+      if (Connection2 != null) {
         try {
-          Connection.close();
+          Connection2.close();
         } catch (SQLException e) {
-          e.printStackTrace();
         }
       }
     }
+    static void connectGPS() throws IOException, InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException {
+      Class.forName("org.gjt.mm.mysql.Driver");
+      Connection3 = DriverManager.getConnection("jdbc:mysql://192.168.2.10:3306/gps_data", "DataUser", "data");
+      System.out.println("Connection successful to GPS Database!");
+      Dialog_box.update("Connection successful to GPS Database!\n");
+      connected = true;
 
+      if (Connection3 != null) {
+        try {
+          Connection3.close();
+        } catch (SQLException e) {
+        }
+      }
+    }
+    
+    static void disconnectSQL() throws SQLException{
+        Connection.close();
+        System.out.println("Disconnection successful to Arduino Data Database!");
+        Dialog_box.update("Disconnection successful to Arduino Data Database!\n");
+        Connection1.close();
+        System.out.println("Disconnection successful to Arduino Data Database!");
+        Dialog_box.update("Disconnection successful to Arduino Data Database!\n");
+        Connection2.close();
+        System.out.println("Disconnection successful to Arduino Data Database!");
+        Dialog_box.update("Disconnection successful to Arduino Data Database!\n");
+        Connection3.close();
+        System.out.println("Disconnection successful to Arduino Data Database!");
+        Dialog_box.update("Disconnection successful to Arduino Data Database!\n");
+    }
+    
     static boolean getConnectedSQL(){
     
         return connected;

@@ -42,10 +42,11 @@ public class ECGJAVa2View extends FrameView {
     private final Icon idleIcon;
     private final Icon[] busyIcons = new Icon[15];
     private int busyIconIndex = 0;
-    protected JFrame Dialog;
+    protected JFrame Dialog, GPSDialog;
     protected static int selection;
     private JDialog aboutBox;
     protected static boolean socketConnected = false;
+    private boolean DialogGPSconnected = false;
 
     public ECGJAVa2View(SingleFrameApplication app) {
         super(app);
@@ -150,8 +151,9 @@ public class ECGJAVa2View extends FrameView {
         Connected = new javax.swing.JInternalFrame();
         TEXT = new javax.swing.JLabel();
         Serial = new javax.swing.JLabel();
-        Disconnect = new javax.swing.JButton();
         ConnectDB = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         Temperature = new javax.swing.JInternalFrame();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -262,7 +264,9 @@ public class ECGJAVa2View extends FrameView {
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
         Connect = new javax.swing.JMenuItem();
+        Disconnect = new javax.swing.JMenuItem();
         ConnectToDB = new javax.swing.JMenuItem();
+        CloseDB = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         ShowConnected = new javax.swing.JMenuItem();
@@ -274,14 +278,12 @@ public class ECGJAVa2View extends FrameView {
         ShowALL = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         Dialog_box = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         javax.swing.JMenu helpMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         Main = new javax.swing.JFrame();
         jLabel20 = new javax.swing.JLabel();
 
@@ -563,20 +565,19 @@ public class ECGJAVa2View extends FrameView {
 
         Serial.setText(resourceMap.getString("Serial.text")); // NOI18N
         Serial.setName("Serial"); // NOI18N
-        Connected.getContentPane().add(Serial, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
-
-        Disconnect.setText(resourceMap.getString("Disconnect.text")); // NOI18N
-        Disconnect.setName("Disconnect"); // NOI18N
-        Disconnect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DisconnectActionPerformed(evt);
-            }
-        });
-        Connected.getContentPane().add(Disconnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        Connected.getContentPane().add(Serial, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         ConnectDB.setText(resourceMap.getString("ConnectDB.text")); // NOI18N
         ConnectDB.setName("ConnectDB"); // NOI18N
-        Connected.getContentPane().add(ConnectDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 140, 20));
+        Connected.getContentPane().add(ConnectDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 160, 20));
+
+        jLabel32.setText(resourceMap.getString("jLabel32.text")); // NOI18N
+        jLabel32.setName("jLabel32"); // NOI18N
+        Connected.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+
+        jLabel33.setText(resourceMap.getString("jLabel33.text")); // NOI18N
+        jLabel33.setName("jLabel33"); // NOI18N
+        Connected.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
         mainPanel.add(Connected, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 340, 110));
 
@@ -1510,9 +1511,6 @@ public class ECGJAVa2View extends FrameView {
             .add(jPanel12Layout.createSequentialGroup()
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel12Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE))
-                    .add(jPanel12Layout.createSequentialGroup()
                         .add(32, 32, 32)
                         .add(jLabel9)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
@@ -1521,7 +1519,10 @@ public class ECGJAVa2View extends FrameView {
                         .add(83, 83, 83)
                         .add(ConnectSocket)
                         .add(47, 47, 47)
-                        .add(ConnectSocket1)))
+                        .add(ConnectSocket1))
+                    .add(jPanel12Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -1536,8 +1537,8 @@ public class ECGJAVa2View extends FrameView {
                     .add(ConnectSocket)
                     .add(ConnectSocket1))
                 .add(8, 8, 8)
-                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 176, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -1670,6 +1671,15 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(Connect);
 
+        Disconnect.setText(resourceMap.getString("Disconnect.text")); // NOI18N
+        Disconnect.setName("Disconnect"); // NOI18N
+        Disconnect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisconnectActionPerformed(evt);
+            }
+        });
+        fileMenu.add(Disconnect);
+
         ConnectToDB.setText(resourceMap.getString("ConnectToDB.text")); // NOI18N
         ConnectToDB.setName("ConnectToDB"); // NOI18N
         ConnectToDB.addActionListener(new java.awt.event.ActionListener() {
@@ -1678,6 +1688,15 @@ public class ECGJAVa2View extends FrameView {
             }
         });
         fileMenu.add(ConnectToDB);
+
+        CloseDB.setText(resourceMap.getString("CloseDB.text")); // NOI18N
+        CloseDB.setName("CloseDB"); // NOI18N
+        CloseDB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseDBActionPerformed(evt);
+            }
+        });
+        fileMenu.add(CloseDB);
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(ECGJAVa2View.class, this);
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
@@ -1771,6 +1790,15 @@ public class ECGJAVa2View extends FrameView {
         });
         jMenu2.add(jMenuItem4);
 
+        jMenuItem3.setText(resourceMap.getString("jMenuItem3.text")); // NOI18N
+        jMenuItem3.setName("jMenuItem3"); // NOI18N
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem3);
+
         Dialog_box.setText(resourceMap.getString("Dialog_box.text")); // NOI18N
         Dialog_box.setName("Dialog_box"); // NOI18N
         Dialog_box.addActionListener(new java.awt.event.ActionListener() {
@@ -1783,14 +1811,6 @@ public class ECGJAVa2View extends FrameView {
         menuBar.add(jMenu2);
 
         jMenu6.setText(resourceMap.getString("jMenu6.text")); // NOI18N
-
-        jMenuItem3.setText(resourceMap.getString("jMenuItem3.text")); // NOI18N
-        jMenuItem3.setName("jMenuItem3"); // NOI18N
-        jMenu6.add(jMenuItem3);
-
-        jMenuItem5.setText(resourceMap.getString("jMenuItem5.text")); // NOI18N
-        jMenuItem5.setName("jMenuItem5"); // NOI18N
-        jMenu6.add(jMenuItem5);
 
         jMenuItem10.setText(resourceMap.getString("jMenuItem10.text")); // NOI18N
         jMenuItem10.setName("jMenuItem10"); // NOI18N
@@ -1809,15 +1829,6 @@ public class ECGJAVa2View extends FrameView {
         aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
         aboutMenuItem.setName("aboutMenuItem"); // NOI18N
         helpMenu.add(aboutMenuItem);
-
-        jMenuItem6.setText(resourceMap.getString("jMenuItem6.text")); // NOI18N
-        jMenuItem6.setName("jMenuItem6"); // NOI18N
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        helpMenu.add(jMenuItem6);
 
         menuBar.add(helpMenu);
 
@@ -1843,23 +1854,6 @@ public class ECGJAVa2View extends FrameView {
 
     //disconnect serial
     
-    private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectActionPerformed
-        
-        Serial.setText("<Default>");
-        Serial.repaint();
-        
-        try {
-            CommPortOpen.closeConnection();
-        } catch (IOException ex) {
-            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            WriteLogFiles.closeWriteFile();
-        } catch (IOException ex) {
-            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_DisconnectActionPerformed
-
     //connect serial
     
     private void ConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectActionPerformed
@@ -1975,6 +1969,7 @@ public class ECGJAVa2View extends FrameView {
             SQL.connectArduinoData();
             SQL.connectHistory();
             SQL.connectTrends();
+            SQL.connectGPS();
         } catch (IOException ex) {
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Cannot Connect to DB", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1993,7 +1988,7 @@ public class ECGJAVa2View extends FrameView {
         }
 
         if (SQL.getConnectedSQL()){
-            ConnectDB.setText("Connected!!!");
+            ConnectDB.setText("Connected to DB");
             ConnectDB.repaint();
         }
 
@@ -2285,10 +2280,6 @@ public class ECGJAVa2View extends FrameView {
         }
     }//GEN-LAST:event_GPSActionPerformed
 
-private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-
-}//GEN-LAST:event_jMenuItem6ActionPerformed
-
 private void ConnectSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocketActionPerformed
 
         Thread Server = new GPSComm();
@@ -2312,6 +2303,37 @@ private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GE
             }
     }
 }//GEN-LAST:event_ConnectSocket1ActionPerformed
+
+private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        GPSDialog = new Dialog_boxGPS();
+        GPSDialog.setVisible(true);
+        DialogGPSconnected = true;
+}//GEN-LAST:event_jMenuItem3ActionPerformed
+
+private void CloseDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseDBActionPerformed
+        try {
+                SQL.disconnectSQL();
+        } catch (SQLException ex) {
+            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}//GEN-LAST:event_CloseDBActionPerformed
+
+private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectActionPerformed
+        
+        Serial.setText("<Default>");
+        Serial.repaint();
+        
+        try {
+            CommPortOpen.closeConnection();
+        } catch (IOException ex) {
+            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            WriteLogFiles.closeWriteFile();
+        } catch (IOException ex) {
+            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+}//GEN-LAST:event_DisconnectActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2338,6 +2360,7 @@ private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GE
     private javax.swing.JButton BreathSerialChart1;
     public static javax.swing.JLabel BreathTotal;
     public static javax.swing.JLabel BreathVal;
+    private javax.swing.JMenuItem CloseDB;
     public static javax.swing.JLabel ConectBreathSerial;
     private javax.swing.JMenuItem Connect;
     private javax.swing.JMenuItem ConnectBoard;
@@ -2349,7 +2372,7 @@ private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GE
     private javax.swing.JInternalFrame Connected;
     private javax.swing.JMenuItem Dialog_box;
     public static javax.swing.JLabel DiffTempValue;
-    private javax.swing.JButton Disconnect;
+    private javax.swing.JMenuItem Disconnect;
     public static javax.swing.JInternalFrame ECGContainer;
     private javax.swing.JLabel ECGLabel;
     private javax.swing.JTabbedPane ECGPane;
@@ -2434,6 +2457,8 @@ private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GE
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2456,8 +2481,6 @@ private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GE
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

@@ -31,7 +31,8 @@ public class SplitParse {
     protected static double GlobalTime;
     protected static String GPSSentence = "", ECGSentence ="";
     protected static String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
-    protected static double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
+    protected static double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, 
+                            IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
     protected static double [][] SPO2Array = new double [40][2];
     protected static boolean full = false;
     protected static getBPM BPM = new getBPM();
@@ -50,20 +51,33 @@ public class SplitParse {
     static public void splitGPS_Val(String Val) throws IOException{
         
         //compile regex
-        
         Pattern p1 = Pattern.compile(REGEX2);
         String[] items = p1.split(Val);
+        
         //if connected
         if(ECGJAVa2View.getSocketConnected()){
             GPSSentence = items[1];
+            
+            // this sets the global var. in the GPSComm class
+            // this class uses this sentence ove and over ad over, 
+            // until a new sentence is parsed.
+            
             GPSComm.setMessage(GPSSentence);
         }
+        
         //split values if parsable
         ECGSentence = items[0];
         if(parsable(ECGSentence)){
             splitVal(ECGSentence);
         }
     }
+    
+    /*
+     * This function splits the ECG Vital states sentence into float variables. 
+     * The vairables are then used in the Chrating Classes as vectors,
+     * <SystemTime, Value> and are the plotted.
+     * 
+     */
     static public void splitVal(String Val) throws IOException{
         if (ArrayIndex2 == 0){
            InitialTime = System.currentTimeMillis();

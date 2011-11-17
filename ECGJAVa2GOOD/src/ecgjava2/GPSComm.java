@@ -29,17 +29,21 @@ class GPSComm extends Thread{
 		//2. Wait for connection
 		providerSocket.bind(new InetSocketAddress("localhost", 4444));
 		System.out.println("Waiting for connection on localhost:4444");
+                Dialog_box.update("Waiting for connection on localhost:4444\n");
 			
 		//2.2 connect to the SQL server
 			
 		connection = providerSocket.accept();
 		System.out.println("Connection received from " + connection.getInetAddress().getHostName());
+                Dialog_box.update("Connection received from " + connection.getInetAddress().getHostName()+"\n");
+
 		JOptionPane.showMessageDialog(null, "Handshake accepted", "Initialize connection", JOptionPane.INFORMATION_MESSAGE);
 			
 		//3. get Input and Output streams
 		out = new ObjectOutputStream(connection.getOutputStream());
 		out.flush();
 		sendMessage("Connection successful");
+                Dialog_box.update("Connection successful\n");
 			
 		//4. The two parts communicate via the input and output streams
 		do{
@@ -67,6 +71,7 @@ class GPSComm extends Thread{
             out.writeChars(msg + "\n");
             out.flush();
             System.out.println("server>" + msg);
+            Dialog_boxGPS.update("server>" + msg);
         }
         catch(IOException ioException){}
     }

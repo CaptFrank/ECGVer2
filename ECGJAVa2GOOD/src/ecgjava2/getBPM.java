@@ -15,7 +15,8 @@ public class getBPM{
 
     static double [][] array;
     static double [] datacopy;
-    static boolean guardlow = false, guardhigh = false, GH1 = false, GH2 = false, GL1 = false, GL2 = false, BPMguard = false;
+    static boolean guardlow = false, guardhigh = false, GH1 = false, GH2 = false, 
+                    GL1 = false, GL2 = false, BPMguard = false;
     static int count = 0, k = 0, totalcount = 0, averageBPM = 0, countGetBPM = 0;
     static getBPM BPM;
     static double previoustime = 0.00;
@@ -45,9 +46,6 @@ public class getBPM{
                     else GL2 = false;
                     if (GL2 && GL1) guardlow = true;
                     else guardlow = false;
-                    System.out.println(datacopy[2] + "     " + datacopy[0] + "    " + GL1 + "    " + GL2 + "    " + guardlow);
-                    System.out.println(datacopy[2] + "     " + datacopy[1] + "    " + GL1 + "    " + GL2 + "    " + guardlow);
-
 
                     if(datacopy[3] < datacopy[2]) GH1 = true;
                     else GH1 = false;
@@ -55,9 +53,6 @@ public class getBPM{
                     else GH2 = false;
                     if (GH2 && GH1) guardhigh = true;
                     else guardhigh = false;
-                    System.out.println(datacopy[2] + "     " + datacopy[3] + "    " + GH1 + "    " + GH2 + "    " + guardhigh);
-                    System.out.println(datacopy[2] + "     " + datacopy[4] + "    " + GL1 + "    " + GL2 + "    " + guardlow);
-
 
                 if (guardlow && guardhigh && GL2 && GL1 && GH1 && GH2){
                     count++;
