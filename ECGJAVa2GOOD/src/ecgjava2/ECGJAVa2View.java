@@ -289,7 +289,7 @@ public class ECGJAVa2View extends FrameView {
         jLabel20 = new javax.swing.JLabel();
 
         mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        mainPanel.setLayout(new java.awt.GridBagLayout());
 
         GenDAta.setClosable(true);
         GenDAta.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -498,7 +498,15 @@ public class ECGJAVa2View extends FrameView {
 
         GenDAta.setJMenuBar(jMenuBar5);
 
-        mainPanel.add(GenDAta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 340, 300));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = 190;
+        gridBagConstraints.ipady = 235;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(120, 20, 0, 0);
+        mainPanel.add(GenDAta, gridBagConstraints);
 
         ECGContainer.setClosable(true);
         ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -545,7 +553,16 @@ public class ECGJAVa2View extends FrameView {
 
         ECGContainer.setJMenuBar(jMenuBar4);
 
-        mainPanel.add(ECGContainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 1400, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 6;
+        gridBagConstraints.ipadx = 1250;
+        gridBagConstraints.ipady = 292;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(110, 20, 14, 20);
+        mainPanel.add(ECGContainer, gridBagConstraints);
 
         Connected.setClosable(true);
         Connected.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -606,7 +623,14 @@ public class ECGJAVa2View extends FrameView {
         gridBagConstraints.insets = new java.awt.Insets(10, 12, 0, 0);
         Connected.getContentPane().add(jLabel33, gridBagConstraints);
 
-        mainPanel.add(Connected, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 340, 110));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 190;
+        gridBagConstraints.ipady = 45;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
+        mainPanel.add(Connected, gridBagConstraints);
 
         Temperature.setClosable(true);
         Temperature.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -816,7 +840,16 @@ public class ECGJAVa2View extends FrameView {
 
         Temperature.setJMenuBar(jMenuBar2);
 
-        mainPanel.add(Temperature, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 510, 280));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 360;
+        gridBagConstraints.ipady = 215;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 350, 0, 0);
+        mainPanel.add(Temperature, gridBagConstraints);
 
         SignalAnalysis.setClosable(true);
         SignalAnalysis.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1039,7 +1072,16 @@ public class ECGJAVa2View extends FrameView {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 3);
         SignalAnalysis.getContentPane().add(jTabbedPane1, gridBagConstraints);
 
-        mainPanel.add(SignalAnalysis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 510, 150));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.ipadx = 360;
+        gridBagConstraints.ipady = 85;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(150, 350, 0, 0);
+        mainPanel.add(SignalAnalysis, gridBagConstraints);
 
         Inbound.setClosable(true);
         Inbound.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1054,140 +1096,179 @@ public class ECGJAVa2View extends FrameView {
         ECGPane.setName("ECGPane"); // NOI18N
 
         jPanel2.setName("jPanel2"); // NOI18N
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
         LightSensorLabel.setFont(resourceMap.getFont("LightSensorLabel.font")); // NOI18N
         LightSensorLabel.setText(resourceMap.getString("LightSensorLabel.text")); // NOI18N
         LightSensorLabel.setName("LightSensorLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(31, 127, 0, 0);
+        jPanel2.add(LightSensorLabel, gridBagConstraints);
 
         LightValue.setFont(resourceMap.getFont("LightValue.font")); // NOI18N
         LightValue.setText(resourceMap.getString("LightValue.text")); // NOI18N
         LightValue.setName("LightValue"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(34, 70, 0, 122);
+        jPanel2.add(LightValue, gridBagConstraints);
 
         ECGLabel.setFont(resourceMap.getFont("ECGLabel.font")); // NOI18N
         ECGLabel.setText(resourceMap.getString("ECGLabel.text")); // NOI18N
         ECGLabel.setName("ECGLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 127, 0, 0);
+        jPanel2.add(ECGLabel, gridBagConstraints);
 
         ECGValue.setFont(resourceMap.getFont("SPO2Value.font")); // NOI18N
         ECGValue.setText(resourceMap.getString("ECGValue.text")); // NOI18N
         ECGValue.setName("ECGValue"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 70, 0, 122);
+        jPanel2.add(ECGValue, gridBagConstraints);
 
         RESPLabel.setFont(resourceMap.getFont("RESPLabel.font")); // NOI18N
         RESPLabel.setText(resourceMap.getString("RESPLabel.text")); // NOI18N
         RESPLabel.setName("RESPLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 127, 0, 0);
+        jPanel2.add(RESPLabel, gridBagConstraints);
 
         RESPValue.setFont(resourceMap.getFont("SPO2Value.font")); // NOI18N
         RESPValue.setText(resourceMap.getString("RESPValue.text")); // NOI18N
         RESPValue.setName("RESPValue"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 70, 0, 122);
+        jPanel2.add(RESPValue, gridBagConstraints);
 
         SPO2Label.setFont(resourceMap.getFont("SPO2Label.font")); // NOI18N
         SPO2Label.setText(resourceMap.getString("SPO2Label.text")); // NOI18N
         SPO2Label.setName("SPO2Label"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 127, 0, 0);
+        jPanel2.add(SPO2Label, gridBagConstraints);
 
         SPO2Value.setFont(resourceMap.getFont("SPO2Value.font")); // NOI18N
         SPO2Value.setText(resourceMap.getString("SPO2Value.text")); // NOI18N
         SPO2Value.setName("SPO2Value"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 70, 0, 122);
+        jPanel2.add(SPO2Value, gridBagConstraints);
 
         PulseLabel.setFont(resourceMap.getFont("PulseLabel.font")); // NOI18N
         PulseLabel.setText(resourceMap.getString("PulseLabel.text")); // NOI18N
         PulseLabel.setName("PulseLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 127, 0, 0);
+        jPanel2.add(PulseLabel, gridBagConstraints);
 
         PulseValue.setFont(resourceMap.getFont("SPO2Value.font")); // NOI18N
         PulseValue.setText(resourceMap.getString("PulseValue.text")); // NOI18N
         PulseValue.setName("PulseValue"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 70, 0, 122);
+        jPanel2.add(PulseValue, gridBagConstraints);
 
         jLabel24.setFont(resourceMap.getFont("REDLED.font")); // NOI18N
         jLabel24.setText(resourceMap.getString("jLabel24.text")); // NOI18N
         jLabel24.setName("jLabel24"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 127, 0, 0);
+        jPanel2.add(jLabel24, gridBagConstraints);
 
         jLabel26.setFont(resourceMap.getFont("REDLED.font")); // NOI18N
         jLabel26.setText(resourceMap.getString("jLabel26.text")); // NOI18N
         jLabel26.setName("jLabel26"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 127, 0, 0);
+        jPanel2.add(jLabel26, gridBagConstraints);
 
         REDLED.setFont(resourceMap.getFont("REDLED.font")); // NOI18N
         REDLED.setText(resourceMap.getString("REDLED.text")); // NOI18N
         REDLED.setName("REDLED"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 70, 0, 122);
+        jPanel2.add(REDLED, gridBagConstraints);
 
         IRLED.setFont(resourceMap.getFont("IRLED.font")); // NOI18N
         IRLED.setText(resourceMap.getString("IRLED.text")); // NOI18N
         IRLED.setName("IRLED"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 70, 0, 122);
+        jPanel2.add(IRLED, gridBagConstraints);
 
         jLabel8.setFont(resourceMap.getFont("jLabel8.font")); // NOI18N
         jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
         jLabel8.setName("jLabel8"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 127, 20, 0);
+        jPanel2.add(jLabel8, gridBagConstraints);
 
         RESP.setFont(resourceMap.getFont("RESP.font")); // NOI18N
         RESP.setText(resourceMap.getString("RESP.text")); // NOI18N
         RESP.setName("RESP"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(127, 127, 127)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(ECGLabel)
-                    .add(RESPLabel)
-                    .add(SPO2Label)
-                    .add(PulseLabel)
-                    .add(jLabel24)
-                    .add(jLabel26)
-                    .add(LightSensorLabel)
-                    .add(jLabel8))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 70, Short.MAX_VALUE)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(RESP)
-                    .add(IRLED)
-                    .add(REDLED)
-                    .add(SPO2Value)
-                    .add(RESPValue)
-                    .add(ECGValue)
-                    .add(LightValue)
-                    .add(PulseValue))
-                .add(122, 122, 122))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(31, 31, 31)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(3, 3, 3)
-                        .add(LightValue)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(ECGValue)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(RESPValue)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(SPO2Value)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(PulseValue))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(LightSensorLabel)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(ECGLabel)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(RESPLabel)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(SPO2Label)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(PulseLabel)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(jLabel24)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel26))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(REDLED)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(IRLED)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jLabel8)
-                    .add(RESP))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 70, 20, 122);
+        jPanel2.add(RESP, gridBagConstraints);
 
         ECGPane.addTab(resourceMap.getString("jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
 
@@ -1243,14 +1324,14 @@ public class ECGJAVa2View extends FrameView {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(IRSerialChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
-            .add(IRSQLChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(IRSerialChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+            .add(IRSQLChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
             .add(jPanel17Layout.createSequentialGroup()
                 .add(180, 180, 180)
                 .add(jLabel28)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
+                .addContainerGap(161, Short.MAX_VALUE)
                 .add(jLabel27)
                 .add(156, 156, 156))
             .add(jPanel17Layout.createSequentialGroup()
@@ -1260,7 +1341,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(StopSPO2)
                 .add(30, 30, 30)
                 .add(ResetSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1312,13 +1393,13 @@ public class ECGJAVa2View extends FrameView {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addContainerGap(186, Short.MAX_VALUE)
                 .add(jLabel11)
                 .add(178, 178, 178))
-            .add(ECGSQLChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
-            .add(ECGSerialChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(ECGSQLChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+            .add(ECGSerialChart, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .add(jLabel10)
                 .add(157, 157, 157))
         );
@@ -1393,13 +1474,13 @@ public class ECGJAVa2View extends FrameView {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(OXISQLChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
             .add(jPanel9Layout.createSequentialGroup()
                 .add(180, 180, 180)
                 .add(jLabel13)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
+                .addContainerGap(161, Short.MAX_VALUE)
                 .add(jLabel12)
                 .add(156, 156, 156))
             .add(jPanel9Layout.createSequentialGroup()
@@ -1411,8 +1492,8 @@ public class ECGJAVa2View extends FrameView {
                 .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel29)
-                .addContainerGap(21, Short.MAX_VALUE))
-            .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE))
+            .add(OXISerialChart1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1470,15 +1551,15 @@ public class ECGJAVa2View extends FrameView {
             jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
                 .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(RESPSerial, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
-                    .add(RESPSql, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                    .add(RESPSerial, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                    .add(RESPSql, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
                     .add(jPanel11Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel11Layout.createSequentialGroup()
                                 .add(180, 180, 180)
                                 .add(jLabel30)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 183, Short.MAX_VALUE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 184, Short.MAX_VALUE))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
                                 .add(jLabel31)
                                 .add(156, 156, 156)))))
@@ -1550,7 +1631,7 @@ public class ECGJAVa2View extends FrameView {
                         .add(ConnectSocket1))
                     .add(jPanel12Layout.createSequentialGroup()
                         .addContainerGap()
-                        .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)))
+                        .add(GPS, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -1599,16 +1680,16 @@ public class ECGJAVa2View extends FrameView {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(LightSerialChart2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(LightSerialChart2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .add(jLabel14)
                 .add(157, 157, 157))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(184, Short.MAX_VALUE)
+                .addContainerGap(185, Short.MAX_VALUE)
                 .add(jLabel15)
                 .add(179, 179, 179))
-            .add(LightSQLChart2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .add(LightSQLChart2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1650,7 +1731,7 @@ public class ECGJAVa2View extends FrameView {
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -1690,7 +1771,16 @@ public class ECGJAVa2View extends FrameView {
 
         Inbound.setJMenuBar(jMenuBar3);
 
-        mainPanel.add(Inbound, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 20, 570, 410));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.ipadx = 420;
+        gridBagConstraints.ipady = 345;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 490, 0, 20);
+        mainPanel.add(Inbound, gridBagConstraints);
 
         menuBar.setName("menuBar"); // NOI18N
 
