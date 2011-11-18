@@ -124,12 +124,6 @@ public class ECGJAVa2View extends FrameView {
         mainPanel = new javax.swing.JPanel();
         GenDAta = new javax.swing.JInternalFrame();
         jTabbedPane6 = new javax.swing.JTabbedPane();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        BreathVal = new javax.swing.JLabel();
-        BreathPer = new javax.swing.JLabel();
-        ConectBreathSerial = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         BreathChartSQL = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -138,6 +132,12 @@ public class ECGJAVa2View extends FrameView {
         jPanel8 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        BreathVal = new javax.swing.JLabel();
+        BreathPer = new javax.swing.JLabel();
+        ConectBreathSerial = new javax.swing.JLabel();
         jMenuBar5 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         EXITGEN = new javax.swing.JMenuItem();
@@ -155,6 +155,7 @@ public class ECGJAVa2View extends FrameView {
         ConnectDB = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        Record = new javax.swing.JCheckBox();
         Temperature = new javax.swing.JInternalFrame();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -269,6 +270,10 @@ public class ECGJAVa2View extends FrameView {
         ConnectToDB = new javax.swing.JMenuItem();
         CloseDB = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        Dialog_box = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         ShowConnected = new javax.swing.JMenuItem();
         ShowTemp = new javax.swing.JMenuItem();
@@ -277,16 +282,13 @@ public class ECGJAVa2View extends FrameView {
         ShowECG = new javax.swing.JMenuItem();
         ShowSignal = new javax.swing.JMenuItem();
         ShowALL = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        Dialog_box = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         javax.swing.JMenu helpMenu = new javax.swing.JMenu();
         javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
         Main = new javax.swing.JFrame();
         jLabel20 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         mainPanel.setName("mainPanel"); // NOI18N
         mainPanel.setLayout(null);
@@ -303,63 +305,6 @@ public class ECGJAVa2View extends FrameView {
         GenDAta.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jTabbedPane6.setName("jTabbedPane6"); // NOI18N
-
-        jPanel6.setName("jPanel6"); // NOI18N
-        jPanel6.setLayout(new java.awt.GridBagLayout());
-
-        jLabel2.setFont(resourceMap.getFont("jLabel2.font")); // NOI18N
-        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
-        jLabel2.setName("jLabel2"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 20, 0, 0);
-        jPanel6.add(jLabel2, gridBagConstraints);
-
-        jLabel3.setFont(resourceMap.getFont("jLabel3.font")); // NOI18N
-        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
-        jLabel3.setName("jLabel3"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
-        jPanel6.add(jLabel3, gridBagConstraints);
-
-        BreathVal.setFont(resourceMap.getFont("BreathVal.font")); // NOI18N
-        BreathVal.setText(resourceMap.getString("BreathVal.text")); // NOI18N
-        BreathVal.setName("BreathVal"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 18, 0, 34);
-        jPanel6.add(BreathVal, gridBagConstraints);
-
-        BreathPer.setFont(resourceMap.getFont("BreathPer.font")); // NOI18N
-        BreathPer.setText(resourceMap.getString("BreathPer.text")); // NOI18N
-        BreathPer.setName("BreathPer"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 18, 0, 34);
-        jPanel6.add(BreathPer, gridBagConstraints);
-
-        ConectBreathSerial.setText("Not Connected to Serial");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 56, 32, 0);
-        jPanel6.add(ConectBreathSerial, gridBagConstraints);
-
-        jTabbedPane6.addTab(resourceMap.getString("jPanel6.TabConstraints.tabTitle"), jPanel6); // NOI18N
 
         jPanel7.setName("jPanel7"); // NOI18N
         jPanel7.setLayout(new java.awt.GridBagLayout());
@@ -451,14 +396,63 @@ public class ECGJAVa2View extends FrameView {
 
         jTabbedPane6.addTab(resourceMap.getString("jPanel8.TabConstraints.tabTitle"), jPanel8); // NOI18N
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 14;
-        gridBagConstraints.ipady = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 12, 16);
-        GenDAta.getContentPane().add(jTabbedPane6, gridBagConstraints);
+        jPanel6.setName("jPanel6"); // NOI18N
+
+        jLabel2.setFont(resourceMap.getFont("jLabel2.font")); // NOI18N
+        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
+        jLabel2.setName("jLabel2"); // NOI18N
+
+        jLabel3.setFont(resourceMap.getFont("jLabel3.font")); // NOI18N
+        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
+        jLabel3.setName("jLabel3"); // NOI18N
+
+        BreathVal.setFont(resourceMap.getFont("BreathVal.font")); // NOI18N
+        BreathVal.setText(resourceMap.getString("BreathVal.text")); // NOI18N
+        BreathVal.setName("BreathVal"); // NOI18N
+
+        BreathPer.setFont(resourceMap.getFont("BreathPer.font")); // NOI18N
+        BreathPer.setText(resourceMap.getString("BreathPer.text")); // NOI18N
+        BreathPer.setName("BreathPer"); // NOI18N
+
+        ConectBreathSerial.setText("Not Connected to Serial");
+
+        org.jdesktop.layout.GroupLayout jPanel6Layout = new org.jdesktop.layout.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(40, 40, 40)
+                .add(jLabel2)
+                .add(18, 18, 18)
+                .add(BreathVal))
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(40, 40, 40)
+                .add(jLabel3)
+                .add(45, 45, 45)
+                .add(BreathPer))
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(76, 76, 76)
+                .add(ConectBreathSerial))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(46, 46, 46)
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel2)
+                    .add(BreathVal))
+                .add(18, 18, 18)
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel3)
+                    .add(BreathPer))
+                .add(18, 18, 18)
+                .add(ConectBreathSerial)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jTabbedPane6.addTab(resourceMap.getString("jPanel6.TabConstraints.tabTitle"), jPanel6); // NOI18N
+
+        GenDAta.getContentPane().add(jTabbedPane6, new java.awt.GridBagConstraints());
 
         jMenuBar5.setName("jMenuBar5"); // NOI18N
 
@@ -493,7 +487,7 @@ public class ECGJAVa2View extends FrameView {
         GenDAta.setJMenuBar(jMenuBar5);
 
         mainPanel.add(GenDAta);
-        GenDAta.setBounds(20, 120, 340, 310);
+        GenDAta.setBounds(20, 150, 340, 280);
 
         ECGContainer.setClosable(true);
         ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -550,60 +544,72 @@ public class ECGJAVa2View extends FrameView {
         Connected.setTitle(resourceMap.getString("Connected.title")); // NOI18N
         Connected.setName("Connected"); // NOI18N
         Connected.setVisible(true);
-        Connected.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         TEXT.setText(resourceMap.getString("TEXT.text")); // NOI18N
         TEXT.setName("TEXT"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
-        Connected.getContentPane().add(TEXT, gridBagConstraints);
 
         Serial.setText(resourceMap.getString("Serial.text")); // NOI18N
         Serial.setName("Serial"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 2, 0, 0);
-        Connected.getContentPane().add(Serial, gridBagConstraints);
 
         ConnectDB.setText(resourceMap.getString("ConnectDB.text")); // NOI18N
         ConnectDB.setName("ConnectDB"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 17;
-        gridBagConstraints.ipady = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(3, 2, 14, 26);
-        Connected.getContentPane().add(ConnectDB, gridBagConstraints);
 
         jLabel32.setText(resourceMap.getString("jLabel32.text")); // NOI18N
         jLabel32.setName("jLabel32"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(3, 12, 0, 0);
-        Connected.getContentPane().add(jLabel32, gridBagConstraints);
 
         jLabel33.setText(resourceMap.getString("jLabel33.text")); // NOI18N
         jLabel33.setName("jLabel33"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 12, 0, 0);
-        Connected.getContentPane().add(jLabel33, gridBagConstraints);
+
+        Record.setText(resourceMap.getString("Record.text")); // NOI18N
+        Record.setName("Record"); // NOI18N
+        Record.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RecordActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout ConnectedLayout = new org.jdesktop.layout.GroupLayout(Connected.getContentPane());
+        Connected.getContentPane().setLayout(ConnectedLayout);
+        ConnectedLayout.setHorizontalGroup(
+            ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ConnectedLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(ConnectedLayout.createSequentialGroup()
+                        .add(TEXT)
+                        .add(12, 12, 12)
+                        .add(jLabel33)
+                        .add(2, 2, 2)
+                        .add(Serial))
+                    .add(ConnectedLayout.createSequentialGroup()
+                        .add(100, 100, 100)
+                        .add(jLabel32)
+                        .add(2, 2, 2)
+                        .add(ConnectDB, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(Record))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        ConnectedLayout.setVerticalGroup(
+            ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ConnectedLayout.createSequentialGroup()
+                .add(15, 15, 15)
+                .add(ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(ConnectedLayout.createSequentialGroup()
+                        .add(1, 1, 1)
+                        .add(TEXT))
+                    .add(jLabel33)
+                    .add(Serial))
+                .add(3, 3, 3)
+                .add(ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel32)
+                    .add(ConnectDB, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(9, 9, 9)
+                .add(Record)
+                .addContainerGap())
+        );
 
         mainPanel.add(Connected);
-        Connected.setBounds(20, 20, 340, 110);
+        Connected.setBounds(20, 20, 340, 140);
 
         Temperature.setClosable(true);
         Temperature.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1738,6 +1744,7 @@ public class ECGJAVa2View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
+        Connect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.META_MASK));
         Connect.setText(resourceMap.getString("Connect.text")); // NOI18N
         Connect.setName("Connect"); // NOI18N
         Connect.addActionListener(new java.awt.event.ActionListener() {
@@ -1747,6 +1754,7 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(Connect);
 
+        Disconnect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.META_MASK));
         Disconnect.setText(resourceMap.getString("Disconnect.text")); // NOI18N
         Disconnect.setName("Disconnect"); // NOI18N
         Disconnect.addActionListener(new java.awt.event.ActionListener() {
@@ -1756,6 +1764,7 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(Disconnect);
 
+        ConnectToDB.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.META_MASK));
         ConnectToDB.setText(resourceMap.getString("ConnectToDB.text")); // NOI18N
         ConnectToDB.setName("ConnectToDB"); // NOI18N
         ConnectToDB.addActionListener(new java.awt.event.ActionListener() {
@@ -1765,6 +1774,7 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(ConnectToDB);
 
+        CloseDB.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.META_MASK));
         CloseDB.setText(resourceMap.getString("CloseDB.text")); // NOI18N
         CloseDB.setName("CloseDB"); // NOI18N
         CloseDB.addActionListener(new java.awt.event.ActionListener() {
@@ -1785,6 +1795,38 @@ public class ECGJAVa2View extends FrameView {
         fileMenu.add(exitMenuItem);
 
         menuBar.add(fileMenu);
+
+        jMenu2.setText(resourceMap.getString("jMenu2.text")); // NOI18N
+        jMenu2.setName("jMenu2"); // NOI18N
+
+        jMenuItem4.setText(resourceMap.getString("jMenuItem4.text")); // NOI18N
+        jMenuItem4.setName("jMenuItem4"); // NOI18N
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem3.setText(resourceMap.getString("jMenuItem3.text")); // NOI18N
+        jMenuItem3.setName("jMenuItem3"); // NOI18N
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem3);
+
+        Dialog_box.setText(resourceMap.getString("Dialog_box.text")); // NOI18N
+        Dialog_box.setName("Dialog_box"); // NOI18N
+        Dialog_box.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Dialog_boxActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Dialog_box);
+
+        menuBar.add(jMenu2);
 
         jMenu9.setText(resourceMap.getString("jMenu9.text")); // NOI18N
         jMenu9.setName("jMenu9"); // NOI18N
@@ -1843,6 +1885,7 @@ public class ECGJAVa2View extends FrameView {
         });
         jMenu9.add(ShowSignal);
 
+        ShowALL.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.META_MASK));
         ShowALL.setText(resourceMap.getString("ShowALL.text")); // NOI18N
         ShowALL.setName("ShowALL"); // NOI18N
         ShowALL.addActionListener(new java.awt.event.ActionListener() {
@@ -1854,40 +1897,9 @@ public class ECGJAVa2View extends FrameView {
 
         menuBar.add(jMenu9);
 
-        jMenu2.setText(resourceMap.getString("jMenu2.text")); // NOI18N
-        jMenu2.setName("jMenu2"); // NOI18N
-
-        jMenuItem4.setText(resourceMap.getString("jMenuItem4.text")); // NOI18N
-        jMenuItem4.setName("jMenuItem4"); // NOI18N
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem3.setText(resourceMap.getString("jMenuItem3.text")); // NOI18N
-        jMenuItem3.setName("jMenuItem3"); // NOI18N
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
-
-        Dialog_box.setText(resourceMap.getString("Dialog_box.text")); // NOI18N
-        Dialog_box.setName("Dialog_box"); // NOI18N
-        Dialog_box.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Dialog_boxActionPerformed(evt);
-            }
-        });
-        jMenu2.add(Dialog_box);
-
-        menuBar.add(jMenu2);
-
         jMenu6.setText(resourceMap.getString("jMenu6.text")); // NOI18N
 
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.META_MASK));
         jMenuItem10.setText(resourceMap.getString("jMenuItem10.text")); // NOI18N
         jMenuItem10.setName("jMenuItem10"); // NOI18N
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
@@ -1903,6 +1915,7 @@ public class ECGJAVa2View extends FrameView {
         helpMenu.setName("helpMenu"); // NOI18N
 
         aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
+        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.META_MASK));
         aboutMenuItem.setName("aboutMenuItem"); // NOI18N
         helpMenu.add(aboutMenuItem);
 
@@ -1923,6 +1936,9 @@ public class ECGJAVa2View extends FrameView {
 
         jLabel20.setText(resourceMap.getString("jLabel20.text")); // NOI18N
         jLabel20.setName("jLabel20"); // NOI18N
+
+        jCheckBox1.setText(resourceMap.getString("jCheckBox1.text")); // NOI18N
+        jCheckBox1.setName("jCheckBox1"); // NOI18N
 
         setComponent(mainPanel);
         setMenuBar(menuBar);
@@ -1954,13 +1970,7 @@ public class ECGJAVa2View extends FrameView {
             }
        Comm.start();
        InitialTime = System.currentTimeMillis();
-        
-        try {
-            LogFiles.WriteLogFiles.main(null);
-        } catch (IOException ex) {
-            Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+       
        System.out.println(CommPortOpen.getConnected());
         if (CommPortOpen.getConnected()){
             Serial.setText(CommPortOpen.getPortName());
@@ -2411,6 +2421,17 @@ private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         }
 }//GEN-LAST:event_DisconnectActionPerformed
 
+private void RecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecordActionPerformed
+        if(Record.isSelected()){
+            try {
+                LogFiles.WriteLogFiles.main(null);
+            } catch (IOException ex) {
+                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+}//GEN-LAST:event_RecordActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.getConnected()){
@@ -2480,6 +2501,7 @@ private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JButton RESPSerial;
     private javax.swing.JButton RESPSql;
     public static javax.swing.JLabel RESPValue;
+    private javax.swing.JCheckBox Record;
     private javax.swing.JButton ResetPulse;
     private javax.swing.JButton ResetSPO2;
     private javax.swing.JLabel SPO2Label;
@@ -2508,6 +2530,7 @@ private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     public static javax.swing.JLabel XbeePackets;
     public static javax.swing.JLabel XbeeTotal;
     public static javax.swing.JLabel Xbeegood;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
