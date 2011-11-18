@@ -447,7 +447,7 @@ public class ECGJAVa2View extends FrameView {
                     .add(BreathPer))
                 .add(18, 18, 18)
                 .add(ConectBreathSerial)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab(resourceMap.getString("jPanel6.TabConstraints.tabTitle"), jPanel6); // NOI18N
@@ -535,7 +535,7 @@ public class ECGJAVa2View extends FrameView {
         ECGContainer.setJMenuBar(jMenuBar4);
 
         mainPanel.add(ECGContainer);
-        ECGContainer.setBounds(20, 410, 1400, 335);
+        ECGContainer.setBounds(20, 410, 1353, 320);
 
         Connected.setClosable(true);
         Connected.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -587,7 +587,7 @@ public class ECGJAVa2View extends FrameView {
                         .add(2, 2, 2)
                         .add(ConnectDB, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(Record))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         ConnectedLayout.setVerticalGroup(
             ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1744,7 +1744,7 @@ public class ECGJAVa2View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
-        Connect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.META_MASK));
+        Connect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         Connect.setText(resourceMap.getString("Connect.text")); // NOI18N
         Connect.setName("Connect"); // NOI18N
         Connect.addActionListener(new java.awt.event.ActionListener() {
@@ -1754,7 +1754,7 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(Connect);
 
-        Disconnect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.META_MASK));
+        Disconnect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         Disconnect.setText(resourceMap.getString("Disconnect.text")); // NOI18N
         Disconnect.setName("Disconnect"); // NOI18N
         Disconnect.addActionListener(new java.awt.event.ActionListener() {
@@ -1764,7 +1764,7 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(Disconnect);
 
-        ConnectToDB.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.META_MASK));
+        ConnectToDB.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         ConnectToDB.setText(resourceMap.getString("ConnectToDB.text")); // NOI18N
         ConnectToDB.setName("ConnectToDB"); // NOI18N
         ConnectToDB.addActionListener(new java.awt.event.ActionListener() {
@@ -1774,7 +1774,7 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(ConnectToDB);
 
-        CloseDB.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.META_MASK));
+        CloseDB.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         CloseDB.setText(resourceMap.getString("CloseDB.text")); // NOI18N
         CloseDB.setName("CloseDB"); // NOI18N
         CloseDB.addActionListener(new java.awt.event.ActionListener() {
@@ -1885,7 +1885,7 @@ public class ECGJAVa2View extends FrameView {
         });
         jMenu9.add(ShowSignal);
 
-        ShowALL.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.META_MASK));
+        ShowALL.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         ShowALL.setText(resourceMap.getString("ShowALL.text")); // NOI18N
         ShowALL.setName("ShowALL"); // NOI18N
         ShowALL.addActionListener(new java.awt.event.ActionListener() {
@@ -1899,7 +1899,7 @@ public class ECGJAVa2View extends FrameView {
 
         jMenu6.setText(resourceMap.getString("jMenu6.text")); // NOI18N
 
-        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.META_MASK));
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem10.setText(resourceMap.getString("jMenuItem10.text")); // NOI18N
         jMenuItem10.setName("jMenuItem10"); // NOI18N
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
@@ -1915,7 +1915,7 @@ public class ECGJAVa2View extends FrameView {
         helpMenu.setName("helpMenu"); // NOI18N
 
         aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
-        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.META_MASK));
+        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         aboutMenuItem.setName("aboutMenuItem"); // NOI18N
         helpMenu.add(aboutMenuItem);
 

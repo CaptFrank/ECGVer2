@@ -199,7 +199,7 @@
                               </Group>
                               <EmptySpace min="18" pref="18" max="18" attributes="0"/>
                               <Component id="ConectBreathSerial" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="33" max="32767" attributes="0"/>
+                              <EmptySpace pref="40" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -398,7 +398,7 @@
                           </Group>
                           <Component id="Record" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1959,7 +1959,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="Connect">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Meta+I"/>
+                  <KeyStroke key="Ctrl+W"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="Connect.text"/>
                 <Property name="name" type="java.lang.String" value="Connect" noResource="true"/>
@@ -1971,7 +1971,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="Disconnect">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Meta+D"/>
+                  <KeyStroke key="Ctrl+D"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="Disconnect.text"/>
                 <Property name="name" type="java.lang.String" value="Disconnect" noResource="true"/>
@@ -1983,7 +1983,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ConnectToDB">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Meta+B"/>
+                  <KeyStroke key="Ctrl+B"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="ConnectToDB.text"/>
                 <Property name="name" type="java.lang.String" value="ConnectToDB" noResource="true"/>
@@ -1995,7 +1995,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="CloseDB">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Meta+S"/>
+                  <KeyStroke key="Ctrl+S"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="CloseDB.text"/>
                 <Property name="name" type="java.lang.String" value="CloseDB" noResource="true"/>
@@ -2119,7 +2119,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ShowALL">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Meta+W"/>
+                  <KeyStroke key="Ctrl+W"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="ShowALL.text"/>
                 <Property name="name" type="java.lang.String" value="ShowALL" noResource="true"/>
@@ -2138,7 +2138,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Meta+E"/>
+                  <KeyStroke key="Ctrl+E"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="jMenuItem10.text"/>
                 <Property name="name" type="java.lang.String" value="jMenuItem10" noResource="true"/>
@@ -2165,7 +2165,7 @@
                   <action class="ecgjava2.ECGJAVa2View" id="showAboutBox" methodName="showAboutBox"/>
                 </Property>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Meta+A"/>
+                  <KeyStroke key="F1"/>
                 </Property>
                 <Property name="name" type="java.lang.String" value="aboutMenuItem" noResource="true"/>
               </Properties>
