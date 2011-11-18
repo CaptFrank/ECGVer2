@@ -447,7 +447,7 @@ public class ECGJAVa2View extends FrameView {
                     .add(BreathPer))
                 .add(18, 18, 18)
                 .add(ConectBreathSerial)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab(resourceMap.getString("jPanel6.TabConstraints.tabTitle"), jPanel6); // NOI18N
@@ -535,7 +535,7 @@ public class ECGJAVa2View extends FrameView {
         ECGContainer.setJMenuBar(jMenuBar4);
 
         mainPanel.add(ECGContainer);
-        ECGContainer.setBounds(20, 410, 1353, 320);
+        ECGContainer.setBounds(20, 410, 1400, 335);
 
         Connected.setClosable(true);
         Connected.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -587,7 +587,7 @@ public class ECGJAVa2View extends FrameView {
                         .add(2, 2, 2)
                         .add(ConnectDB, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(Record))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ConnectedLayout.setVerticalGroup(
             ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1744,7 +1744,7 @@ public class ECGJAVa2View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
-        Connect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
+        Connect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         Connect.setText(resourceMap.getString("Connect.text")); // NOI18N
         Connect.setName("Connect"); // NOI18N
         Connect.addActionListener(new java.awt.event.ActionListener() {
@@ -1915,7 +1915,6 @@ public class ECGJAVa2View extends FrameView {
         helpMenu.setName("helpMenu"); // NOI18N
 
         aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
-        aboutMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         aboutMenuItem.setName("aboutMenuItem"); // NOI18N
         helpMenu.add(aboutMenuItem);
 
