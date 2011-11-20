@@ -2,9 +2,6 @@
 // www.ladyada.net/learn/sensors/thermocouple
 
 //defines/includes
-
-#include <nmea.h>
-
 #include "max6675.h"
 #define potPin 0
 #define LightPin 1
@@ -17,17 +14,23 @@
 #define irLED 4
 #define Battpin 5
 #define Resppin 2
+#define receivePin 23
 
 //initalization of vars
 
 int z=0;
 double temp=0;
+int byteGPS = -1;
+char buffer[300] = "";
+char commandGPR[7] = "$GPRMC";
+int count = 0;
+int good = 0;
+int counter = 0;
+int indices[13];
 
 int thermoDO = 10;
 int thermoCS = 11;
 int thermoCLK = 12;
-String Sentence = null;
-NMEA gps(ALL);
 
  /*________________________________________________________________________________*/
 
@@ -38,10 +41,10 @@ int gndPin = 8;
  /*________________________________________________________________________________*/
   
 void setup() {
-  Serial.begin(115200);
-  Serial1.begin(4800);
+  Serial1.begin(115200);
+  Serial2.begin(4800);
   // use Arduino pins 
-  
+  pinMode(receivePin, OUTPUT);
   pinMode(vccPin, OUTPUT); digitalWrite(vccPin, HIGH);
   pinMode(gndPin, OUTPUT); digitalWrite(gndPin, LOW);
   pinMode(PWR_PIN, OUTPUT); digitalWrite(PWR_PIN, HIGH);
@@ -51,6 +54,10 @@ void setup() {
   pinMode(redLED, OUTPUT); digitalWrite(redLED, LOW);
   pinMode(LightPin, INPUT);
   
+  for (int i = 0; i < 300; i++){
+   buffer[i] = ' '; 
+  }
+  
   // wait for MAX chip to stabilize
   delay(100);
 }
@@ -59,39 +66,38 @@ void setup() {
 
 void loop() {
   // basic readout test, just print the current temp
-  Serial.print("!");
-  Serial.print("Lig:");
-  Serial.print((double)analogRead(LightPin));
+  Serial1.print("!");
+  Serial1.print("Lig:");
+  Serial1.print((double)analogRead(LightPin));
   if (z==1000){
-    Serial.print("Tem:");
+    Serial1.print("Tem:");
     temp =thermocouple.readCelsius()-6.0;
-    Serial.print((double)(thermocouple.readCelsius()-6.0));
+    Serial1.print((double)(thermocouple.readCelsius()-6.0));
     z=0;
   }
   else{
-    Serial.print("Tem:");
-    Serial.print(temp);
+    Serial1.print("Tem:");
+    Serial1.print(temp);
   }
-  Serial.print("ECG:");
-  Serial.print((double)analogRead(ECGPin));
-  Serial.print("POT:");
+  Serial1.print("ECG:");
+  Serial1.print((double)analogRead(ECGPin));
+  Serial1.print("POT:");
   digitalWrite(redLED, HIGH);
-  Serial.print(pulseIn(Red, HIGH));
+  Serial1.print(pulseIn(Red, HIGH));
   digitalWrite(redLED, LOW);
-  Serial.print("BAT:");
-  Serial.print((double)analogRead(Battpin));
-  Serial.print("IRL:");
+  Serial1.print("BAT:");
+  Serial1.print((double)analogRead(Battpin));
+  Serial1.print("IRL:");
   digitalWrite(irLED, HIGH);
-  Serial.print((double)pulseIn(Red, HIGH));
+  Serial1.print((double)pulseIn(Red, HIGH));
   digitalWrite(irLED, LOW);
-  Serial.print("LOW:");
-  Serial.print((double)pulseIn(Red, HIGH));
-  Serial.print("RES:");
-  Serial.print((double)analogRead(Resppin));
+  Serial1.print("LOW:");
+  Serial1.print((double)pulseIn(Red, HIGH));
+  Serial1.print("RES:");
+  Serial1.print((double)analogRead(Resppin));
  
   getGPSSentence();
-  Serial.println("\n");
-  delay(70);
+  Serial1.println("\n");
   z+=10;
 }
 
@@ -104,16 +110,32 @@ void select(){
 }
 
 String getGPSSentence(){
-  if(Serial1.available() > 0){
-    if (gps.decode(Serial1.read())){
-      if(Sentence != gps.decode()){
-         Sentence = gps.decode();
-         Serial.print("|");      
-         Serial.print(Sentence);
-       } 
-       else{
-         Serial.print("|");      
-         Serial.print(Sentence);
+    digitalWrite(receivePin, HIGH);
+    Serial1.print("|");
+    byteGPS = Serial2.read();
+    if(byteGPS == -1){
+       delay(100); 
+    }
+    else{
+       buffer[counter] = byteGPS;
+       counter++;
+       Serial2.print(byteGPS, BYTE);
+       if(byteGPS == 13){
+           digitalWrite(receivePin, LOW);
+           count = 0;
+           good = 0;
+           
+           for(int i = 1; i < 7; i++){
+             if(buffer[i] == commandGPR[i - 1]){
+               good++;
+             }
+           }
+           if(good == 6){
+             for(int i = 0; i < 300; i++){
+               Serial1.print(buffer[i]);
+             }
+          }
        }
-  }
+    }
+  Serial1.print("\n");
 }

@@ -41,6 +41,8 @@ public class SQL{
       Dialog_box.update("Connection successful to Arduino Data Database!\n");
             
       connected = true;
+      
+      
 
 //      if (Connection != null) {
 //        try {
@@ -114,7 +116,7 @@ public class SQL{
     
     static void insertItems(String instance, String Command){
 
-        // To Do
+
         
     }
 
