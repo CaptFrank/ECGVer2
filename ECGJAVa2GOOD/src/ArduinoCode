@@ -1,5 +1,4 @@
-// this example is public domain. enjoy!
-// www.ladyada.net/learn/sensors/thermocouple
+// By: Francis Papineau
 
 //defines/includes
 #include "max6675.h"
