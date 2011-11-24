@@ -578,10 +578,10 @@ public class ECGJAVa2View extends FrameView {
         );
         GenDAtaLayout.setVerticalGroup(
             GenDAtaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jTabbedPane6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+            .add(jTabbedPane6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
         );
 
-        GenDAta.setBounds(0, 160, 320, 210);
+        GenDAta.setBounds(0, 160, 320, 220);
         mainPanel2.add(GenDAta, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Temperature.setClosable(true);
@@ -775,7 +775,7 @@ public class ECGJAVa2View extends FrameView {
 
         Temperature.setJMenuBar(jMenuBar2);
 
-        Temperature.setBounds(380, 20, 370, 220);
+        Temperature.setBounds(380, 10, 370, 220);
         mainPanel2.add(Temperature, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         SignalAnalysis.setClosable(true);
@@ -1026,7 +1026,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel16))
         );
 
-        ECGContainer.setBounds(10, 380, 1340, 330);
+        ECGContainer.setBounds(0, 380, 1360, 330);
         mainPanel2.add(ECGContainer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Inbound.setClosable(true);

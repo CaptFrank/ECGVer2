@@ -10,10 +10,8 @@ package ecgjava2;
  */
 import java.io.*;
 import java.net.*;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 class GPSComm extends Thread{
@@ -65,11 +63,7 @@ class GPSComm extends Thread{
                 }
                 catch(IOException ioException){} 
             }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(GPSComm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
 	}
         
         //sned messages
@@ -79,6 +73,11 @@ class GPSComm extends Thread{
             out.flush();
             System.out.println("server>" + msg);
             Dialog_boxGPS.update("server>" + msg);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(GPSComm.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         catch(IOException ioException){}
     }
