@@ -1075,7 +1075,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-                  <JLayeredPaneConstraints x="0" y="380" width="1360" height="330" layer="0" position="-1"/>
+                  <JLayeredPaneConstraints x="0" y="380" width="1350" height="330" layer="0" position="-1"/>
                 </Constraint>
               </Constraints>
 
@@ -1860,22 +1860,33 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="14" pref="14" max="14" attributes="0"/>
-                                          <Component id="Socket" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="ConnectSocket" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                                  <Component id="ConnectSocket1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="14" pref="14" max="14" attributes="0"/>
+                                                  <Component id="Socket" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                          <Component id="ConnectSocket" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="47" pref="47" max="47" attributes="0"/>
-                                          <Component id="ConnectSocket1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                          <Component id="GPS" min="-2" pref="427" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="GPS" alignment="0" min="-2" pref="427" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                                          <Component id="GPSd4Win" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="GPSd4Mac" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace pref="44" max="32767" attributes="0"/>
                               </Group>
@@ -1891,12 +1902,17 @@
                                   </Group>
                                   <EmptySpace min="18" pref="18" max="18" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="ConnectSocket" min="-2" max="-2" attributes="0"/>
                                       <Component id="ConnectSocket1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ConnectSocket" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="8" pref="8" max="8" attributes="0"/>
-                                  <Component id="GPS" min="-2" pref="138" max="-2" attributes="0"/>
-                                  <EmptySpace pref="35" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Component id="GPS" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="GPSd4Win" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="GPSd4Mac" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="45" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1939,6 +1955,24 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConnectSocket1ActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JRadioButton" name="GPSd4Win">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" resourceKey="GPSd4Win.text"/>
+                            <Property name="name" type="java.lang.String" value="GPSd4Win" noResource="true"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GPSd4WinActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JRadioButton" name="GPSd4Mac">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" resourceKey="GPSd4Mac.text"/>
+                            <Property name="name" type="java.lang.String" value="GPSd4Mac" noResource="true"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GPSd4MacActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>

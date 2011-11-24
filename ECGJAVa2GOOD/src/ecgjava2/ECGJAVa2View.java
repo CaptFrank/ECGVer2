@@ -253,6 +253,8 @@ public class ECGJAVa2View extends FrameView {
         Socket = new javax.swing.JLabel();
         ConnectSocket = new javax.swing.JButton();
         ConnectSocket1 = new javax.swing.JButton();
+        GPSd4Win = new javax.swing.JRadioButton();
+        GPSd4Mac = new javax.swing.JRadioButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         LightSerialChart2 = new javax.swing.JButton();
@@ -1026,7 +1028,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel16))
         );
 
-        ECGContainer.setBounds(0, 380, 1360, 330);
+        ECGContainer.setBounds(0, 380, 1350, 330);
         mainPanel2.add(ECGContainer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Inbound.setClosable(true);
@@ -1555,24 +1557,47 @@ public class ECGJAVa2View extends FrameView {
             }
         });
 
+        GPSd4Win.setText(resourceMap.getString("GPSd4Win.text")); // NOI18N
+        GPSd4Win.setName("GPSd4Win"); // NOI18N
+        GPSd4Win.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPSd4WinActionPerformed(evt);
+            }
+        });
+
+        GPSd4Mac.setText(resourceMap.getString("GPSd4Mac.text")); // NOI18N
+        GPSd4Mac.setName("GPSd4Mac"); // NOI18N
+        GPSd4Mac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPSd4MacActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel12Layout.createSequentialGroup()
-                .add(44, 44, 44)
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel12Layout.createSequentialGroup()
-                        .add(15, 15, 15)
-                        .add(jLabel9)
-                        .add(14, 14, 14)
-                        .add(Socket))
+                        .add(59, 59, 59)
+                        .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel12Layout.createSequentialGroup()
+                                .add(ConnectSocket)
+                                .add(98, 98, 98)
+                                .add(ConnectSocket1))
+                            .add(jPanel12Layout.createSequentialGroup()
+                                .add(jLabel9)
+                                .add(14, 14, 14)
+                                .add(Socket))))
                     .add(jPanel12Layout.createSequentialGroup()
-                        .add(66, 66, 66)
-                        .add(ConnectSocket)
-                        .add(47, 47, 47)
-                        .add(ConnectSocket1))
-                    .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 427, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(44, 44, 44)
+                        .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 427, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel12Layout.createSequentialGroup()
+                        .add(140, 140, 140)
+                        .add(GPSd4Win)
+                        .add(18, 18, 18)
+                        .add(GPSd4Mac)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -1584,11 +1609,15 @@ public class ECGJAVa2View extends FrameView {
                     .add(Socket))
                 .add(18, 18, 18)
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(ConnectSocket)
-                    .add(ConnectSocket1))
+                    .add(ConnectSocket1)
+                    .add(ConnectSocket))
                 .add(8, 8, 8)
-                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 138, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(27, 27, 27)
+                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(GPSd4Win)
+                    .add(GPSd4Mac))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -2429,12 +2458,20 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     System.out.println(Dir);
 
             try {
-                Process child = Runtime.getRuntime().exec("java -jar " + Dir + "/dist/Chat.jar");
+                Process child = Runtime.getRuntime().exec("java -jar " + Dir + "/Chat/Chat.jar");
             } catch (IOException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
             }
     
 }//GEN-LAST:event_Net_ChatActionPerformed
+
+private void GPSd4WinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSd4WinActionPerformed
+
+}//GEN-LAST:event_GPSd4WinActionPerformed
+
+private void GPSd4MacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSd4MacActionPerformed
+
+}//GEN-LAST:event_GPSd4MacActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2484,6 +2521,8 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuItem EXITINBOUND;
     private javax.swing.JMenuItem EXITTEMP;
     private javax.swing.JButton GPS;
+    private javax.swing.JRadioButton GPSd4Mac;
+    private javax.swing.JRadioButton GPSd4Win;
     private javax.swing.JInternalFrame GenDAta;
     private javax.swing.JLabel GoodPackets;
     public static javax.swing.JLabel IRLED;
