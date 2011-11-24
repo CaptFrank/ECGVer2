@@ -1,8 +1,8 @@
-18:36:41,304 DEBUG plugin:1362 - URL of my class :jar:file:/Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar!/org/dinopolis/gpstool/Gpsylon.class, dir of jar is /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3
-18:36:41,329 DEBUG plugin:1389 - Adding default plugin dir: /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
-18:36:41,330 DEBUG plugin:1410 - Adding repository for plugin/service jars: /Users/francispapineau/.gpsylon/plugins
-18:36:41,330 DEBUG plugin:1403 - Ignoring duplicate plugin/service repository: /Users/francispapineau/.gpsylon/plugins
-18:36:41,359 DEBUG plugin:2949 - plugins for writing image detected: (java.lang.Object[2])org.dinopolis.gpstool.plugin.writerasterimage.WriteJpgImagePlugin@7114460,org.dinopolis.gpstool.plugin.writerasterimage.WritePngImagePlugin@7e9ffe3f
-18:36:41,370 DEBUG connection:1657 - connecting in gps mode 'tcp' with gps protocol 'nmea'
-18:36:41,376 DEBUG connection:1790 - connecting to gpsdevice on host localhost:4444
-18:36:41,376 DEBUG GPSNetworkGpsdDevice:111 - try to connect to host localhost port 4444
+13:28:58,215 DEBUG plugin:1362 - URL of my class :jar:file:/Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar!/org/dinopolis/gpstool/Gpsylon.class, dir of jar is /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3
+13:28:58,233 DEBUG plugin:1389 - Adding default plugin dir: /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
+13:28:58,234 DEBUG plugin:1410 - Adding repository for plugin/service jars: /Users/francispapineau/.gpsylon/plugins
+13:28:58,234 DEBUG plugin:1403 - Ignoring duplicate plugin/service repository: /Users/francispapineau/.gpsylon/plugins
+13:28:58,261 DEBUG plugin:2949 - plugins for writing image detected: (java.lang.Object[2])org.dinopolis.gpstool.plugin.writerasterimage.WriteJpgImagePlugin@7e9ffe3f,org.dinopolis.gpstool.plugin.writerasterimage.WritePngImagePlugin@39ed1b0b
+13:28:58,269 DEBUG connection:1657 - connecting in gps mode 'tcp' with gps protocol 'nmea'
+13:28:58,275 DEBUG connection:1790 - connecting to gpsdevice on host localhost:4444
+13:28:58,275 DEBUG GPSNetworkGpsdDevice:111 - try to connect to host localhost port 4444

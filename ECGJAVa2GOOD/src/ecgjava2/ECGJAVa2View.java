@@ -270,6 +270,7 @@ public class ECGJAVa2View extends FrameView {
         Disconnect = new javax.swing.JMenuItem();
         ConnectToDB = new javax.swing.JMenuItem();
         CloseDB = new javax.swing.JMenuItem();
+        Net_Chat = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -1765,6 +1766,16 @@ public class ECGJAVa2View extends FrameView {
         });
         fileMenu.add(CloseDB);
 
+        Net_Chat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        Net_Chat.setText(resourceMap.getString("Net_Chat.text")); // NOI18N
+        Net_Chat.setName("Net_Chat"); // NOI18N
+        Net_Chat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Net_ChatActionPerformed(evt);
+            }
+        });
+        fileMenu.add(Net_Chat);
+
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(ECGJAVa2View.class, this);
         exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
         exitMenuItem.setName("exitMenuItem"); // NOI18N
@@ -2333,10 +2344,10 @@ public class ECGJAVa2View extends FrameView {
     }//GEN-LAST:event_RESPSerialActionPerformed
 
     private void GPSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSActionPerformed
-        
+        String Dir = System.getProperty("user.dir");
         if (socketConnected){
             try {
-                Process child = Runtime.getRuntime().exec("java -jar /Users/francispapineau/Desktop/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar");
+                Process child = Runtime.getRuntime().exec("java -jar " + Dir + "/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar");
             } catch (IOException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2412,6 +2423,19 @@ private void RecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         }
 }//GEN-LAST:event_RecordActionPerformed
 
+private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Net_ChatActionPerformed
+            
+    String Dir = System.getProperty("user.dir");
+    System.out.println(Dir);
+
+            try {
+                Process child = Runtime.getRuntime().exec("java -jar " + Dir + "/dist/Chat.jar");
+            } catch (IOException ex) {
+                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    
+}//GEN-LAST:event_Net_ChatActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.getConnected()){
@@ -2471,6 +2495,7 @@ private void RecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     private javax.swing.JButton LightSerialChart2;
     public static javax.swing.JLabel LightValue;
     private javax.swing.JFrame Main;
+    private javax.swing.JMenuItem Net_Chat;
     private javax.swing.JButton OXISQLChart1;
     private javax.swing.JButton OXISerialChart1;
     private javax.swing.JLabel PulseLabel;

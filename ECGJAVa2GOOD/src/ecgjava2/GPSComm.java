@@ -11,6 +11,8 @@ package ecgjava2;
 import java.io.*;
 import java.net.*;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -20,7 +22,7 @@ class GPSComm extends Thread{
 	public static ServerSocket providerSocket;
 	public static Socket connection = null;
 	static ObjectOutputStream out;
-	static String message = "";
+	static String message = "$GPRMC,081836,A,3751.65,S,14507.36,E,000.0,360.0,130998,011.3,E*62";
 	public void run(){
             try{
 		//1. creating a server socket
@@ -63,6 +65,11 @@ class GPSComm extends Thread{
                 }
                 catch(IOException ioException){} 
             }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(GPSComm.class.getName()).log(Level.SEVERE, null, ex);
+        }
 	}
         
         //sned messages
