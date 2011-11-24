@@ -466,7 +466,7 @@ public final class ChartECGembed
     super.init();
     Chart2D chart = new Chart2D();
     this.setChart(chart);
-    this.setSize(new Dimension(1374, 250));
+    this.setSize(new Dimension(1315, 250));
     this.m_chart.getAxisX().setPaintGrid(true);
     this.m_chart.getAxisY().setPaintGrid(true);
     chart.getAxisY().setRangePolicy(new RangePolicyMinimumViewport(new Range(-20, +20)));

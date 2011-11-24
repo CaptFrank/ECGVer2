@@ -976,20 +976,12 @@ public class ECGJAVa2View extends FrameView {
         ECGContainer.setClosable(true);
         ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         ECGContainer.setIconifiable(true);
-        ECGContainer.setResizable(true);
         ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
         ECGContainer.setName("ECGContainer"); // NOI18N
         ECGContainer.setVisible(true);
-        ECGContainer.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel16.setText(resourceMap.getString("jLabel16.text")); // NOI18N
         jLabel16.setName("jLabel16"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(112, 600, 161, 598);
-        ECGContainer.getContentPane().add(jLabel16, gridBagConstraints);
 
         jMenuBar4.setName("jMenuBar4"); // NOI18N
 
@@ -1018,7 +1010,22 @@ public class ECGJAVa2View extends FrameView {
 
         ECGContainer.setJMenuBar(jMenuBar4);
 
-        ECGContainer.setBounds(10, 380, 1350, 335);
+        org.jdesktop.layout.GroupLayout ECGContainerLayout = new org.jdesktop.layout.GroupLayout(ECGContainer.getContentPane());
+        ECGContainer.getContentPane().setLayout(ECGContainerLayout);
+        ECGContainerLayout.setHorizontalGroup(
+            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ECGContainerLayout.createSequentialGroup()
+                .add(575, 575, 575)
+                .add(jLabel16))
+        );
+        ECGContainerLayout.setVerticalGroup(
+            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ECGContainerLayout.createSequentialGroup()
+                .add(112, 112, 112)
+                .add(jLabel16))
+        );
+
+        ECGContainer.setBounds(10, 380, 1340, 330);
         mainPanel2.add(ECGContainer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Inbound.setClosable(true);
