@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-class GPSComm extends Thread{
+class GPSCommSocket extends Thread{
     
        //define stuff
 	public static ServerSocket providerSocket;
@@ -76,7 +76,7 @@ class GPSComm extends Thread{
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(GPSComm.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(GPSCommSocket.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         catch(IOException ioException){}
@@ -89,7 +89,7 @@ class GPSComm extends Thread{
     }
         //make a new thread
     public static void main(String args[]){
-        GPSComm server = new GPSComm();
+        GPSCommSocket server = new GPSCommSocket();
         while(true){
             server.start();
         }

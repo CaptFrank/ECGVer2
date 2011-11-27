@@ -20,19 +20,20 @@ public class SplitParse {
     
     /*________________________________________________________________________________*/
 
-    private static String REGEX1 = "[!Lig:TemECGPOBAIRWS]";
+    private static String REGEX1 = "[!Lig:TemECGPOBAIRWSAr]";
    
     /*  ADD THE REGEX FOR PARSING */
     
     //the regex that splits the stuff
-    private static String REGEX2 = "|";
+    private static String REGEX2 = "[/]";
     
     protected static int ArrayIndex1 = 0, ArrayIndex2 = 0;
     protected static double GlobalTime;
     protected static String GPSSentence = "", ECGSentence ="";
-    protected static String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "";
+    protected static String Light = "", Temp = "", ECG = "", Pot = "", Bat = "", IR = "", Low = "", RESP = "",
+                            DiffTemp = "";
     protected static double Lightnum = 0.00, Tempnum = 0.00, ECGnum = 0.00, Potnum = 0.00, Battery = 0.00, 
-                            IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00;
+                            IRnum = 0.00, LowNum = 0.00, RESPnum = 0.00, DiffTempValue = 0.00;
     protected static double [][] SPO2Array = new double [40][2];
     protected static boolean full = false;
     protected static getBPM BPM = new getBPM();
@@ -50,23 +51,26 @@ public class SplitParse {
     
     static public void splitGPS_Val(String Val) throws IOException{
         
-        //compile regex
-        Pattern p1 = Pattern.compile(REGEX2);
-        String[] items = p1.split(Val);
-        
-        //if connected
-        if(ECGJAVa2View.getSocketConnected()){
-            GPSSentence = items[1];
-            
-            // this sets the global var. in the GPSComm class
-            // this class uses this sentence ove and over ad over, 
-            // until a new sentence is parsed.
-            
-            GPSComm.setMessage(GPSSentence);
-        }
-        
-        //split values if parsable
-        ECGSentence = items[0];
+//        //compile regex
+//        Pattern p1 = Pattern.compile(REGEX2);
+//        String[] items = p1.split(Val);
+//        
+//        //for(String s: items){
+//            //System.out.println(s);
+//        //}
+//        //if connected
+//        if(ECGJAVa2View.getSocketConnected()){
+//            GPSSentence = items[1];
+//            
+//            // this sets the global var. in the GPSCommSocket class
+//            // this class uses this sentence ove and over ad over, 
+//            // until a new sentence is parsed.
+//            
+//            GPSCommSocket.setMessage(GPSSentence);
+//        }
+//        
+//        //split values if parsable
+        ECGSentence = Val;
         if(parsable(ECGSentence)){
             splitVal(ECGSentence);
         }
@@ -160,16 +164,33 @@ public class SplitParse {
                 }
                 ECGJAVa2View.RESP.repaint();
             }
+            else if (ArrayIndex1 == 37){
+                DiffTemp = items[37];
+                if (DiffTemp != null && !DiffTemp.isEmpty()){
+                    DiffTempValue = Double.parseDouble(DiffTemp);
+                    System.out.println(DiffTemp);
+                    ECGJAVa2View.BaseTempValue.setText(Double.toString(DiffTempValue));
+                    ECGJAVa2View.DiffTempValue.setText(Double.toString(Tempnum - DiffTempValue));
+                }
+                ECGJAVa2View.BaseTempValue.repaint();
+            }
             ArrayIndex1++;
             if (getSPO2.getGuard()){
                 getSPO2.getSPO2();
             }
         }
-        if (Light != null && ECG != null && Temp != null && Pot != null && !Light.isEmpty() && !ECG.isEmpty() && !Temp.isEmpty() && !Pot.isEmpty() && Bat != null && !Bat.isEmpty()
-                && IR != null && !IR.isEmpty() && Low != null && !Low.isEmpty() && RESP != null && !RESP.isEmpty()){
-            GlobalTime = System.currentTimeMillis() - ECGJAVa2View.InitialTime;
-            String x = (System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + Lightnum + "," + ECGnum + "," + Tempnum + "," + Potnum + "," + Bat + "," + IRnum + "," + LowNum + "," + RESPnum + "\n";
-            LogFiles.WriteLogFiles.Writetofile(x);
+        if(ECGJAVa2View.Record.isSelected()){
+            if (Light != null && ECG != null && Temp != null && Pot != null && !Light.isEmpty() && !ECG.isEmpty() && !Temp.isEmpty() && !Pot.isEmpty() && Bat != null && !Bat.isEmpty()
+                    && IR != null && !IR.isEmpty() && Low != null && !Low.isEmpty() && RESP != null && !RESP.isEmpty() && DiffTemp != null && !DiffTemp.isEmpty()){
+                String xVitals = (System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + ECGnum + "," + Potnum + "," + 
+                        "," + IRnum + "," + LowNum + "," + RESPnum + "\n";
+                String xOthers = ((System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + Lightnum + "," + Bat + "\n");
+                String xTemp = ((System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + Tempnum + "," + DiffTempValue + "\n");
+                
+                LogFiles.WriteLogFilesOthers.Writetofile(xOthers);
+                LogFiles.WriteLogFilesVitals.Writetofile(xVitals);
+                LogFiles.WriteLogFilesTemp.Writetofile(xTemp);
+            }
         }
 
         ArrayIndex1 = 0;
@@ -179,7 +200,8 @@ public class SplitParse {
 
     public static boolean parsable(String val){
         
-        Pattern p = Pattern.compile("(!?)(Lig:)(\\d+)(.)(\\d+)(Tem:)(\\d+)(.)(\\d+)(ECG:)(\\d+)(.)(\\d+)(POT:)(\\d+)(.)(\\d+)(BAT:)(\\d+)(.)(\\d+)(IRL:)(\\d+)(.)(\\d+)(LOW:)(\\d+)(.)(\\d+)(RES:)(\\d+)(.)(\\d+)");
+        Pattern p = Pattern.compile("(!?)(Lig:)(\\d+)(.)(\\d+)(Tem:)(\\d+)(.)(\\d+)(ECG:)(\\d+)(.)(\\d+)(POT:)(\\d+)(.)(\\d+)(BAT:)(\\d+)(.)(\\d+)(IRL:)(\\d+)(.)(\\d+)(LOW:)(\\d+)"
+                + "(.)(\\d+)(RES:)(\\d+)(.)(\\d+)(ArT:)(\\d+)(.)(\\d+)");
         Matcher m = p.matcher(val);
 
         if (m.find()){
@@ -225,5 +247,7 @@ public class SplitParse {
     public static String getGPS_Sentence(){
         return GPSSentence;
     }
-    
+    public static double getDiffTemp(){
+        return DiffTempValue;
+    } 
 }

@@ -20,15 +20,16 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 
 
-public class WriteLogFiles {
+public class WriteLogFilesVitals {
     public static FileOutputStream outputFileStream = null;
     static File aFile;
     private static BufferedWriter output;
     public static Date date;
     public static FileReader in;
     public static FileWriter fout;
+    private static boolean good = false;
 
-    WriteLogFiles(){}
+    WriteLogFilesVitals(){}
     
     private final static java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy.MMMM.dd");
 
@@ -36,7 +37,7 @@ public class WriteLogFiles {
     FileWriter fout = null;
 
     date = new Date();
-    aFile = new File("Data" + dateFormat.format(date) + ".csv");
+    aFile = new File("DataVitals" + dateFormat.format(date) + ".csv");
     if (aFile.exists()){
        aFile.renameTo(new File("Data-" + dateFormat.format(date) + "-1.csv"));
        if (ecgjava2.ECGJAVa2View.Dialogconnected){
@@ -54,7 +55,7 @@ public class WriteLogFiles {
     }
 
     fout = new FileWriter(aFile);
-    fout.write("Time,Light,ECG,Temp,OXI,Battery Voltage (mV), IR Value, SPO2, Fail safe, RESP Value\n");
+    fout.write("Time,ECG,OXI,IR Value,SPO2,Fail safe,RESP Value\n");
     fout.close();
     System.out.println("Header Written Successfully");
       if (ecgjava2.ECGJAVa2View.Dialogconnected){
@@ -68,9 +69,9 @@ public class WriteLogFiles {
         File outputFile = null;
         File f = null;
             try {
-                inputFile = new File("Data" + dateFormat.format(date) + ".csv");
+                inputFile = new File("DataVitals" + dateFormat.format(date) + ".csv");
                 f = inputFile;
-                outputFile = new File("DataTemp.csv");
+                outputFile = new File("DataVitalsTemp.csv");
                 try {
                     in = new FileReader(inputFile);
                 } catch (FileNotFoundException ex) {
@@ -84,13 +85,17 @@ public class WriteLogFiles {
                     fout.write(c);
                 }
                 fout.write(x);
+                good = true;
             } catch (IOException ex) {
             } finally {
-                try {
-                    fout.close();
-                    in.close();
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Error closing the I/O streams", "Error", JOptionPane.ERROR_MESSAGE);
+                if(good){
+                    try {
+                        fout.close();
+                        in.close();
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(null, "Error closing the I/O streams", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    good = false;
                 }
             }
             inputFile.delete();

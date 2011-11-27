@@ -1,4 +1,5 @@
-// By: Francis Papineau
+// this example is public domain. enjoy!
+// www.ladyada.net/learn/sensors/thermocouple
 
 //defines/includes
 #include "max6675.h"
@@ -14,6 +15,7 @@
 #define Battpin 5
 #define Resppin 2
 #define receivePin 23
+#define TempAround 2
 
 //initalization of vars
 
@@ -40,8 +42,8 @@ int gndPin = 8;
  /*________________________________________________________________________________*/
   
 void setup() {
-  Serial1.begin(115200);
-  Serial2.begin(4800);
+  Serial.begin(115200);
+  Serial1.begin(4800);
   // use Arduino pins 
   pinMode(receivePin, OUTPUT);
   pinMode(vccPin, OUTPUT); digitalWrite(vccPin, HIGH);
@@ -51,6 +53,7 @@ void setup() {
   pinMode(ECGPin, INPUT); digitalWrite(ECGPin, LOW);
   pinMode(irLED, OUTPUT); digitalWrite(irLED, LOW);
   pinMode(redLED, OUTPUT); digitalWrite(redLED, LOW);
+  //pinMode(TempAround, OUTPUT); digitalWrite(TempAround, LOW);
   pinMode(LightPin, INPUT);
   
   for (int i = 0; i < 300; i++){
@@ -65,39 +68,42 @@ void setup() {
 
 void loop() {
   // basic readout test, just print the current temp
-  Serial1.print("!");
-  Serial1.print("Lig:");
-  Serial1.print((double)analogRead(LightPin));
+  Serial.print("!");
+  Serial.print("Lig:");
+  Serial.print((double)analogRead(LightPin));
   if (z==1000){
-    Serial1.print("Tem:");
+    Serial.print("Tem:");
     temp =thermocouple.readCelsius()-6.0;
-    Serial1.print((double)(thermocouple.readCelsius()-6.0));
+    Serial.print((double)(thermocouple.readCelsius()-6.0));
     z=0;
   }
   else{
-    Serial1.print("Tem:");
-    Serial1.print(temp);
+    Serial.print("Tem:");
+    Serial.print(temp);
   }
-  Serial1.print("ECG:");
-  Serial1.print((double)analogRead(ECGPin));
-  Serial1.print("POT:");
+  Serial.print("ECG:");
+  Serial.print((double)analogRead(ECGPin));
+  Serial.print("POT:");
   digitalWrite(redLED, HIGH);
-  Serial1.print(pulseIn(Red, HIGH));
+  Serial.print(pulseIn(Red, HIGH));
   digitalWrite(redLED, LOW);
-  Serial1.print("BAT:");
-  Serial1.print((double)analogRead(Battpin));
-  Serial1.print("IRL:");
+  Serial.print("BAT:");
+  Serial.print((double)analogRead(Battpin));
+  Serial.print("IRL:");
   digitalWrite(irLED, HIGH);
-  Serial1.print((double)pulseIn(Red, HIGH));
+  Serial.print((double)pulseIn(Red, HIGH));
   digitalWrite(irLED, LOW);
-  Serial1.print("LOW:");
-  Serial1.print((double)pulseIn(Red, HIGH));
-  Serial1.print("RES:");
-  Serial1.print((double)analogRead(Resppin));
- 
-  getGPSSentence();
-  Serial1.println("\n");
+  Serial.print("LOW:");
+  Serial.print((double)pulseIn(Red, HIGH));
+  Serial.print("RES:");
+  Serial.print((double)analogRead(Resppin));
+  Serial.print("ArT:");
+  Serial.print((double)Thermistor(analogRead(TempAround)));
+  
+  //getGPSSentence();
+  Serial.println("\n");
   z+=10;
+  delay(100);
 }
 
  /*________________________________________________________________________________*/
@@ -108,33 +114,11 @@ void select(){
   // Select the inputs...
 }
 
-String getGPSSentence(){
-    digitalWrite(receivePin, HIGH);
-    Serial1.print("|");
-    byteGPS = Serial2.read();
-    if(byteGPS == -1){
-       delay(100); 
-    }
-    else{
-       buffer[counter] = byteGPS;
-       counter++;
-       Serial2.print(byteGPS, BYTE);
-       if(byteGPS == 13){
-           digitalWrite(receivePin, LOW);
-           count = 0;
-           good = 0;
-           
-           for(int i = 1; i < 7; i++){
-             if(buffer[i] == commandGPR[i - 1]){
-               good++;
-             }
-           }
-           if(good == 6){
-             for(int i = 0; i < 300; i++){
-               Serial1.print(buffer[i]);
-             }
-          }
-       }
-    }
-  Serial1.print("\n");
-}
+//String getGPSSentence(){
+//    digitalWrite(receivePin, HIGH);
+//    Serial.print("/");
+//    for(int i = 0; i < 300; i++){
+//      Serial.print(Serial1.read(), BYTE);
+//    }
+//    Serial.print("\n");
+//}

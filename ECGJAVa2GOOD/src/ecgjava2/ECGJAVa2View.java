@@ -5,7 +5,7 @@
 package ecgjava2;
 
 
-import LogFiles.WriteLogFiles;
+import LogFiles.WriteLogFilesOthers;
 import gnu.io.NoSuchPortException;
 import gnu.io.PortInUseException;
 import gnu.io.UnsupportedCommOperationException;
@@ -130,6 +130,7 @@ public class ECGJAVa2View extends FrameView {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         Record = new javax.swing.JCheckBox();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         GenDAta = new javax.swing.JInternalFrame();
         jTabbedPane6 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
@@ -255,6 +256,7 @@ public class ECGJAVa2View extends FrameView {
         ConnectSocket1 = new javax.swing.JButton();
         GPSd4Win = new javax.swing.JRadioButton();
         GPSd4Mac = new javax.swing.JRadioButton();
+        GPSWrite = new javax.swing.JCheckBox();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         LightSerialChart2 = new javax.swing.JButton();
@@ -333,6 +335,8 @@ public class ECGJAVa2View extends FrameView {
             }
         });
 
+        filler1.setName("filler1"); // NOI18N
+
         org.jdesktop.layout.GroupLayout ConnectedLayout = new org.jdesktop.layout.GroupLayout(Connected.getContentPane());
         Connected.getContentPane().setLayout(ConnectedLayout);
         ConnectedLayout.setHorizontalGroup(
@@ -353,7 +357,11 @@ public class ECGJAVa2View extends FrameView {
                                 .add(jLabel33)
                                 .add(2, 2, 2)
                                 .add(Serial)))))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, ConnectedLayout.createSequentialGroup()
+                .addContainerGap(265, Short.MAX_VALUE)
+                .add(filler1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(81, 81, 81))
         );
         ConnectedLayout.setVerticalGroup(
             ConnectedLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -371,10 +379,12 @@ public class ECGJAVa2View extends FrameView {
                     .add(ConnectDB, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(Record)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(filler1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        Connected.setBounds(0, 10, 320, 140);
+        Connected.setBounds(0, 10, 370, 140);
         mainPanel2.add(Connected, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         GenDAta.setClosable(true);
@@ -1290,7 +1300,7 @@ public class ECGJAVa2View extends FrameView {
                         .add(ResetSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(IRSQLChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 494, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(IRSerialChart, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 486, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1307,7 +1317,7 @@ public class ECGJAVa2View extends FrameView {
                     .add(StartSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(StopSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(ResetSPO2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel17.TabConstraints.tabTitle"), jPanel17); // NOI18N
@@ -1444,7 +1454,7 @@ public class ECGJAVa2View extends FrameView {
                                 .add(StopPulse)
                                 .add(33, 33, 33)
                                 .add(ResetPulse, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1498,29 +1508,30 @@ public class ECGJAVa2View extends FrameView {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel11Layout.createSequentialGroup()
-                .add(184, 184, 184)
-                .add(jLabel31))
-            .add(jPanel11Layout.createSequentialGroup()
-                .add(20, 20, 20)
-                .add(RESPSerial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 489, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-            .add(jPanel11Layout.createSequentialGroup()
-                .add(200, 200, 200)
-                .add(jLabel30))
-            .add(jPanel11Layout.createSequentialGroup()
-                .add(20, 20, 20)
-                .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 489, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel11Layout.createSequentialGroup()
+                        .add(164, 164, 164)
+                        .add(jLabel31))
+                    .add(RESPSerial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 489, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jPanel11Layout.createSequentialGroup()
+                        .add(180, 180, 180)
+                        .add(jLabel30))
+                    .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 489, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel11Layout.createSequentialGroup()
-                .add(59, 59, 59)
+                .addContainerGap()
                 .add(jLabel31)
                 .add(9, 9, 9)
                 .add(RESPSerial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 47, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(11, 11, 11)
                 .add(jLabel30)
                 .add(7, 7, 7)
-                .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(RESPSql, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel11.TabConstraints.tabTitle"), jPanel11); // NOI18N
@@ -1573,6 +1584,14 @@ public class ECGJAVa2View extends FrameView {
             }
         });
 
+        GPSWrite.setText(resourceMap.getString("GPSWrite.text")); // NOI18N
+        GPSWrite.setName("GPSWrite"); // NOI18N
+        GPSWrite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GPSWriteActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -1589,7 +1608,9 @@ public class ECGJAVa2View extends FrameView {
                             .add(jPanel12Layout.createSequentialGroup()
                                 .add(jLabel9)
                                 .add(14, 14, 14)
-                                .add(Socket))))
+                                .add(Socket)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 161, Short.MAX_VALUE)
+                                .add(GPSWrite))))
                     .add(jPanel12Layout.createSequentialGroup()
                         .add(44, 44, 44)
                         .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 427, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -1598,7 +1619,7 @@ public class ECGJAVa2View extends FrameView {
                         .add(GPSd4Win)
                         .add(18, 18, 18)
                         .add(GPSd4Mac)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1606,7 +1627,9 @@ public class ECGJAVa2View extends FrameView {
                 .add(12, 12, 12)
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel9)
-                    .add(Socket))
+                    .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(Socket)
+                        .add(GPSWrite)))
                 .add(18, 18, 18)
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(ConnectSocket1)
@@ -1617,7 +1640,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(GPSd4Win)
                     .add(GPSd4Mac))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -1660,7 +1683,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(19, 19, 19)
                 .add(LightSQLChart2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 491, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .add(LightSerialChart2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 491, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1701,14 +1724,14 @@ public class ECGJAVa2View extends FrameView {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+            .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 131, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
@@ -1735,20 +1758,20 @@ public class ECGJAVa2View extends FrameView {
         Inbound.getContentPane().setLayout(InboundLayout);
         InboundLayout.setHorizontalGroup(
             InboundLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(InboundLayout.createSequentialGroup()
-                .add(ECGPane, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
-                .addContainerGap())
+            .add(ECGPane, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
         );
         InboundLayout.setVerticalGroup(
             InboundLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ECGPane, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+            .add(InboundLayout.createSequentialGroup()
+                .add(ECGPane, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 287, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Inbound.setBounds(800, 10, 560, 370);
+        Inbound.setBounds(800, 10, 580, 350);
         mainPanel2.add(Inbound, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         mainPanel.add(mainPanel2);
-        mainPanel2.setBounds(0, 0, 1370, 720);
+        mainPanel2.setBounds(0, 0, 1380, 720);
 
         menuBar.setName("menuBar"); // NOI18N
 
@@ -2388,7 +2411,7 @@ public class ECGJAVa2View extends FrameView {
 
 private void ConnectSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocketActionPerformed
 
-        Thread Server = new GPSComm();
+        Thread Server = new GPSCommSocket();
         Server.start();
 
         socketConnected = true;
@@ -2402,7 +2425,7 @@ private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GE
             Socket.setText("<Default>");
             socketConnected = false;
             try {
-                GPSComm.closeSocket();
+                GPSCommSocket.closeSocket();
                 
             } catch (IOException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
@@ -2435,7 +2458,7 @@ private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            WriteLogFiles.closeWriteFile();
+            WriteLogFilesOthers.closeWriteFile();
         } catch (IOException ex) {
             Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2444,7 +2467,9 @@ private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 private void RecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecordActionPerformed
         if(Record.isSelected()){
             try {
-                LogFiles.WriteLogFiles.main(null);
+                LogFiles.WriteLogFilesOthers.main(null);
+                LogFiles.WriteLogFilesTemp.main(null);
+                LogFiles.WriteLogFilesVitals.main(null);
             } catch (IOException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2472,6 +2497,18 @@ private void GPSd4WinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void GPSd4MacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSd4MacActionPerformed
 
 }//GEN-LAST:event_GPSd4MacActionPerformed
+
+private void GPSWriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSWriteActionPerformed
+            
+        if(GPSWrite.isSelected()){
+            try {
+                LogFiles.WriteLogFilesGPS.main(null);
+            } catch (IOException ex) {
+                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        }
+}//GEN-LAST:event_GPSWriteActionPerformed
 
     private void Disconnect_Close(){
 
@@ -2521,6 +2558,7 @@ private void GPSd4MacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuItem EXITINBOUND;
     private javax.swing.JMenuItem EXITTEMP;
     private javax.swing.JButton GPS;
+    private javax.swing.JCheckBox GPSWrite;
     private javax.swing.JRadioButton GPSd4Mac;
     private javax.swing.JRadioButton GPSd4Win;
     private javax.swing.JInternalFrame GenDAta;
@@ -2545,7 +2583,7 @@ private void GPSd4MacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton RESPSerial;
     private javax.swing.JButton RESPSql;
     public static javax.swing.JLabel RESPValue;
-    private javax.swing.JCheckBox Record;
+    protected static javax.swing.JCheckBox Record;
     private javax.swing.JButton ResetPulse;
     private javax.swing.JButton ResetSPO2;
     private javax.swing.JLabel SPO2Label;
@@ -2574,6 +2612,7 @@ private void GPSd4MacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     public static javax.swing.JLabel XbeePackets;
     public static javax.swing.JLabel XbeeTotal;
     public static javax.swing.JLabel Xbeegood;
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
