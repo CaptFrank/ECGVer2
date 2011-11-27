@@ -252,11 +252,6 @@ public class ECGJAVa2View extends FrameView {
         GPS = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         Socket = new javax.swing.JLabel();
-        ConnectSocket = new javax.swing.JButton();
-        ConnectSocket1 = new javax.swing.JButton();
-        GPSd4Win = new javax.swing.JRadioButton();
-        GPSd4Mac = new javax.swing.JRadioButton();
-        GPSWrite = new javax.swing.JCheckBox();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         LightSerialChart2 = new javax.swing.JButton();
@@ -1552,95 +1547,31 @@ public class ECGJAVa2View extends FrameView {
         Socket.setText(resourceMap.getString("Socket.text")); // NOI18N
         Socket.setName("Socket"); // NOI18N
 
-        ConnectSocket.setText(resourceMap.getString("ConnectSocket.text")); // NOI18N
-        ConnectSocket.setName("ConnectSocket"); // NOI18N
-        ConnectSocket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConnectSocketActionPerformed(evt);
-            }
-        });
-
-        ConnectSocket1.setText(resourceMap.getString("ConnectSocket1.text")); // NOI18N
-        ConnectSocket1.setName("ConnectSocket1"); // NOI18N
-        ConnectSocket1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConnectSocket1ActionPerformed(evt);
-            }
-        });
-
-        GPSd4Win.setText(resourceMap.getString("GPSd4Win.text")); // NOI18N
-        GPSd4Win.setName("GPSd4Win"); // NOI18N
-        GPSd4Win.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GPSd4WinActionPerformed(evt);
-            }
-        });
-
-        GPSd4Mac.setText(resourceMap.getString("GPSd4Mac.text")); // NOI18N
-        GPSd4Mac.setName("GPSd4Mac"); // NOI18N
-        GPSd4Mac.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GPSd4MacActionPerformed(evt);
-            }
-        });
-
-        GPSWrite.setText(resourceMap.getString("GPSWrite.text")); // NOI18N
-        GPSWrite.setName("GPSWrite"); // NOI18N
-        GPSWrite.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GPSWriteActionPerformed(evt);
-            }
-        });
-
         org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel12Layout.createSequentialGroup()
-                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel12Layout.createSequentialGroup()
-                        .add(59, 59, 59)
-                        .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel12Layout.createSequentialGroup()
-                                .add(ConnectSocket)
-                                .add(98, 98, 98)
-                                .add(ConnectSocket1))
-                            .add(jPanel12Layout.createSequentialGroup()
-                                .add(jLabel9)
-                                .add(14, 14, 14)
-                                .add(Socket)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 161, Short.MAX_VALUE)
-                                .add(GPSWrite))))
-                    .add(jPanel12Layout.createSequentialGroup()
-                        .add(44, 44, 44)
-                        .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 427, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel12Layout.createSequentialGroup()
-                        .add(140, 140, 140)
-                        .add(GPSd4Win)
-                        .add(18, 18, 18)
-                        .add(GPSd4Mac)))
-                .addContainerGap(32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(59, 59, 59)
+                .add(jLabel9)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(Socket)
+                .addContainerGap(301, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 427, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(41, 41, 41))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel12Layout.createSequentialGroup()
                 .add(12, 12, 12)
-                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel9)
-                    .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(Socket)
-                        .add(GPSWrite)))
-                .add(18, 18, 18)
-                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(ConnectSocket1)
-                    .add(ConnectSocket))
-                .add(8, 8, 8)
-                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(27, 27, 27)
                 .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(GPSd4Win)
-                    .add(GPSd4Mac))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .add(jLabel9)
+                    .add(Socket))
+                .add(13, 13, 13)
+                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -2397,46 +2328,15 @@ public class ECGJAVa2View extends FrameView {
 
     private void GPSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSActionPerformed
         String Dir = System.getProperty("user.dir");
-        if (socketConnected){
             try {
                 Process child = Runtime.getRuntime().exec("java -jar " + Dir + "/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar");
             } catch (IOException ex) {
                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Not Connected to Socket", "Error", JOptionPane.ERROR_MESSAGE);
-        }
     }//GEN-LAST:event_GPSActionPerformed
 
-private void ConnectSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocketActionPerformed
-
-        Thread Server = new GPSCommSocket();
-        Server.start();
-
-        socketConnected = true;
-        Socket.setText("Connected To -> localhost:4444");
-    
-}//GEN-LAST:event_ConnectSocketActionPerformed
-
-private void ConnectSocket1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectSocket1ActionPerformed
-  
-    if (socketConnected){
-            Socket.setText("<Default>");
-            socketConnected = false;
-            try {
-                GPSCommSocket.closeSocket();
-                
-            } catch (IOException ex) {
-                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }
-}//GEN-LAST:event_ConnectSocket1ActionPerformed
-
 private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        GPSDialog = new Dialog_boxGPS();
-        GPSDialog.setVisible(true);
-        DialogGPSconnected = true;
+
 }//GEN-LAST:event_jMenuItem3ActionPerformed
 
 private void CloseDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseDBActionPerformed
@@ -2490,26 +2390,6 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     
 }//GEN-LAST:event_Net_ChatActionPerformed
 
-private void GPSd4WinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSd4WinActionPerformed
-
-}//GEN-LAST:event_GPSd4WinActionPerformed
-
-private void GPSd4MacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSd4MacActionPerformed
-
-}//GEN-LAST:event_GPSd4MacActionPerformed
-
-private void GPSWriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GPSWriteActionPerformed
-            
-        if(GPSWrite.isSelected()){
-            try {
-                LogFiles.WriteLogFilesGPS.main(null);
-            } catch (IOException ex) {
-                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        }
-}//GEN-LAST:event_GPSWriteActionPerformed
-
     private void Disconnect_Close(){
 
         if(CommPortOpen.getConnected()){
@@ -2541,8 +2421,6 @@ private void GPSWriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuItem ConnectBoard;
     private javax.swing.JMenu ConnectBreath;
     public static javax.swing.JLabel ConnectDB;
-    private javax.swing.JButton ConnectSocket;
-    private javax.swing.JButton ConnectSocket1;
     private javax.swing.JMenuItem ConnectToDB;
     private javax.swing.JInternalFrame Connected;
     private javax.swing.JMenuItem Dialog_box;
@@ -2558,9 +2436,6 @@ private void GPSWriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuItem EXITINBOUND;
     private javax.swing.JMenuItem EXITTEMP;
     private javax.swing.JButton GPS;
-    private javax.swing.JCheckBox GPSWrite;
-    private javax.swing.JRadioButton GPSd4Mac;
-    private javax.swing.JRadioButton GPSd4Win;
     private javax.swing.JInternalFrame GenDAta;
     private javax.swing.JLabel GoodPackets;
     public static javax.swing.JLabel IRLED;
