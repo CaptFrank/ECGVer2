@@ -24,6 +24,7 @@ public class getSignalStrength {
         CommPortOpen.printCommand("ATDB\r");
         SignalStrength = CommPortOpen.readReply();
         int value = Integer.parseInt(SignalStrength, 16);
+        value = 100-value;
         System.out.print(value);
         SignalAnalysis.SignalStrength.setText("-" + Integer.toString(value));
 

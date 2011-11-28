@@ -188,6 +188,7 @@ class CommPortOpen extends Thread{
   static void converse() throws IOException{
 
     System.out.println("Ready to read and write port.");
+    os.flush();
     // Input/Output code not written -- must subclass.
     while (ConnectGuard == true){
         readvalues();

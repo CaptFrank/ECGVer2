@@ -70,7 +70,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        Webcam = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -133,7 +133,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtOhipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +150,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
                     .addComponent(jRadioButton1)
                     .addComponent(jRadioButton2)
                     .addComponent(jRadioButton3))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jRadioButton1.getAccessibleContext().setAccessibleName(resourceMap.getString("jRadioButton1.AccessibleContext.accessibleName")); // NOI18N
@@ -170,7 +170,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(209, 209, 209))
@@ -217,8 +217,8 @@ public class PatientInformationForm extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAllergies, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                            .addComponent(txtPastSurgeries, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)))
+                            .addComponent(txtAllergies, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                            .addComponent(txtPastSurgeries, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))
                     .addComponent(jLabel7))
                 .addContainerGap())
         );
@@ -254,7 +254,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(JScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addComponent(JScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -285,15 +285,18 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
         jMenu1.setName("jMenu1"); // NOI18N
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
-        jMenuItem1.setName("jMenuItem1"); // NOI18N
-        jMenu1.add(jMenuItem1);
+        Webcam.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        Webcam.setText(resourceMap.getString("Webcam.text")); // NOI18N
+        Webcam.setName("Webcam"); // NOI18N
+        Webcam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WebcamActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Webcam);
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(PatientInformationForm.class, this);
         jMenuItem2.setAction(actionMap.get("quit")); // NOI18N
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
         jMenuItem2.setName("jMenuItem2"); // NOI18N
         jMenu1.add(jMenuItem2);
 
@@ -390,6 +393,12 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     txtPatientName.setText("");
 }//GEN-LAST:event_btnClearActionPerformed
 
+private void WebcamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WebcamActionPerformed
+
+    
+    
+}//GEN-LAST:event_WebcamActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -427,6 +436,7 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane JScrollPane1;
+    private javax.swing.JMenuItem Webcam;
     private javax.swing.ButtonGroup bgrpGender;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnSave;
@@ -439,7 +449,6 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
