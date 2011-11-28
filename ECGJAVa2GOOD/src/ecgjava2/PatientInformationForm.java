@@ -22,6 +22,8 @@
  */
 package ecgjava2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Thai
@@ -42,7 +44,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        bgrpGender = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtPatientName = new javax.swing.JTextField();
@@ -64,15 +66,12 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         JScrollPane1 = new javax.swing.JScrollPane();
         txtDoctorNotes = new javax.swing.JTextArea();
-        btnSave = new javax.swing.JToggleButton();
-        btnClear = new javax.swing.JToggleButton();
+        btnSave = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        mnuNew = new javax.swing.JMenuItem();
-        mnuOpen = new javax.swing.JMenuItem();
-        mnuSave = new javax.swing.JMenuItem();
-        mnuQuit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getResourceMap(PatientInformationForm.class);
@@ -93,12 +92,15 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
+        bgrpGender.add(jRadioButton1);
         jRadioButton1.setLabel(resourceMap.getString("Male.label")); // NOI18N
         jRadioButton1.setName("Male"); // NOI18N
 
+        bgrpGender.add(jRadioButton2);
         jRadioButton2.setLabel(resourceMap.getString("jRadioButton2.label")); // NOI18N
         jRadioButton2.setName("jRadioButton2"); // NOI18N
 
+        bgrpGender.add(jRadioButton3);
         jRadioButton3.setLabel(resourceMap.getString("jRadioButton3.label")); // NOI18N
         jRadioButton3.setName("jRadioButton3"); // NOI18N
 
@@ -175,9 +177,11 @@ public class PatientInformationForm extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel5)
-                .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel3.border.title"))); // NOI18N
@@ -262,6 +266,11 @@ public class PatientInformationForm extends javax.swing.JFrame {
 
         btnSave.setText(resourceMap.getString("btnSave.text")); // NOI18N
         btnSave.setName("btnSave"); // NOI18N
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnClear.setText(resourceMap.getString("btnClear.text")); // NOI18N
         btnClear.setName("btnClear"); // NOI18N
@@ -276,31 +285,19 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
         jMenu1.setName("jMenu1"); // NOI18N
 
-        mnuNew.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        mnuNew.setText(resourceMap.getString("mnuNew.text")); // NOI18N
-        mnuNew.setName("mnuNew"); // NOI18N
-        jMenu1.add(mnuNew);
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
+        jMenuItem1.setName("jMenuItem1"); // NOI18N
+        jMenu1.add(jMenuItem1);
 
-        mnuOpen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        mnuOpen.setText(resourceMap.getString("mnuOpen.text")); // NOI18N
-        mnuOpen.setName("mnuOpen"); // NOI18N
-        jMenu1.add(mnuOpen);
-
-        mnuSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        mnuSave.setText(resourceMap.getString("mnuSave.text")); // NOI18N
-        mnuSave.setName("mnuSave"); // NOI18N
-        jMenu1.add(mnuSave);
-
-        mnuQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        mnuQuit.setText(resourceMap.getString("mnuQuit.text")); // NOI18N
-        mnuQuit.setName("mnuQuit"); // NOI18N
-        jMenu1.add(mnuQuit);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(PatientInformationForm.class, this);
+        jMenuItem2.setAction(actionMap.get("quit")); // NOI18N
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
+        jMenuItem2.setName("jMenuItem2"); // NOI18N
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText(resourceMap.getString("jMenu2.text")); // NOI18N
-        jMenu2.setName("jMenu2"); // NOI18N
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -317,7 +314,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnSave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClear)))
                 .addContainerGap())
         );
@@ -344,6 +341,45 @@ public class PatientInformationForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+private boolean hasValidInput(){
+    boolean inputValid = true;
+    String patientName = txtPatientName.getText();
+    String doctorName = txtDoctorName.getText();
+    String errorMessage = "Error: \n";
+    
+    //Check for incorrect input and blank fields
+    if (!txtOhipNumber.getText().matches("((-|\\+)?[0-9]+(]].[0-9]+)?)+")) {
+        inputValid = false;
+        errorMessage += "OHIP number is incorrect\n";
+    }
+    if (patientName.isEmpty()){
+        inputValid = false;
+        errorMessage += "Patient name was not given\n";
+    }
+    if (doctorName.isEmpty()){
+        inputValid = false;
+        errorMessage += "Doctor name was not given\n";
+    }
+    //TODO check if formatting of allergies and past surgeries is correct.
+    
+    if (!inputValid){
+        JOptionPane.showMessageDialog(this, errorMessage,
+                                      "Bad Input", JOptionPane.WARNING_MESSAGE);
+    }
+    
+    return inputValid;
+}    
+    
+private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+    if (!hasValidInput()) return;
+    
+    int ohipNumber = Integer.parseInt(txtOhipNumber.getText());
+    String patientName = txtPatientName.getText();
+    String doctorName = txtDoctorName.getText();
+    String doctorNote = txtDoctorNotes.getText();
+    //TODO add in variable that will contain allergies and past surgeries (use ArrayList?)
+}//GEN-LAST:event_btnSaveActionPerformed
+
 private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
     txtPatientName.setText("");
     txtAllergies.setText("");
@@ -363,22 +399,22 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PatientInformationForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
         //</editor-fold>
 
         /* Create and display the form */
@@ -391,9 +427,9 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane JScrollPane1;
-    private javax.swing.JToggleButton btnClear;
-    private javax.swing.JToggleButton btnSave;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup bgrpGender;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -402,8 +438,9 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -411,10 +448,6 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JMenuItem mnuNew;
-    private javax.swing.JMenuItem mnuOpen;
-    private javax.swing.JMenuItem mnuQuit;
-    private javax.swing.JMenuItem mnuSave;
     private javax.swing.JTextField txtAllergies;
     private javax.swing.JTextField txtDoctorName;
     private javax.swing.JTextArea txtDoctorNotes;
