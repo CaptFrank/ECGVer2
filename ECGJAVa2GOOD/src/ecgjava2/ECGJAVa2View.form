@@ -1891,7 +1891,14 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace pref="67" max="32767" attributes="0"/>
-                                  <Component id="GPS" min="-2" pref="427" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="1">
+                                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="DistanceGPS" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="GPS" alignment="1" min="-2" pref="427" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1906,7 +1913,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="GPS" min="-2" pref="78" max="-2" attributes="0"/>
-                                  <EmptySpace pref="122" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="DistanceGPS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="88" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1932,6 +1944,21 @@
                             <Property name="text" type="java.lang.String" resourceKey="Socket.text"/>
                             <Property name="name" type="java.lang.String" value="Socket" noResource="true"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel35">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" resourceKey="jLabel35.text"/>
+                            <Property name="name" type="java.lang.String" value="jLabel35" noResource="true"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="DistanceGPS">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" resourceKey="DistanceGPS.text"/>
+                            <Property name="name" type="java.lang.String" value="DistanceGPS" noResource="true"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>

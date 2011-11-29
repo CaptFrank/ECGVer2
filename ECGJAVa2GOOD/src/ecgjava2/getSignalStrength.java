@@ -13,18 +13,23 @@ import java.io.IOException;
  */
 
 public class getSignalStrength {
+    
+    /*
+     * AT
+     * 
+     */
 
     protected static String Broadcast_Power;
     protected static String SignalStrength;
     protected static String DestinationAddressHigh, DestinationAddressLow, PANID, VersionID, ChannelID, NodeID;
+    protected static int value;
 
     void getSignalStrenght(){}
     
     public static void getSignalStrength() throws IOException{
         CommPortOpen.printCommand("ATDB\r");
         SignalStrength = CommPortOpen.readReply();
-        int value = Integer.parseInt(SignalStrength, 16);
-        value = 100-value;
+        value = Integer.parseInt(SignalStrength, 16);
         System.out.print(value);
         SignalAnalysis.SignalStrength.setText("-" + Integer.toString(value));
 
@@ -114,6 +119,15 @@ public class getSignalStrength {
             }
         }
     }
+    public static void getDistanceIndoor() throws IOException{
+        double distance = Math.abs(Math.abs(((((value)-40.0)+1.0)*2.0)+8.0)-56);
+        SignalAnalysis.Distance.setText(Double.toString(distance));
+    }
+    
+    public static void getDistanceOutdoor() throws IOException{
+        double distance = Math.abs(((((value)-40.0)+1.0)*2.0)+8.0);
+        SignalAnalysis.Distance.setText(Double.toString(distance));
+    }
 
     public static void getAll() throws IOException{
         getSignalStrength();
@@ -123,6 +137,15 @@ public class getSignalStrength {
         getPANID();
         getVersionID();
         getChannelID();
+        if(SignalAnalysis.Outdoor.isSelected() && SignalAnalysis.Indoor.isSelected()){
+            SignalAnalysis.Distance.setText("Error");
+        }
+        else if(SignalAnalysis.Indoor.isSelected()){
+            getDistanceIndoor();
+        }
+        else{
+            getDistanceOutdoor();
+        }
     }
 
     public static boolean finishUp(){

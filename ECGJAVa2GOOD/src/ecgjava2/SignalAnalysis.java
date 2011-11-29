@@ -51,6 +51,10 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
         SignalStrengthProg = new javax.swing.JProgressBar();
         jLabel10 = new javax.swing.JLabel();
         Temp = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Distance = new javax.swing.JLabel();
+        Indoor = new javax.swing.JCheckBox();
+        Outdoor = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         CloseSignalAnalysis = new javax.swing.JMenuItem();
@@ -116,6 +120,18 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
         Temp.setText(resourceMap.getString("Temp.text")); // NOI18N
         Temp.setName("Temp"); // NOI18N
 
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        Distance.setText(resourceMap.getString("Distance.text")); // NOI18N
+        Distance.setName("Distance"); // NOI18N
+
+        Indoor.setText(resourceMap.getString("Indoor.text")); // NOI18N
+        Indoor.setName("Indoor"); // NOI18N
+
+        Outdoor.setText(resourceMap.getString("Outdoor.text")); // NOI18N
+        Outdoor.setName("Outdoor"); // NOI18N
+
         jMenuBar1.setName("jMenuBar1"); // NOI18N
 
         jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
@@ -143,6 +159,13 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel10)
+                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                                .add(Outdoor)
+                                .add(SignalStrengthProg, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(25, 25, 25))
+                    .add(layout.createSequentialGroup()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(layout.createSequentialGroup()
                                 .add(jLabel4)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 68, Short.MAX_VALUE)
@@ -153,15 +176,12 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
                                 .add(DestinationAddressHigh))
                             .add(layout.createSequentialGroup()
                                 .add(jLabel2)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 86, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 74, Short.MAX_VALUE)
                                 .add(Broadcastpower))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                                 .add(jLabel1)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 93, Short.MAX_VALUE)
-                                .add(SignalStrength)))
-                        .add(13, 13, 13))
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 81, Short.MAX_VALUE)
+                                .add(SignalStrength))
                             .add(layout.createSequentialGroup()
                                 .add(jLabel7)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 107, Short.MAX_VALUE)
@@ -173,19 +193,22 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
                             .add(layout.createSequentialGroup()
                                 .add(jLabel6)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 171, Short.MAX_VALUE)
-                                .add(PANID)))
-                        .add(13, 13, 13))
-                    .add(SignalStrengthProg, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(PANID))
+                            .add(Temp))
+                        .add(20, 20, 20))
                     .add(layout.createSequentialGroup()
-                        .add(jLabel10)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 173, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(Temp))
-                .addContainerGap())
+                        .add(jLabel5)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 51, Short.MAX_VALUE)
+                        .add(Distance)
+                        .addContainerGap())
+                    .add(layout.createSequentialGroup()
+                        .add(Indoor)
+                        .addContainerGap(125, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(22, 22, 22)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .add(Temp)
                 .add(18, 18, 18)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -216,10 +239,18 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
                     .add(jLabel7)
                     .add(FirmwareID))
                 .add(18, 18, 18)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel5)
+                    .add(Distance))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 21, Short.MAX_VALUE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(Indoor)
+                    .add(Outdoor))
+                .add(18, 18, 18)
                 .add(jLabel10)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(SignalStrengthProg, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(32, 32, 32))
+                .addContainerGap())
         );
 
         pack();
@@ -247,7 +278,10 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
     private javax.swing.JMenuItem CloseSignalAnalysis;
     public static javax.swing.JLabel DestinationAddressHigh;
     public static javax.swing.JLabel DestinationAddressLow;
+    public static javax.swing.JLabel Distance;
     public static javax.swing.JLabel FirmwareID;
+    public static javax.swing.JCheckBox Indoor;
+    public static javax.swing.JCheckBox Outdoor;
     public static javax.swing.JLabel PANID;
     public static javax.swing.JLabel SignalStrength;
     public static javax.swing.JProgressBar SignalStrengthProg;
@@ -258,6 +292,7 @@ public class SignalAnalysis extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

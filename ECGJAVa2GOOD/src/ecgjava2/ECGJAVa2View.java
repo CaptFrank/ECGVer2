@@ -252,6 +252,8 @@ public class ECGJAVa2View extends FrameView {
         GPS = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         Socket = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        DistanceGPS = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         LightSerialChart2 = new javax.swing.JButton();
@@ -1518,6 +1520,12 @@ public class ECGJAVa2View extends FrameView {
         Socket.setText(resourceMap.getString("Socket.text")); // NOI18N
         Socket.setName("Socket"); // NOI18N
 
+        jLabel35.setText(resourceMap.getString("jLabel35.text")); // NOI18N
+        jLabel35.setName("jLabel35"); // NOI18N
+
+        DistanceGPS.setText(resourceMap.getString("DistanceGPS.text")); // NOI18N
+        DistanceGPS.setName("DistanceGPS"); // NOI18N
+
         org.jdesktop.layout.GroupLayout jPanel12Layout = new org.jdesktop.layout.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -1530,7 +1538,12 @@ public class ECGJAVa2View extends FrameView {
                 .addContainerGap(301, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel12Layout.createSequentialGroup()
                 .addContainerGap(67, Short.MAX_VALUE)
-                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 427, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jPanel12Layout.createSequentialGroup()
+                        .add(jLabel35)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(DistanceGPS))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 427, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(41, 41, 41))
         );
         jPanel12Layout.setVerticalGroup(
@@ -1542,7 +1555,11 @@ public class ECGJAVa2View extends FrameView {
                     .add(Socket))
                 .add(13, 13, 13)
                 .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .add(18, 18, 18)
+                .add(jPanel12Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel35)
+                    .add(DistanceGPS))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         ECGPane.addTab(resourceMap.getString("jPanel12.TabConstraints.tabTitle"), jPanel12); // NOI18N
@@ -2397,6 +2414,7 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuItem Dialog_box;
     public static javax.swing.JLabel DiffTempValue;
     private javax.swing.JMenuItem Disconnect;
+    public static javax.swing.JLabel DistanceGPS;
     public static javax.swing.JInternalFrame ECGContainer;
     private javax.swing.JLabel ECGLabel;
     private javax.swing.JTabbedPane ECGPane;
@@ -2487,6 +2505,7 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
