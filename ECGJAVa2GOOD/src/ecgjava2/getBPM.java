@@ -10,6 +10,10 @@ import java.util.logging.Logger;
 /**
  *
  * @author francispapineau
+ * 
+ * SOON TO BE Deprecated, as hardware solution is going to be implemented 
+ * using Schmitt triggers
+ * 
  */
 public class getBPM{
 

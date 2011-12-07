@@ -51,25 +51,6 @@ public class SplitParse {
     
     static public void splitGPS_Val(String Val) throws IOException{
         
-//        //compile regex
-//        Pattern p1 = Pattern.compile(REGEX2);
-//        String[] items = p1.split(Val);
-//        
-//        //for(String s: items){
-//            //System.out.println(s);
-//        //}
-//        //if connected
-//        if(ECGJAVa2View.getSocketConnected()){
-//            GPSSentence = items[1];
-//            
-//            // this sets the global var. in the GPSCommSocket class
-//            // this class uses this sentence ove and over ad over, 
-//            // until a new sentence is parsed.
-//            
-//            GPSCommSocket.setMessage(GPSSentence);
-//        }
-//        
-//        //split values if parsable
         ECGSentence = Val;
         if(parsable(ECGSentence)){
             splitVal(ECGSentence);

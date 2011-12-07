@@ -1,13 +1,15 @@
-// this example is public domain. enjoy!
-// www.ladyada.net/learn/sensors/thermocouple
 
 //defines/includes
 #include "max6675.h"
+#include <SPI.h>
+#include <SD.h>
+#include <Time.h>
+#include <serialGLCDlib.h>
+
 #define potPin 0
 #define LightPin 1
 #define ECGPin 4
 #define ECG_LED 5
-#define threshold 10
 #define PWR_PIN 6
 #define Red 2
 #define redLED 3
@@ -18,16 +20,26 @@
 #define TempAround 2
 
 //initalization of vars
+const int chipSelect = 4;
 
-int z=0;
-double temp=0;
-int byteGPS = -1;
-char buffer[300] = "";
-char commandGPR[7] = "$GPRMC";
-int count = 0;
-int good = 0;
-int counter = 0;
-int indices[13];
+serialGLCD lcd;
+int z = 0;
+double temp = 0;
+double tempInt = 0;
+double tempError = 0;
+double tempRed = 0;
+double tempECG = 0;
+double tempRESP = 0;
+double tempLight = 0;
+double AmbientTemp = 0;
+double tempBat = 0;
+boolean DoNotWrite = false;
+boolean Rolling = true;
+
+String VitalData = "\nTime, ECG, Red LED, IR LED, Error, RESP \n";
+String TempData = "Time, Temperature, Ambient Temp \n";
+String OtherData = "Time, Battery \n";
+String sent = "";
 
 int thermoDO = 10;
 int thermoCS = 11;
@@ -43,7 +55,7 @@ int gndPin = 8;
   
 void setup() {
   Serial.begin(115200);
-  Serial1.begin(4800);
+  Serial1.begin(115200);
   // use Arduino pins 
   pinMode(receivePin, OUTPUT);
   pinMode(vccPin, OUTPUT); digitalWrite(vccPin, HIGH);
@@ -53,15 +65,77 @@ void setup() {
   pinMode(ECGPin, INPUT); digitalWrite(ECGPin, LOW);
   pinMode(irLED, OUTPUT); digitalWrite(irLED, LOW);
   pinMode(redLED, OUTPUT); digitalWrite(redLED, LOW);
-  //pinMode(TempAround, OUTPUT); digitalWrite(TempAround, LOW);
+  pinMode(TempAround, OUTPUT); digitalWrite(TempAround, LOW);
   pinMode(LightPin, INPUT);
+  digitalWrite(43, HIGH);
   
-  for (int i = 0; i < 300; i++){
-   buffer[i] = ' '; 
+  // On the Ethernet Shield, CS is pin 4. It's set as an output by default.
+  // Note that even if it's not used as the CS pin, the hardware SS pin 
+  // (10 on most Arduino boards, 53 on the Mega) must be left as an output 
+  // or the SD library functions will not work. 
+  pinMode(53, OUTPUT);     // change this to 53 on a mega
+  
+  lcd.gotoLine(8);
+  Serial1.print("Frank & Thai MED R&D.");
+  lcd.gotoLine(6);
+  Serial1.print("Starting up..........");
+  
+  Serial1.print("                     ");
+  Serial1.print("                     ");
+  Serial1.print("                     ");
+  Serial1.print("                     ");
+  Serial1.print("                     ");
+  Serial1.print("                     ");
+  
+  delay(10000);
+  
+  lcd.resetLCD();
+  
+  if (!SD.begin(chipSelect)) {
+    // don't do anything more:
+    DoNotWrite = true;
+    return;
   }
   
+  Serial1.print("SD card Initialized..");
+  
+  getCardInfo();
+  if(SD.exists("CardInfo.txt")){
+    Serial1.print("CardInfo.txt Init....");
+  }
+  else{
+    Serial1.print("CardInfo.txt FInit...");
+  }
+
+  WriteToSD(VitalData, TempData, OtherData);
+  
+  delay(1000);
+  if(SD.exists("OtherLog.csv")){
+    Serial1.print("OtherLog.csv Init....");
+  }
+  else{
+    Serial1.print("OtherLog.csv FInit...");
+  }
+  if(SD.exists("TempLog.csv")){
+    Serial1.print("TempLog.csv Init.....");
+  }
+  else{
+    Serial1.print("TempLog.csv FInit....");
+  }
+  if(SD.exists("DataLog.csv")){
+    Serial1.print("DataLog.csv Init.....");
+  }
+  else{
+    Serial1.print("DatasLog.csv FInit...");
+  }
+  
+  
+    Serial1.print("                     ");
+    Serial1.print("                     ");
+    Serial1.print("                     ");
+  
   // wait for MAX chip to stabilize
-  delay(100);
+  delay(10000);
 }
 
  /*________________________________________________________________________________*/
@@ -73,7 +147,7 @@ void loop() {
   Serial.print((double)analogRead(LightPin));
   if (z==1000){
     Serial.print("Tem:");
-    temp =thermocouple.readCelsius()-6.0;
+    temp = thermocouple.readCelsius()-6.0;
     Serial.print((double)(thermocouple.readCelsius()-6.0));
     z=0;
   }
@@ -82,28 +156,50 @@ void loop() {
     Serial.print(temp);
   }
   Serial.print("ECG:");
-  Serial.print((double)analogRead(ECGPin));
+  tempECG = (double)analogRead(ECGPin);
+  Serial.print(tempECG);
   Serial.print("POT:");
   digitalWrite(redLED, HIGH);
-  Serial.print(pulseIn(Red, HIGH));
+  tempRed = pulseIn(Red, HIGH); 
+  Serial.print(tempRed);
   digitalWrite(redLED, LOW);
   Serial.print("BAT:");
-  Serial.print((double)analogRead(Battpin));
+  tempBat = (double)analogRead(Battpin);
+  Serial.print(tempBat);
   Serial.print("IRL:");
   digitalWrite(irLED, HIGH);
-  Serial.print((double)pulseIn(Red, HIGH));
+  tempInt = (double)pulseIn(Red, HIGH);
+  Serial.print(tempInt);
   digitalWrite(irLED, LOW);
   Serial.print("LOW:");
-  Serial.print((double)pulseIn(Red, HIGH));
+  tempError = (double)pulseIn(Red, HIGH);
+  Serial.print(tempInt);
   Serial.print("RES:");
-  Serial.print((double)analogRead(Resppin));
+  tempRESP = (double)analogRead(Resppin);
+  Serial.print(tempRESP);
   Serial.print("ArT:");
-  Serial.print((double)Thermistor(analogRead(TempAround)));
-  
-  //getGPSSentence();
+  AmbientTemp = (double)Thermistor(analogRead(TempAround)); 
+  Serial.print(AmbientTemp);
   Serial.println("\n");
   z+=10;
-  delay(100);
+  
+  VitalData = (String((int)millis()) + "," + (String((int)tempECG)) + "," + (String((int)tempRed)) + "," + 
+              (String((int)tempInt)) + "," +(String((int)tempError)) + "," + (String((int)tempRESP)) + "\n");
+ 
+  TempData = (String((int)millis()) + "," + (String((int)temp)) + "," + (String((int)AmbientTemp)) + "\n");
+  
+  OtherData = (String((int)millis()) + "," + (String((int)tempBat)) + "\n");
+  
+  sent = ("(!Lig:"+ String((int)tempLight) + "Tem:" + String((int)temp) + "ECG:" + String((int)tempECG) + "POT:" + String((int)tempRed) + "BAT:" + String((int)tempBat) +
+          "IRL:" + String((int)tempInt) + "LOW:" + String((int)tempError) + "RES:" + String((int)tempRESP) + "ArT:" + String((int)AmbientTemp));
+  
+  PrintToLCD();
+  
+  if(DoNotWrite == false){
+      WriteToSD(VitalData, TempData, OtherData);
+  }
+  
+  delay(30);
 }
 
  /*________________________________________________________________________________*/
@@ -114,11 +210,139 @@ void select(){
   // Select the inputs...
 }
 
-//String getGPSSentence(){
-//    digitalWrite(receivePin, HIGH);
-//    Serial.print("/");
-//    for(int i = 0; i < 300; i++){
-//      Serial.print(Serial1.read(), BYTE);
-//    }
-//    Serial.print("\n");
-//}
+
+
+  File dataFile4;
+  // set up variables using the SD utility library functions:
+  Sd2Card card;
+  SdVolume volume;
+  SdFile root;
+
+  void getCardInfo(){
+    
+    dataFile4 = SD.open("CardInfo.txt", FILE_WRITE);
+  // we'll use the initialization code from the utility libraries
+  // since we're just testing if the card is working!
+  if (!card.init(SPI_HALF_SPEED, chipSelect)) {
+    dataFile4.println("initialization failed. Things to check:");
+    dataFile4.println("* is a card is inserted?");
+    dataFile4.println("* Is your wiring correct?");
+    dataFile4.println("* did you change the chipSelect pin to match your shield or module?");
+    return;
+  } else {
+   dataFile4.println("Wiring is correct and a card is present."); 
+  }
+
+  // print the type of card
+  dataFile4.print("\nCard type: ");
+  switch(card.type()) {
+    case SD_CARD_TYPE_SD1:
+      dataFile4.println("SD1");
+      break;
+    case SD_CARD_TYPE_SD2:
+      dataFile4.println("SD2");
+      break;
+    case SD_CARD_TYPE_SDHC:
+      dataFile4.println("SDHC");
+      break;
+    default:
+      dataFile4.println("Unknown");
+  }
+
+  // Now we will try to open the 'volume'/'partition' - it should be FAT16 or FAT32
+  if (!volume.init(card)) {
+    dataFile4.println("Could not find FAT16/FAT32 partition.\nMake sure you've formatted the card");
+    return;
+  }
+
+
+  // print the type and size of the first FAT-type volume
+  uint32_t volumesize;
+  dataFile4.print("\nVolume type is FAT");
+  dataFile4.println(volume.fatType(), DEC);
+  dataFile4.println();
+  
+  volumesize = volume.blocksPerCluster();    // clusters are collections of blocks
+  volumesize *= volume.clusterCount();       // we'll have a lot of clusters
+  volumesize *= 512;                            // SD card blocks are always 512 bytes
+  dataFile4.print("Volume size (bytes): ");
+  dataFile4.println(volumesize);
+  dataFile4.print("Volume size (Kbytes): ");
+  volumesize /= 1024;
+  dataFile4.println(volumesize);
+  dataFile4.print("Volume size (Mbytes): ");
+  volumesize /= 1024;
+  dataFile4.println(volumesize);
+
+  
+  dataFile4.println("\nFiles found on the card (name, date and size in bytes): ");
+  root.openRoot(volume);
+  
+  // list all files in the card with date and size
+  root.ls(LS_R | LS_DATE | LS_SIZE);
+  dataFile4.println("=============================================================");
+} 
+  
+  
+  void PrintToLCD(){
+    if(Rolling){ 
+      Serial1.print("Writing to Log Files.");
+      Serial1.print("Pushing Electrons....");
+      Serial1.print("Sending to XBee......");
+      Serial1.print("                     ");
+      Serial1.print("                     ");
+      Serial1.print("                     ");
+      Serial1.print("                     ");
+      Serial1.print("                     ");
+      Rolling = false;
+    }
+    else{
+      Serial1.print("Sending -> ..........");
+      Serial1.print(sent);
+      Serial1.print("                     ");
+      Serial1.print("                     ");
+      Serial1.print("                     ");
+      Serial1.print("             ");
+    }
+  }
+  
+  
+float vcc = 4.91;                       // only used for display purposes, if used
+                                        // set to the measured Vcc.
+float pad = 9850;                       // balance/pad resistor value, set this to
+                                        // the measured resistance of your pad resistor
+float thermr = 10000;                   // thermistor nominal resistance
+
+
+float Thermistor(int RawADC) {
+  long Resistance;  
+  float Temp;  // Dual-Purpose variable to save space.
+
+  Resistance=((1024 * pad / RawADC) - pad); 
+  Temp = log(Resistance); // Saving the Log(resistance) so not to calculate  it 4 times later
+  Temp = 1 / (0.001129148 + (0.000234125 * Temp) + (0.0000000876741 * Temp * Temp * Temp));
+  Temp = Temp - 273.15;  // Convert Kelvin to Celsius                      
+  return Temp;                                      // Return the Temperature
+}
+
+
+void WriteToSD(String VitalData, String TempData, String OtherData){
+    
+  File dataFile1 = SD.open("TempLog.csv", FILE_WRITE);
+      if(dataFile1){
+         dataFile1.println(TempData);
+         dataFile1.close(); 
+      }
+    
+    File dataFile2 = SD.open("OtherLog.csv", FILE_WRITE);
+      if(dataFile2){
+         dataFile2.println(OtherData);
+         dataFile2.close(); 
+      }
+      
+    File dataFile3 = SD.open("DataLog.csv", FILE_WRITE);
+       if(dataFile3){
+         dataFile3.println(VitalData);
+         dataFile3.close(); 
+      }
+}

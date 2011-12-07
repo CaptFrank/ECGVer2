@@ -19,8 +19,7 @@ public class getSPO2 {
     public static void getSPO2(){
         double error = SplitParse.getLowNum();
         double tempSPO2 = (((SplitParse.getPotnum() - error) / (SplitParse.getIRValue() - error))*100.00);
-        averageSPO2 += tempSPO2;
-        averageSPO2 = averageSPO2 / 2.0;
+        averageSPO2 = (tempSPO2 + averageSPO2) / 2.0;
         ECGJAVa2View.SPO2Value.setText(Integer.toString((int)averageSPO2));
     }
 
