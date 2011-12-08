@@ -98,14 +98,6 @@ void setup() {
   }
   
   Serial1.print("SD card Initialized..");
-  
-  getCardInfo();
-  if(SD.exists("CardInfo.txt")){
-    Serial1.print("CardInfo.txt Init....");
-  }
-  else{
-    Serial1.print("CardInfo.txt FInit...");
-  }
 
   WriteToSD(VitalData, TempData, OtherData);
   
@@ -130,9 +122,17 @@ void setup() {
   }
   
   
-    Serial1.print("                     ");
-    Serial1.print("                     ");
-    Serial1.print("                     ");
+  Serial1.print("                     ");
+  Serial1.print("                     ");
+  Serial1.print("                     ");
+    
+  getCardInfo();
+  if(SD.exists("CardInfo.txt")){
+    Serial1.print("CardInfo.txt Init....");
+  }
+  else{
+    Serial1.print("CardInfo.txt FInit...");
+  }
   
   // wait for MAX chip to stabilize
   delay(10000);
@@ -183,12 +183,12 @@ void loop() {
   Serial.println("\n");
   z+=10;
   
-  VitalData = (String((int)millis()) + "," + (String((int)tempECG)) + "," + (String((int)tempRed)) + "," + 
+  VitalData = (printTime() + "," + (String((int)tempECG)) + "," + (String((int)tempRed)) + "," + 
               (String((int)tempInt)) + "," +(String((int)tempError)) + "," + (String((int)tempRESP)) + "\n");
  
-  TempData = (String((int)millis()) + "," + (String((int)temp)) + "," + (String((int)AmbientTemp)) + "\n");
+  TempData = (printTime() + "," + (String((int)temp)) + "," + (String((int)AmbientTemp)) + "\n");
   
-  OtherData = (String((int)millis()) + "," + (String((int)tempBat)) + "\n");
+  OtherData = (printTime() + "," + (String((int)tempBat)) + "\n");
   
   sent = ("(!Lig:"+ String((int)tempLight) + "Tem:" + String((int)temp) + "ECG:" + String((int)tempECG) + "POT:" + String((int)tempRed) + "BAT:" + String((int)tempBat) +
           "IRL:" + String((int)tempInt) + "LOW:" + String((int)tempError) + "RES:" + String((int)tempRESP) + "ArT:" + String((int)AmbientTemp));
@@ -280,6 +280,7 @@ void select(){
   
   // list all files in the card with date and size
   root.ls(LS_R | LS_DATE | LS_SIZE);
+  ListFiles(dataFile4);
   dataFile4.println("=============================================================");
 } 
   
@@ -345,4 +346,57 @@ void WriteToSD(String VitalData, String TempData, String OtherData){
          dataFile3.println(VitalData);
          dataFile3.close(); 
       }
+}
+
+void ListFiles(File client) {
+  // This code is just copied from SdFile.cpp in the SDFat library
+  // and tweaked to print to the client output in html!
+  dir_t p;
+  
+  root.rewind();
+  while (root.readDir(p) > 0) {
+    // done if past last used entry
+    if (p.name[0] == DIR_NAME_FREE) break;
+
+    // skip deleted entry and entries for . and  ..
+    if (p.name[0] == DIR_NAME_DELETED || p.name[0] == '.') continue;
+
+    // only list subdirectories and files
+    if (!DIR_IS_FILE_OR_SUBDIR(&p)) continue;
+   
+
+    // print file name with possible blank fill
+    //root.printDirName(*p, flags & (LS_DATE | LS_SIZE) ? 14 : 0);
+
+
+    for (uint8_t i = 0; i < 11; i++) {
+      if (p.name[i] == ' ') continue;
+      if (i == 8) {
+        client.print('.');
+      }
+      client.print(p.name[i]);
+    }
+    if (DIR_IS_SUBDIR(&p)) {
+      client.print('/');
+    }
+      
+      client.print("        ");
+      // print modify date/time if requested
+      //client.print(p.lastWriteDate, HEX);
+      //client.print("/t");
+      //client.print(p.lastWriteTime, HEX);
+      // print size if requested
+      //client.print("/t");
+      client.print(p.fileSize);
+      client.print("\n");
+      
+  }
+}
+
+
+String printTime(){
+ 
+ time_t t = now(); // store the current time in time variable t 
+  
+  return (String(hour(t)) + ":" + String(minute(t)) + ":" + String(second(t)));
 }
