@@ -23,14 +23,13 @@
 package ecgjava2;
 
 import java.awt.event.ActionEvent;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -404,7 +403,6 @@ private boolean hasValidInput(){
         inputValid = false;
         errorMessage += "Doctor name was not given\n";
     }
-    //TODO check if formatting of allergies and past surgeries is correct.
     
     if (!inputValid){
         JOptionPane.showMessageDialog(this, errorMessage,
@@ -421,7 +419,17 @@ private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     String patientName = txtPatientName.getText();
     String doctorName = txtDoctorName.getText();
     String doctorNote = txtDoctorNotes.getText();
-    //TODO add in variable that will contain allergies and past surgeries (use ArrayList?)
+    String[] pastSurgeriesList = txtPastSurgeries.getText().split(",");
+    String[] allergiesList = txtAllergies.getText().split(",");
+    
+    //Testing
+    System.out.println("Past Surgeries ");
+    for (String s : pastSurgeriesList) System.out.println(s);
+    System.out.println("Allergies: ");
+    for (String s : allergiesList) System.out.println(s);
+    //TODO Add picture
+    
+    //TODO Implement SQL interface.
 }//GEN-LAST:event_btnSaveActionPerformed
 
 private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
