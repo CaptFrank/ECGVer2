@@ -23,7 +23,11 @@
 package ecgjava2;
 
 import java.awt.event.ActionEvent;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -391,7 +395,7 @@ private boolean hasValidInput(){
         inputValid = false;
         errorMessage += "OHIP number was not given\n";
     } else if (!ohipNumber.matches("((-|\\+)?[0-9]+(]].[0-9]+)?)+")) {
-        //OHIP number can only contain numbers.
+        //Input invalid if OHIP number contains non-numeric character.
         inputValid = false;
         errorMessage += "OHIP number can only contain numbers\n";
     }
@@ -421,15 +425,42 @@ private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     String doctorNote = txtDoctorNotes.getText();
     String[] pastSurgeriesList = txtPastSurgeries.getText().split(",");
     String[] allergiesList = txtAllergies.getText().split(",");
-    
-    //Testing
-    System.out.println("Past Surgeries ");
-    for (String s : pastSurgeriesList) System.out.println(s);
-    System.out.println("Allergies: ");
-    for (String s : allergiesList) System.out.println(s);
     //TODO Add picture
     
-    //TODO Implement SQL interface.
+    //Get file from user through file dialog.
+    final JFileChooser fc = new JFileChooser();
+    fc.setDialogTitle("Save patient information");
+    fc.setMultiSelectionEnabled(true);
+    fc.setApproveButtonText("Save");
+    int retVal = fc.showOpenDialog(this);
+    if (retVal == JFileChooser.APPROVE_OPTION) {
+        File patientFile = fc.getSelectedFile();
+        
+        //Write patient information to patientFile.
+        try {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(patientFile)));
+            out.println("ohip " + ohipNumber);
+            out.println("patient " + patientName);
+            out.println("doctor " + doctorName);
+            out.println("note " + doctorNote);
+            
+            out.print("past_surgeries ");
+            for (String s : pastSurgeriesList) out.print(s + " ");
+            out.println();
+            
+            out.print("allergies ");
+            for (String s: allergiesList) out.print(s + " ");
+            out.println();
+            
+            //TODO Write patient gender and figure out how to store the picture.
+
+            out.close();
+        }
+        catch (IOException e) {
+            System.out.println("Unable to write to file.\n"
+                                 + e.toString());
+        }
+    }
 }//GEN-LAST:event_btnSaveActionPerformed
 
 private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
@@ -443,11 +474,11 @@ private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_btnClearActionPerformed
 
 private void mnuAddPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAddPicActionPerformed
-        
-    final JFrame frame = new JFrame("Open Log Files");
     final JFileChooser fc = new JFileChooser();
+    fc.setDialogTitle("Select patient's picture");
     fc.setMultiSelectionEnabled(true);
-    int retVal = fc.showOpenDialog(frame);
+    fc.setApproveButtonText("Open");
+    int retVal = fc.showOpenDialog(this);
     if (retVal == JFileChooser.APPROVE_OPTION) {
         File selectedFile = fc.getSelectedFile();
         StringBuilder sb = new StringBuilder();
