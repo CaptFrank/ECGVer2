@@ -159,7 +159,6 @@ public class ECGJAVa2View extends FrameView {
         jLabel22 = new javax.swing.JLabel();
         Batt = new javax.swing.JLabel();
         ECGContainer = new javax.swing.JInternalFrame();
-        jLabel16 = new javax.swing.JLabel();
         jMenuBar4 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -227,12 +226,13 @@ public class ECGJAVa2View extends FrameView {
         jLabel35 = new javax.swing.JLabel();
         DistanceGPS = new javax.swing.JLabel();
         GPS = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
-        ConnectBreath = new javax.swing.JMenu();
-        ConnectBoard = new javax.swing.JMenuItem();
         Connect = new javax.swing.JMenuItem();
         Disconnect = new javax.swing.JMenuItem();
+        ConnectBreath = new javax.swing.JMenu();
+        ConnectBoard = new javax.swing.JMenuItem();
         Net_Chat = new javax.swing.JMenuItem();
         javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -394,31 +394,66 @@ public class ECGJAVa2View extends FrameView {
         jTabbedPane1.setName("jTabbedPane1"); // NOI18N
 
         jPanel14.setName("jPanel14"); // NOI18N
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel14.setLayout(new java.awt.GridBagLayout());
 
         jLabel17.setText(resourceMap.getString("jLabel17.text")); // NOI18N
         jLabel17.setName("jLabel17"); // NOI18N
-        jPanel14.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 0, 0, 0);
+        jPanel14.add(jLabel17, gridBagConstraints);
 
         jLabel18.setText(resourceMap.getString("jLabel18.text")); // NOI18N
         jLabel18.setName("jLabel18"); // NOI18N
-        jPanel14.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(14, 0, 32, 0);
+        jPanel14.add(jLabel18, gridBagConstraints);
 
         XbeePackets.setText(resourceMap.getString("XbeePackets.text")); // NOI18N
         XbeePackets.setName("XbeePackets"); // NOI18N
-        jPanel14.add(XbeePackets, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 3, 0, 32);
+        jPanel14.add(XbeePackets, gridBagConstraints);
 
         XbeeTotal.setText(resourceMap.getString("XbeeTotal.text")); // NOI18N
         XbeeTotal.setName("XbeeTotal"); // NOI18N
-        jPanel14.add(XbeeTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(14, 3, 32, 32);
+        jPanel14.add(XbeeTotal, gridBagConstraints);
 
         GoodPackets.setText(resourceMap.getString("GoodPackets.text")); // NOI18N
         GoodPackets.setName("GoodPackets"); // NOI18N
-        jPanel14.add(GoodPackets, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 140, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = -8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
+        jPanel14.add(GoodPackets, gridBagConstraints);
 
         Xbeegood.setText(resourceMap.getString("Xbeegood.text")); // NOI18N
         Xbeegood.setName("Xbeegood"); // NOI18N
-        jPanel14.add(Xbeegood, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 3, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 1, 0, 0);
+        jPanel14.add(Xbeegood, gridBagConstraints);
 
         jTabbedPane1.addTab(resourceMap.getString("jPanel14.TabConstraints.tabTitle"), jPanel14); // NOI18N
 
@@ -493,7 +528,7 @@ public class ECGJAVa2View extends FrameView {
         SignalAnalysis.getContentPane().setLayout(SignalAnalysisLayout);
         SignalAnalysisLayout.setHorizontalGroup(
             SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+            .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         SignalAnalysisLayout.setVerticalGroup(
             SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -511,9 +546,7 @@ public class ECGJAVa2View extends FrameView {
         ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
         ECGContainer.setName("ECGContainer"); // NOI18N
         ECGContainer.setVisible(true);
-
-        jLabel16.setText(resourceMap.getString("jLabel16.text")); // NOI18N
-        jLabel16.setName("jLabel16"); // NOI18N
+        ECGContainer.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jMenuBar4.setName("jMenuBar4"); // NOI18N
 
@@ -542,22 +575,7 @@ public class ECGJAVa2View extends FrameView {
 
         ECGContainer.setJMenuBar(jMenuBar4);
 
-        org.jdesktop.layout.GroupLayout ECGContainerLayout = new org.jdesktop.layout.GroupLayout(ECGContainer.getContentPane());
-        ECGContainer.getContentPane().setLayout(ECGContainerLayout);
-        ECGContainerLayout.setHorizontalGroup(
-            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ECGContainerLayout.createSequentialGroup()
-                .add(575, 575, 575)
-                .add(jLabel16))
-        );
-        ECGContainerLayout.setVerticalGroup(
-            ECGContainerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ECGContainerLayout.createSequentialGroup()
-                .add(112, 112, 112)
-                .add(jLabel16))
-        );
-
-        ECGContainer.setBounds(0, 370, 550, 350);
+        ECGContainer.setBounds(0, 380, 550, 350);
         mainPanel2.add(ECGContainer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         RealTimeData.setClosable(true);
@@ -1168,29 +1186,16 @@ public class ECGJAVa2View extends FrameView {
         GPSPanel.setTitle(resourceMap.getString("GPSPanel.title")); // NOI18N
         GPSPanel.setName("GPSPanel"); // NOI18N
         GPSPanel.setVisible(true);
+        GPSPanel.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         CPSFrame.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("CPSFrame.border.title"))); // NOI18N
         CPSFrame.setName("CPSFrame"); // NOI18N
-        CPSFrame.setLayout(new java.awt.GridBagLayout());
 
         jLabel35.setText(resourceMap.getString("jLabel35.text")); // NOI18N
         jLabel35.setName("jLabel35"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 26, 0, 0);
-        CPSFrame.add(jLabel35, gridBagConstraints);
 
         DistanceGPS.setText(resourceMap.getString("DistanceGPS.text")); // NOI18N
         DistanceGPS.setName("DistanceGPS"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 52, 0, 64);
-        CPSFrame.add(DistanceGPS, gridBagConstraints);
 
         GPS.setText(resourceMap.getString("GPS.text")); // NOI18N
         GPS.setName("GPS"); // NOI18N
@@ -1199,33 +1204,52 @@ public class ECGJAVa2View extends FrameView {
                 GPSActionPerformed(evt);
             }
         });
+
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout CPSFrameLayout = new org.jdesktop.layout.GroupLayout(CPSFrame);
+        CPSFrame.setLayout(CPSFrameLayout);
+        CPSFrameLayout.setHorizontalGroup(
+            CPSFrameLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(CPSFrameLayout.createSequentialGroup()
+                .add(60, 60, 60)
+                .add(jLabel35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 263, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(DistanceGPS))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, CPSFrameLayout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(GPS, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 250, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton1))
+        );
+        CPSFrameLayout.setVerticalGroup(
+            CPSFrameLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(CPSFrameLayout.createSequentialGroup()
+                .add(CPSFrameLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel35)
+                    .add(DistanceGPS))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(CPSFrameLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton1)
+                    .add(GPS))
+                .add(45, 45, 45))
+        );
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 34;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipady = -45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 101, 23, 0);
-        CPSFrame.add(GPS, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 14, 12);
+        GPSPanel.getContentPane().add(CPSFrame, gridBagConstraints);
 
-        org.jdesktop.layout.GroupLayout GPSPanelLayout = new org.jdesktop.layout.GroupLayout(GPSPanel.getContentPane());
-        GPSPanel.getContentPane().setLayout(GPSPanelLayout);
-        GPSPanelLayout.setHorizontalGroup(
-            GPSPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(GPSPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(CPSFrame, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 407, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        GPSPanelLayout.setVerticalGroup(
-            GPSPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(GPSPanelLayout.createSequentialGroup()
-                .add(10, 10, 10)
-                .add(CPSFrame, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        GPSPanel.setBounds(0, 210, 470, 160);
+        GPSPanel.setBounds(0, 210, 550, 150);
         mainPanel2.add(GPSPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         mainPanel.add(mainPanel2);
@@ -1235,20 +1259,6 @@ public class ECGJAVa2View extends FrameView {
 
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
-
-        ConnectBreath.setText(resourceMap.getString("ConnectBreath.text")); // NOI18N
-        ConnectBreath.setName("ConnectBreath"); // NOI18N
-
-        ConnectBoard.setText(resourceMap.getString("ConnectBoard.text")); // NOI18N
-        ConnectBoard.setName("ConnectBoard"); // NOI18N
-        ConnectBoard.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConnectBoardActionPerformed(evt);
-            }
-        });
-        ConnectBreath.add(ConnectBoard);
-
-        fileMenu.add(ConnectBreath);
 
         Connect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         Connect.setText(resourceMap.getString("Connect.text")); // NOI18N
@@ -1269,6 +1279,20 @@ public class ECGJAVa2View extends FrameView {
             }
         });
         fileMenu.add(Disconnect);
+
+        ConnectBreath.setText(resourceMap.getString("ConnectBreath.text")); // NOI18N
+        ConnectBreath.setName("ConnectBreath"); // NOI18N
+
+        ConnectBoard.setText(resourceMap.getString("ConnectBoard.text")); // NOI18N
+        ConnectBoard.setName("ConnectBoard"); // NOI18N
+        ConnectBoard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConnectBoardActionPerformed(evt);
+            }
+        });
+        ConnectBreath.add(ConnectBoard);
+
+        fileMenu.add(ConnectBreath);
 
         Net_Chat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         Net_Chat.setText(resourceMap.getString("Net_Chat.text")); // NOI18N
@@ -1757,6 +1781,15 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String Dir = System.getProperty("user.dir");
+            try {
+                Process child = Runtime.getRuntime().exec("open " + Dir + "/GPSSerialData/GPSUtility.app");
+            } catch (IOException ex) {
+                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.getConnected()){
@@ -1843,12 +1876,12 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     public static javax.swing.JLabel XbeeTotal;
     public static javax.swing.JLabel Xbeegood;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
