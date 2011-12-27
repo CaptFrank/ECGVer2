@@ -160,7 +160,7 @@ public class SplitParse {
                 getSPO2.getSPO2();
             }
         }
-        if(ECGJAVa2View.Record.isSelected()){
+        if(ECGJAVa2View.getRecordWatchDog() == 0){
             if (Light != null && ECG != null && Temp != null && Pot != null && !Light.isEmpty() && !ECG.isEmpty() && !Temp.isEmpty() && !Pot.isEmpty() && Bat != null && !Bat.isEmpty()
                     && IR != null && !IR.isEmpty() && Low != null && !Low.isEmpty() && RESP != null && !RESP.isEmpty() && DiffTemp != null && !DiffTemp.isEmpty()){
                 String xVitals = (System.currentTimeMillis() - ECGJAVa2View.InitialTime) + "," + ECGnum + "," + Potnum + "," + 

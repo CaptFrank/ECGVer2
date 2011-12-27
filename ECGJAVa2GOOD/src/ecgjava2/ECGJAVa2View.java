@@ -47,6 +47,7 @@ public class ECGJAVa2View extends FrameView {
     private JDialog aboutBox;
     protected static boolean socketConnected = false;
     private boolean DialogGPSconnected = false;
+    private static int RecordWatchDog = 0;
 
     public ECGJAVa2View(SingleFrameApplication app) {
         super(app);
@@ -124,7 +125,6 @@ public class ECGJAVa2View extends FrameView {
         mainPanel = new javax.swing.JPanel();
         mainPanel2 = new javax.swing.JDesktopPane();
         Connected = new javax.swing.JInternalFrame();
-        Record = new javax.swing.JCheckBox();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         jPanel3 = new javax.swing.JPanel();
         Serial = new javax.swing.JLabel();
@@ -221,6 +221,9 @@ public class ECGJAVa2View extends FrameView {
         StartPulse = new javax.swing.JButton();
         StopPulse = new javax.swing.JButton();
         ResetPulse = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        AmbTemp = new javax.swing.JButton();
         GPSPanel = new javax.swing.JInternalFrame();
         CPSFrame = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
@@ -271,21 +274,6 @@ public class ECGJAVa2View extends FrameView {
         Connected.setVisible(true);
         Connected.getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        Record.setText(resourceMap.getString("Record.text")); // NOI18N
-        Record.setName("Record"); // NOI18N
-        Record.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RecordActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 7, 0);
-        Connected.getContentPane().add(Record, gridBagConstraints);
-
         filler1.setName("filler1"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -315,7 +303,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel33)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(Serial)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -357,7 +345,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel34)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(ConectBreathSerial)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -378,7 +366,7 @@ public class ECGJAVa2View extends FrameView {
         gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
         Connected.getContentPane().add(jPanel5, gridBagConstraints);
 
-        Connected.setBounds(0, 20, 470, 200);
+        Connected.setBounds(10, 10, 470, 200);
         mainPanel2.add(Connected, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         SignalAnalysis.setClosable(true);
@@ -614,7 +602,7 @@ public class ECGJAVa2View extends FrameView {
         ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
         ECGContainer.setName("ECGContainer"); // NOI18N
         ECGContainer.setVisible(true);
-        ECGContainer.getContentPane().setLayout(new java.awt.GridBagLayout());
+        ECGContainer.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jMenuBar4.setName("jMenuBar4"); // NOI18N
 
@@ -948,7 +936,6 @@ public class ECGJAVa2View extends FrameView {
         RealTime.setTitle(resourceMap.getString("RealTime.title")); // NOI18N
         RealTime.setName("RealTime"); // NOI18N
         RealTime.setVisible(true);
-        RealTime.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel2.border.title"))); // NOI18N
         jPanel2.setName("jPanel2"); // NOI18N
@@ -969,14 +956,6 @@ public class ECGJAVa2View extends FrameView {
         });
         jPanel2.add(BreathSerialChart1, new java.awt.GridBagConstraints());
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 163;
-        gridBagConstraints.ipady = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        RealTime.getContentPane().add(jPanel2, gridBagConstraints);
-
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel6.border.title"))); // NOI18N
         jPanel6.setName("jPanel6"); // NOI18N
         jPanel6.setLayout(new java.awt.GridBagLayout());
@@ -993,13 +972,6 @@ public class ECGJAVa2View extends FrameView {
             }
         });
         jPanel6.add(TempSerialChart, new java.awt.GridBagConstraints());
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 139;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        RealTime.getContentPane().add(jPanel6, gridBagConstraints);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel1.border.title"))); // NOI18N
         jPanel1.setName("jPanel1"); // NOI18N
@@ -1018,13 +990,6 @@ public class ECGJAVa2View extends FrameView {
         });
         jPanel1.add(LightSerialChart2, new java.awt.GridBagConstraints());
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 139;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        RealTime.getContentPane().add(jPanel1, gridBagConstraints);
-
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel4.border.title"))); // NOI18N
         jPanel4.setName("jPanel4"); // NOI18N
         jPanel4.setLayout(new java.awt.GridBagLayout());
@@ -1042,13 +1007,6 @@ public class ECGJAVa2View extends FrameView {
         });
         jPanel4.add(RESPSerial, new java.awt.GridBagConstraints());
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 139;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        RealTime.getContentPane().add(jPanel4, gridBagConstraints);
-
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel7.border.title"))); // NOI18N
         jPanel7.setName("jPanel7"); // NOI18N
         jPanel7.setLayout(new java.awt.GridBagLayout());
@@ -1065,13 +1023,6 @@ public class ECGJAVa2View extends FrameView {
             }
         });
         jPanel7.add(ECGSerialChart, new java.awt.GridBagConstraints());
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 139;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        RealTime.getContentPane().add(jPanel7, gridBagConstraints);
 
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel10.border.title"))); // NOI18N
         jPanel10.setName("jPanel10"); // NOI18N
@@ -1147,14 +1098,6 @@ public class ECGJAVa2View extends FrameView {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 30, 6, 23);
         jPanel10.add(ResetSPO2, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = -11;
-        gridBagConstraints.ipady = -24;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        RealTime.getContentPane().add(jPanel10, gridBagConstraints);
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel11.border.title"))); // NOI18N
         jPanel11.setName("jPanel11"); // NOI18N
@@ -1235,16 +1178,63 @@ public class ECGJAVa2View extends FrameView {
         gridBagConstraints.insets = new java.awt.Insets(1, 27, 0, 27);
         jPanel11.add(ResetPulse, gridBagConstraints);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = -12;
-        gridBagConstraints.ipady = -12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 9, 0);
-        RealTime.getContentPane().add(jPanel11, gridBagConstraints);
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel9.border.title"))); // NOI18N
+        jPanel9.setName("jPanel9"); // NOI18N
+        jPanel9.setLayout(new java.awt.GridBagLayout());
 
-        RealTime.setBounds(560, 20, 470, 530);
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+        jPanel9.add(jLabel5, new java.awt.GridBagConstraints());
+
+        AmbTemp.setText(resourceMap.getString("AmbTemp.text")); // NOI18N
+        AmbTemp.setName("AmbTemp"); // NOI18N
+        AmbTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AmbTempActionPerformed(evt);
+            }
+        });
+        jPanel9.add(AmbTemp, new java.awt.GridBagConstraints());
+
+        org.jdesktop.layout.GroupLayout RealTimeLayout = new org.jdesktop.layout.GroupLayout(RealTime.getContentPane());
+        RealTime.getContentPane().setLayout(RealTimeLayout);
+        RealTimeLayout.setHorizontalGroup(
+            RealTimeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(RealTimeLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(RealTimeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel11, 0, 0, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel10, 0, 0, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        RealTimeLayout.setVerticalGroup(
+            RealTimeLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(RealTimeLayout.createSequentialGroup()
+                .add(14, 14, 14)
+                .add(jPanel9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 94, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 96, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        RealTime.setBounds(550, 20, 460, 610);
         mainPanel2.add(RealTime, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         GPSPanel.setClosable(true);
@@ -1527,7 +1517,20 @@ public class ECGJAVa2View extends FrameView {
     //connect serial
     
     private void ConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectActionPerformed
+    
+    RecordWatchDog = JOptionPane.showConfirmDialog(new JFrame(),"Would you like to record the data from this session?","Record Data?", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 
+    if (RecordWatchDog == 0){
+        try {
+                LogFiles.WriteLogFilesOthers.main(null);
+                LogFiles.WriteLogFilesTemp.main(null);
+                LogFiles.WriteLogFilesVitals.main(null);
+            } catch (IOException ex) {
+                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+    }
+        
        Thread Comm = null;
             try {
             try {
@@ -1807,19 +1810,6 @@ private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         }
 }//GEN-LAST:event_DisconnectActionPerformed
 
-private void RecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecordActionPerformed
-        if(Record.isSelected()){
-            try {
-                LogFiles.WriteLogFilesOthers.main(null);
-                LogFiles.WriteLogFilesTemp.main(null);
-                LogFiles.WriteLogFilesVitals.main(null);
-            } catch (IOException ex) {
-                Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-}//GEN-LAST:event_RecordActionPerformed
-
 private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Net_ChatActionPerformed
             
     String Dir = System.getProperty("user.dir");
@@ -1858,6 +1848,15 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void AmbTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AmbTempActionPerformed
+
+        if (!CommPortOpen.getConnected()) {
+            JOptionPane.showMessageDialog(null, "Not Connected to Serial", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            chart.ThreadedChartAmbTemp.main(null);
+        }
+    }//GEN-LAST:event_AmbTempActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.getConnected()){
@@ -1873,7 +1872,11 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     static boolean getSocketConnected(){
         return socketConnected;
     }
+    static int getRecordWatchDog(){
+        return RecordWatchDog;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AmbTemp;
     private javax.swing.JLabel BaseLabel;
     public static javax.swing.JLabel BaseTempValue;
     public static javax.swing.JLabel Batt;
@@ -1916,7 +1919,6 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     public static javax.swing.JLabel RESPValue;
     private javax.swing.JInternalFrame RealTime;
     private javax.swing.JInternalFrame RealTimeData;
-    protected static javax.swing.JCheckBox Record;
     private javax.swing.JButton ResetPulse;
     private javax.swing.JButton ResetSPO2;
     private javax.swing.JLabel SPO2Label;
@@ -1968,6 +1970,7 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu2;
@@ -1994,6 +1997,7 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     public static javax.swing.JLabel label10;
     public static javax.swing.JLabel label20;

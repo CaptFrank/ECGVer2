@@ -247,6 +247,8 @@ class CommPortOpen extends Thread{
   }
   static public void readvalues() throws IOException{
       
+      String DialogText = null;
+      
       //ECGJAVa2View.container.setTitle("Container - " + timeFormat.format(System.currentTimeMillis() - (ECGJAVa2View.InitialTime)));
       String val = is.readLine();
       PacketCountXbee++;
@@ -266,7 +268,17 @@ class CommPortOpen extends Thread{
           ECGJAVa2View.Xbeegood.setText(Integer.toString(PacketCountXbeegood));
           ECGJAVa2View.XbeePackets.setText(Double.toString(Math.floor((PacketCountXbeegood*1.0)/(PacketCountXbee*1.0)*100.0)));
           System.out.println(val);
-          Dialog_box.update("XBee Inbound : " + val + " -> written to LogFiles");
+          DialogText = "Inbound: " + val;
+          
+          if(thePortID.getName().startsWith("/dev/tty.usbserial")){
+              DialogText = "XBee -> " + DialogText;
+              
+          }
+          if(ECGJAVa2View.getRecordWatchDog() == 0){
+              DialogText = DialogText + " Written to files";
+          }
+          
+          Dialog_box.update(DialogText);
           
           //split the 2 messages
           SplitParse.splitGPS_Val(val); 
