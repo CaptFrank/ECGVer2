@@ -23,17 +23,20 @@
 package ecgjava2;
 
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import java.util.regex.Pattern;
+import javax.swing.AbstractButton;
+import javax.swing.Icon;
+import org.jdesktop.application.Action;
 
 /**
  *
@@ -80,10 +83,15 @@ public class PatientInformationForm extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         lblPicture = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuAddPic = new javax.swing.JMenuItem();
+        mnuSave = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         mnuQuit = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        mnuClear = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getResourceMap(PatientInformationForm.class);
@@ -279,21 +287,14 @@ public class PatientInformationForm extends javax.swing.JFrame {
                 .addComponent(JScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
         );
 
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(PatientInformationForm.class, this);
+        btnSave.setAction(actionMap.get("save")); // NOI18N
         btnSave.setText(resourceMap.getString("btnSave.text")); // NOI18N
         btnSave.setName("btnSave"); // NOI18N
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
-            }
-        });
 
+        btnClear.setAction(actionMap.get("clear")); // NOI18N
         btnClear.setText(resourceMap.getString("btnClear.text")); // NOI18N
         btnClear.setName("btnClear"); // NOI18N
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
 
         lblPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPicture.setText(resourceMap.getString("lblPicture.text")); // NOI18N
@@ -306,12 +307,16 @@ public class PatientInformationForm extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setAction(actionMap.get("quit")); // NOI18N
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+
         jMenuBar1.setName("jMenuBar1"); // NOI18N
 
         jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
         jMenu1.setName("jMenu1"); // NOI18N
 
-        mnuAddPic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        mnuAddPic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         mnuAddPic.setText(resourceMap.getString("mnuAddPic.text")); // NOI18N
         mnuAddPic.setName("mnuAddPic"); // NOI18N
         mnuAddPic.addActionListener(new java.awt.event.ActionListener() {
@@ -321,13 +326,32 @@ public class PatientInformationForm extends javax.swing.JFrame {
         });
         jMenu1.add(mnuAddPic);
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(PatientInformationForm.class, this);
+        mnuSave.setAction(actionMap.get("save")); // NOI18N
+        mnuSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        mnuSave.setText(resourceMap.getString("mnuSave.text")); // NOI18N
+        mnuSave.setName("mnuSave"); // NOI18N
+        jMenu1.add(mnuSave);
+
+        jSeparator1.setName("jSeparator1"); // NOI18N
+        jMenu1.add(jSeparator1);
+
         mnuQuit.setAction(actionMap.get("quit")); // NOI18N
         mnuQuit.setText(resourceMap.getString("mnuQuit.text")); // NOI18N
         mnuQuit.setName("mnuQuit"); // NOI18N
         jMenu1.add(mnuQuit);
 
         jMenuBar1.add(jMenu1);
+
+        jMenu2.setText(resourceMap.getString("jMenu2.text")); // NOI18N
+        jMenu2.setName("jMenu2"); // NOI18N
+
+        mnuClear.setAction(actionMap.get("clear")); // NOI18N
+        mnuClear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        mnuClear.setText(resourceMap.getString("mnuClear.text")); // NOI18N
+        mnuClear.setName("mnuClear"); // NOI18N
+        jMenu2.add(mnuClear);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -341,6 +365,8 @@ public class PatientInformationForm extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
                         .addComponent(btnSave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClear))
@@ -369,7 +395,8 @@ public class PatientInformationForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave)
-                    .addComponent(btnClear))
+                    .addComponent(btnClear)
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
@@ -379,100 +406,162 @@ public class PatientInformationForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Checks if the user has entered the correct data into the fields.
+     * Returns a BufferedImage object of the given Icon object.
+     * 
+     * @param icon the Icon object
+     * @return a BufferedImage object
+     */
+    private BufferedImage iconToImage(Icon icon) {
+        int w = icon.getIconWidth();
+        int h = icon.getIconHeight();
+        BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+        //line below used to store rasterised image of icon to BufferedImage image
+        icon.paintIcon(null, image.getGraphics(), 0, 0);
+        return image;
+    } 
+
+    /**
+     * Checks if the user has entered the correct data into the fields. If 
+     * the user has entered any bad data then an error message is returned 
+     * showing all the errors with the user's input.
      * 
      * @return true  if the user's input was valid
      * @return false if the user entered incorrect data or left fields blank
      */
-private boolean hasValidInput(){
-    boolean inputValid = true; //Assume input is good.
-    String ohipNumber = txtOhipNumber.getText();
-    String patientName = txtPatientName.getText();
-    String doctorName = txtDoctorName.getText();
-    String errorMessage = "Error: \n";
-    
-    if (ohipNumber.isEmpty()){
-        inputValid = false;
-        errorMessage += "OHIP number was not given\n";
-    } else if (!ohipNumber.matches("((-|\\+)?[0-9]+(]].[0-9]+)?)+")) {
-        //Input invalid if OHIP number contains non-numeric character.
-        inputValid = false;
-        errorMessage += "OHIP number can only contain numbers\n";
-    }
-    if (patientName.isEmpty()){
-        inputValid = false;
-        errorMessage += "Patient name was not given\n";
-    }
-    if (doctorName.isEmpty()){
-        inputValid = false;
-        errorMessage += "Doctor name was not given\n";
-    }
-    
-    if (!inputValid){
-        JOptionPane.showMessageDialog(this, errorMessage,
-                                      "Bad Input", JOptionPane.WARNING_MESSAGE);
-    }
-    
-    return inputValid;
-}    
-    
-private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-    if (!hasValidInput()) return;
-    
-    int ohipNumber = Integer.parseInt(txtOhipNumber.getText());
-    String patientName = txtPatientName.getText();
-    String doctorName = txtDoctorName.getText();
-    String doctorNote = txtDoctorNotes.getText();
-    String[] pastSurgeriesList = txtPastSurgeries.getText().split(",");
-    String[] allergiesList = txtAllergies.getText().split(",");
-    //TODO Add picture
-    
-    //Get file from user through file dialog.
-    final JFileChooser fc = new JFileChooser();
-    fc.setDialogTitle("Save patient information");
-    fc.setMultiSelectionEnabled(true);
-    fc.setApproveButtonText("Save");
-    int retVal = fc.showOpenDialog(this);
-    if (retVal == JFileChooser.APPROVE_OPTION) {
-        File patientFile = fc.getSelectedFile();
-        
+    private boolean hasValidInput(){
+        boolean inputValid = true; //Assume input is good.
+        String ohipNumber = txtOhipNumber.getText();
+        String patientName = txtPatientName.getText();
+        String doctorName = txtDoctorName.getText();
+        String errorMessage = "Error: \n";
+
+        //Check if OHIP number is correct
+        if (ohipNumber.isEmpty()){
+            inputValid = false;
+            errorMessage += "OHIP number was not given\n";
+        } else if (!ohipNumber.matches("((-|\\+)?[0-9]+(]].[0-9]+)?)+")) {
+            inputValid = false;
+            errorMessage += "OHIP number can only contain numbers\n";
+        }
+        //Check if patient's name is correct.
+        if (patientName.isEmpty()){
+            inputValid = false;
+            errorMessage += "Patient name was not given\n";
+        }
+        //Check if doctor's name is correct.
+        if (doctorName.isEmpty()){
+            inputValid = false;
+            errorMessage += "Doctor name was not given\n";
+        }
+        //Check if patient's gender was chosen.
+        Enumeration genderButtons = bgrpGender.getElements();
+        int unselectedButtonCount = 0;
+        for (Enumeration<AbstractButton> b = genderButtons; b.hasMoreElements(); ){
+            if (b.nextElement().isSelected()) break;
+            else {
+                unselectedButtonCount++;
+            }
+
+            if (unselectedButtonCount == 3) { //No gender was chosen
+                inputValid = false;
+                errorMessage += "Patient gender not given\n";
+            }
+        }
+
+        if (!inputValid){
+            JOptionPane.showMessageDialog(this, errorMessage,
+                                          "Bad Input", JOptionPane.WARNING_MESSAGE);
+        }
+
+        return inputValid;
+    }   
+
+    /**
+     * Writes all patient information to file patientFile. If the method 
+     * could not write to patientFile then an error message will be printed.
+     * 
+     * The writeToFile method writes patient information such as 
+     *  - OHIP number
+     *  - Patient's name
+     *  - Patient's gender
+     *  - Name of patient's doctor
+     *  - Doctor's note
+     *  - List of past surgeries
+     *  - List of patient's allergies
+     *  - patient's portrait
+     * 
+     * @param patientFile the file to write the patient information to
+     * @return true  if writing to file was successful
+     * @return false otherwise
+     */
+    private boolean writeToFile(File patientFile){
+        int ohipNumber = Integer.parseInt(txtOhipNumber.getText());
+        String patientName = txtPatientName.getText();
+        String patientGender = bgrpGender.getSelection().getActionCommand();
+        String doctorName = txtDoctorName.getText();
+        String doctorNote = txtDoctorNotes.getText();
+        String[] pastSurgeriesList = txtPastSurgeries.getText().split(",");
+        String[] allergiesList = txtAllergies.getText().split(",");
+        BufferedImage patientImage = iconToImage(lblPicture.getIcon());
+
         //Write patient information to patientFile.
         try {
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(patientFile)));
             out.println("ohip " + ohipNumber);
             out.println("patient " + patientName);
+            out.println("gender " + patientGender);
             out.println("doctor " + doctorName);
             out.println("note " + doctorNote);
-            
+
             out.print("past_surgeries ");
             for (String s : pastSurgeriesList) out.print(s + " ");
             out.println();
-            
+
             out.print("allergies ");
             for (String s: allergiesList) out.print(s + " ");
             out.println();
-            
-            //TODO Write patient gender and figure out how to store the picture.
 
+            //Write image at end of file.
+            ImageIO.write(patientImage, "png", patientFile);
+            
             out.close();
+            return true;
         }
         catch (IOException e) {
             System.out.println("Unable to write to file.\n"
                                  + e.toString());
+            return false;
         }
     }
-}//GEN-LAST:event_btnSaveActionPerformed
+    
+    @Action
+    public void save() {
+        if (!hasValidInput()) return;
 
-private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-    txtPatientName.setText("");
-    txtAllergies.setText("");
-    txtDoctorName.setText("");
-    txtDoctorNotes.setText("");
-    txtOhipNumber.setText("");
-    txtPastSurgeries.setText("");
-    txtPatientName.setText("");
-}//GEN-LAST:event_btnClearActionPerformed
+        //Get file from user through file dialog and write to file.
+        final JFileChooser fc = new JFileChooser();
+        fc.setDialogTitle("Save patient information");
+        fc.setMultiSelectionEnabled(true);
+        fc.setApproveButtonText("Save");
+        int retVal = fc.showOpenDialog(this);
+        if (retVal == JFileChooser.APPROVE_OPTION) {
+            File patientFile = fc.getSelectedFile();
+            writeToFile(patientFile);
+        }
+    }
 
+    @Action
+    public void clear() {
+        txtPatientName.setText("");
+        txtAllergies.setText("");
+        txtDoctorName.setText("");
+        txtDoctorNotes.setText("");
+        txtOhipNumber.setText("");
+        txtPastSurgeries.setText("");
+        txtPatientName.setText("");
+    }
+    
+//TODO Replace the add picture methods with just one Action method
 private void mnuAddPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAddPicActionPerformed
     final JFileChooser fc = new JFileChooser();
     fc.setDialogTitle("Select patient's picture");
@@ -481,7 +570,6 @@ private void mnuAddPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     int retVal = fc.showOpenDialog(this);
     if (retVal == JFileChooser.APPROVE_OPTION) {
         File selectedFile = fc.getSelectedFile();
-        StringBuilder sb = new StringBuilder();
         System.out.println(fc.getSelectedFile());
         
         //TODO provide error handling (check if file contains image) and figure out how to resize image to fit
@@ -495,7 +583,7 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
     ActionEvent aEvt = new ActionEvent(evt.getSource(), evt.getID(), evt.paramString());
     mnuAddPicActionPerformed(aEvt);
 }//GEN-LAST:event_lblPictureMouseClicked
-
+    
     /**
      * @param args the command line arguments
      */
@@ -531,11 +619,13 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
             }
         });
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane JScrollPane1;
     private javax.swing.ButtonGroup bgrpGender;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -544,6 +634,7 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -552,9 +643,12 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JLabel lblPicture;
     private javax.swing.JMenuItem mnuAddPic;
+    private javax.swing.JMenuItem mnuClear;
     private javax.swing.JMenuItem mnuQuit;
+    private javax.swing.JMenuItem mnuSave;
     private javax.swing.JTextField txtAllergies;
     private javax.swing.JTextField txtDoctorName;
     private javax.swing.JTextArea txtDoctorNotes;
