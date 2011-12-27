@@ -458,69 +458,137 @@ public class ECGJAVa2View extends FrameView {
         jTabbedPane1.addTab(resourceMap.getString("jPanel14.TabConstraints.tabTitle"), jPanel14); // NOI18N
 
         jPanel15.setName("jPanel15"); // NOI18N
-        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel15.setLayout(new java.awt.GridBagLayout());
 
         jLabel21.setText(resourceMap.getString("jLabel21.text")); // NOI18N
         jLabel21.setName("jLabel21"); // NOI18N
-        jPanel15.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 41;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 25, 0, 0);
+        jPanel15.add(jLabel21, gridBagConstraints);
 
         BreathPacket.setText(resourceMap.getString("BreathPacket.text")); // NOI18N
         BreathPacket.setName("BreathPacket"); // NOI18N
-        jPanel15.add(BreathPacket, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 8, 0, 36);
+        jPanel15.add(BreathPacket, gridBagConstraints);
 
         jLabel23.setText(resourceMap.getString("jLabel23.text")); // NOI18N
         jLabel23.setName("jLabel23"); // NOI18N
-        jPanel15.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 25, 58, 0);
+        jPanel15.add(jLabel23, gridBagConstraints);
 
         BreathTotal.setText(resourceMap.getString("BreathTotal.text")); // NOI18N
         BreathTotal.setName("BreathTotal"); // NOI18N
-        jPanel15.add(BreathTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(8, 8, 58, 36);
+        jPanel15.add(BreathTotal, gridBagConstraints);
 
         jTabbedPane1.addTab(resourceMap.getString("jPanel15.TabConstraints.tabTitle"), jPanel15); // NOI18N
 
         SignalStrength.setName("SignalStrength"); // NOI18N
-        SignalStrength.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        SignalStrength.setLayout(new java.awt.GridBagLayout());
 
         jLabel19.setText(resourceMap.getString("jLabel19.text")); // NOI18N
         jLabel19.setName("jLabel19"); // NOI18N
-        SignalStrength.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 0, 0, 0);
+        SignalStrength.add(jLabel19, gridBagConstraints);
 
         jLabel25.setText(resourceMap.getString("jLabel25.text")); // NOI18N
         jLabel25.setName("jLabel25"); // NOI18N
-        SignalStrength.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        SignalStrength.add(jLabel25, gridBagConstraints);
 
         label10.setIcon(resourceMap.getIcon("label10.icon")); // NOI18N
         label10.setText(resourceMap.getString("label10.text")); // NOI18N
         label10.setName("label10"); // NOI18N
-        SignalStrength.add(label10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 8, 0, 0);
+        SignalStrength.add(label10, gridBagConstraints);
 
         label20.setIcon(resourceMap.getIcon("label20.icon")); // NOI18N
         label20.setText(resourceMap.getString("label20.text")); // NOI18N
         label20.setName("label20"); // NOI18N
-        SignalStrength.add(label20, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 0, 0, 0);
+        SignalStrength.add(label20, gridBagConstraints);
 
         label30.setIcon(resourceMap.getIcon("label30.icon")); // NOI18N
         label30.setText(resourceMap.getString("label30.text")); // NOI18N
         label30.setName("label30"); // NOI18N
-        SignalStrength.add(label30, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 0, 0, 0);
+        SignalStrength.add(label30, gridBagConstraints);
 
         label40.setIcon(resourceMap.getIcon("label40.icon")); // NOI18N
         label40.setText(resourceMap.getString("label40.text")); // NOI18N
         label40.setName("label40"); // NOI18N
-        SignalStrength.add(label40, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 0, 43, 31);
+        SignalStrength.add(label40, gridBagConstraints);
 
         jTabbedPane1.addTab(resourceMap.getString("SignalStrength.TabConstraints.tabTitle"), SignalStrength); // NOI18N
 
         jPanel16.setName("jPanel16"); // NOI18N
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel16.setLayout(new java.awt.GridBagLayout());
 
         jLabel22.setText(resourceMap.getString("jLabel22.text")); // NOI18N
         jLabel22.setName("jLabel22"); // NOI18N
-        jPanel16.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 8, 72, 0);
+        jPanel16.add(jLabel22, gridBagConstraints);
 
         Batt.setText(resourceMap.getString("Batt.text")); // NOI18N
         Batt.setName("Batt"); // NOI18N
-        jPanel16.add(Batt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 2, 72, 99);
+        jPanel16.add(Batt, gridBagConstraints);
 
         jTabbedPane1.addTab(resourceMap.getString("jPanel16.TabConstraints.tabTitle"), jPanel16); // NOI18N
 
@@ -528,14 +596,14 @@ public class ECGJAVa2View extends FrameView {
         SignalAnalysis.getContentPane().setLayout(SignalAnalysisLayout);
         SignalAnalysisLayout.setHorizontalGroup(
             SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
         );
         SignalAnalysisLayout.setVerticalGroup(
             SignalAnalysisLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
         );
 
-        SignalAnalysis.setBounds(1060, 480, 280, 200);
+        SignalAnalysis.setBounds(1030, 480, 330, 200);
         mainPanel2.add(SignalAnalysis, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         ECGContainer.setClosable(true);
