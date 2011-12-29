@@ -22,6 +22,7 @@
  */
 package ecgjava2;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
@@ -316,18 +317,12 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jMenu1.setText(resourceMap.getString("jMenu1.text")); // NOI18N
         jMenu1.setName("jMenu1"); // NOI18N
 
-        mnuAddPic.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        mnuAddPic.setAction(actionMap.get("addPicture")); // NOI18N
         mnuAddPic.setText(resourceMap.getString("mnuAddPic.text")); // NOI18N
         mnuAddPic.setName("mnuAddPic"); // NOI18N
-        mnuAddPic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuAddPicActionPerformed(evt);
-            }
-        });
         jMenu1.add(mnuAddPic);
 
         mnuSave.setAction(actionMap.get("save")); // NOI18N
-        mnuSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         mnuSave.setText(resourceMap.getString("mnuSave.text")); // NOI18N
         mnuSave.setName("mnuSave"); // NOI18N
         jMenu1.add(mnuSave);
@@ -561,27 +556,37 @@ public class PatientInformationForm extends javax.swing.JFrame {
         txtPatientName.setText("");
     }
     
-//TODO Replace the add picture methods with just one Action method
-private void mnuAddPicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAddPicActionPerformed
-    final JFileChooser fc = new JFileChooser();
-    fc.setDialogTitle("Select patient's picture");
-    fc.setMultiSelectionEnabled(true);
-    fc.setApproveButtonText("Open");
-    int retVal = fc.showOpenDialog(this);
-    if (retVal == JFileChooser.APPROVE_OPTION) {
-        File selectedFile = fc.getSelectedFile();
-        System.out.println(fc.getSelectedFile());
+    @Action
+    public void addPicture() {
+        int w = lblPicture.getWidth();
+        int h = lblPicture.getHeight();
         
-        //TODO provide error handling (check if file contains image) and figure out how to resize image to fit
-        ImageIcon icon = new ImageIcon(selectedFile.toString());
-        //Add image to lblPicture
-        lblPicture.setIcon(icon);
-    }
-}//GEN-LAST:event_mnuAddPicActionPerformed
+        final JFileChooser fc = new JFileChooser();
+        fc.setDialogTitle("Select patient's picture");
+        fc.setMultiSelectionEnabled(true);
+        fc.setApproveButtonText("Open");
+        int retVal = fc.showOpenDialog(this);
+        if (retVal == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fc.getSelectedFile();
+            System.out.println(fc.getSelectedFile());
 
+            //TODO provide error handling (check if file contains image)
+            try {
+                BufferedImage image = ImageIO.read(selectedFile);
+                Image scaledImage = image.getScaledInstance(w, h, Image.SCALE_DEFAULT);
+            
+                ImageIcon icon = new ImageIcon(scaledImage);
+                //Add image to lblPicture
+                lblPicture.setIcon(icon);
+                lblPicture.setText(""); //Remove "Add patient portrait" text
+            }
+            catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPictureMouseClicked
-    ActionEvent aEvt = new ActionEvent(evt.getSource(), evt.getID(), evt.paramString());
-    mnuAddPicActionPerformed(aEvt);
+    addPicture();
 }//GEN-LAST:event_lblPictureMouseClicked
     
     /**

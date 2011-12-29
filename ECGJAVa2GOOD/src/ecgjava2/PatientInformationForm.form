@@ -17,23 +17,17 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuAddPic">
               <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+A"/>
+                <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+                  <action class="ecgjava2.PatientInformationForm" id="addPicture" methodName="addPicture"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="mnuAddPic.text"/>
                 <Property name="name" type="java.lang.String" value="mnuAddPic" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuAddPicActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuSave">
               <Properties>
                 <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                   <action class="ecgjava2.PatientInformationForm" id="save" methodName="save"/>
-                </Property>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+S"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="mnuSave.text"/>
                 <Property name="name" type="java.lang.String" value="mnuSave" noResource="true"/>
@@ -65,9 +59,6 @@
               <Properties>
                 <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
                   <action class="ecgjava2.PatientInformationForm" id="clear" methodName="clear"/>
-                </Property>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+C"/>
                 </Property>
                 <Property name="text" type="java.lang.String" resourceKey="mnuClear.text"/>
                 <Property name="name" type="java.lang.String" value="mnuClear" noResource="true"/>
