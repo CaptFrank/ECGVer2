@@ -256,6 +256,10 @@ public class ECGJAVa2View extends FrameView {
         Main = new javax.swing.JFrame();
         jLabel20 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
+        RecordData = new javax.swing.JDialog();
+        Record = new javax.swing.JCheckBox();
+        NO = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         mainPanel.setName("mainPanel"); // NOI18N
         mainPanel.setLayout(null);
@@ -303,7 +307,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel33)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(Serial)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -345,7 +349,7 @@ public class ECGJAVa2View extends FrameView {
                 .add(jLabel34)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(ConectBreathSerial)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1508,6 +1512,50 @@ public class ECGJAVa2View extends FrameView {
         jCheckBox1.setText(resourceMap.getString("jCheckBox1.text")); // NOI18N
         jCheckBox1.setName("jCheckBox1"); // NOI18N
 
+        RecordData.setName("RecordData"); // NOI18N
+
+        Record.setText(resourceMap.getString("Record.text")); // NOI18N
+        Record.setName("Record"); // NOI18N
+        Record.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RecordActionPerformed(evt);
+            }
+        });
+
+        NO.setText(resourceMap.getString("NO.text")); // NOI18N
+        NO.setName("NO"); // NOI18N
+
+        jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
+        jLabel7.setName("jLabel7"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout RecordDataLayout = new org.jdesktop.layout.GroupLayout(RecordData.getContentPane());
+        RecordData.getContentPane().setLayout(RecordDataLayout);
+        RecordDataLayout.setHorizontalGroup(
+            RecordDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(RecordDataLayout.createSequentialGroup()
+                .add(RecordDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(RecordDataLayout.createSequentialGroup()
+                        .add(32, 32, 32)
+                        .add(Record)
+                        .add(45, 45, 45)
+                        .add(NO))
+                    .add(RecordDataLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel7)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        RecordDataLayout.setVerticalGroup(
+            RecordDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(RecordDataLayout.createSequentialGroup()
+                .add(48, 48, 48)
+                .add(jLabel7)
+                .add(18, 18, 18)
+                .add(RecordDataLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(Record)
+                    .add(NO))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setComponent(mainPanel);
         setMenuBar(menuBar);
     }// </editor-fold>//GEN-END:initComponents
@@ -1857,6 +1905,10 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }//GEN-LAST:event_AmbTempActionPerformed
 
+    private void RecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecordActionPerformed
+
+        if (Record.isSelected()) {             try {                 LogFiles.WriteLogFilesOthers.main(null);                 LogFiles.WriteLogFilesTemp.main(null);                 LogFiles.WriteLogFilesVitals.main(null);             } catch (IOException ex) {                 Logger.getLogger(ECGJAVa2View.class.getName()).log(Level.SEVERE, null, ex);                 JOptionPane.showMessageDialog(null, "Error initializing files", "Error", JOptionPane.ERROR_MESSAGE);             }         }     }//GEN-LAST:event_RecordActionPerformed
+
     private void Disconnect_Close(){
 
         if(CommPortOpen.getConnected()){
@@ -1908,6 +1960,7 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton LightSerialChart2;
     public static javax.swing.JLabel LightValue;
     private javax.swing.JFrame Main;
+    private javax.swing.JButton NO;
     private javax.swing.JMenuItem Net_Chat;
     private javax.swing.JButton OXISerialChart1;
     private javax.swing.JLabel PulseLabel;
@@ -1919,6 +1972,8 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     public static javax.swing.JLabel RESPValue;
     private javax.swing.JInternalFrame RealTime;
     private javax.swing.JInternalFrame RealTimeData;
+    private javax.swing.JCheckBox Record;
+    private javax.swing.JDialog RecordData;
     private javax.swing.JButton ResetPulse;
     private javax.swing.JButton ResetSPO2;
     private javax.swing.JLabel SPO2Label;
@@ -1972,6 +2027,7 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
