@@ -158,11 +158,6 @@ public class ECGJAVa2View extends FrameView {
         jPanel16 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         Batt = new javax.swing.JLabel();
-        ECGContainer = new javax.swing.JInternalFrame();
-        jMenuBar4 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         RealTimeData = new javax.swing.JInternalFrame();
         jPanel8 = new javax.swing.JPanel();
         BaseLabel = new javax.swing.JLabel();
@@ -232,6 +227,7 @@ public class ECGJAVa2View extends FrameView {
         jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         javax.swing.JMenu fileMenu = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         Connect = new javax.swing.JMenuItem();
         Disconnect = new javax.swing.JMenuItem();
         ConnectBreath = new javax.swing.JMenu();
@@ -260,6 +256,11 @@ public class ECGJAVa2View extends FrameView {
         Record = new javax.swing.JCheckBox();
         NO = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        ECGContainer = new javax.swing.JInternalFrame();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         mainPanel.setName("mainPanel"); // NOI18N
         mainPanel.setLayout(null);
@@ -596,46 +597,6 @@ public class ECGJAVa2View extends FrameView {
 
         SignalAnalysis.setBounds(1030, 480, 330, 200);
         mainPanel2.add(SignalAnalysis, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        ECGContainer.setClosable(true);
-        ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        ECGContainer.setIconifiable(true);
-        ECGContainer.setMaximizable(true);
-        ECGContainer.setResizable(true);
-        ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
-        ECGContainer.setName("ECGContainer"); // NOI18N
-        ECGContainer.setVisible(true);
-        ECGContainer.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jMenuBar4.setName("jMenuBar4"); // NOI18N
-
-        jMenu4.setText(resourceMap.getString("jMenu4.text")); // NOI18N
-        jMenu4.setName("jMenu4"); // NOI18N
-
-        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
-        jMenuItem1.setName("jMenuItem1"); // NOI18N
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem1);
-
-        jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
-        jMenuItem2.setName("jMenuItem2"); // NOI18N
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem2);
-
-        jMenuBar4.add(jMenu4);
-
-        ECGContainer.setJMenuBar(jMenuBar4);
-
-        ECGContainer.setBounds(0, 380, 550, 350);
-        mainPanel2.add(ECGContainer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         RealTimeData.setClosable(true);
         RealTimeData.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -1321,6 +1282,10 @@ public class ECGJAVa2View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
+        jMenuItem3.setText(resourceMap.getString("jMenuItem3.text")); // NOI18N
+        jMenuItem3.setName("jMenuItem3"); // NOI18N
+        fileMenu.add(jMenuItem3);
+
         Connect.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         Connect.setText(resourceMap.getString("Connect.text")); // NOI18N
         Connect.setName("Connect"); // NOI18N
@@ -1554,6 +1519,43 @@ public class ECGJAVa2View extends FrameView {
                     .add(NO))
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        ECGContainer.setClosable(true);
+        ECGContainer.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        ECGContainer.setIconifiable(true);
+        ECGContainer.setMaximizable(true);
+        ECGContainer.setResizable(true);
+        ECGContainer.setTitle(resourceMap.getString("ECGContainer.title")); // NOI18N
+        ECGContainer.setName("ECGContainer"); // NOI18N
+        ECGContainer.setVisible(true);
+        ECGContainer.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jMenuBar4.setName("jMenuBar4"); // NOI18N
+
+        jMenu4.setText(resourceMap.getString("jMenu4.text")); // NOI18N
+        jMenu4.setName("jMenu4"); // NOI18N
+
+        jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
+        jMenuItem1.setName("jMenuItem1"); // NOI18N
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem1);
+
+        jMenuItem2.setText(resourceMap.getString("jMenuItem2.text")); // NOI18N
+        jMenuItem2.setName("jMenuItem2"); // NOI18N
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem2);
+
+        jMenuBar4.add(jMenu4);
+
+        ECGContainer.setJMenuBar(jMenuBar4);
 
         setComponent(mainPanel);
         setMenuBar(menuBar);
@@ -2036,6 +2038,7 @@ private void Net_ChatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
