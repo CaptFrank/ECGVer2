@@ -536,9 +536,8 @@ public class PatientInformationForm extends javax.swing.JFrame {
         //Get file from user through file dialog and write to file.
         final JFileChooser fc = new JFileChooser();
         fc.setDialogTitle("Save patient information");
-        fc.setMultiSelectionEnabled(true);
-        fc.setApproveButtonText("Save");
-        int retVal = fc.showOpenDialog(this);
+        fc.setMultiSelectionEnabled(false);
+        int retVal = fc.showSaveDialog(this);
         if (retVal == JFileChooser.APPROVE_OPTION) {
             File patientFile = fc.getSelectedFile();
             writeToFile(patientFile);
