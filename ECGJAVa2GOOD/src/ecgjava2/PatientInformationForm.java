@@ -562,7 +562,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
         
         final JFileChooser fc = new JFileChooser();
         fc.setDialogTitle("Select patient's picture");
-        fc.setMultiSelectionEnabled(true);
+        fc.setMultiSelectionEnabled(false);
         fc.setApproveButtonText("Open");
         int retVal = fc.showOpenDialog(this);
         if (retVal == JFileChooser.APPROVE_OPTION) {
