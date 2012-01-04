@@ -37,8 +37,8 @@ public class KeyMaker {
      * Creates a SecretKey using the given password and the PBE, MDS, and DES 
      * encryption algorithm.
      * 
-     * @param password
-     * @return 
+     * @param password The char array used to create the SecretKey.
+     * @return A SecretKey based on the given password.
      */
     public static SecretKey createKey(char[] password) {
         try {
@@ -47,12 +47,22 @@ public class KeyMaker {
                                     "PBEWithMDSandDES").generateSecret(keySpec);
             return key;
         } catch (InvalidKeySpecException ex) {
-            Logger.getLogger(KeyMaker.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KeyMaker.class.getName()).log(Level.SEVERE, null, 
+                                                                            ex);
         } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(KeyMaker.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KeyMaker.class.getName()).log(Level.SEVERE, null, 
+                                                                            ex);
         }
         return null;
     }
+    
+    /**
+     * An overloaded method of createKey(char[] password).
+     * 
+     * @see createKey(char[] password)
+     * @param password - The String used to create the SecretKey.
+     * @return A SecretKey based on the given password.
+     */
     public static SecretKey createKey(String password) {
         return createKey(password.toCharArray());
     }
