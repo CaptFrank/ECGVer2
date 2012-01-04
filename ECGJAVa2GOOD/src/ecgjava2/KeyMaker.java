@@ -60,7 +60,7 @@ public class KeyMaker {
      * An overloaded method of createKey(char[] password).
      * 
      * @see createKey(char[] password)
-     * @param password - The String used to create the SecretKey.
+     * @param password The String used to create the SecretKey.
      * @return A SecretKey based on the given password.
      */
     public static SecretKey createKey(String password) {
