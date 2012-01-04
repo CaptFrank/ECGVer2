@@ -1,0 +1,6 @@
+Notes to do later or investigate method if
+the procedures that are implemented now are
+not working.
+
+
+http://www.barello.net/avrx/
