@@ -53,4 +53,7 @@ public class KeyMaker {
         }
         return null;
     }
+    public static SecretKey createKey(String password) {
+        return createKey(password.toCharArray());
+    }
 }
