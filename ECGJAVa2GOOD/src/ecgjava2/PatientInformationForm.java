@@ -23,19 +23,19 @@
 package ecgjava2;
 
 import java.awt.Image;
-import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.AbstractButton;
 import javax.swing.Icon;
 import org.jdesktop.application.Action;
 
@@ -64,11 +64,13 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtPatientName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         txtOhipNumber = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        cmbGender = new javax.swing.JComboBox();
+        jLabel9 = new javax.swing.JLabel();
+        txtPostalCode = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtDoctorName = new javax.swing.JTextField();
@@ -79,12 +81,12 @@ public class PatientInformationForm extends javax.swing.JFrame {
         txtAllergies = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        JScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         txtDoctorNotes = new javax.swing.JTextArea();
         btnSave = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         lblPicture = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnQuit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuAddPic = new javax.swing.JMenuItem();
@@ -113,49 +115,54 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
-        bgrpGender.add(jRadioButton1);
-        jRadioButton1.setLabel(resourceMap.getString("Male.label")); // NOI18N
-        jRadioButton1.setName("Male"); // NOI18N
-
-        bgrpGender.add(jRadioButton2);
-        jRadioButton2.setLabel(resourceMap.getString("jRadioButton2.label")); // NOI18N
-        jRadioButton2.setName("jRadioButton2"); // NOI18N
-
-        bgrpGender.add(jRadioButton3);
-        jRadioButton3.setLabel(resourceMap.getString("jRadioButton3.label")); // NOI18N
-        jRadioButton3.setName("jRadioButton3"); // NOI18N
-
         jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
         jLabel4.setName("jLabel4"); // NOI18N
 
         txtOhipNumber.setText(resourceMap.getString("lblOhipNumber.text")); // NOI18N
         txtOhipNumber.setName("lblOhipNumber"); // NOI18N
 
+        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
+        jLabel8.setName("jLabel8"); // NOI18N
+
+        jTextField1.setText(resourceMap.getString("jTextField1.text")); // NOI18N
+        jTextField1.setName("jTextField1"); // NOI18N
+
+        cmbGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--", "Male", "Female", "Other" }));
+        cmbGender.setName("cmbGender"); // NOI18N
+
+        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
+        jLabel9.setName("jLabel9"); // NOI18N
+
+        txtPostalCode.setText(resourceMap.getString("txtPostalCode.text")); // NOI18N
+        txtPostalCode.setName("txtPostalCode"); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPatientName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtOhipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtOhipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPostalCode))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,21 +170,22 @@ public class PatientInformationForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
                     .addComponent(txtOhipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
-                .addGap(11, 11, 11))
+                    .addComponent(cmbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9)
+                        .addComponent(txtPostalCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
-
-        jRadioButton1.getAccessibleContext().setAccessibleName(resourceMap.getString("jRadioButton1.AccessibleContext.accessibleName")); // NOI18N
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel2.border.title"))); // NOI18N
         jPanel2.setName("jPanel2"); // NOI18N
@@ -197,7 +205,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDoctorName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,8 +249,8 @@ public class PatientInformationForm extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAllergies, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                            .addComponent(txtPastSurgeries, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)))
+                            .addComponent(txtAllergies, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+                            .addComponent(txtPastSurgeries, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)))
                     .addComponent(jLabel7))
                 .addContainerGap())
         );
@@ -265,27 +273,23 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(resourceMap.getString("jPanel4.border.title"))); // NOI18N
         jPanel4.setName("jPanel4"); // NOI18N
 
-        JScrollPane1.setName("JScrollPane1"); // NOI18N
+        jScrollPane1.setHorizontalScrollBar(null);
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
 
         txtDoctorNotes.setColumns(20);
         txtDoctorNotes.setRows(5);
         txtDoctorNotes.setName("txtDoctorNotes"); // NOI18N
-        JScrollPane1.setViewportView(txtDoctorNotes);
+        jScrollPane1.setViewportView(txtDoctorNotes);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
         );
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(ecgjava2.ECGJAVa2App.class).getContext().getActionMap(PatientInformationForm.class, this);
@@ -295,10 +299,12 @@ public class PatientInformationForm extends javax.swing.JFrame {
 
         btnClear.setAction(actionMap.get("clear")); // NOI18N
         btnClear.setText(resourceMap.getString("btnClear.text")); // NOI18N
+        btnClear.setToolTipText(resourceMap.getString("btnClear.toolTipText")); // NOI18N
         btnClear.setName("btnClear"); // NOI18N
 
         lblPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPicture.setText(resourceMap.getString("lblPicture.text")); // NOI18N
+        lblPicture.setToolTipText(resourceMap.getString("lblPicture.toolTipText")); // NOI18N
         lblPicture.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblPicture.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPicture.setName("lblPicture"); // NOI18N
@@ -308,9 +314,9 @@ public class PatientInformationForm extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setAction(actionMap.get("quit")); // NOI18N
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        btnQuit.setAction(actionMap.get("quit")); // NOI18N
+        btnQuit.setText(resourceMap.getString("btnQuit.text")); // NOI18N
+        btnQuit.setName("btnQuit"); // NOI18N
 
         jMenuBar1.setName("jMenuBar1"); // NOI18N
 
@@ -341,7 +347,6 @@ public class PatientInformationForm extends javax.swing.JFrame {
         jMenu2.setName("jMenu2"); // NOI18N
 
         mnuClear.setAction(actionMap.get("clear")); // NOI18N
-        mnuClear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         mnuClear.setText(resourceMap.getString("mnuClear.text")); // NOI18N
         mnuClear.setName("mnuClear"); // NOI18N
         jMenu2.add(mnuClear);
@@ -354,23 +359,23 @@ public class PatientInformationForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnQuit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 474, Short.MAX_VALUE)
                         .addComponent(btnSave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClear))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)))
+                        .addComponent(lblPicture, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -380,18 +385,18 @@ public class PatientInformationForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(lblPicture, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQuit)
                     .addComponent(btnSave)
-                    .addComponent(btnClear)
-                    .addComponent(jButton1))
+                    .addComponent(btnClear))
                 .addContainerGap())
         );
 
@@ -402,7 +407,7 @@ public class PatientInformationForm extends javax.swing.JFrame {
 
     /**
      * Returns a BufferedImage object of the given Icon object.
-     * 
+     *
      * @param icon the Icon object
      * @return a BufferedImage object
      */
@@ -413,13 +418,13 @@ public class PatientInformationForm extends javax.swing.JFrame {
         //line below used to store rasterised image of icon to BufferedImage image
         icon.paintIcon(null, image.getGraphics(), 0, 0);
         return image;
-    } 
+    }
 
     /**
-     * Checks if the user has entered the correct data into the fields. If 
-     * the user has entered any bad data then an error message is returned 
+     * Checks if the user has entered the correct data into the fields. If
+     * the user has entered any bad data then an error message is returned
      * showing all the errors with the user's input.
-     * 
+     *
      * @return true  if the user's input was valid
      * @return false if the user entered incorrect data or left fields blank
      */
@@ -427,55 +432,61 @@ public class PatientInformationForm extends javax.swing.JFrame {
         boolean inputValid = true; //Assume input is good.
         String ohipNumber = txtOhipNumber.getText();
         String patientName = txtPatientName.getText();
+        String address;
+        String phoneNumber;
+        String postalCode = txtPostalCode.getText();
+        String patientEmergencyContact;
         String doctorName = txtDoctorName.getText();
+        
         String errorMessage = "Error: \n";
-
+        String regexNumbersOnly = "((-|\\+)?[0-9]+(]].[0-9]+)?)+";
+        String regexPostalCode = "^[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1} *\\d{1}[A-Z]{1}\\d{1}$";
+                
         //Check if OHIP number is correct
         if (ohipNumber.isEmpty()){
             inputValid = false;
             errorMessage += "OHIP number was not given\n";
-        } else if (!ohipNumber.matches("((-|\\+)?[0-9]+(]].[0-9]+)?)+")) {
+        } else if (!ohipNumber.matches(regexNumbersOnly)) {
             inputValid = false;
             errorMessage += "OHIP number can only contain numbers\n";
         }
-        //Check if patient's name is correct.
+        //Check if patient's name is entered.
         if (patientName.isEmpty()){
             inputValid = false;
             errorMessage += "Patient name was not given\n";
         }
-        //Check if doctor's name is correct.
+        //Check if doctor's name is entered.
         if (doctorName.isEmpty()){
             inputValid = false;
             errorMessage += "Doctor name was not given\n";
         }
         //Check if patient's gender was chosen.
-        Enumeration genderButtons = bgrpGender.getElements();
-        int unselectedButtonCount = 0;
-        for (Enumeration<AbstractButton> b = genderButtons; b.hasMoreElements(); ){
-            if (b.nextElement().isSelected()) break;
-            else {
-                unselectedButtonCount++;
-            }
-
-            if (unselectedButtonCount == 3) { //No gender was chosen
-                inputValid = false;
-                errorMessage += "Patient gender not given\n";
-            }
+        if (cmbGender.getSelectedIndex() <= 0){
+            inputValid = false;
+            errorMessage += "Patient gender not selected\n";
         }
+        //Check if postal code is in correct format.
+        if (postalCode.isEmpty()) {
+            inputValid = false;
+            errorMessage += "Postal code not given\n";
+        } else if (!postalCode.toUpperCase().matches(regexPostalCode)) {
+            inputValid = false;
+            errorMessage += "Postal code should be in format 'A0A 0A0' and be valid\n";
+        }
+        //TODO Check if phone number is in correct format.
 
         if (!inputValid){
             JOptionPane.showMessageDialog(this, errorMessage,
                                           "Bad Input", JOptionPane.WARNING_MESSAGE);
         }
-
         return inputValid;
-    }   
+    }
 
     /**
-     * Writes all patient information to file patientFile. If the method 
-     * could not write to patientFile then an error message will be printed.
-     * 
-     * The writeToFile method writes patient information such as 
+     * Writes all patient information to file patientFile. If the method
+     * could not write to patientFile then an IOException will be thrown.
+     *
+     * The writeToFile method writes patient information such as
      *  - OHIP number
      *  - Patient's name
      *  - Patient's gender
@@ -484,15 +495,20 @@ public class PatientInformationForm extends javax.swing.JFrame {
      *  - List of past surgeries
      *  - List of patient's allergies
      *  - patient's portrait
-     * 
+     *
+     * @throws IOException
      * @param patientFile the file to write the patient information to
      * @return true  if writing to file was successful
      * @return false otherwise
      */
-    private boolean writeToFile(File patientFile){
+    private void writeToFile(File patientFile) throws IOException{
         int ohipNumber = Integer.parseInt(txtOhipNumber.getText());
         String patientName = txtPatientName.getText();
-        String patientGender = bgrpGender.getSelection().getActionCommand();
+        String patientGender = cmbGender.getSelectedItem().toString();
+        String address = "";
+        String phoneNumber = "";
+        String postalCode = txtPostalCode.getText();
+        String patientNextKin = "";
         String doctorName = txtDoctorName.getText();
         String doctorNote = txtDoctorNotes.getText();
         String[] pastSurgeriesList = txtPastSurgeries.getText().split(",");
@@ -500,35 +516,31 @@ public class PatientInformationForm extends javax.swing.JFrame {
         BufferedImage patientImage = iconToImage(lblPicture.getIcon());
 
         //Write patient information to patientFile.
-        try {
-            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(patientFile)));
-            out.println("ohip " + ohipNumber);
-            out.println("patient " + patientName);
-            out.println("gender " + patientGender);
-            out.println("doctor " + doctorName);
-            out.println("note " + doctorNote);
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(patientFile)));
+        out.println("ohip " + ohipNumber);
+        out.println("patient " + patientName);
+        out.println("address " + address);
+        out.println("phoneNo " + phoneNumber);
+        out.println("postal_code " + postalCode);
+        out.println("next_kin " + patientNextKin);
+        out.println("gender " + patientGender);
+        out.println("doctor " + doctorName);
+        out.println("note " + doctorNote);
 
-            out.print("past_surgeries ");
-            for (String s : pastSurgeriesList) out.print(s + " ");
-            out.println();
+        out.print("past_surgeries ");
+        for (String s : pastSurgeriesList) out.print(s.trim() + " ");
+        out.println();
 
-            out.print("allergies ");
-            for (String s: allergiesList) out.print(s + " ");
-            out.println();
+        out.print("allergies ");
+        for (String s: allergiesList) out.print(s.trim() + " ");
+        out.println();
 
-            //Write image at end of file.
-            ImageIO.write(patientImage, "png", patientFile);
-            
-            out.close();
-            return true;
-        }
-        catch (IOException e) {
-            System.out.println("Unable to write to file.\n"
-                                 + e.toString());
-            return false;
-        }
+        //Write image at end of file.
+        ImageIO.write(patientImage, "png", patientFile);
+
+        out.close();
     }
-    
+
     @Action
     public void save() {
         if (!hasValidInput()) return;
@@ -540,10 +552,17 @@ public class PatientInformationForm extends javax.swing.JFrame {
         int retVal = fc.showSaveDialog(this);
         if (retVal == JFileChooser.APPROVE_OPTION) {
             File patientFile = fc.getSelectedFile();
-            writeToFile(patientFile);
+            try {
+                writeToFile(patientFile);
+            } catch (IOException ex) {
+                Logger.getLogger(PatientInformationForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
+    /**
+     * Removes all text and selections made by the user.
+     */
     @Action
     public void clear() {
         txtPatientName.setText("");
@@ -553,13 +572,17 @@ public class PatientInformationForm extends javax.swing.JFrame {
         txtOhipNumber.setText("");
         txtPastSurgeries.setText("");
         txtPatientName.setText("");
+        
+        cmbGender.setSelectedIndex(0); //0th index should not contain a gender
+        lblPicture.setIcon(null); 
+        lblPicture.setText("Add patient portrait");
     }
-    
+
     @Action
     public void addPicture() {
         int w = lblPicture.getWidth();
         int h = lblPicture.getHeight();
-        
+
         final JFileChooser fc = new JFileChooser();
         fc.setDialogTitle("Select patient's picture");
         fc.setMultiSelectionEnabled(false);
@@ -573,21 +596,20 @@ public class PatientInformationForm extends javax.swing.JFrame {
             try {
                 BufferedImage image = ImageIO.read(selectedFile);
                 Image scaledImage = image.getScaledInstance(w, h, Image.SCALE_DEFAULT);
-            
+
                 ImageIcon icon = new ImageIcon(scaledImage);
-                //Add image to lblPicture
-                lblPicture.setIcon(icon);
-                lblPicture.setText(""); //Remove "Add patient portrait" text
+                lblPicture.setIcon(icon); //Add image to lblPicture
+                lblPicture.setText("");   //Remove "Add patient portrait" text
             }
             catch(IOException e) {
-                e.printStackTrace();
+                System.out.println(e);
             }
         }
     }
-private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPictureMouseClicked
-    addPicture();
-}//GEN-LAST:event_lblPictureMouseClicked
-    
+    private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPictureMouseClicked
+        addPicture();
+    }//GEN-LAST:event_lblPictureMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -595,7 +617,7 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
 //        try {
 //            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -623,13 +645,13 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane JScrollPane1;
     private javax.swing.ButtonGroup bgrpGender;
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox cmbGender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -637,6 +659,8 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -644,10 +668,9 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblPicture;
     private javax.swing.JMenuItem mnuAddPic;
     private javax.swing.JMenuItem mnuClear;
@@ -659,5 +682,6 @@ private void lblPictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:
     private javax.swing.JTextField txtOhipNumber;
     private javax.swing.JTextField txtPastSurgeries;
     private javax.swing.JTextField txtPatientName;
+    private javax.swing.JTextField txtPostalCode;
     // End of variables declaration//GEN-END:variables
 }
