@@ -1,0 +1,22 @@
+Notes to do later or investigate method if
+the procedures that are implemented now are
+not working.
+
+
+http://www.barello.net/avrx/
+
+
+For XCode IDE
+
+http://web.mac.com/carstenm/INSS/ArduinoOnXCode.html
+
+http://www.obdev.at/products/crosspack/index.html
+
+http://robertcarlsen.net/2009/02/28/using-arduino-in-xcode-532
+
+https://github.com/timknapen/Arduino-With-XCode/tree/master/Arduino
+
+Serial to Bonjour Networking:
+
+http://robotgrrl.com/apps4arduino/wijourno.php
+
