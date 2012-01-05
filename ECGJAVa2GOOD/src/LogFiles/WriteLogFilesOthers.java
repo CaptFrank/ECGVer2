@@ -55,7 +55,7 @@ public class WriteLogFilesOthers {
     }
 
     fout = new FileWriter(aFile);
-    fout.write("Time,Light,Battery Voltage (mV)\n");
+    fout.write("Time,Light,Battery Voltage (V), ECG Battery Voltage (V)\n");
     fout.close();
     System.out.println("Header Written Successfully");
       if (ecgjava2.ECGJAVa2View.Dialogconnected){

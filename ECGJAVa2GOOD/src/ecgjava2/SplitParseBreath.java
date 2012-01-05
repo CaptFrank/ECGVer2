@@ -47,7 +47,7 @@ public class SplitParseBreath {
             
             MatcherArrayIndex1++;
         }
-        if (valuenum != 0 && percentagenum != 0){
+        if (valuenum != 0 && percentagenum != 0 && ECGJAVa2View.getRecordWatchDogBreath() == 0){
             String x = valuenum + "," + percentagenum + "\n";
             LogFiles.WriteLogFilesB.Writetofile(x);
         }

@@ -1,31 +1,20 @@
-00:53:00,130 DEBUG plugin:1362 - URL of my class :jar:file:/Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar!/org/dinopolis/gpstool/Gpsylon.class, dir of jar is /Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3
-00:53:00,145 DEBUG plugin:1389 - Adding default plugin dir: /Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
-00:53:00,146 DEBUG plugin:1410 - Adding repository for plugin/service jars: /Users/francispapineau/.gpsylon/plugins
-00:53:00,146 DEBUG plugin:1403 - Ignoring duplicate plugin/service repository: /Users/francispapineau/.gpsylon/plugins
-00:53:00,255 DEBUG plugin:2949 - plugins for writing image detected: (java.lang.Object[2])org.dinopolis.gpstool.plugin.writerasterimage.WriteJpgImagePlugin@48ff4cf,org.dinopolis.gpstool.plugin.writerasterimage.WritePngImagePlugin@7114460
-00:53:00,260 DEBUG connection:1657 - connecting in gps mode 'serial' with gps protocol 'nmea'
-00:53:00,260 DEBUG connection:1721 - connecting to nmea device /dev/cu.usbmodem411
-00:53:00,273 INFO  Gpsylon:1762 - Connecting to gpsdevice on port /dev/cu.usbmodem411 at 9600 baud
-00:53:00,273 DEBUG GPSSerialDevice:113 - try to connect to port '/dev/cu.usbmodem411' using 9600 baud
-00:53:00,459 INFO  Gpsylon:585 - Plugins in the following locations are used:
-00:53:00,460 INFO  Gpsylon:594 - /Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
-00:53:00,485 INFO  Gpsylon:1440 - Added Gui Plugin: Average Position V0.01
-00:53:00,490 INFO  Gpsylon:1440 - Added Gui Plugin: GPSTool V0.01
-00:53:00,537 INFO  Gpsylon:1440 - Added Gui Plugin: ImportExport V0.01
-00:53:00,538 INFO  Gpsylon:1440 - Added Gui Plugin: Kismet Import V0.01
-00:53:00,551 INFO  Gpsylon:1440 - Added Gui Plugin: Map Manager V0.01
-00:53:00,553 INFO  Gpsylon:1440 - Added Gui Plugin: Track Charts V0.01
-00:53:00,567 INFO  Gpsylon:1440 - Added Gui Plugin: Tracks V0.01
-00:53:00,693 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Download Maps V1.1
-00:53:00,725 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Navigation Mode V1.0
-00:53:02,156 DEBUG MapInfo:356 - Image 'null' loaded.
-00:53:02,238 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000162.gif' loaded.
-00:53:02,258 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000160.gif' loaded.
-00:53:02,278 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000223.gif' loaded.
-00:53:02,299 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000153.gif' loaded.
-00:53:02,305 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000159.gif' loaded.
-00:53:02,312 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000156.gif' loaded.
-00:53:02,318 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000154.gif' loaded.
-00:53:02,333 DEBUG MapInfo:356 - Image '/Users/francispapineau/.gpsylon/maps/map_000222.gif' loaded.
-00:53:05,357 DEBUG propertychange:1175 - property change event: current_map_position.latitude=54.3754768371582 from org.dinopolis.util.resource.FileResources@67cec874
-00:53:05,358 DEBUG propertychange:1175 - property change event: current_map_position.longitude=-13.300726890563965 from org.dinopolis.util.resource.FileResources@67cec874
+20:35:00,433 DEBUG plugin:1362 - URL of my class :jar:file:/Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3/gpsylon-0.5.3.jar!/org/dinopolis/gpstool/Gpsylon.class, dir of jar is /Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3
+20:35:00,495 DEBUG plugin:1389 - Adding default plugin dir: /Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
+20:35:00,495 DEBUG plugin:1410 - Adding repository for plugin/service jars: /Users/francispapineau/.gpsylon/plugins
+20:35:00,496 DEBUG plugin:1403 - Ignoring duplicate plugin/service repository: /Users/francispapineau/.gpsylon/plugins
+20:35:00,670 DEBUG plugin:2949 - plugins for writing image detected: (java.lang.Object[2])org.dinopolis.gpstool.plugin.writerasterimage.WriteJpgImagePlugin@5b7b0998,org.dinopolis.gpstool.plugin.writerasterimage.WritePngImagePlugin@6ab30913
+20:35:00,713 DEBUG connection:1657 - connecting in gps mode 'serial' with gps protocol 'nmea'
+20:35:00,713 DEBUG connection:1721 - connecting to nmea device /dev/cu.usbmodem411
+20:35:00,758 INFO  Gpsylon:1762 - Connecting to gpsdevice on port /dev/cu.usbmodem411 at 9600 baud
+20:35:00,759 DEBUG GPSSerialDevice:113 - try to connect to port '/dev/cu.usbmodem411' using 9600 baud
+20:35:01,076 INFO  Gpsylon:585 - Plugins in the following locations are used:
+20:35:01,077 INFO  Gpsylon:594 - /Users/francispapineau/NetBeansProjects/ECG-JAVA/trunk/ECGJAVa2GOOD/gpsylon_bin-0.5.3/plugins
+20:35:01,115 INFO  Gpsylon:1440 - Added Gui Plugin: Average Position V0.01
+20:35:01,121 INFO  Gpsylon:1440 - Added Gui Plugin: GPSTool V0.01
+20:35:01,167 INFO  Gpsylon:1440 - Added Gui Plugin: ImportExport V0.01
+20:35:01,168 INFO  Gpsylon:1440 - Added Gui Plugin: Kismet Import V0.01
+20:35:01,198 INFO  Gpsylon:1440 - Added Gui Plugin: Map Manager V0.01
+20:35:01,201 INFO  Gpsylon:1440 - Added Gui Plugin: Track Charts V0.01
+20:35:01,211 INFO  Gpsylon:1440 - Added Gui Plugin: Tracks V0.01
+20:35:01,421 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Download Maps V1.1
+20:35:01,554 INFO  Gpsylon:1453 - Added Mouse Mode Plugin: Navigation Mode V1.0

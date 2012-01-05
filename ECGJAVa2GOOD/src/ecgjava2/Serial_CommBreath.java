@@ -2,7 +2,6 @@ package ecgjava2;
 
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
-import gnu.io.CommPortOwnershipListener;
 import gnu.io.NoSuchPortException;
 import gnu.io.ParallelPort;
 import gnu.io.PortInUseException;
@@ -30,7 +29,6 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -42,7 +40,7 @@ import javax.swing.JPanel;
 class CommPortOpenBreath extends Thread{
 
   /** How long to wait for the open to finish up. */
-  static final int TIMEOUTSECONDS = 30;
+  static final int TIMEOUTSECONDS = 10;
 
   /** The baud rate to use. */
   static final int BAUD = 9600;
@@ -191,6 +189,24 @@ class CommPortOpenBreath extends Thread{
 
     }
   }
+  
+  static public void disconnect() throws IOException {
+        connected = false;
+        if (thePort != null) {
+            // close the i/o streams.
+            
+            DataThreadBreath.inStream.close();
+            DataThreadBreath.currentThread().stop();
+            
+            os.close();
+            isBreath.close();
+            // don't care
+            }
+            // Close the port.
+            thePort.close();
+            thePort = null;
+    }
+  
   static public boolean getConnected(){
       return connected;
   }
@@ -357,7 +373,7 @@ class PortChooserBreath extends JDialog implements ItemListener {
 /** This inner class handles one side of a conversation. */
 
   class DataThreadBreath extends Thread {
-    BufferedReader inStream;
+    static BufferedReader inStream;
     String val;
     PrintStream pStream;
 

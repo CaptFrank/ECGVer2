@@ -43,7 +43,7 @@ import javax.swing.JPanel;
 class CommPortOpen extends Thread{
 
   /** How long to wait for the open to finish up. */
-  static final int TIMEOUTSECONDS = 30;
+  static final int TIMEOUTSECONDS = 10;
 
   /** The baud rate to use. */
   static final int BAUD = 115200;
@@ -224,23 +224,25 @@ class CommPortOpen extends Thread{
       return is.readLine();
   }
   
-  static void closeConnection() throws IOException{
-      
-      System.out.println("closing: " + thePort.getName());
-      DataThread.currentThread().stop();
-      DataThread.inStream.close();
-      is.close();
-      in.close();
-      os.close();
-      myPort.close();
-      thePort.close();
-      is = null;
-      in = null;
-      os = null;
-      myPort = null;
-      thePort = null;
-      
-  }
+  static public void disconnect() {
+        connected = false;
+        if (thePort != null) {         
+            try {
+                // close the i/o streams.
+
+                DataThread.inStream.close();
+                DataThread.currentThread().stop();
+                
+                os.close();
+                is.close();
+            } catch (IOException ex) {
+                // don't care
+            }
+            // Close the port.
+            thePort.close();
+            thePort = null;
+        }
+    }
 
   static String getPortName(){
       return thePortID.getName();
@@ -442,7 +444,7 @@ class PortChooser extends JDialog implements ItemListener {
 
 /** This inner class handles one side of a conversation. */
 
-  class DataThread extends Thread {
+class DataThread extends Thread {
     static public BufferedReader inStream;
     String val;
     PrintStream pStream;
@@ -463,3 +465,5 @@ class PortChooser extends JDialog implements ItemListener {
         return;
       }
 }
+
+

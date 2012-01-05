@@ -97,8 +97,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+<<<<<<< .mine
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="280" max="32767" attributes="0"/>
+=======
                       <Component id="btnQuit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="474" max="32767" attributes="0"/>
+>>>>>>> .r187
                       <Component id="btnSave" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnClear" min="-2" max="-2" attributes="0"/>
@@ -128,7 +133,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< .mine
+                  <Component id="lblPicture" pref="250" max="32767" attributes="0"/>
+=======
                   <Component id="lblPicture" pref="198" max="32767" attributes="0"/>
+>>>>>>> .r187
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
@@ -315,7 +324,11 @@
                   <Component id="jLabel5" min="-2" pref="62" max="-2" attributes="1"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtDoctorName" min="-2" pref="135" max="-2" attributes="1"/>
+<<<<<<< .mine
+                  <EmptySpace pref="81" max="32767" attributes="0"/>
+=======
                   <EmptySpace pref="257" max="32767" attributes="0"/>
+>>>>>>> .r187
               </Group>
           </Group>
         </DimensionLayout>
@@ -374,8 +387,13 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< .mine
+                              <Component id="txtAllergies" pref="354" max="32767" attributes="0"/>
+                              <Component id="txtPastSurgeries" alignment="0" pref="354" max="32767" attributes="0"/>
+=======
                               <Component id="txtAllergies" pref="535" max="32767" attributes="0"/>
                               <Component id="txtPastSurgeries" alignment="0" pref="535" max="32767" attributes="0"/>
+>>>>>>> .r187
                           </Group>
                       </Group>
                       <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -454,7 +472,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< .mine
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="JScrollPane1" pref="460" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+=======
               <Component id="jScrollPane1" alignment="0" pref="635" max="32767" attributes="0"/>
+>>>>>>> .r187
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
