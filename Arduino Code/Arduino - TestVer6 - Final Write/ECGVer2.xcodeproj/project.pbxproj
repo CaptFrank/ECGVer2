@@ -1,0 +1,182 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		6FFA26C114B1092B006FBD0C /* DEBUG_SEND.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DEBUG_SEND.c; sourceTree = "<group>"; };
+		6FFA26C214B1094E006FBD0C /* Defines_Includes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Defines_Includes.c; sourceTree = "<group>"; };
+		6FFA26C314B10962006FBD0C /* ECGVer2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ECGVer2.c; sourceTree = "<group>"; };
+		6FFA26C514B10979006FBD0C /* LCD.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LCD.c; sourceTree = "<group>"; };
+		6FFA26C614B10988006FBD0C /* PwrFailDetect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PwrFailDetect.c; sourceTree = "<group>"; };
+		6FFA26C714B10993006FBD0C /* Sensors.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Sensors.c; sourceTree = "<group>"; };
+		6FFA26C914B109AB006FBD0C /* SpecialChar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SpecialChar.c; sourceTree = "<group>"; };
+		6FFA26CA14B109C1006FBD0C /* TempControl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TempControl.c; sourceTree = "<group>"; };
+		6FFA26CB14B109CF006FBD0C /* USB_Host.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = USB_Host.c; sourceTree = "<group>"; };
+		6FFA26CC14B109DA006FBD0C /* VDIP.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VDIP.c; sourceTree = "<group>"; };
+		6FFA26CD14B10ED1006FBD0C /* EEPROM MAPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "EEPROM MAPP"; sourceTree = "<group>"; };
+		6FFA26CE14B117A7006FBD0C /* Init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Init.c; sourceTree = "<group>"; };
+		6FFA26CF14B124DB006FBD0C /* EEPROM.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EEPROM.c; sourceTree = "<group>"; };
+		6FFA26D014B145A7006FBD0C /* LoggingChange.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LoggingChange.c; sourceTree = "<group>"; };
+		6FFA26D114B2833E006FBD0C /* Buttons.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Buttons.c; sourceTree = "<group>"; };
+		6FFA26D214B29876006FBD0C /* Menus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Menus.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		6FFA26B414B1081C006FBD0C = {
+			isa = PBXGroup;
+			children = (
+				6FFA26CD14B10ED1006FBD0C /* EEPROM MAPP */,
+				6FFA26D214B29876006FBD0C /* Menus.c */,
+				6FFA26C914B109AB006FBD0C /* SpecialChar.c */,
+				6FFA26C514B10979006FBD0C /* LCD.c */,
+				6FFA26C114B1092B006FBD0C /* DEBUG_SEND.c */,
+				6FFA26CF14B124DB006FBD0C /* EEPROM.c */,
+				6FFA26CC14B109DA006FBD0C /* VDIP.c */,
+				6FFA26CB14B109CF006FBD0C /* USB_Host.c */,
+				6FFA26CA14B109C1006FBD0C /* TempControl.c */,
+				6FFA26C714B10993006FBD0C /* Sensors.c */,
+				6FFA26D114B2833E006FBD0C /* Buttons.c */,
+				6FFA26D014B145A7006FBD0C /* LoggingChange.c */,
+				6FFA26C614B10988006FBD0C /* PwrFailDetect.c */,
+				6FFA26CE14B117A7006FBD0C /* Init.c */,
+				6FFA26C314B10962006FBD0C /* ECGVer2.c */,
+				6FFA26C214B1094E006FBD0C /* Defines_Includes.c */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		6FFA26BB14B10835006FBD0C /* ECGVer2 */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 6FFA26BE14B10837006FBD0C /* Build configuration list for PBXLegacyTarget "ECGVer2" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = ECGVer2;
+			passBuildSettingsInEnvironment = 1;
+			productName = ECGVer2;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		6FFA26B614B1081E006FBD0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "carleton university";
+			};
+			buildConfigurationList = 6FFA26B914B1081E006FBD0C /* Build configuration list for PBXProject "ECGVer2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6FFA26B414B1081C006FBD0C;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FFA26BB14B10835006FBD0C /* ECGVer2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		6FFA26BC14B10837006FBD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6FFA26BD14B10837006FBD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6FFA26BF14B10837006FBD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6FFA26C014B10837006FBD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FFA26B914B1081E006FBD0C /* Build configuration list for PBXProject "ECGVer2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FFA26BC14B10837006FBD0C /* Debug */,
+				6FFA26BD14B10837006FBD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FFA26BE14B10837006FBD0C /* Build configuration list for PBXLegacyTarget "ECGVer2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FFA26BF14B10837006FBD0C /* Debug */,
+				6FFA26C014B10837006FBD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FFA26B614B1081E006FBD0C /* Project object */;
+}
