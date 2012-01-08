@@ -55,7 +55,7 @@ public class WriteLogFilesVitals {
     }
 
     fout = new FileWriter(aFile);
-    fout.write("Time,ECG,OXI,IR Value,SPO2,Fail safe,RESP Value\n");
+    fout.write("Time,ECG,ECG Pulse,OXI,IR Value,SPO2,Fail safe,RESP Value\n");
     fout.close();
     System.out.println("Header Written Successfully");
       if (ecgjava2.ECGJAVa2View.Dialogconnected){
